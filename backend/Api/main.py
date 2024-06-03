@@ -1,5 +1,5 @@
-from fastapi import Depends, FastApi
+from fastapi import Depends, FastAPI
 from .routes import login
 
-app = FastApi()
+app = FastAPI()
 app.include_router(login.router)
