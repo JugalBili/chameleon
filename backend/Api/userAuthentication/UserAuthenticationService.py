@@ -16,6 +16,11 @@ class UserAuthenticationService(object):
                  repository: Annotated[UserAuthenticationRepository, Depends(UserAuthenticationRepository)]) -> None:
         self.repository = repository
 
+    # realistically, this method should be a middleware but I can't figure out how to do that properly with this library
+    async def authenticateUser(self, token: str):
+        jwt_token = token.split(' ')[1]
+        return await self.repository.authenticateAccessTokenAsync(jwt_token)
+
     async def getUserToken(self, loginDto: UserLoginDto):
         user = await self.repository.getUserFromLogin(loginDto)
         if user is None:

@@ -1,7 +1,6 @@
 from fastapi import HTTPException, Depends
 from firebase_admin import firestore_async
 from google.cloud.firestore_v1 import DocumentSnapshot
-
 from .CreateUserDto import CreateUserDTO
 from .UserLoginDto import UserLoginDto
 from ..dependencies import getEnv
@@ -10,6 +9,7 @@ from typing import Annotated, Union
 from pydantic import BaseModel
 from datetime import datetime, timedelta, timezone
 import jwt
+from jwt.exceptions import InvalidTokenError
 from passlib.context import CryptContext
 
 
@@ -59,6 +59,22 @@ class UserAuthenticationRepository:
         to_encode.update({"exp": expiration_date})
         token = jwt.encode(to_encode, self.signingKey, self.signingAlgorithm)
         return token
+
+    async def authenticateAccessTokenAsync(self, token: str) -> User:
+        try:
+            payload = jwt.decode(token, self.signingKey, [self.signingAlgorithm])
+            identification = payload.get("usr")
+            expiration = payload.get("exp")
+            if identification is None:
+                raise InvalidTokenError
+            if expiration is None or expiration < datetime.now(timezone.utc).timestamp():
+                raise HTTPException(status_code=401, detail="Token is expired")
+        except InvalidTokenError:
+            raise HTTPException(status_code=401, detail="Could not validate credentials")
+        user = await self.getUserFromEmail(identification)
+        if user is None:
+            raise HTTPException(status_code=401, detail="Could not validate credentials")
+        return user
 
     async def getUserFromLogin(self, loginDto: UserLoginDto) -> Union[User, None]:
         try:
