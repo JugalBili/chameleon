@@ -2,3 +2,6 @@ fastapi
 firebase-admin
 pydantic-settings
 pyjwt
+pydantic
+bcrypt==4.0.1
+passlib[bcrypt]
