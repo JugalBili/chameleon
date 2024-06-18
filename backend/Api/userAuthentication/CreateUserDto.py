@@ -1,8 +1,6 @@
-﻿from pydantic import BaseModel
+﻿from .UserLoginDto import UserLoginDto
 
 
-class CreateUserDTO(BaseModel):
-    email: str
-    password: str
+class CreateUserDTO(UserLoginDto):
     firstname: str
     lastname: str

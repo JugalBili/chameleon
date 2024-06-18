@@ -1,9 +1,9 @@
-import os
 from typing import Annotated
 
-from fastapi import APIRouter, Depends
+from fastapi import APIRouter, Depends, Header
 
 from ..userAuthentication.CreateUserDto import CreateUserDTO
+from ..userAuthentication.UserLoginDto import UserLoginDto
 from ..userAuthentication.UserAuthenticationService import UserAuthenticationService
 
 router = APIRouter(
@@ -16,9 +16,10 @@ router = APIRouter(
 )
 
 
-@router.get("/test")
-def test():
-    return os.getenv("FIREBASE_EMULATOR_HOST")
+@router.post("/login")
+async def login_user(loginDto: UserLoginDto,
+                     AuthenticationService: Annotated[UserAuthenticationService, Depends(UserAuthenticationService)]):
+    return await AuthenticationService.getUserToken(loginDto)
 
 
 @router.post("/register")

@@ -1,7 +1,14 @@
-from fastapi import Depends
+from fastapi import Depends, HTTPException
 from .UserAuthenticationRepository import UserAuthenticationRepository
 from typing import Annotated
 from .CreateUserDto import CreateUserDTO
+from .UserLoginDto import UserLoginDto
+from pydantic import BaseModel
+
+
+class AuthToken(BaseModel):
+    token: str
+    token_type: str
 
 
 class UserAuthenticationService(object):
@@ -9,5 +16,15 @@ class UserAuthenticationService(object):
                  repository: Annotated[UserAuthenticationRepository, Depends(UserAuthenticationRepository)]) -> None:
         self.repository = repository
 
+    async def getUserToken(self, loginDto: UserLoginDto):
+        user = await self.repository.getUserFromLogin(loginDto)
+        if user is None:
+            raise HTTPException(status_code=401, detail="Invalid Username and/or password")
+        return AuthToken(token=self.repository.createAccessToken(user), token_type="Bearer")
+
     async def createUser(self, createUserDto: CreateUserDTO):
-        return await self.repository.createUserAsync(createUserDto)
+        user = await self.repository.getUserFromEmail(createUserDto.email)
+        if user is not None:
+            raise HTTPException(status_code=409, detail="User exists")
+        user = await self.repository.createUserAsync(createUserDto)
+        return AuthToken(token=self.repository.createAccessToken(user), token_type="Bearer")
