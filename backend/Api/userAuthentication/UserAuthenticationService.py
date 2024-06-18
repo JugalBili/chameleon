@@ -4,6 +4,7 @@ from typing import Annotated
 from .CreateUserDto import CreateUserDTO
 from .UserLoginDto import UserLoginDto
 from pydantic import BaseModel
+from email_validator import validate_email, EmailNotValidError
 
 
 class AuthToken(BaseModel):
@@ -31,5 +32,9 @@ class UserAuthenticationService(object):
         user = await self.repository.getUserFromEmail(createUserDto.email)
         if user is not None:
             raise HTTPException(status_code=409, detail="User exists")
+        try:
+            validate_email(createUserDto.email)
+        except EmailNotValidError as e:
+            raise HTTPException(status_code=409, detail=str(e))
         user = await self.repository.createUserAsync(createUserDto)
         return AuthToken(token=self.repository.createAccessToken(user), token_type="Bearer")
