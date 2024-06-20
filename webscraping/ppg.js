@@ -1,5 +1,10 @@
 import puppeteer from "puppeteer";
-import { rgbStringToArray, rgbToColorName } from "./utils.js";
+import {
+  RGBToHSL,
+  hslToColorName,
+  rgbStringToArray,
+  rgbToColorName,
+} from "./utils.js";
 import fs from "fs/promises";
 
 const browser = await puppeteer.launch();
@@ -34,12 +39,15 @@ if (colors) {
   // pre-processing
   const processedColors = colors.map((c) => {
     const rgb = rgbStringToArray(c.rgb);
-    // const genericLabel = rgbToColorName(rgb[0], rgb[1], rgb[2]);
-    const genericLabel = rgbToColorName(rgb);
+    const hsl = RGBToHSL(rgb);
+    const genericLabelHSL = hslToColorName(hsl);
+    const genericLabelRGB = rgbToColorName(rgb);
     return {
       ...c,
       rgb,
-      label: genericLabel,
+      hsl,
+      labelHSL: genericLabelHSL,
+      labelRGB: genericLabelRGB,
     };
   });
   const dataString = JSON.stringify(processedColors, null, 2);

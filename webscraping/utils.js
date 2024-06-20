@@ -53,3 +53,84 @@ export const rgbStringToArray = (rgbString) => {
     return rgbString;
   }
 };
+
+export const RGBToHSL = (rgb) => {
+  let [r, g, b] = rgb;
+  // Make r, g, and b fractions of 1
+  r /= 255;
+  g /= 255;
+  b /= 255;
+
+  // Find greatest and smallest channel values
+  let cmin = Math.min(r, g, b),
+    cmax = Math.max(r, g, b),
+    delta = cmax - cmin,
+    h = 0,
+    s = 0,
+    l = 0;
+
+  // Calculate hue
+  // No difference
+  if (delta === 0) h = 0;
+  // Red is max
+  else if (cmax === r) h = ((g - b) / delta) % 6;
+  // Green is max
+  else if (cmax === g) h = (b - r) / delta + 2;
+  // Blue is max
+  else h = (r - g) / delta + 4;
+
+  h = Math.round(h * 60);
+
+  // Make negative hues positive behind 360°
+  if (h < 0) h += 360;
+
+  // Calculate lightness
+  l = (cmax + cmin) / 2;
+
+  // Calculate saturation
+  s = delta === 0 ? 0 : delta / (1 - Math.abs(2 * l - 1));
+
+  // Multiply l and s by 100
+  s = +(s * 100).toFixed(1);
+  l = +(l * 100).toFixed(1);
+
+  return [h, s, l];
+};
+
+export const hslToColorName = (hsl) => {
+  const [h, s, l] = hsl;
+  // Convert hue to degrees if it's not already
+  if (h > 360) h = h % 360;
+
+  // Handle grayscale
+  if (s <= 10) {
+    if (l < 20) return "black";
+    if (l > 80) return "white";
+    return "gray";
+  }
+  if (l === 100) return "white";
+  if (l <= 5) return "black";
+
+  let color = "unknown";
+
+  if (h >= 0 && h < 15) {
+    color = "red";
+  } else if (h >= 15 && h < 30) {
+    if (s <= 55) color = "brown";
+    else color = "orange";
+  } else if (h >= 30 && h < 90) {
+    color = "yellow";
+  } else if (h >= 90 && h < 150) {
+    color = "green";
+  } else if (h >= 150 && h < 210) {
+    color = "cyan";
+  } else if (h >= 210 && h < 270) {
+    color = "blue";
+  } else if (h >= 270 && h < 330) {
+    color = "purple";
+  } else if (h >= 330 && h < 360) {
+    color = "red";
+  }
+
+  return color;
+};
