@@ -1,4 +1,4 @@
-package cs446.project.chameleon
+package com.example.chameleon
 
 import org.junit.Test
 
