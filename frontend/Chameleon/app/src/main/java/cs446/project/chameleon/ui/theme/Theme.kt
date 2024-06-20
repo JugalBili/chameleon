@@ -1,4 +1,4 @@
-package com.example.chameleon.ui.theme
+package cs446.project.chameleon.ui.theme
 
 import android.app.Activity
 import android.os.Build

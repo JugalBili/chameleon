@@ -1,4 +1,4 @@
-package com.example.chameleon.ui.theme
+package cs446.project.chameleon.ui.theme
 
 import androidx.compose.ui.graphics.Color
 

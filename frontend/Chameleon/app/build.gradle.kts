@@ -4,11 +4,11 @@ plugins {
 }
 
 android {
-    namespace = "com.example.chameleon"
+    namespace = "cs446.project.chameleon"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.example.chameleon"
+        applicationId = "cs446.project.chameleon"
         minSdk = 24
         targetSdk = 34
         versionCode = 1
