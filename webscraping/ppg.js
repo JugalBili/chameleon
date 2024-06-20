@@ -34,7 +34,8 @@ if (colors) {
   // pre-processing
   const processedColors = colors.map((c) => {
     const rgb = rgbStringToArray(c.rgb);
-    const genericLabel = rgbToColorName(rgb[0], rgb[1], rgb[2]);
+    // const genericLabel = rgbToColorName(rgb[0], rgb[1], rgb[2]);
+    const genericLabel = rgbToColorName(rgb);
     return {
       ...c,
       rgb,

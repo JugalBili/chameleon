@@ -9,7 +9,7 @@
     ],
     "name": "Peregrine",
     "Id": "PPG0993-1",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -21,7 +21,7 @@
     ],
     "name": "Train",
     "Id": "PPG0993-2",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -33,7 +33,7 @@
     ],
     "name": "Gosling Gray",
     "Id": "PPG0993-3",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -93,7 +93,7 @@
     ],
     "name": "Afraid Of The Dark",
     "Id": "PPG0994-1",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -105,7 +105,7 @@
     ],
     "name": "Pittsburgh Gray",
     "Id": "PPG0994-2",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -117,7 +117,7 @@
     ],
     "name": "Half Dome",
     "Id": "PPG0994-3",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -129,7 +129,7 @@
     ],
     "name": "Hippopotamus",
     "Id": "PPG0994-4",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -177,7 +177,7 @@
     ],
     "name": "Shaded Whisper",
     "Id": "PPG0995-1",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -189,7 +189,7 @@
     ],
     "name": "Ancient Cloud",
     "Id": "PPG0995-2",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -201,7 +201,7 @@
     ],
     "name": "Silver Band",
     "Id": "PPG0995-3",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -213,7 +213,7 @@
     ],
     "name": "Pigeon Feather",
     "Id": "PPG0995-4",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -249,7 +249,7 @@
     ],
     "name": "Starless Sky",
     "Id": "PPG0995-7",
-    "label": "black"
+    "label": "brown"
   },
   {
     "brand": "PPG",
@@ -261,7 +261,7 @@
     ],
     "name": "Shining Scale",
     "Id": "PPG0996-1",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -273,7 +273,7 @@
     ],
     "name": "Steely Gaze",
     "Id": "PPG0996-2",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -285,7 +285,7 @@
     ],
     "name": "Statue Garden",
     "Id": "PPG0996-3",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -345,7 +345,7 @@
     ],
     "name": "Allegheny River",
     "Id": "PPG0997-1",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -357,7 +357,7 @@
     ],
     "name": "Felted Wool",
     "Id": "PPG0997-2",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -369,7 +369,7 @@
     ],
     "name": "Fresh Granite",
     "Id": "PPG0997-3",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -381,7 +381,7 @@
     ],
     "name": "Precipitation",
     "Id": "PPG0997-4",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -417,7 +417,7 @@
     ],
     "name": "Black Widow",
     "Id": "PPG0997-7",
-    "label": "gray"
+    "label": "brown"
   },
   {
     "brand": "PPG",
@@ -441,7 +441,7 @@
     ],
     "name": "Hikers Paradise",
     "Id": "PPG0998-2",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -453,7 +453,7 @@
     ],
     "name": "Kalispell",
     "Id": "PPG0998-3",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -501,7 +501,7 @@
     ],
     "name": "Undercover",
     "Id": "PPG0998-7",
-    "label": "gray"
+    "label": "brown"
   },
   {
     "brand": "PPG",
@@ -513,7 +513,7 @@
     ],
     "name": "In The Cloud",
     "Id": "PPG0999-1",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -525,7 +525,7 @@
     ],
     "name": "Rabbit's Ear",
     "Id": "PPG0999-2",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -537,7 +537,7 @@
     ],
     "name": "Boulder Creek",
     "Id": "PPG0999-3",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -597,7 +597,7 @@
     ],
     "name": "Dust Bunny",
     "Id": "PPG1000-1",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -609,7 +609,7 @@
     ],
     "name": "Rocky Road",
     "Id": "PPG1000-2",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -621,7 +621,7 @@
     ],
     "name": "Fieldstone",
     "Id": "PPG1000-3",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -669,7 +669,7 @@
     ],
     "name": "Chocolate Lab",
     "Id": "PPG1000-7",
-    "label": "gray"
+    "label": "brown"
   },
   {
     "brand": "PPG",
@@ -681,7 +681,7 @@
     ],
     "name": "Black Magic",
     "Id": "PPG1001-7",
-    "label": "gray"
+    "label": "brown"
   },
   {
     "brand": "PPG",
@@ -693,7 +693,7 @@
     ],
     "name": "Dark As Night",
     "Id": "PPG14-05",
-    "label": "teal"
+    "label": "brown"
   },
   {
     "brand": "PPG",
@@ -705,7 +705,7 @@
     ],
     "name": "Onyx",
     "Id": "PPG1011-7",
-    "label": "gray"
+    "label": "brown"
   },
   {
     "brand": "PPG",
@@ -717,7 +717,7 @@
     ],
     "name": "Black Forest",
     "Id": "PPG1012-7",
-    "label": "gray"
+    "label": "brown"
   },
   {
     "brand": "PPG",
@@ -729,7 +729,7 @@
     ],
     "name": "Licorice",
     "Id": "PPG1009-7",
-    "label": "gray"
+    "label": "brown"
   },
   {
     "brand": "PPG",
@@ -741,7 +741,7 @@
     ],
     "name": "Zombie",
     "Id": "PPG1010-7",
-    "label": "gray"
+    "label": "brown"
   },
   {
     "brand": "PPG",
@@ -945,7 +945,7 @@
     ],
     "name": "Stepping Stone",
     "Id": "PPG1010-4",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -957,7 +957,7 @@
     ],
     "name": "Polaris",
     "Id": "PPG10-04",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -969,7 +969,7 @@
     ],
     "name": "Flagstone",
     "Id": "PPG1001-4",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -981,7 +981,7 @@
     ],
     "name": "Nautical Star",
     "Id": "PPG1036-3",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -993,7 +993,7 @@
     ],
     "name": "Stargazer",
     "Id": "PPG1011-3",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -1005,7 +1005,7 @@
     ],
     "name": "Gray Stone",
     "Id": "PPG1009-4",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -1017,7 +1017,7 @@
     ],
     "name": "Solstice",
     "Id": "PPG1010-3",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -1029,7 +1029,7 @@
     ],
     "name": "Gray Frost",
     "Id": "PPG1012-4",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -1041,7 +1041,7 @@
     ],
     "name": "Solitary State",
     "Id": "PPG1009-3",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -1053,7 +1053,7 @@
     ],
     "name": "Winter Chill",
     "Id": "PPG1036-2",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -1065,7 +1065,7 @@
     ],
     "name": "Tornado",
     "Id": "PPG1009-2",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -1077,7 +1077,7 @@
     ],
     "name": "Elemental",
     "Id": "PPG1011-2",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -1089,7 +1089,7 @@
     ],
     "name": "",
     "Id": "FLLW961",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -1101,7 +1101,7 @@
     ],
     "name": "Fog",
     "Id": "PPG1010-2",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -1113,7 +1113,7 @@
     ],
     "name": "Tinsel",
     "Id": "PPG1012-3",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -1125,7 +1125,7 @@
     ],
     "name": "Thin Ice",
     "Id": "PPG1001-3",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -1137,7 +1137,7 @@
     ],
     "name": "Tundra Frost",
     "Id": "PPG1009-1",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -1329,7 +1329,7 @@
     ],
     "name": "Wavecrest",
     "Id": "PPG1239-1",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -1389,7 +1389,7 @@
     ],
     "name": "Glassine",
     "Id": "PPG1157-1",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -1461,7 +1461,7 @@
     ],
     "name": "Harbor Light",
     "Id": "PPG1162-1",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -1473,7 +1473,7 @@
     ],
     "name": "Harbor Mist",
     "Id": "PPG1160-1",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -1605,7 +1605,7 @@
     ],
     "name": "Sea Frost",
     "Id": "PPG1037-1",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -1617,7 +1617,7 @@
     ],
     "name": "Aloof",
     "Id": "PPG1154-2",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -1629,7 +1629,7 @@
     ],
     "name": "Zen",
     "Id": "PPG1040-1",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -1641,7 +1641,7 @@
     ],
     "name": "Bit Of Heaven",
     "Id": "PPG1156-2",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -1653,7 +1653,7 @@
     ],
     "name": "Ghost Whisperer",
     "Id": "PPG1039-1",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -1665,7 +1665,7 @@
     ],
     "name": "Sky Splash",
     "Id": "PPG1037-2",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -1677,7 +1677,7 @@
     ],
     "name": "Keepsakes",
     "Id": "PPG1040-2",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -1689,7 +1689,7 @@
     ],
     "name": "Cool Gray",
     "Id": "PPG10-12",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -1701,7 +1701,7 @@
     ],
     "name": "Magical",
     "Id": "PPG1160-2",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -1713,7 +1713,7 @@
     ],
     "name": "Memory Lane",
     "Id": "PPG1163-2",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -1725,7 +1725,7 @@
     ],
     "name": "High Sierra",
     "Id": "PPG1149-2",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -1737,7 +1737,7 @@
     ],
     "name": "Tradewinds",
     "Id": "PPG10-27",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -1749,7 +1749,7 @@
     ],
     "name": "Breakwater",
     "Id": "PPG1152-2",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -1761,7 +1761,7 @@
     ],
     "name": "Magic Wand",
     "Id": "PPG1158-2",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -1773,7 +1773,7 @@
     ],
     "name": "Calm Sea",
     "Id": "PPG1159-2",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -1785,7 +1785,7 @@
     ],
     "name": "Stratosphere",
     "Id": "PPG1162-2",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -1797,7 +1797,7 @@
     ],
     "name": "C'est La Vie",
     "Id": "PPG1161-2",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -1809,7 +1809,7 @@
     ],
     "name": "Touch Of Blue",
     "Id": "PPG1242-2",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -1821,7 +1821,7 @@
     ],
     "name": "Vitamin Sea",
     "Id": "PPG1241-2",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -1833,7 +1833,7 @@
     ],
     "name": "Embellishment",
     "Id": "PPG1151-2",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -1845,7 +1845,7 @@
     ],
     "name": "Blue Pearl",
     "Id": "PPG1157-2",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -1857,7 +1857,7 @@
     ],
     "name": "Aster Petal",
     "Id": "PPG1166-2",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -1869,7 +1869,7 @@
     ],
     "name": "Goddess",
     "Id": "PPG1238-2",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -1881,7 +1881,7 @@
     ],
     "name": "Duck's Egg Blue",
     "Id": "PPG1239-2",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -1893,7 +1893,7 @@
     ],
     "name": "Blue Silk",
     "Id": "PPG1244-2",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -1917,7 +1917,7 @@
     ],
     "name": "Niagara Falls",
     "Id": "PPG1240-2",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -1941,7 +1941,7 @@
     ],
     "name": "Billowing Clouds",
     "Id": "PPG1041-3",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -1953,7 +1953,7 @@
     ],
     "name": "Blustery Day",
     "Id": "PPG1164-3",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -1965,7 +1965,7 @@
     ],
     "name": "Simply Elegant",
     "Id": "PPG1155-3",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -1977,7 +1977,7 @@
     ],
     "name": "Dartmoor Mist",
     "Id": "PPG1154-3",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -1989,7 +1989,7 @@
     ],
     "name": "Winter's Breath",
     "Id": "PPG1038-3",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -2001,7 +2001,7 @@
     ],
     "name": "Blue Smoke",
     "Id": "PPG1153-3",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -2013,7 +2013,7 @@
     ],
     "name": "Scandinavian Sky",
     "Id": "PPG1149-3",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -2025,7 +2025,7 @@
     ],
     "name": "Constellation",
     "Id": "PPG1155-4",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -2037,7 +2037,7 @@
     ],
     "name": "Blue Dolphin",
     "Id": "PPG1041-4",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -2049,7 +2049,7 @@
     ],
     "name": "Pageant Song",
     "Id": "PPG1163-3",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -2061,7 +2061,7 @@
     ],
     "name": "Rendezvous",
     "Id": "PPG1160-3",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -2073,7 +2073,7 @@
     ],
     "name": "Always Blue",
     "Id": "PPG1156-3",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -2085,7 +2085,7 @@
     ],
     "name": "Heavenly Blue",
     "Id": "PPG1159-3",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -2097,7 +2097,7 @@
     ],
     "name": "Chambray",
     "Id": "PPG1153-4",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -2109,7 +2109,7 @@
     ],
     "name": "Graceful",
     "Id": "PPG1152-3",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -2121,7 +2121,7 @@
     ],
     "name": "Twinkle",
     "Id": "PPG1154-4",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -2133,7 +2133,7 @@
     ],
     "name": "Blue Bows",
     "Id": "PPG1158-3",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -2145,7 +2145,7 @@
     ],
     "name": "Blue Thistle",
     "Id": "PPG1162-3",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -2157,7 +2157,7 @@
     ],
     "name": "Blue Opal",
     "Id": "PPG1166-3",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -2169,7 +2169,7 @@
     ],
     "name": "Sonata",
     "Id": "PPG1157-3",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -2181,7 +2181,7 @@
     ],
     "name": "Midsummer's Dream",
     "Id": "PPG1151-3",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -2193,7 +2193,7 @@
     ],
     "name": "Flemish Blue",
     "Id": "PPG1238-3",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -2205,7 +2205,7 @@
     ],
     "name": "Windsor Way",
     "Id": "PPG1239-3",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -2217,7 +2217,7 @@
     ],
     "name": "Viva La Bleu",
     "Id": "PPG1242-3",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -2229,7 +2229,7 @@
     ],
     "name": "Everlasting",
     "Id": "PPG1161-3",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -2241,7 +2241,7 @@
     ],
     "name": "Fresh Violet",
     "Id": "PPG1166-4",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -2253,7 +2253,7 @@
     ],
     "name": "Valor",
     "Id": "PPG1244-3",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -2265,7 +2265,7 @@
     ],
     "name": "Set Sail",
     "Id": "PPG1243-3",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -2277,7 +2277,7 @@
     ],
     "name": "Sweet Dreams",
     "Id": "PPG1241-3",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -2289,7 +2289,7 @@
     ],
     "name": "Songbird",
     "Id": "PPG1240-3",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -2301,7 +2301,7 @@
     ],
     "name": "Ariel",
     "Id": "PPG1237-3",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -2313,7 +2313,7 @@
     ],
     "name": "Horizon Haze",
     "Id": "PPG1237-4",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -2325,7 +2325,7 @@
     ],
     "name": "Xavier Blue",
     "Id": "PPG1240-4",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -2337,7 +2337,7 @@
     ],
     "name": "Windjammer",
     "Id": "PPG1241-4",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -2349,7 +2349,7 @@
     ],
     "name": "Victoria Blue",
     "Id": "PPG1243-4",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -2361,7 +2361,7 @@
     ],
     "name": "Boudoir Blue",
     "Id": "PPG1244-4",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -2373,7 +2373,7 @@
     ],
     "name": "Overcast",
     "Id": "PPG1242-4",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -2385,7 +2385,7 @@
     ],
     "name": "Salem Blue",
     "Id": "PPG1239-4",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -2397,7 +2397,7 @@
     ],
     "name": "Harbor Sky",
     "Id": "PPG1238-4",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -2409,7 +2409,7 @@
     ],
     "name": "Crystal Lake",
     "Id": "PPG1151-4",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -2421,7 +2421,7 @@
     ],
     "name": "Arabella",
     "Id": "PPG1157-4",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -2433,7 +2433,7 @@
     ],
     "name": "Serene Sea",
     "Id": "PPG1158-4",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -2505,7 +2505,7 @@
     ],
     "name": "Kaleidoscope",
     "Id": "PPG1160-4",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -2517,7 +2517,7 @@
     ],
     "name": "Inevitable",
     "Id": "PPG10-24",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -2529,7 +2529,7 @@
     ],
     "name": "Sterling Silver",
     "Id": "PPG1163-4",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -2541,7 +2541,7 @@
     ],
     "name": "Dreamy",
     "Id": "PPG1164-4",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -2553,7 +2553,7 @@
     ],
     "name": "Maiden Mist ",
     "Id": "PPG1039-2",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -2565,7 +2565,7 @@
     ],
     "name": "Quest",
     "Id": "PPG10-15",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -2577,7 +2577,7 @@
     ],
     "name": "Ocean Drive",
     "Id": "PPG1040-3",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -2589,7 +2589,7 @@
     ],
     "name": "Stormy",
     "Id": "PPG10-14",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -2601,7 +2601,7 @@
     ],
     "name": "Smoke Screen",
     "Id": "PPG1038-4",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -2613,7 +2613,7 @@
     ],
     "name": "Mirror Mirror",
     "Id": "PPG1039-3",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -2625,7 +2625,7 @@
     ],
     "name": "Foretell",
     "Id": "PPG10-13",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -2637,7 +2637,7 @@
     ],
     "name": "Special Delivery",
     "Id": "PPG1037-3",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -2649,7 +2649,7 @@
     ],
     "name": "Peace",
     "Id": "PPG10-28",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -2661,7 +2661,7 @@
     ],
     "name": "Set in Stone",
     "Id": "PPG1040-4",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -2805,7 +2805,7 @@
     ],
     "name": "Mountain Stream",
     "Id": "PPG1149-4",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -2817,7 +2817,7 @@
     ],
     "name": "Dresden Dream",
     "Id": "PPG1155-5",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -3009,7 +3009,7 @@
     ],
     "name": "Quiet Night",
     "Id": "PPG1239-5",
-    "label": "teal"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -3021,7 +3021,7 @@
     ],
     "name": "King Triton",
     "Id": "PPG1242-5",
-    "label": "teal"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -3057,7 +3057,7 @@
     ],
     "name": "Magical Merlin",
     "Id": "PPG1241-5",
-    "label": "teal"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -3069,7 +3069,7 @@
     ],
     "name": "Sorcerer",
     "Id": "PPG1240-5",
-    "label": "teal"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -3093,7 +3093,7 @@
     ],
     "name": "Bellflower",
     "Id": "PPG1237-6",
-    "label": "teal"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -3105,7 +3105,7 @@
     ],
     "name": "Newport Blue",
     "Id": "PPG1240-6",
-    "label": "teal"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -3117,7 +3117,7 @@
     ],
     "name": "Electric Blue",
     "Id": "PPG1241-6",
-    "label": "teal"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -3129,7 +3129,7 @@
     ],
     "name": "Royal Plume",
     "Id": "PPG1243-6",
-    "label": "teal"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -3141,7 +3141,7 @@
     ],
     "name": "Nocturne Shade",
     "Id": "PPG1244-6",
-    "label": "teal"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -3153,7 +3153,7 @@
     ],
     "name": "Planetarium",
     "Id": "PPG1242-6",
-    "label": "teal"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -3165,7 +3165,7 @@
     ],
     "name": "North Sea",
     "Id": "PPG1239-6",
-    "label": "teal"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -3177,7 +3177,7 @@
     ],
     "name": "Blue Paisley",
     "Id": "PPG1238-6",
-    "label": "teal"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -3189,7 +3189,7 @@
     ],
     "name": "Adventure",
     "Id": "PPG1151-6",
-    "label": "teal"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -3201,7 +3201,7 @@
     ],
     "name": "Cosmic Dust",
     "Id": "PPG1157-6",
-    "label": "teal"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -3213,7 +3213,7 @@
     ],
     "name": "Starry Night",
     "Id": "PPG1161-6",
-    "label": "teal"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -3237,7 +3237,7 @@
     ],
     "name": "Teeny Bikini",
     "Id": "PPG1162-6",
-    "label": "teal"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -3249,7 +3249,7 @@
     ],
     "name": "Blue Oasis",
     "Id": "PPG1158-6",
-    "label": "teal"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -3261,7 +3261,7 @@
     ],
     "name": "Animation",
     "Id": "PPG1159-6",
-    "label": "teal"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -3273,7 +3273,7 @@
     ],
     "name": "Brigade",
     "Id": "PPG1152-6",
-    "label": "teal"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -3309,7 +3309,7 @@
     ],
     "name": "Mountain Lake",
     "Id": "PPG1156-6",
-    "label": "teal"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -3321,7 +3321,7 @@
     ],
     "name": "Chinese Porcelain",
     "Id": "PPG1160-6",
-    "label": "teal"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -3489,7 +3489,7 @@
     ],
     "name": "Soothing Sapphire",
     "Id": "PPG10-09",
-    "label": "gray"
+    "label": "brown"
   },
   {
     "brand": "PPG",
@@ -3501,7 +3501,7 @@
     ],
     "name": "High Salute",
     "Id": "PPG1039-7",
-    "label": "gray"
+    "label": "brown"
   },
   {
     "brand": "PPG",
@@ -3513,7 +3513,7 @@
     ],
     "name": "Witchcraft",
     "Id": "PPG1037-7",
-    "label": "gray"
+    "label": "brown"
   },
   {
     "brand": "PPG",
@@ -3525,7 +3525,7 @@
     ],
     "name": "Midnight Hour",
     "Id": "PPG1038-7",
-    "label": "teal"
+    "label": "brown"
   },
   {
     "brand": "PPG",
@@ -3537,7 +3537,7 @@
     ],
     "name": "Cavalry",
     "Id": "PPG1041-7",
-    "label": "teal"
+    "label": "brown"
   },
   {
     "brand": "PPG",
@@ -3549,7 +3549,7 @@
     ],
     "name": "Plymouth Blue",
     "Id": "PPG13-27",
-    "label": "teal"
+    "label": "brown"
   },
   {
     "brand": "PPG",
@@ -3561,7 +3561,7 @@
     ],
     "name": "Regatta Bay",
     "Id": "PPG1154-7",
-    "label": "teal"
+    "label": "brown"
   },
   {
     "brand": "PPG",
@@ -3573,7 +3573,7 @@
     ],
     "name": "Blue Lava",
     "Id": "PPG1155-7",
-    "label": "teal"
+    "label": "brown"
   },
   {
     "brand": "PPG",
@@ -3585,7 +3585,7 @@
     ],
     "name": "Annapolis Blue",
     "Id": "PPG1164-7",
-    "label": "teal"
+    "label": "brown"
   },
   {
     "brand": "PPG",
@@ -3597,7 +3597,7 @@
     ],
     "name": "Blueberry Pie",
     "Id": "PPG1163-7",
-    "label": "teal"
+    "label": "brown"
   },
   {
     "brand": "PPG",
@@ -3609,7 +3609,7 @@
     ],
     "name": "Blue Tang",
     "Id": "PPG1160-7",
-    "label": "teal"
+    "label": "brown"
   },
   {
     "brand": "PPG",
@@ -3621,7 +3621,7 @@
     ],
     "name": "Celestial Blue",
     "Id": "PPG1156-7",
-    "label": "teal"
+    "label": "brown"
   },
   {
     "brand": "PPG",
@@ -3633,7 +3633,7 @@
     ],
     "name": "Sailor's Coat",
     "Id": "PPG1153-7",
-    "label": "teal"
+    "label": "brown"
   },
   {
     "brand": "PPG",
@@ -3645,7 +3645,7 @@
     ],
     "name": "Blue Bayberry",
     "Id": "PPG1149-7",
-    "label": "teal"
+    "label": "brown"
   },
   {
     "brand": "PPG",
@@ -3657,7 +3657,7 @@
     ],
     "name": "Shimmering Sea",
     "Id": "PPG1152-7",
-    "label": "teal"
+    "label": "brown"
   },
   {
     "brand": "PPG",
@@ -3669,7 +3669,7 @@
     ],
     "name": "Singing The Blues",
     "Id": "PPG1159-7",
-    "label": "teal"
+    "label": "brown"
   },
   {
     "brand": "PPG",
@@ -3681,7 +3681,7 @@
     ],
     "name": "Stunning Sapphire",
     "Id": "PPG1158-7",
-    "label": "teal"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -3693,7 +3693,7 @@
     ],
     "name": "Dragonfly",
     "Id": "PPG1162-7",
-    "label": "teal"
+    "label": "brown"
   },
   {
     "brand": "PPG",
@@ -3705,7 +3705,7 @@
     ],
     "name": "Daring Indigo",
     "Id": "PPG1166-7",
-    "label": "teal"
+    "label": "brown"
   },
   {
     "brand": "PPG",
@@ -3717,7 +3717,7 @@
     ],
     "name": "Brilliant Blue",
     "Id": "PPG1161-7",
-    "label": "teal"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -3729,7 +3729,7 @@
     ],
     "name": "Blue Flame",
     "Id": "PPG1157-7",
-    "label": "teal"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -3741,7 +3741,7 @@
     ],
     "name": "Jamaican Dream",
     "Id": "PPG1151-7",
-    "label": "teal"
+    "label": "brown"
   },
   {
     "brand": "PPG",
@@ -3753,7 +3753,7 @@
     ],
     "name": "Port Au Prince",
     "Id": "PPG1238-7",
-    "label": "teal"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -3765,7 +3765,7 @@
     ],
     "name": "Rave Regatta",
     "Id": "PPG1239-7",
-    "label": "teal"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -3777,7 +3777,7 @@
     ],
     "name": "Suddenly Sapphire",
     "Id": "PPG1242-7",
-    "label": "teal"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -3789,7 +3789,7 @@
     ],
     "name": "Florentine Lapis",
     "Id": "PPG1244-7",
-    "label": "teal"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -3801,7 +3801,7 @@
     ],
     "name": "Rainbow Bright",
     "Id": "PPG1243-7",
-    "label": "teal"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -3813,7 +3813,7 @@
     ],
     "name": "Cobalt Stone",
     "Id": "PPG1241-7",
-    "label": "teal"
+    "label": "blue"
   },
   {
     "brand": "PPG",
@@ -3825,7 +3825,7 @@
     ],
     "name": "Cobalt Glaze",
     "Id": "PPG1240-7",
-    "label": "teal"
+    "label": "blue"
   },
   {
     "brand": "PPG",
@@ -3837,7 +3837,7 @@
     ],
     "name": "Neptune",
     "Id": "PPG1237-7",
-    "label": "teal"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -3849,7 +3849,7 @@
     ],
     "name": "Mediterranean Blue",
     "Id": "PPG1236-7",
-    "label": "teal"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -3861,7 +3861,7 @@
     ],
     "name": "Riviera Paradise",
     "Id": "PPG1233-7",
-    "label": "teal"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -3873,7 +3873,7 @@
     ],
     "name": "Teal We Meet Again",
     "Id": "PPG17-32",
-    "label": "teal"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -3885,7 +3885,7 @@
     ],
     "name": "Torrid Turquoise",
     "Id": "PPG1232-7",
-    "label": "teal"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -3897,7 +3897,7 @@
     ],
     "name": "Romantic Isle",
     "Id": "PPG1231-7",
-    "label": "teal"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -3909,7 +3909,7 @@
     ],
     "name": "Hypnotic Sea",
     "Id": "PPG1234-7",
-    "label": "teal"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -3921,7 +3921,7 @@
     ],
     "name": "Bimini Blue",
     "Id": "PPG1235-7",
-    "label": "teal"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -3933,7 +3933,7 @@
     ],
     "name": "Caribbean Splash",
     "Id": "PPG1150-7",
-    "label": "teal"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -3945,7 +3945,7 @@
     ],
     "name": "Caribbean Holiday",
     "Id": "PPG13-28",
-    "label": "teal"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -3957,7 +3957,7 @@
     ],
     "name": "Tahitian Treat",
     "Id": "PPG1147-7",
-    "label": "teal"
+    "label": "brown"
   },
   {
     "brand": "PPG",
@@ -3969,7 +3969,7 @@
     ],
     "name": "Emerald Pool",
     "Id": "PPG1146-7",
-    "label": "teal"
+    "label": "brown"
   },
   {
     "brand": "PPG",
@@ -3981,7 +3981,7 @@
     ],
     "name": "Deep Veridian",
     "Id": "PPG1141-7",
-    "label": "teal"
+    "label": "brown"
   },
   {
     "brand": "PPG",
@@ -3993,7 +3993,7 @@
     ],
     "name": "Empress Teal",
     "Id": "PPG1142-7",
-    "label": "teal"
+    "label": "brown"
   },
   {
     "brand": "PPG",
@@ -4005,7 +4005,7 @@
     ],
     "name": "Holly Leaf",
     "Id": "PPG1143-7",
-    "label": "teal"
+    "label": "brown"
   },
   {
     "brand": "PPG",
@@ -4017,7 +4017,7 @@
     ],
     "name": "Crystal Ball",
     "Id": "PPG1144-7",
-    "label": "teal"
+    "label": "brown"
   },
   {
     "brand": "PPG",
@@ -4029,7 +4029,7 @@
     ],
     "name": "Sea Glass",
     "Id": "PPG13-30",
-    "label": "teal"
+    "label": "brown"
   },
   {
     "brand": "PPG",
@@ -4041,7 +4041,7 @@
     ],
     "name": "Deep Emerald",
     "Id": "PPG1148-7",
-    "label": "teal"
+    "label": "brown"
   },
   {
     "brand": "PPG",
@@ -4053,7 +4053,7 @@
     ],
     "name": "Mountain Pine",
     "Id": "PPG1034-7",
-    "label": "teal"
+    "label": "brown"
   },
   {
     "brand": "PPG",
@@ -4065,7 +4065,7 @@
     ],
     "name": "Obsidian",
     "Id": "PPG1035-7",
-    "label": "gray"
+    "label": "brown"
   },
   {
     "brand": "PPG",
@@ -4077,7 +4077,7 @@
     ],
     "name": "Night Watch",
     "Id": "PPG1145-7",
-    "label": "teal"
+    "label": "brown"
   },
   {
     "brand": "PPG",
@@ -4089,7 +4089,7 @@
     ],
     "name": "Antique Slate",
     "Id": "PPG13-29",
-    "label": "gray"
+    "label": "brown"
   },
   {
     "brand": "PPG",
@@ -4101,7 +4101,7 @@
     ],
     "name": "Oceania",
     "Id": "PPG10-01",
-    "label": "gray"
+    "label": "brown"
   },
   {
     "brand": "PPG",
@@ -4113,7 +4113,7 @@
     ],
     "name": "Dark Green Velvet",
     "Id": "PPG1136-7",
-    "label": "gray"
+    "label": "brown"
   },
   {
     "brand": "PPG",
@@ -4221,7 +4221,7 @@
     ],
     "name": "Jade Jewel",
     "Id": "PPG1147-6",
-    "label": "teal"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -4233,7 +4233,7 @@
     ],
     "name": "Bermuda",
     "Id": "PPG1150-6",
-    "label": "teal"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -4245,7 +4245,7 @@
     ],
     "name": "Safe Harbor",
     "Id": "PPG1235-6",
-    "label": "teal"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -4257,7 +4257,7 @@
     ],
     "name": "Sea Fantasy",
     "Id": "PPG1234-6",
-    "label": "teal"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -4269,7 +4269,7 @@
     ],
     "name": "Azure Tide",
     "Id": "PPG1231-6",
-    "label": "teal"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -4281,7 +4281,7 @@
     ],
     "name": "Grecian Isle",
     "Id": "PPG1232-6",
-    "label": "teal"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -4293,7 +4293,7 @@
     ],
     "name": "Jamaican Sea",
     "Id": "PPG1236-6",
-    "label": "teal"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -4317,7 +4317,7 @@
     ],
     "name": "Ocean Cruise",
     "Id": "PPG1236-4",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -4329,7 +4329,7 @@
     ],
     "name": "Tropical Splash",
     "Id": "PPG1233-5",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -4353,7 +4353,7 @@
     ],
     "name": "Montego Bay",
     "Id": "PPG1233-6",
-    "label": "teal"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -4617,7 +4617,7 @@
     ],
     "name": "Parakeet Pete",
     "Id": "PPG1143-4",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -4629,7 +4629,7 @@
     ],
     "name": "Blue By You",
     "Id": "PPG1035-3",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -4641,7 +4641,7 @@
     ],
     "name": "Holly Glen",
     "Id": "PPG1144-4",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -4653,7 +4653,7 @@
     ],
     "name": "Blue Willow",
     "Id": "PPG1145-4",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -4665,7 +4665,7 @@
     ],
     "name": "Misty Surf",
     "Id": "PPG1034-4",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -4677,7 +4677,7 @@
     ],
     "name": "Gale Force",
     "Id": "PPG10-08",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -4689,7 +4689,7 @@
     ],
     "name": "Blue Shamrock",
     "Id": "PPG1136-4",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -4701,7 +4701,7 @@
     ],
     "name": "Lazy River",
     "Id": "PPG1148-4",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -4713,7 +4713,7 @@
     ],
     "name": "Frosty Glade",
     "Id": "PPG1146-4",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -4725,7 +4725,7 @@
     ],
     "name": "Caribbean Green",
     "Id": "PPG1141-4",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -4737,7 +4737,7 @@
     ],
     "name": "Pitter Patter",
     "Id": "PPG1142-4",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -4749,7 +4749,7 @@
     ],
     "name": "Aqua Fiesta",
     "Id": "PPG1147-4",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -4761,7 +4761,7 @@
     ],
     "name": "",
     "Id": "FLLW892",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -4773,7 +4773,7 @@
     ],
     "name": "Kingston Aqua",
     "Id": "PPG1150-4",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -4785,7 +4785,7 @@
     ],
     "name": "Idyllic Isle",
     "Id": "PPG1235-4",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -4797,7 +4797,7 @@
     ],
     "name": "Fling Green",
     "Id": "PPG1234-4",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -4809,7 +4809,7 @@
     ],
     "name": "Tropical Holiday",
     "Id": "PPG1231-4",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -4821,7 +4821,7 @@
     ],
     "name": "Caribbean Crush",
     "Id": "PPG17-31",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -4833,7 +4833,7 @@
     ],
     "name": "Isle Royale",
     "Id": "PPG1232-4",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -4845,7 +4845,7 @@
     ],
     "name": "Silent Ripple",
     "Id": "PPG1232-3",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -4857,7 +4857,7 @@
     ],
     "name": "Seascape Green",
     "Id": "PPG1233-4",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -4869,7 +4869,7 @@
     ],
     "name": "Surf's Up",
     "Id": "PPG1236-3",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -4881,7 +4881,7 @@
     ],
     "name": "Pale Seafoam",
     "Id": "PPG1233-3",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -4893,7 +4893,7 @@
     ],
     "name": "Minerva",
     "Id": "PPG1231-3",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -4905,7 +4905,7 @@
     ],
     "name": "Aqua Whisper",
     "Id": "PPG1234-3",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -4917,7 +4917,7 @@
     ],
     "name": "Galactica",
     "Id": "PPG1235-3",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -4929,7 +4929,7 @@
     ],
     "name": "Everglade Mist",
     "Id": "PPG1150-3",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -4941,7 +4941,7 @@
     ],
     "name": "Misty Aqua",
     "Id": "PPG1147-3",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -4953,7 +4953,7 @@
     ],
     "name": "Veridian Green",
     "Id": "PPG1142-3",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -4965,7 +4965,7 @@
     ],
     "name": "Cosmic Rays",
     "Id": "PPG1148-3",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -4977,7 +4977,7 @@
     ],
     "name": "Morning Breeze",
     "Id": "PPG1136-3",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -4989,7 +4989,7 @@
     ],
     "name": "Cave Pearl",
     "Id": "PPG1145-3",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -5001,7 +5001,7 @@
     ],
     "name": "Pristine Petal",
     "Id": "PPG1034-3",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -5013,7 +5013,7 @@
     ],
     "name": "Julep Green",
     "Id": "PPG1146-3",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -5025,7 +5025,7 @@
     ],
     "name": "Green Wave",
     "Id": "PPG1141-2",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -5037,7 +5037,7 @@
     ],
     "name": "Cassiopeia",
     "Id": "PPG1141-3",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -5049,7 +5049,7 @@
     ],
     "name": "Sea Sprite",
     "Id": "PPG1143-3",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -5061,7 +5061,7 @@
     ],
     "name": "Babbling Brook",
     "Id": "PPG1144-3",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -5073,7 +5073,7 @@
     ],
     "name": "Sky Diving",
     "Id": "PPG1035-2",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -5085,7 +5085,7 @@
     ],
     "name": "Blue Lullaby",
     "Id": "PPG1143-2",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -5097,7 +5097,7 @@
     ],
     "name": "Thunder Bay",
     "Id": "PPG1144-2",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -5109,7 +5109,7 @@
     ],
     "name": "Morning Fog",
     "Id": "PPG1144-1",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -5121,7 +5121,7 @@
     ],
     "name": "Watery Blue",
     "Id": "PPG1035-1",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -5133,7 +5133,7 @@
     ],
     "name": "Spring Mist",
     "Id": "PPG1146-2",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -5145,7 +5145,7 @@
     ],
     "name": "Pistachio Cream",
     "Id": "PPG1148-2",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -5157,7 +5157,7 @@
     ],
     "name": "Big Sky",
     "Id": "PPG1142-2",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -5169,7 +5169,7 @@
     ],
     "name": "Mountain Dew",
     "Id": "PPG1147-2",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -5181,7 +5181,7 @@
     ],
     "name": "Water Lily",
     "Id": "PPG1150-2",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -5217,7 +5217,7 @@
     ],
     "name": "Swan Lake",
     "Id": "PPG1231-2",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -5337,7 +5337,7 @@
     ],
     "name": "Meadowsweet Mist",
     "Id": "PPG1148-1",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -5349,7 +5349,7 @@
     ],
     "name": "Aqua Sparkle",
     "Id": "PPG1150-1",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -5529,7 +5529,7 @@
     ],
     "name": "Touch Of Lime",
     "Id": "PPG1124-1",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -5541,7 +5541,7 @@
     ],
     "name": "Lime Daiquiri",
     "Id": "PPG1127-1",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -5553,7 +5553,7 @@
     ],
     "name": "Salty Breeze",
     "Id": "PPG1033-1",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -5565,7 +5565,7 @@
     ],
     "name": "Rain Cloud",
     "Id": "PPG1125-1",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -5577,7 +5577,7 @@
     ],
     "name": "I Miss You",
     "Id": "PPG1113-1",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -5589,7 +5589,7 @@
     ],
     "name": "Anonymous",
     "Id": "PPG1128-1",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -5601,7 +5601,7 @@
     ],
     "name": "Cactus Blossom",
     "Id": "PPG1138-1",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -5733,7 +5733,7 @@
     ],
     "name": "More Mint",
     "Id": "PPG1118-1",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -5793,7 +5793,7 @@
     ],
     "name": "Summer Breeze",
     "Id": "PPG1139-1",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -5817,7 +5817,7 @@
     ],
     "name": "Echo",
     "Id": "PPG1140-1",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -5889,7 +5889,7 @@
     ],
     "name": "Delicate Daisy",
     "Id": "PPG1117-1",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -5901,7 +5901,7 @@
     ],
     "name": "September Morn",
     "Id": "PPG1110-1",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -5913,7 +5913,7 @@
     ],
     "name": "Slices Of Happy",
     "Id": "PPG1109-1",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -6141,7 +6141,7 @@
     ],
     "name": "Limited Lime",
     "Id": "PPG1217-2",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -6201,7 +6201,7 @@
     ],
     "name": "Sweet Pea",
     "Id": "PPG1227-2",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -6213,7 +6213,7 @@
     ],
     "name": "Dinner Mint",
     "Id": "PPG17-30",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -6225,7 +6225,7 @@
     ],
     "name": "Wintergreen Mint",
     "Id": "PPG1229-2",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -6237,7 +6237,7 @@
     ],
     "name": "Serendipity",
     "Id": "PPG1230-2",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -6249,7 +6249,7 @@
     ],
     "name": "Jade Spell",
     "Id": "PPG1228-2",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -6261,7 +6261,7 @@
     ],
     "name": "Peppermint Patty",
     "Id": "PPG1226-2",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -6285,7 +6285,7 @@
     ],
     "name": "Honeydew Melon",
     "Id": "PPG1222-2",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -6297,7 +6297,7 @@
     ],
     "name": "Daydream",
     "Id": "PPG1219-2",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -6309,7 +6309,7 @@
     ],
     "name": "Awareness",
     "Id": "PPG1117-2",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -6321,7 +6321,7 @@
     ],
     "name": "Mystic Melon",
     "Id": "PPG1218-2",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -6333,7 +6333,7 @@
     ],
     "name": "Pineapple Delight",
     "Id": "PPG1215-3",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -6345,7 +6345,7 @@
     ],
     "name": "Star Bright",
     "Id": "PPG1109-2",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -6357,7 +6357,7 @@
     ],
     "name": "Subtle Sunshine",
     "Id": "PPG1110-2",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -6369,7 +6369,7 @@
     ],
     "name": "Fountain Frolic",
     "Id": "PPG1119-2",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -6393,7 +6393,7 @@
     ],
     "name": "Herbal Mist",
     "Id": "PPG1131-2",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -6405,7 +6405,7 @@
     ],
     "name": "Solitaire",
     "Id": "PPG1132-2",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -6417,7 +6417,7 @@
     ],
     "name": "Sweet Nothings",
     "Id": "PPG1140-2",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -6429,7 +6429,7 @@
     ],
     "name": "Malted Mint",
     "Id": "PPG1139-2",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -6441,7 +6441,7 @@
     ],
     "name": "Tenderness",
     "Id": "PPG1133-2",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -6453,7 +6453,7 @@
     ],
     "name": "Mint Wafer",
     "Id": "PPG1130-2",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -6465,7 +6465,7 @@
     ],
     "name": "Lime Spritz",
     "Id": "PPG1121-2",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -6477,7 +6477,7 @@
     ],
     "name": "Lime Wash",
     "Id": "PPG1122-2",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -6489,7 +6489,7 @@
     ],
     "name": "Sage Splash",
     "Id": "PPG1115-2",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -6525,7 +6525,7 @@
     ],
     "name": "Breezeway",
     "Id": "PPG11-21",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -6537,7 +6537,7 @@
     ],
     "name": "April Showers",
     "Id": "PPG1118-2",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -6549,7 +6549,7 @@
     ],
     "name": "More Melon",
     "Id": "PPG1116-2",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -6561,7 +6561,7 @@
     ],
     "name": "Bamboo",
     "Id": "PPG1111-2",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -6573,7 +6573,7 @@
     ],
     "name": "Namaste",
     "Id": "PPG1026-1",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -6585,7 +6585,7 @@
     ],
     "name": "Cozy Cream",
     "Id": "PPG1112-2",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -6597,7 +6597,7 @@
     ],
     "name": "River Reed",
     "Id": "PPG1114-2",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -6609,7 +6609,7 @@
     ],
     "name": "Falling Star",
     "Id": "PPG1129-2",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -6621,7 +6621,7 @@
     ],
     "name": "White Clover",
     "Id": "PPG10-31",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -6633,7 +6633,7 @@
     ],
     "name": "Geyser",
     "Id": "PPG1138-2",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -6645,7 +6645,7 @@
     ],
     "name": "Secret Crush",
     "Id": "PPG1135-3",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -6669,7 +6669,7 @@
     ],
     "name": "Morning Rush",
     "Id": "PPG1135-2",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -6681,7 +6681,7 @@
     ],
     "name": "Liberated Lime",
     "Id": "PPG1127-2",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -6693,7 +6693,7 @@
     ],
     "name": "Pale Vista",
     "Id": "PPG1124-2",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -6705,7 +6705,7 @@
     ],
     "name": "Wayward Willow",
     "Id": "PPG1033-2",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -6717,7 +6717,7 @@
     ],
     "name": "White Sage",
     "Id": "PPG1125-2",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -6729,7 +6729,7 @@
     ],
     "name": "Brainstorm",
     "Id": "PPG1030-1",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -6741,7 +6741,7 @@
     ],
     "name": "Frivolous Folly",
     "Id": "PPG1128-2",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -6753,7 +6753,7 @@
     ],
     "name": "Bay Of Fundy",
     "Id": "PPG10-07",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -6765,7 +6765,7 @@
     ],
     "name": "Mix Or Match",
     "Id": "PPG1031-1",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -6777,7 +6777,7 @@
     ],
     "name": "Metallic Mist",
     "Id": "PPG1032-1",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -6789,7 +6789,7 @@
     ],
     "name": "Silent Storm",
     "Id": "PPG1033-3",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -6801,7 +6801,7 @@
     ],
     "name": "Pale Pine",
     "Id": "PPG1030-2",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -6813,7 +6813,7 @@
     ],
     "name": "Misty Meadow",
     "Id": "PPG1031-2",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -6825,7 +6825,7 @@
     ],
     "name": "Hurricane Haze",
     "Id": "PPG1032-2",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -6837,7 +6837,7 @@
     ],
     "name": "Mellow Mood",
     "Id": "PPG1030-3",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -6849,7 +6849,7 @@
     ],
     "name": "Wandering Willow",
     "Id": "PPG1031-3",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -6861,7 +6861,7 @@
     ],
     "name": "Olive It",
     "Id": "PPG1032-3",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -6873,7 +6873,7 @@
     ],
     "name": "Easy",
     "Id": "PPG1026-3",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -6885,7 +6885,7 @@
     ],
     "name": "Distant Valley",
     "Id": "PPG11-19",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -6897,7 +6897,7 @@
     ],
     "name": "Northern Landscape",
     "Id": "PPG1113-3",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -6909,7 +6909,7 @@
     ],
     "name": "Sanctuary",
     "Id": "PPG1026-2",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -6921,7 +6921,7 @@
     ],
     "name": "Silver Sage",
     "Id": "PPG1113-2",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -6933,7 +6933,7 @@
     ],
     "name": "Whispering Pine",
     "Id": "PPG1125-3",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -6945,7 +6945,7 @@
     ],
     "name": "Frosty Pine",
     "Id": "PPG1124-3",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -6957,7 +6957,7 @@
     ],
     "name": "Merry Music",
     "Id": "PPG1127-3",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -6969,7 +6969,7 @@
     ],
     "name": "Life Lesson",
     "Id": "PPG1128-3",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -6981,7 +6981,7 @@
     ],
     "name": "Crystal Oasis",
     "Id": "PPG1138-3",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -6993,7 +6993,7 @@
     ],
     "name": "Castaway",
     "Id": "PPG1129-3",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -7005,7 +7005,7 @@
     ],
     "name": "Pinch Of Pistachio",
     "Id": "PPG1126-3",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -7017,7 +7017,7 @@
     ],
     "name": "Wild Wheat",
     "Id": "PPG1123-3",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -7029,7 +7029,7 @@
     ],
     "name": "Forgive Quickly",
     "Id": "PPG1116-3",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -7041,7 +7041,7 @@
     ],
     "name": "Slow Dance",
     "Id": "PPG1115-3",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -7053,7 +7053,7 @@
     ],
     "name": "Misty Moor",
     "Id": "PPG1116-4",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -7065,7 +7065,7 @@
     ],
     "name": "Canary Grass",
     "Id": "PPG1114-3",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -7077,7 +7077,7 @@
     ],
     "name": "Only Oatmeal",
     "Id": "PPG1112-3",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -7089,7 +7089,7 @@
     ],
     "name": "Safari",
     "Id": "PPG1111-3",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -7101,7 +7101,7 @@
     ],
     "name": "True To You",
     "Id": "PPG1118-3",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -7113,7 +7113,7 @@
     ],
     "name": "Pickling Spice",
     "Id": "PPG1122-3",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -7125,7 +7125,7 @@
     ],
     "name": "Pale Moss Green",
     "Id": "PPG1121-3",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -7137,7 +7137,7 @@
     ],
     "name": "St. Augustine",
     "Id": "PPG1130-3",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -7149,7 +7149,7 @@
     ],
     "name": "Limelight",
     "Id": "PPG1133-3",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -7161,7 +7161,7 @@
     ],
     "name": "Green Silk",
     "Id": "PPG1139-3",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -7173,7 +7173,7 @@
     ],
     "name": "Tarreyton",
     "Id": "PPG1140-3",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -7185,7 +7185,7 @@
     ],
     "name": "Taffy Twist",
     "Id": "PPG1132-3",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -7197,7 +7197,7 @@
     ],
     "name": "Dreamcatcher",
     "Id": "PPG1131-3",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -7209,7 +7209,7 @@
     ],
     "name": "Great Joy",
     "Id": "PPG1120-3",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -7221,7 +7221,7 @@
     ],
     "name": "Beach Grass",
     "Id": "PPG1119-3",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -7233,7 +7233,7 @@
     ],
     "name": "Charming",
     "Id": "PPG1117-3",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -7245,7 +7245,7 @@
     ],
     "name": "Twinkle Toes",
     "Id": "PPG1109-3",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -7257,7 +7257,7 @@
     ],
     "name": "Lively Laugh",
     "Id": "PPG1218-3",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -7269,7 +7269,7 @@
     ],
     "name": "Curious",
     "Id": "PPG1219-3",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -7281,7 +7281,7 @@
     ],
     "name": "Aloe Vera",
     "Id": "PPG1222-3",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -7293,7 +7293,7 @@
     ],
     "name": "Lime Flip",
     "Id": "PPG1223-3",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -7305,7 +7305,7 @@
     ],
     "name": "Sprite Twist",
     "Id": "PPG1226-3",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -7317,7 +7317,7 @@
     ],
     "name": "Flowering Cactus",
     "Id": "PPG1228-3",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -7329,7 +7329,7 @@
     ],
     "name": "Whirlpool",
     "Id": "PPG1230-3",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -7341,7 +7341,7 @@
     ],
     "name": "Almost Aqua",
     "Id": "PPG1229-3",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -7353,7 +7353,7 @@
     ],
     "name": "San Juan Spritz",
     "Id": "PPG17-29",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -7365,7 +7365,7 @@
     ],
     "name": "Mountain Mint",
     "Id": "PPG1227-3",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -7377,7 +7377,7 @@
     ],
     "name": "Applemint",
     "Id": "PPG1225-3",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -7401,7 +7401,7 @@
     ],
     "name": "Mellow Mint",
     "Id": "PPG1221-3",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -7413,7 +7413,7 @@
     ],
     "name": "Lots Of Bubbles",
     "Id": "PPG1220-3",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -7425,7 +7425,7 @@
     ],
     "name": "Totally Tickled",
     "Id": "PPG11-11",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -7437,7 +7437,7 @@
     ],
     "name": "Hip Hop",
     "Id": "PPG1217-3",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -7449,7 +7449,7 @@
     ],
     "name": "Spring Blossom",
     "Id": "PPG1216-3",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -7461,7 +7461,7 @@
     ],
     "name": "Lemon Pepper",
     "Id": "PPG1216-4",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -7473,7 +7473,7 @@
     ],
     "name": "Mermaid Tears",
     "Id": "PPG1217-4",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -7485,7 +7485,7 @@
     ],
     "name": "High Hopes",
     "Id": "PPG1220-4",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -7497,7 +7497,7 @@
     ],
     "name": "Faith",
     "Id": "PPG1221-4",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -7509,7 +7509,7 @@
     ],
     "name": "Lantana Lime",
     "Id": "PPG1224-4",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -7521,7 +7521,7 @@
     ],
     "name": "Lime Sorbet",
     "Id": "PPG1225-4",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -7533,7 +7533,7 @@
     ],
     "name": "Crystal Gem",
     "Id": "PPG1227-4",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -7557,7 +7557,7 @@
     ],
     "name": "Pale Jade",
     "Id": "PPG1230-4",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -7569,7 +7569,7 @@
     ],
     "name": "Green Balloon",
     "Id": "PPG1228-4",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -7581,7 +7581,7 @@
     ],
     "name": "Heath Green",
     "Id": "PPG1226-4",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -7593,7 +7593,7 @@
     ],
     "name": "Bleached Spruce",
     "Id": "PPG1223-4",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -7605,7 +7605,7 @@
     ],
     "name": "Lettuce Alone",
     "Id": "PPG1222-4",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -7617,7 +7617,7 @@
     ],
     "name": "Goody Gumdrop",
     "Id": "PPG1219-4",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -7629,7 +7629,7 @@
     ],
     "name": "Force Of Nature",
     "Id": "PPG1218-4",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -7641,7 +7641,7 @@
     ],
     "name": "Got The Giggles",
     "Id": "PPG17-25",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -7653,7 +7653,7 @@
     ],
     "name": "Canary Yellow",
     "Id": "PPG1215-4",
-    "label": "silver"
+    "label": "yellow"
   },
   {
     "brand": "PPG",
@@ -7665,7 +7665,7 @@
     ],
     "name": "Grassroots",
     "Id": "PPG11-03",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -7677,7 +7677,7 @@
     ],
     "name": "Citrus Yellow",
     "Id": "PPG1109-4",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -7689,7 +7689,7 @@
     ],
     "name": "Serene Scene",
     "Id": "PPG1110-3",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -7701,7 +7701,7 @@
     ],
     "name": "Secret Safari",
     "Id": "PPG1110-4",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -7713,7 +7713,7 @@
     ],
     "name": "Floral Bouquet",
     "Id": "PPG1117-4",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -7725,7 +7725,7 @@
     ],
     "name": "Dancing Kite",
     "Id": "PPG1119-4",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -7737,7 +7737,7 @@
     ],
     "name": "In The Dale",
     "Id": "PPG11-10",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -7749,7 +7749,7 @@
     ],
     "name": "Pistachio Pudding",
     "Id": "PPG1120-4",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -7761,7 +7761,7 @@
     ],
     "name": "Lime Taffy",
     "Id": "PPG1130-4",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -7773,7 +7773,7 @@
     ],
     "name": "French Market",
     "Id": "PPG1131-4",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -7821,7 +7821,7 @@
     ],
     "name": "Silver Leaf",
     "Id": "PPG1133-4",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -7833,7 +7833,7 @@
     ],
     "name": "Quaking Grass",
     "Id": "PPG1121-4",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -7845,7 +7845,7 @@
     ],
     "name": "Bahia Grass",
     "Id": "PPG1122-4",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -7857,7 +7857,7 @@
     ],
     "name": "Jitterbug",
     "Id": "PPG1118-4",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -7869,7 +7869,7 @@
     ],
     "name": "Nettle",
     "Id": "PPG1111-4",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -7893,7 +7893,7 @@
     ],
     "name": "Beach Dune",
     "Id": "PPG1112-4",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -7905,7 +7905,7 @@
     ],
     "name": "Cress Green",
     "Id": "PPG1114-4",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -7917,7 +7917,7 @@
     ],
     "name": "Sage Splendor",
     "Id": "PPG1115-4",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -7929,7 +7929,7 @@
     ],
     "name": "Only Olive",
     "Id": "PPG1123-4",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -7941,7 +7941,7 @@
     ],
     "name": "Side Kick",
     "Id": "PPG1126-4",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -7953,7 +7953,7 @@
     ],
     "name": "Coastal Crush",
     "Id": "PPG1129-4",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -7965,7 +7965,7 @@
     ],
     "name": "Copenhagen",
     "Id": "PPG1137-4",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -7989,7 +7989,7 @@
     ],
     "name": "Dusty Aqua",
     "Id": "PPG10-29",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -8001,7 +8001,7 @@
     ],
     "name": "Pine Whisper",
     "Id": "PPG1134-4",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -8013,7 +8013,7 @@
     ],
     "name": "Aquamarine Dream",
     "Id": "PPG1135-4",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -8025,7 +8025,7 @@
     ],
     "name": "Niagara Mist",
     "Id": "PPG10-30",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -8037,7 +8037,7 @@
     ],
     "name": "Balsam",
     "Id": "PPG1128-4",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -8049,7 +8049,7 @@
     ],
     "name": "Light Sage",
     "Id": "PPG1124-4",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -8061,7 +8061,7 @@
     ],
     "name": "Gargoyle ",
     "Id": "PPG1127-4",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -8073,7 +8073,7 @@
     ],
     "name": "Light Drizzle",
     "Id": "PPG1033-4",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -8085,7 +8085,7 @@
     ],
     "name": "Olive Sprig",
     "Id": "PPG1125-4",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -8121,7 +8121,7 @@
     ],
     "name": "Lively Ivy",
     "Id": "PPG11-30",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -8421,7 +8421,7 @@
     ],
     "name": "Gracious Glow",
     "Id": "PPG1116-5",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -8553,7 +8553,7 @@
     ],
     "name": "Harmonious",
     "Id": "PPG1120-5",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -8577,7 +8577,7 @@
     ],
     "name": "Fancy Flirt",
     "Id": "PPG1119-5",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -8637,7 +8637,7 @@
     ],
     "name": "Boogie Blast",
     "Id": "PPG1219-5",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -8649,7 +8649,7 @@
     ],
     "name": "Fern Glow",
     "Id": "PPG17-27",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -8661,7 +8661,7 @@
     ],
     "name": "Lime Green",
     "Id": "PPG1222-5",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -8721,7 +8721,7 @@
     ],
     "name": "Aloha",
     "Id": "PPG1229-5",
-    "label": "teal"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -8745,7 +8745,7 @@
     ],
     "name": "May Apple",
     "Id": "PPG1225-5",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -8757,7 +8757,7 @@
     ],
     "name": "Almost Aloe",
     "Id": "PPG1224-5",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -8769,7 +8769,7 @@
     ],
     "name": "Livin' Large",
     "Id": "PPG1221-5",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -8781,7 +8781,7 @@
     ],
     "name": "Clean N Crisp",
     "Id": "PPG1220-5",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -8793,7 +8793,7 @@
     ],
     "name": "Lime Splash",
     "Id": "PPG1217-5",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -8805,7 +8805,7 @@
     ],
     "name": "Fresh Lemonade",
     "Id": "PPG1216-5",
-    "label": "silver"
+    "label": "yellow"
   },
   {
     "brand": "PPG",
@@ -8829,7 +8829,7 @@
     ],
     "name": "Green Gecko",
     "Id": "PPG1217-6",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -8841,7 +8841,7 @@
     ],
     "name": "Glow Worm",
     "Id": "PPG1220-6",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -8865,7 +8865,7 @@
     ],
     "name": "Celery Sprig",
     "Id": "PPG1224-6",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -8889,7 +8889,7 @@
     ],
     "name": "Beanstalk",
     "Id": "PPG1227-6",
-    "label": "teal"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -8901,7 +8901,7 @@
     ],
     "name": "Congo Green",
     "Id": "PPG1229-6",
-    "label": "teal"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -8913,7 +8913,7 @@
     ],
     "name": "Miami Jade",
     "Id": "PPG1230-6",
-    "label": "teal"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -8925,7 +8925,7 @@
     ],
     "name": "Leprechaun",
     "Id": "PPG1228-6",
-    "label": "teal"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -8985,7 +8985,7 @@
     ],
     "name": "Machine Green",
     "Id": "PPG1218-6",
-    "label": "olive"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -8997,7 +8997,7 @@
     ],
     "name": "Grass Daisy",
     "Id": "PPG1215-6",
-    "label": "olive"
+    "label": "yellow"
   },
   {
     "brand": "PPG",
@@ -9129,7 +9129,7 @@
     ],
     "name": "Pinehurst",
     "Id": "PPG1140-6",
-    "label": "teal"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -9429,7 +9429,7 @@
     ],
     "name": "Country Club",
     "Id": "PPG1139-6",
-    "label": "teal"
+    "label": "brown"
   },
   {
     "brand": "PPG",
@@ -9585,7 +9585,7 @@
     ],
     "name": "Moss Rock",
     "Id": "PPG1032-7",
-    "label": "gray"
+    "label": "brown"
   },
   {
     "brand": "PPG",
@@ -9597,7 +9597,7 @@
     ],
     "name": "Osiris",
     "Id": "PPG1031-7",
-    "label": "gray"
+    "label": "brown"
   },
   {
     "brand": "PPG",
@@ -9609,7 +9609,7 @@
     ],
     "name": "Charcoal Smoke",
     "Id": "PPG1033-7",
-    "label": "gray"
+    "label": "brown"
   },
   {
     "brand": "PPG",
@@ -9621,7 +9621,7 @@
     ],
     "name": "Olive Green",
     "Id": "PPG1113-7",
-    "label": "olive"
+    "label": "brown"
   },
   {
     "brand": "PPG",
@@ -9633,7 +9633,7 @@
     ],
     "name": "Pinetop",
     "Id": "PPG1125-7",
-    "label": "olive"
+    "label": "brown"
   },
   {
     "brand": "PPG",
@@ -9645,7 +9645,7 @@
     ],
     "name": "Grape Leaves",
     "Id": "PPG1124-7",
-    "label": "gray"
+    "label": "brown"
   },
   {
     "brand": "PPG",
@@ -9657,7 +9657,7 @@
     ],
     "name": "Fresh Basil",
     "Id": "PPG1127-7",
-    "label": "gray"
+    "label": "brown"
   },
   {
     "brand": "PPG",
@@ -9669,7 +9669,7 @@
     ],
     "name": "Castle Stone",
     "Id": "PPG1128-7",
-    "label": "gray"
+    "label": "brown"
   },
   {
     "brand": "PPG",
@@ -9681,7 +9681,7 @@
     ],
     "name": "Pine Forest",
     "Id": "PPG1134-7",
-    "label": "gray"
+    "label": "brown"
   },
   {
     "brand": "PPG",
@@ -9705,7 +9705,7 @@
     ],
     "name": "Midnight Clover",
     "Id": "PPG1138-7",
-    "label": "teal"
+    "label": "brown"
   },
   {
     "brand": "PPG",
@@ -9717,7 +9717,7 @@
     ],
     "name": "Black Spruce",
     "Id": "PPG1137-7",
-    "label": "teal"
+    "label": "brown"
   },
   {
     "brand": "PPG",
@@ -9729,7 +9729,7 @@
     ],
     "name": "Evergreen Boughs",
     "Id": "PPG1129-7",
-    "label": "gray"
+    "label": "brown"
   },
   {
     "brand": "PPG",
@@ -9801,7 +9801,7 @@
     ],
     "name": "Russian Olive",
     "Id": "PPG1112-7",
-    "label": "gray"
+    "label": "brown"
   },
   {
     "brand": "PPG",
@@ -9813,7 +9813,7 @@
     ],
     "name": "Sphagnum Moss",
     "Id": "PPG1111-7",
-    "label": "olive"
+    "label": "brown"
   },
   {
     "brand": "PPG",
@@ -9873,7 +9873,7 @@
     ],
     "name": "Globe Artichoke",
     "Id": "PPG1121-7",
-    "label": "olive"
+    "label": "brown"
   },
   {
     "brand": "PPG",
@@ -9885,7 +9885,7 @@
     ],
     "name": "Mountain Forest",
     "Id": "PPG1130-7",
-    "label": "olive"
+    "label": "brown"
   },
   {
     "brand": "PPG",
@@ -9897,7 +9897,7 @@
     ],
     "name": "Still Searching",
     "Id": "PPG13-31",
-    "label": "gray"
+    "label": "brown"
   },
   {
     "brand": "PPG",
@@ -9909,7 +9909,7 @@
     ],
     "name": "Royal Hunter Green",
     "Id": "PPG1133-7",
-    "label": "teal"
+    "label": "brown"
   },
   {
     "brand": "PPG",
@@ -9921,7 +9921,7 @@
     ],
     "name": "Billiard Green",
     "Id": "PPG1139-7",
-    "label": "teal"
+    "label": "brown"
   },
   {
     "brand": "PPG",
@@ -9933,7 +9933,7 @@
     ],
     "name": "Peacock Green",
     "Id": "PPG1140-7",
-    "label": "teal"
+    "label": "brown"
   },
   {
     "brand": "PPG",
@@ -9945,7 +9945,7 @@
     ],
     "name": "Brunswick",
     "Id": "PPG1132-7",
-    "label": "teal"
+    "label": "brown"
   },
   {
     "brand": "PPG",
@@ -9957,7 +9957,7 @@
     ],
     "name": "Emerald City",
     "Id": "PPG13-32",
-    "label": "gray"
+    "label": "brown"
   },
   {
     "brand": "PPG",
@@ -9969,7 +9969,7 @@
     ],
     "name": "Clover Leaf",
     "Id": "PPG1131-7",
-    "label": "gray"
+    "label": "brown"
   },
   {
     "brand": "PPG",
@@ -10041,7 +10041,7 @@
     ],
     "name": "Peas Please",
     "Id": "PPG1110-7",
-    "label": "olive"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -10053,7 +10053,7 @@
     ],
     "name": "Autumn Festival",
     "Id": "PPG1109-7",
-    "label": "olive"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -10065,7 +10065,7 @@
     ],
     "name": "Pollination",
     "Id": "PPG1215-7",
-    "label": "olive"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -10077,7 +10077,7 @@
     ],
     "name": "Be Yourself",
     "Id": "PPG1218-7",
-    "label": "olive"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -10089,7 +10089,7 @@
     ],
     "name": "Lichen",
     "Id": "PPG1219-7",
-    "label": "olive"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -10101,7 +10101,7 @@
     ],
     "name": "Willow Herb",
     "Id": "PPG17-26",
-    "label": "olive"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -10113,7 +10113,7 @@
     ],
     "name": "Antique Moss",
     "Id": "PPG1222-7",
-    "label": "olive"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -10125,7 +10125,7 @@
     ],
     "name": "Antique Green",
     "Id": "PPG1223-7",
-    "label": "olive"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -10137,7 +10137,7 @@
     ],
     "name": "Blarney Stone",
     "Id": "PPG1226-7",
-    "label": "teal"
+    "label": "brown"
   },
   {
     "brand": "PPG",
@@ -10149,7 +10149,7 @@
     ],
     "name": "Ivy League",
     "Id": "PPG1228-7",
-    "label": "teal"
+    "label": "brown"
   },
   {
     "brand": "PPG",
@@ -10161,7 +10161,7 @@
     ],
     "name": "Medieval Forest",
     "Id": "PPG1230-7",
-    "label": "teal"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -10173,7 +10173,7 @@
     ],
     "name": "Carolina Green",
     "Id": "PPG1229-7",
-    "label": "teal"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -10185,7 +10185,7 @@
     ],
     "name": "Green Gloss",
     "Id": "PPG1227-7",
-    "label": "teal"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -10221,7 +10221,7 @@
     ],
     "name": "Funky Frog",
     "Id": "PPG1221-7",
-    "label": "olive"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -10353,7 +10353,7 @@
     ],
     "name": "Curry Sauce",
     "Id": "PPG1210-7",
-    "label": "olive"
+    "label": "yellow"
   },
   {
     "brand": "PPG",
@@ -10365,7 +10365,7 @@
     ],
     "name": "Mecca Gold",
     "Id": "PPG1209-7",
-    "label": "olive"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -10377,7 +10377,7 @@
     ],
     "name": "Gothic Gold",
     "Id": "PPG1208-7",
-    "label": "olive"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -10389,7 +10389,7 @@
     ],
     "name": "Cider Toddy",
     "Id": "PPG1207-7",
-    "label": "olive"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -10617,7 +10617,7 @@
     ],
     "name": "Shaker Peg",
     "Id": "PPG1095-7",
-    "label": "olive"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -10677,7 +10677,7 @@
     ],
     "name": "Seasoned Acorn",
     "Id": "PPG1096-7",
-    "label": "gray"
+    "label": "brown"
   },
   {
     "brand": "PPG",
@@ -10689,7 +10689,7 @@
     ],
     "name": "Twig Basket",
     "Id": "PPG1103-7",
-    "label": "olive"
+    "label": "brown"
   },
   {
     "brand": "PPG",
@@ -10701,7 +10701,7 @@
     ],
     "name": "Olive Wood",
     "Id": "PPG1097-7",
-    "label": "gray"
+    "label": "brown"
   },
   {
     "brand": "PPG",
@@ -10725,7 +10725,7 @@
     ],
     "name": "Muddy River",
     "Id": "PPG1098-7",
-    "label": "olive"
+    "label": "brown"
   },
   {
     "brand": "PPG",
@@ -10737,7 +10737,7 @@
     ],
     "name": "Lemur",
     "Id": "PPG1101-7",
-    "label": "gray"
+    "label": "brown"
   },
   {
     "brand": "PPG",
@@ -10761,7 +10761,7 @@
     ],
     "name": "Pine Cone",
     "Id": "PPG1102-7",
-    "label": "gray"
+    "label": "brown"
   },
   {
     "brand": "PPG",
@@ -10773,7 +10773,7 @@
     ],
     "name": "Afternoon Tea",
     "Id": "PPG1023-7",
-    "label": "gray"
+    "label": "brown"
   },
   {
     "brand": "PPG",
@@ -10785,7 +10785,7 @@
     ],
     "name": "Friar's Brown",
     "Id": "PPG1024-7",
-    "label": "gray"
+    "label": "brown"
   },
   {
     "brand": "PPG",
@@ -10797,7 +10797,7 @@
     ],
     "name": "Coffee Bean",
     "Id": "PPG1025-7",
-    "label": "gray"
+    "label": "brown"
   },
   {
     "brand": "PPG",
@@ -10809,7 +10809,7 @@
     ],
     "name": "Grapevine",
     "Id": "PPG1027-7",
-    "label": "olive"
+    "label": "brown"
   },
   {
     "brand": "PPG",
@@ -10821,7 +10821,7 @@
     ],
     "name": "Walnut Grove",
     "Id": "PPG1028-7",
-    "label": "gray"
+    "label": "brown"
   },
   {
     "brand": "PPG",
@@ -11265,7 +11265,7 @@
     ],
     "name": "Brown Mustard",
     "Id": "PPG1208-5",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -11313,7 +11313,7 @@
     ],
     "name": "Honey Pot",
     "Id": "PPG1205-6",
-    "label": "silver"
+    "label": "yellow"
   },
   {
     "brand": "PPG",
@@ -11325,7 +11325,7 @@
     ],
     "name": "Golden Opportunity",
     "Id": "PPG1204-6",
-    "label": "silver"
+    "label": "yellow"
   },
   {
     "brand": "PPG",
@@ -11337,7 +11337,7 @@
     ],
     "name": "Chunk Of Cheddar",
     "Id": "PPG1204-5",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -11349,7 +11349,7 @@
     ],
     "name": "Maybe Maui",
     "Id": "PPG1210-4",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -11361,7 +11361,7 @@
     ],
     "name": "Evening Glow",
     "Id": "PPG1205-5",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -11373,7 +11373,7 @@
     ],
     "name": "Spiced Butternut",
     "Id": "PPG1206-5",
-    "label": "silver"
+    "label": "yellow"
   },
   {
     "brand": "PPG",
@@ -11385,7 +11385,7 @@
     ],
     "name": "Firelight",
     "Id": "PPG1211-5",
-    "label": "silver"
+    "label": "yellow"
   },
   {
     "brand": "PPG",
@@ -11421,7 +11421,7 @@
     ],
     "name": "Forsythia Blossom",
     "Id": "PPG1214-5",
-    "label": "silver"
+    "label": "yellow"
   },
   {
     "brand": "PPG",
@@ -11457,7 +11457,7 @@
     ],
     "name": "Sol De Yucatan",
     "Id": "PPG17-18",
-    "label": "silver"
+    "label": "yellow"
   },
   {
     "brand": "PPG",
@@ -11469,7 +11469,7 @@
     ],
     "name": "Yukon Gold",
     "Id": "PPG1209-4",
-    "label": "silver"
+    "label": "yellow"
   },
   {
     "brand": "PPG",
@@ -11481,7 +11481,7 @@
     ],
     "name": "Gold Buff",
     "Id": "PPG1208-4",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -11493,7 +11493,7 @@
     ],
     "name": "Autumn Glow",
     "Id": "PPG1106-3",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -11505,7 +11505,7 @@
     ],
     "name": "Turner's Yellow",
     "Id": "PPG1106-4",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -11517,7 +11517,7 @@
     ],
     "name": "Sun Salutation",
     "Id": "PPG12-03",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -11529,7 +11529,7 @@
     ],
     "name": "Bright Idea",
     "Id": "PPG1210-5",
-    "label": "silver"
+    "label": "yellow"
   },
   {
     "brand": "PPG",
@@ -11565,7 +11565,7 @@
     ],
     "name": "Tesoros",
     "Id": "PPG17-20",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -11577,7 +11577,7 @@
     ],
     "name": "Lion's Mane",
     "Id": "PPG1207-5",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -11589,7 +11589,7 @@
     ],
     "name": "Apollo Gold",
     "Id": "PPG16-11",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -11601,7 +11601,7 @@
     ],
     "name": "Bold Butterscotch",
     "Id": "PPG12-08",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -11613,7 +11613,7 @@
     ],
     "name": "Butterscotch Bliss",
     "Id": "PPG1106-5",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -11625,7 +11625,7 @@
     ],
     "name": "Outback",
     "Id": "PPG1088-5",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -11673,7 +11673,7 @@
     ],
     "name": "Burnt Ivory",
     "Id": "PPG15-08",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -11685,7 +11685,7 @@
     ],
     "name": "",
     "Id": "FLLW568",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -11697,7 +11697,7 @@
     ],
     "name": "More Maple",
     "Id": "PPG1091-5",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -11709,7 +11709,7 @@
     ],
     "name": "Drops Of Honey",
     "Id": "PPG1090-4",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -11721,7 +11721,7 @@
     ],
     "name": "Tropical Siesta",
     "Id": "PPG1107-5",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -11733,7 +11733,7 @@
     ],
     "name": "Spicy Mustard",
     "Id": "PPG1108-5",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -11745,7 +11745,7 @@
     ],
     "name": "Country Style",
     "Id": "PPG11-04",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -11757,7 +11757,7 @@
     ],
     "name": "Appalachian Trail",
     "Id": "PPG1105-5",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -11769,7 +11769,7 @@
     ],
     "name": "Cracker Bitz",
     "Id": "PPG1087-5",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -11781,7 +11781,7 @@
     ],
     "name": "Rabbit",
     "Id": "PPG15-11",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -11805,7 +11805,7 @@
     ],
     "name": "Antiquity",
     "Id": "PPG1093-5",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -12081,7 +12081,7 @@
     ],
     "name": "Aldabra",
     "Id": "PPG14-28",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -12093,7 +12093,7 @@
     ],
     "name": "Desert Dune",
     "Id": "PPG1023-4",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -12105,7 +12105,7 @@
     ],
     "name": "Sharkskin",
     "Id": "PPG1025-4",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -12117,7 +12117,7 @@
     ],
     "name": "Olive Gray",
     "Id": "PPG1027-4",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -12129,7 +12129,7 @@
     ],
     "name": "Photo Gray",
     "Id": "PPG1029-4",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -12141,7 +12141,7 @@
     ],
     "name": "Scottish Moor",
     "Id": "PPG11-20",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -12153,7 +12153,7 @@
     ],
     "name": "Prairie Dust",
     "Id": "PPG1102-4",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -12165,7 +12165,7 @@
     ],
     "name": "True Khaki",
     "Id": "PPG14-27",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -12177,7 +12177,7 @@
     ],
     "name": "Rock Cliffs",
     "Id": "PPG1101-4",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -12189,7 +12189,7 @@
     ],
     "name": "Best Beige",
     "Id": "PPG1085-4",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -12201,7 +12201,7 @@
     ],
     "name": "Summer Suede",
     "Id": "PPG14-14",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -12213,7 +12213,7 @@
     ],
     "name": "Dusty Trail",
     "Id": "PPG1097-4",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -12225,7 +12225,7 @@
     ],
     "name": "Spiced Vinegar",
     "Id": "PPG1098-4",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -12237,7 +12237,7 @@
     ],
     "name": "Subtle Suede",
     "Id": "PPG1099-4",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -12249,7 +12249,7 @@
     ],
     "name": "Pony Tail",
     "Id": "PPG1086-4",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -12261,7 +12261,7 @@
     ],
     "name": "Gaia",
     "Id": "PPG14-18",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -12273,7 +12273,7 @@
     ],
     "name": "Crepe",
     "Id": "PPG1094-4",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -12285,7 +12285,7 @@
     ],
     "name": "Sandy Pail",
     "Id": "PPG1104-4",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -12297,7 +12297,7 @@
     ],
     "name": "Baguette",
     "Id": "PPG12-30",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -12309,7 +12309,7 @@
     ],
     "name": "Real Simple",
     "Id": "PPG1096-4",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -12321,7 +12321,7 @@
     ],
     "name": "Earthy Cane",
     "Id": "PPG1103-4",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -12333,7 +12333,7 @@
     ],
     "name": "Desert Camel",
     "Id": "PPG12-16",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -12345,7 +12345,7 @@
     ],
     "name": "Somber",
     "Id": "PPG1093-4",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -12357,7 +12357,7 @@
     ],
     "name": "Canvas Satchel",
     "Id": "PPG12-20",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -12369,7 +12369,7 @@
     ],
     "name": "Craftsman Gold",
     "Id": "PPG1092-4",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -12381,7 +12381,7 @@
     ],
     "name": "Splash Of Honey",
     "Id": "PPG1088-4",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -12393,7 +12393,7 @@
     ],
     "name": "Honey Bunny",
     "Id": "PPG1090-3",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -12405,7 +12405,7 @@
     ],
     "name": "Bulletin Board",
     "Id": "PPG12-04",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -12417,7 +12417,7 @@
     ],
     "name": "Hummus",
     "Id": "PPG16-10",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -12429,7 +12429,7 @@
     ],
     "name": "Golden Ecru",
     "Id": "PPG1095-4",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -12441,7 +12441,7 @@
     ],
     "name": "Chalkware",
     "Id": "PPG1087-4",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -12453,7 +12453,7 @@
     ],
     "name": "Chai Tea Latte",
     "Id": "PPG1089-3",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -12465,7 +12465,7 @@
     ],
     "name": "Sugared Pears",
     "Id": "PPG1088-3",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -12477,7 +12477,7 @@
     ],
     "name": "Toffee Crunch",
     "Id": "PPG1207-4",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -12489,7 +12489,7 @@
     ],
     "name": "York Ivory",
     "Id": "PPG15-07",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -12501,7 +12501,7 @@
     ],
     "name": "Faint Fawn",
     "Id": "PPG1089-4",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -12513,7 +12513,7 @@
     ],
     "name": "True Blonde",
     "Id": "PPG12-12",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -12525,7 +12525,7 @@
     ],
     "name": "Halo",
     "Id": "PPG1091-4",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -12537,7 +12537,7 @@
     ],
     "name": "Lira",
     "Id": "PPG12-06",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -12549,7 +12549,7 @@
     ],
     "name": "Hayloft",
     "Id": "PPG12-18",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -12561,7 +12561,7 @@
     ],
     "name": "Foothills",
     "Id": "PPG1105-4",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -12573,7 +12573,7 @@
     ],
     "name": "Wayward Wind",
     "Id": "PPG1108-4",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -12585,7 +12585,7 @@
     ],
     "name": "Tainted Gold",
     "Id": "PPG11-02",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -12597,7 +12597,7 @@
     ],
     "name": "Demeter",
     "Id": "PPG1107-4",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -12609,7 +12609,7 @@
     ],
     "name": "Butterfly Bush",
     "Id": "PPG1214-4",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -12621,7 +12621,7 @@
     ],
     "name": "Doodle",
     "Id": "PPG1204-4",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -12633,7 +12633,7 @@
     ],
     "name": "Honey Bee",
     "Id": "PPG1205-4",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -12645,7 +12645,7 @@
     ],
     "name": "Corn Silk",
     "Id": "PPG12-01",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -12657,7 +12657,7 @@
     ],
     "name": "Sawdust",
     "Id": "PPG1206-4",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -12669,7 +12669,7 @@
     ],
     "name": "",
     "Id": "FLLW785",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -12681,7 +12681,7 @@
     ],
     "name": "Twinkle Little Star",
     "Id": "PPG1211-4",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -12693,7 +12693,7 @@
     ],
     "name": "Lazy Daizy",
     "Id": "PPG1212-4",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -12705,7 +12705,7 @@
     ],
     "name": "Citrus Punch",
     "Id": "PPG1212-5",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -12717,7 +12717,7 @@
     ],
     "name": "Calabash",
     "Id": "PPG1213-5",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -12729,7 +12729,7 @@
     ],
     "name": "Golden Straw",
     "Id": "PPG1213-4",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -12741,7 +12741,7 @@
     ],
     "name": "Butter",
     "Id": "PPG1213-3",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -12753,7 +12753,7 @@
     ],
     "name": "Sunbeam",
     "Id": "PPG1212-3",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -12765,7 +12765,7 @@
     ],
     "name": "Easy On The Eyes",
     "Id": "PPG1211-3",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -12801,7 +12801,7 @@
     ],
     "name": "Winter Wheat",
     "Id": "PPG12-05",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -12825,7 +12825,7 @@
     ],
     "name": "To The Rescue",
     "Id": "PPG12-25",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -12837,7 +12837,7 @@
     ],
     "name": "Honey Beige",
     "Id": "PPG1207-3",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -12849,7 +12849,7 @@
     ],
     "name": "Linen Tint",
     "Id": "PPG16-09",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -12861,7 +12861,7 @@
     ],
     "name": "Belgian Waffle",
     "Id": "PPG1208-3",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -12873,7 +12873,7 @@
     ],
     "name": "Dusty Yellow",
     "Id": "PPG1209-3",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -12885,7 +12885,7 @@
     ],
     "name": "Visionary",
     "Id": "PPG1210-3",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -12897,7 +12897,7 @@
     ],
     "name": "Banana Brulee",
     "Id": "PPG1214-3",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -12909,7 +12909,7 @@
     ],
     "name": "Turning Oakleaf",
     "Id": "PPG1107-3",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -12921,7 +12921,7 @@
     ],
     "name": "Butter Cookie",
     "Id": "PPG1108-3",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -12933,7 +12933,7 @@
     ],
     "name": "Limitless",
     "Id": "PPG1091-3",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -12945,7 +12945,7 @@
     ],
     "name": "Cordon Bleu",
     "Id": "PPG12-02",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -12957,7 +12957,7 @@
     ],
     "name": "Millet",
     "Id": "PPG12-10",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -12969,7 +12969,7 @@
     ],
     "name": "Deserted Beach",
     "Id": "PPG1104-3",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -12981,7 +12981,7 @@
     ],
     "name": "At The Beach",
     "Id": "PPG12-28",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -12993,7 +12993,7 @@
     ],
     "name": "Antique Parchment",
     "Id": "PPG1087-3",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -13005,7 +13005,7 @@
     ],
     "name": "Alpaca Wool",
     "Id": "PPG14-19",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -13017,7 +13017,7 @@
     ],
     "name": "Almond Brittle",
     "Id": "PPG1095-3",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -13029,7 +13029,7 @@
     ],
     "name": "Upbeat",
     "Id": "PPG1106-2",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -13041,7 +13041,7 @@
     ],
     "name": "Waves Of Grain",
     "Id": "PPG12-07",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -13053,7 +13053,7 @@
     ],
     "name": "Tuscan Sun",
     "Id": "PPG12-17",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -13065,7 +13065,7 @@
     ],
     "name": "Caramelized Pears",
     "Id": "PPG1105-3",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -13077,7 +13077,7 @@
     ],
     "name": "Tuscan Bread",
     "Id": "PPG1092-3",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -13089,7 +13089,7 @@
     ],
     "name": "Spice Is Nice",
     "Id": "PPG1090-2",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -13101,7 +13101,7 @@
     ],
     "name": "Antique Cream",
     "Id": "PPG12-11",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -13113,7 +13113,7 @@
     ],
     "name": "Family Ties",
     "Id": "PPG12-29",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -13125,7 +13125,7 @@
     ],
     "name": "Hearth",
     "Id": "PPG1093-3",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -13137,7 +13137,7 @@
     ],
     "name": "Neutral Beige",
     "Id": "PPG12-31",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -13149,7 +13149,7 @@
     ],
     "name": "Baked Bread",
     "Id": "PPG1100-3",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -13161,7 +13161,7 @@
     ],
     "name": "Soft Suede",
     "Id": "PPG1103-3",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -13173,7 +13173,7 @@
     ],
     "name": "Birch Beige",
     "Id": "PPG1094-3",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -13185,7 +13185,7 @@
     ],
     "name": "Cookie Dough",
     "Id": "PPG1096-3",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -13197,7 +13197,7 @@
     ],
     "name": "Almond Cream",
     "Id": "PPG1086-3",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -13209,7 +13209,7 @@
     ],
     "name": "Loofah",
     "Id": "PPG1094-2",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -13221,7 +13221,7 @@
     ],
     "name": "Sandcastle Symphony",
     "Id": "PPG12-32",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -13233,7 +13233,7 @@
     ],
     "name": "Seriously Sand",
     "Id": "PPG1085-3",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -13245,7 +13245,7 @@
     ],
     "name": "Armadillo",
     "Id": "PPG14-17",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -13257,7 +13257,7 @@
     ],
     "name": "Toasted Almond",
     "Id": "PPG1097-3",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -13269,7 +13269,7 @@
     ],
     "name": "Summer Wheat",
     "Id": "PPG14-10",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -13281,7 +13281,7 @@
     ],
     "name": "Sand Fossil",
     "Id": "PPG1098-3",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -13293,7 +13293,7 @@
     ],
     "name": "Lovely Linen",
     "Id": "PPG1099-3",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -13305,7 +13305,7 @@
     ],
     "name": "Skipping Stone",
     "Id": "PPG1027-2",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -13317,7 +13317,7 @@
     ],
     "name": "French Gray Linen",
     "Id": "PPG1029-3",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -13329,7 +13329,7 @@
     ],
     "name": "Hideaway",
     "Id": "PPG14-26",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -13341,7 +13341,7 @@
     ],
     "name": "Stylish",
     "Id": "PPG1101-3",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -13353,7 +13353,7 @@
     ],
     "name": "Dancing Dolphin",
     "Id": "PPG1102-3",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -13365,7 +13365,7 @@
     ],
     "name": "Pine Crush",
     "Id": "PPG1028-3",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -13377,7 +13377,7 @@
     ],
     "name": "Heavy Hammock",
     "Id": "PPG1027-3",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -13389,7 +13389,7 @@
     ],
     "name": "Ashen",
     "Id": "PPG1023-3",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -13401,7 +13401,7 @@
     ],
     "name": "Stonington",
     "Id": "PPG15-25",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -13413,7 +13413,7 @@
     ],
     "name": "Great Gray",
     "Id": "PPG15-28",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -13425,7 +13425,7 @@
     ],
     "name": "Moth Gray",
     "Id": "PPG1024-4",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -13437,7 +13437,7 @@
     ],
     "name": "Ostrich Feather",
     "Id": "PPG14-32",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -13449,7 +13449,7 @@
     ],
     "name": "Whiskers",
     "Id": "PPG1025-3",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -13461,7 +13461,7 @@
     ],
     "name": "Crushed Silk",
     "Id": "PPG1024-3",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -13473,7 +13473,7 @@
     ],
     "name": "Cool Concrete",
     "Id": "PPG1023-2",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -13485,7 +13485,7 @@
     ],
     "name": "Wheat Sheaf",
     "Id": "PPG14-21",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -13497,7 +13497,7 @@
     ],
     "name": "Antique White",
     "Id": "PPG1024-2",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -13509,7 +13509,7 @@
     ],
     "name": "Irresistible",
     "Id": "PPG1094-1",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -13521,7 +13521,7 @@
     ],
     "name": "Silent Smoke",
     "Id": "PPG1025-2",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -13533,7 +13533,7 @@
     ],
     "name": "Cocoon",
     "Id": "PPG1027-1",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -13545,7 +13545,7 @@
     ],
     "name": "Static",
     "Id": "PPG14-11",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -13557,7 +13557,7 @@
     ],
     "name": "With A Twist",
     "Id": "PPG1028-2",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -13569,7 +13569,7 @@
     ],
     "name": "Veil Of Dusk",
     "Id": "PPG1029-2",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -13581,7 +13581,7 @@
     ],
     "name": "Fossil Stone",
     "Id": "PPG1102-2",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -13593,7 +13593,7 @@
     ],
     "name": "Almond Paste",
     "Id": "PPG1103-2",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -13605,7 +13605,7 @@
     ],
     "name": "Sugar Cookie",
     "Id": "PPG1101-2",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -13617,7 +13617,7 @@
     ],
     "name": "Vanilla Love",
     "Id": "PPG1099-2",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -13629,7 +13629,7 @@
     ],
     "name": "Heavy Cream",
     "Id": "PPG1098-2",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -13641,7 +13641,7 @@
     ],
     "name": "Camel Tan",
     "Id": "PPG12-13",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -13653,7 +13653,7 @@
     ],
     "name": "Southern Breeze",
     "Id": "PPG1097-2",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -13665,7 +13665,7 @@
     ],
     "name": "Scotch Mist",
     "Id": "PPG14-07",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -13677,7 +13677,7 @@
     ],
     "name": "Bone White",
     "Id": "PPG1085-2",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -13689,7 +13689,7 @@
     ],
     "name": "Botany Beige",
     "Id": "PPG15-27",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -13701,7 +13701,7 @@
     ],
     "name": "Ethereal",
     "Id": "PPG1088-2",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -13713,7 +13713,7 @@
     ],
     "name": "Brandied Pears",
     "Id": "PPG1086-2",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -13725,7 +13725,7 @@
     ],
     "name": "Morocco Sand",
     "Id": "PPG1096-2",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -13773,7 +13773,7 @@
     ],
     "name": "Soleil",
     "Id": "PPG1093-2",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -13845,7 +13845,7 @@
     ],
     "name": "Gentle Glow",
     "Id": "PPG1210-2",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -13857,7 +13857,7 @@
     ],
     "name": "Sausalito",
     "Id": "PPG1209-2",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -14781,7 +14781,7 @@
     ],
     "name": "Pine Hutch",
     "Id": "PPG1067-1",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -14793,7 +14793,7 @@
     ],
     "name": "South Peak",
     "Id": "PPG1071-1",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -14805,7 +14805,7 @@
     ],
     "name": "Focus",
     "Id": "PPG1008-1",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -14817,7 +14817,7 @@
     ],
     "name": "Paraffin",
     "Id": "PPG14-31",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -14829,7 +14829,7 @@
     ],
     "name": "Hourglass",
     "Id": "PPG1022-1",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -15189,7 +15189,7 @@
     ],
     "name": "Pecan Sandie",
     "Id": "PPG1198-1",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -15201,7 +15201,7 @@
     ],
     "name": "Tea Biscuit",
     "Id": "PPG1201-2",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -15213,7 +15213,7 @@
     ],
     "name": "Oatmeal Cookie",
     "Id": "PPG1080-1",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -15225,7 +15225,7 @@
     ],
     "name": "Budding Peach",
     "Id": "PPG1198-2",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -15237,7 +15237,7 @@
     ],
     "name": "Sourpatch Peach",
     "Id": "PPG1200-2",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -15249,7 +15249,7 @@
     ],
     "name": "Canyon Peach",
     "Id": "PPG1070-1",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -15261,7 +15261,7 @@
     ],
     "name": "Beige Llama",
     "Id": "PPG18-13",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -15273,7 +15273,7 @@
     ],
     "name": "Nosegay",
     "Id": "PPG1069-1",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -15345,7 +15345,7 @@
     ],
     "name": "Peachtree",
     "Id": "PPG1196-1",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -15357,7 +15357,7 @@
     ],
     "name": "Melon Ice",
     "Id": "PPG1196-2",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -15369,7 +15369,7 @@
     ],
     "name": "Shoreland",
     "Id": "PPG1082-2",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -15381,7 +15381,7 @@
     ],
     "name": "Sandpiper",
     "Id": "PPG1077-2",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -15393,7 +15393,7 @@
     ],
     "name": "Blush Beige",
     "Id": "PPG1070-2",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -15405,7 +15405,7 @@
     ],
     "name": "Scotchtone",
     "Id": "PPG1069-2",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -15417,7 +15417,7 @@
     ],
     "name": "Pumpkin Cream",
     "Id": "PPG1080-2",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -15429,7 +15429,7 @@
     ],
     "name": "Beachy Keen",
     "Id": "PPG1081-2",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -15441,7 +15441,7 @@
     ],
     "name": "Enjoy",
     "Id": "PPG1071-2",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -15453,7 +15453,7 @@
     ],
     "name": "Boardwalk",
     "Id": "PPG1067-2",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -15465,7 +15465,7 @@
     ],
     "name": "Blossom Pink",
     "Id": "PPG1016-2",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -15477,7 +15477,7 @@
     ],
     "name": "Coral Cream",
     "Id": "PPG1062-2",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -15489,7 +15489,7 @@
     ],
     "name": "Fiesta",
     "Id": "PPG1065-2",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -15501,7 +15501,7 @@
     ],
     "name": "Sandy Beach",
     "Id": "PPG1072-2",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -15525,7 +15525,7 @@
     ],
     "name": "Wistful Beige",
     "Id": "PPG1061-2",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -15537,7 +15537,7 @@
     ],
     "name": "Moroccan Moonlight",
     "Id": "PPG1074-2",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -15585,7 +15585,7 @@
     ],
     "name": "Water Chestnut",
     "Id": "PPG1078-2",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -15609,7 +15609,7 @@
     ],
     "name": "Ash",
     "Id": "PPG1076-2",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -15621,7 +15621,7 @@
     ],
     "name": "Seagull",
     "Id": "PPG14-03",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -15633,7 +15633,7 @@
     ],
     "name": "Shark",
     "Id": "PPG1006-2",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -15645,7 +15645,7 @@
     ],
     "name": "Malted Milk",
     "Id": "PPG1073-2",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -15657,7 +15657,7 @@
     ],
     "name": "Maybe Mushroom",
     "Id": "PPG1020-2",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -15669,7 +15669,7 @@
     ],
     "name": "Casual Elegance",
     "Id": "PPG1075-3",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -15681,7 +15681,7 @@
     ],
     "name": "Synchronicity",
     "Id": "PPG1021-2",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -15693,7 +15693,7 @@
     ],
     "name": "Intuitive",
     "Id": "PPG1022-2",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -15705,7 +15705,7 @@
     ],
     "name": "Storm's Coming",
     "Id": "PPG1008-2",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -15717,7 +15717,7 @@
     ],
     "name": "Swirling Smoke",
     "Id": "PPG1007-2",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -15729,7 +15729,7 @@
     ],
     "name": "Early Evening",
     "Id": "PPG1006-3",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -15741,7 +15741,7 @@
     ],
     "name": "Ghost Writer",
     "Id": "PPG1007-3",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -15753,7 +15753,7 @@
     ],
     "name": "Silver Dollar",
     "Id": "PPG1022-3",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -15765,7 +15765,7 @@
     ],
     "name": "Greyhound",
     "Id": "PPG1008-3",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -15777,7 +15777,7 @@
     ],
     "name": "Shadow Taupe",
     "Id": "PPG14-01",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -15789,7 +15789,7 @@
     ],
     "name": "Discover",
     "Id": "PPG1021-3",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -15801,7 +15801,7 @@
     ],
     "name": "Gotta Have It",
     "Id": "PPG1076-3",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -15813,7 +15813,7 @@
     ],
     "name": "Whippet",
     "Id": "PPG1020-3",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -15825,7 +15825,7 @@
     ],
     "name": "Cheerful Heart",
     "Id": "PPG1016-3",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -15837,7 +15837,7 @@
     ],
     "name": "Pale Taupe",
     "Id": "PPG1073-3",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -15849,7 +15849,7 @@
     ],
     "name": "Gray Beige",
     "Id": "PPG14-30",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -15861,7 +15861,7 @@
     ],
     "name": "Comfort",
     "Id": "PPG1078-3",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -15873,7 +15873,7 @@
     ],
     "name": "Sourdough",
     "Id": "PPG1084-3",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -15885,7 +15885,7 @@
     ],
     "name": "Cocoa Cream",
     "Id": "PPG1079-3",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -15897,7 +15897,7 @@
     ],
     "name": "Bermuda Sand",
     "Id": "PPG1074-3",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -15909,7 +15909,7 @@
     ],
     "name": "Ginger Shortbread",
     "Id": "PPG1062-3",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -15921,7 +15921,7 @@
     ],
     "name": "Belle Of The Ball",
     "Id": "PPG1061-3",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -15933,7 +15933,7 @@
     ],
     "name": "Honeysweet",
     "Id": "PPG1065-3",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -15945,7 +15945,7 @@
     ],
     "name": "Cool Cantaloupe",
     "Id": "PPG1066-3",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -15957,7 +15957,7 @@
     ],
     "name": "Au Naturel",
     "Id": "PPG1067-3",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -15969,7 +15969,7 @@
     ],
     "name": "Peach Brick",
     "Id": "PPG18-26",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -15981,7 +15981,7 @@
     ],
     "name": "Champagne Wishes",
     "Id": "PPG1071-3",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -15993,7 +15993,7 @@
     ],
     "name": "My Love",
     "Id": "PPG1081-3",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -16005,7 +16005,7 @@
     ],
     "name": "Weathered Sandstone",
     "Id": "PPG1082-4",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -16017,7 +16017,7 @@
     ],
     "name": "Malibu Dune",
     "Id": "PPG1083-4",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -16029,7 +16029,7 @@
     ],
     "name": "Oak Buff",
     "Id": "PPG1083-3",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -16041,7 +16041,7 @@
     ],
     "name": "Crisp Won Ton",
     "Id": "PPG1202-3",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -16053,7 +16053,7 @@
     ],
     "name": "Ice Cream Cone",
     "Id": "PPG1082-3",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -16065,7 +16065,7 @@
     ],
     "name": "Peach Beauty",
     "Id": "PPG18-27",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -16077,7 +16077,7 @@
     ],
     "name": "Beach Vibes",
     "Id": "PPG1070-3",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -16089,7 +16089,7 @@
     ],
     "name": "Starfish",
     "Id": "PPG1069-3",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -16101,7 +16101,7 @@
     ],
     "name": "Wild Rice",
     "Id": "PPG1072-3",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -16113,7 +16113,7 @@
     ],
     "name": "Spice Beige",
     "Id": "PPG18-14",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -16125,7 +16125,7 @@
     ],
     "name": "Sultan Sand",
     "Id": "PPG1068-3",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -16137,7 +16137,7 @@
     ],
     "name": "Pale Coral",
     "Id": "PPG1063-3",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -16149,7 +16149,7 @@
     ],
     "name": "Peach Ash",
     "Id": "PPG1191-3",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -16161,7 +16161,7 @@
     ],
     "name": "Chic Peach",
     "Id": "PPG1192-3",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -16173,7 +16173,7 @@
     ],
     "name": "Spiced Orange",
     "Id": "PPG1199-3",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -16185,7 +16185,7 @@
     ],
     "name": "Siesta",
     "Id": "PPG1200-3",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -16197,7 +16197,7 @@
     ],
     "name": "Citrus Sachet",
     "Id": "PPG1198-3",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -16209,7 +16209,7 @@
     ],
     "name": "Maple Granola",
     "Id": "PPG16-25",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -16221,7 +16221,7 @@
     ],
     "name": "Peach Darling",
     "Id": "PPG1201-3",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -16233,7 +16233,7 @@
     ],
     "name": "Melon Pink",
     "Id": "PPG1195-3",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -16245,7 +16245,7 @@
     ],
     "name": "Bisque",
     "Id": "PPG1197-3",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -16257,7 +16257,7 @@
     ],
     "name": "Peach Dip",
     "Id": "PPG1203-3",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -16269,7 +16269,7 @@
     ],
     "name": "Dreamsicle",
     "Id": "PPG1196-3",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -16305,7 +16305,7 @@
     ],
     "name": "Sweet Angel",
     "Id": "PPG1193-4",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -16317,7 +16317,7 @@
     ],
     "name": "New Clay",
     "Id": "PPG1192-4",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -16329,7 +16329,7 @@
     ],
     "name": "Georgia Peach",
     "Id": "PPG1063-4",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -16341,7 +16341,7 @@
     ],
     "name": "Sweet Sheba",
     "Id": "PPG1194-4",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -16353,7 +16353,7 @@
     ],
     "name": "Crab Bisque",
     "Id": "PPG1195-4",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -16365,7 +16365,7 @@
     ],
     "name": "Shrimp Boat",
     "Id": "PPG1196-4",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -16377,7 +16377,7 @@
     ],
     "name": "Shrimp Toast",
     "Id": "PPG1197-4",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -16389,7 +16389,7 @@
     ],
     "name": "Ginger Peach",
     "Id": "PPG1203-4",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -16401,7 +16401,7 @@
     ],
     "name": "Caramel Ice",
     "Id": "PPG1202-4",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -16413,7 +16413,7 @@
     ],
     "name": "Gentle Doe",
     "Id": "PPG1201-4",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -16425,7 +16425,7 @@
     ],
     "name": "Orange Liqueur",
     "Id": "PPG1198-4",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -16437,7 +16437,7 @@
     ],
     "name": "Orange Clay",
     "Id": "PPG1200-4",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -16449,7 +16449,7 @@
     ],
     "name": "Hush Puppy",
     "Id": "PPG1199-4",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -16461,7 +16461,7 @@
     ],
     "name": "Coral Blush",
     "Id": "PPG1191-4",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -16473,7 +16473,7 @@
     ],
     "name": "Sombrero Tan",
     "Id": "PPG16-01",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -16485,7 +16485,7 @@
     ],
     "name": "Lazy Summer",
     "Id": "PPG1068-4",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -16497,7 +16497,7 @@
     ],
     "name": "Orange Maple",
     "Id": "PPG1069-4",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -16509,7 +16509,7 @@
     ],
     "name": "Clay Fire",
     "Id": "PPG1070-4",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -16521,7 +16521,7 @@
     ],
     "name": "Covered Wagon",
     "Id": "PPG16-18",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -16533,7 +16533,7 @@
     ],
     "name": "Siesta Dreams",
     "Id": "PPG1080-4",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -16545,7 +16545,7 @@
     ],
     "name": "Cheddar Biscuit",
     "Id": "PPG1083-5",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -16557,7 +16557,7 @@
     ],
     "name": "Cinnamon Frost",
     "Id": "PPG1081-4",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -16569,7 +16569,7 @@
     ],
     "name": "Nutmeg Glow",
     "Id": "PPG1080-3",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -16581,7 +16581,7 @@
     ],
     "name": "Cinnamon Ice",
     "Id": "PPG1071-4",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -16593,7 +16593,7 @@
     ],
     "name": "Adorable",
     "Id": "PPG1066-4",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -16605,7 +16605,7 @@
     ],
     "name": "Sweet Peach",
     "Id": "PPG1065-4",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -16617,7 +16617,7 @@
     ],
     "name": "Shrimp Salad",
     "Id": "PPG18-15",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -16629,7 +16629,7 @@
     ],
     "name": "Thankfully",
     "Id": "PPG1067-4",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -16641,7 +16641,7 @@
     ],
     "name": "Sandpaper",
     "Id": "PPG1062-4",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -16653,7 +16653,7 @@
     ],
     "name": "Taupe Tapestry",
     "Id": "PPG1072-4",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -16665,7 +16665,7 @@
     ],
     "name": "Just Rosey",
     "Id": "PPG1061-4",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -16677,7 +16677,7 @@
     ],
     "name": "",
     "Id": "FLLW858",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -16689,7 +16689,7 @@
     ],
     "name": "El Capitan",
     "Id": "PPG1020-4",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -16701,7 +16701,7 @@
     ],
     "name": "Notorious",
     "Id": "PPG1074-4",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -16713,7 +16713,7 @@
     ],
     "name": "Transcend",
     "Id": "PPG1079-4",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -16725,7 +16725,7 @@
     ],
     "name": "Persuasion",
     "Id": "PPG1077-3",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -16737,7 +16737,7 @@
     ],
     "name": "Happy Trails",
     "Id": "PPG1084-4",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -16749,7 +16749,7 @@
     ],
     "name": "Beige Tellin",
     "Id": "PPG15-31",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -16761,7 +16761,7 @@
     ],
     "name": "Kangaroo",
     "Id": "PPG1078-4",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -16773,7 +16773,7 @@
     ],
     "name": "Yosemite Trailhead",
     "Id": "PPG15-04",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -16785,7 +16785,7 @@
     ],
     "name": "Antelope",
     "Id": "PPG15-09",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -16821,7 +16821,7 @@
     ],
     "name": "Thumper",
     "Id": "PPG1075-4",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -16833,7 +16833,7 @@
     ],
     "name": "Pueblo",
     "Id": "PPG1073-4",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -16845,7 +16845,7 @@
     ],
     "name": "Forever Fairytale",
     "Id": "PPG1016-4",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -16857,7 +16857,7 @@
     ],
     "name": "Grey Mauve",
     "Id": "PPG18-03",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -16869,7 +16869,7 @@
     ],
     "name": "Mercurial",
     "Id": "PPG1006-4",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -16881,7 +16881,7 @@
     ],
     "name": "Hot Stone",
     "Id": "PPG1007-4",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -17037,7 +17037,7 @@
     ],
     "name": "Iris Mauve",
     "Id": "PPG1016-5",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -17217,7 +17217,7 @@
     ],
     "name": "Salmon Eggs",
     "Id": "PPG18-16",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -17229,7 +17229,7 @@
     ],
     "name": "Long Weekend",
     "Id": "PPG1065-5",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -17481,7 +17481,7 @@
     ],
     "name": "Buffalo Trail",
     "Id": "PPG1202-5",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -17493,7 +17493,7 @@
     ],
     "name": "Zing",
     "Id": "PPG1203-5",
-    "label": "silver"
+    "label": "yellow"
   },
   {
     "brand": "PPG",
@@ -17505,7 +17505,7 @@
     ],
     "name": "Sorbete De Melon",
     "Id": "PPG17-21",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -17517,7 +17517,7 @@
     ],
     "name": "Orange Marmalade",
     "Id": "PPG1197-5",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -17529,7 +17529,7 @@
     ],
     "name": "Copper River",
     "Id": "PPG1196-5",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -17541,7 +17541,7 @@
     ],
     "name": "Coral Silk",
     "Id": "PPG1195-5",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -17553,7 +17553,7 @@
     ],
     "name": "Coral Serenade",
     "Id": "PPG1193-5",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -17565,7 +17565,7 @@
     ],
     "name": "Opal Fire",
     "Id": "PPG1192-5",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -17577,7 +17577,7 @@
     ],
     "name": "Warm Welcome",
     "Id": "PPG1194-5",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -17649,7 +17649,7 @@
     ],
     "name": "Fall Leaf",
     "Id": "PPG1197-6",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -17661,7 +17661,7 @@
     ],
     "name": "Goldfish",
     "Id": "PPG1203-6",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -17721,7 +17721,7 @@
     ],
     "name": "Tiger Tail",
     "Id": "PPG1198-6",
-    "label": "olive"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -18249,7 +18249,7 @@
     ],
     "name": "Stone's Throw",
     "Id": "PPG1008-7",
-    "label": "gray"
+    "label": "brown"
   },
   {
     "brand": "PPG",
@@ -18261,7 +18261,7 @@
     ],
     "name": "Bark",
     "Id": "PPG1007-7",
-    "label": "gray"
+    "label": "brown"
   },
   {
     "brand": "PPG",
@@ -18273,7 +18273,7 @@
     ],
     "name": "Metropolis",
     "Id": "PPG1006-7",
-    "label": "gray"
+    "label": "brown"
   },
   {
     "brand": "PPG",
@@ -18285,7 +18285,7 @@
     ],
     "name": "Ground Coffee",
     "Id": "PPG1076-7",
-    "label": "gray"
+    "label": "brown"
   },
   {
     "brand": "PPG",
@@ -18297,7 +18297,7 @@
     ],
     "name": "Dolce",
     "Id": "PPG1020-7",
-    "label": "gray"
+    "label": "brown"
   },
   {
     "brand": "PPG",
@@ -18309,7 +18309,7 @@
     ],
     "name": "Cabin Fever",
     "Id": "PPG1021-7",
-    "label": "gray"
+    "label": "brown"
   },
   {
     "brand": "PPG",
@@ -18321,7 +18321,7 @@
     ],
     "name": "Star Anise",
     "Id": "PPG1022-7",
-    "label": "gray"
+    "label": "brown"
   },
   {
     "brand": "PPG",
@@ -18333,7 +18333,7 @@
     ],
     "name": "Chestnut",
     "Id": "PPG15-23",
-    "label": "gray"
+    "label": "brown"
   },
   {
     "brand": "PPG",
@@ -18345,7 +18345,7 @@
     ],
     "name": "Little Bear",
     "Id": "PPG1074-7",
-    "label": "gray"
+    "label": "brown"
   },
   {
     "brand": "PPG",
@@ -18357,7 +18357,7 @@
     ],
     "name": "Fudge Truffle",
     "Id": "PPG1075-7",
-    "label": "olive"
+    "label": "brown"
   },
   {
     "brand": "PPG",
@@ -18369,7 +18369,7 @@
     ],
     "name": "Fudge",
     "Id": "PPG1073-7",
-    "label": "olive"
+    "label": "brown"
   },
   {
     "brand": "PPG",
@@ -18381,7 +18381,7 @@
     ],
     "name": "Bird House Brown",
     "Id": "PPG1072-7",
-    "label": "olive"
+    "label": "brown"
   },
   {
     "brand": "PPG",
@@ -18393,7 +18393,7 @@
     ],
     "name": "Spiced Wine",
     "Id": "PPG1016-7",
-    "label": "gray"
+    "label": "brown"
   },
   {
     "brand": "PPG",
@@ -18405,7 +18405,7 @@
     ],
     "name": "Pumpernickel",
     "Id": "PPG15-22",
-    "label": "gray"
+    "label": "brown"
   },
   {
     "brand": "PPG",
@@ -18417,7 +18417,7 @@
     ],
     "name": "Coffee House",
     "Id": "PPG1077-7",
-    "label": "gray"
+    "label": "brown"
   },
   {
     "brand": "PPG",
@@ -18429,7 +18429,7 @@
     ],
     "name": "Maple Syrup",
     "Id": "PPG1084-7",
-    "label": "olive"
+    "label": "brown"
   },
   {
     "brand": "PPG",
@@ -18441,7 +18441,7 @@
     ],
     "name": "Molasses",
     "Id": "PPG1079-7",
-    "label": "olive"
+    "label": "brown"
   },
   {
     "brand": "PPG",
@@ -18453,7 +18453,7 @@
     ],
     "name": "Chocolate Truffle",
     "Id": "PPG15-13",
-    "label": "gray"
+    "label": "brown"
   },
   {
     "brand": "PPG",
@@ -18465,7 +18465,7 @@
     ],
     "name": "Caramelized Walnut",
     "Id": "PPG1074-6",
-    "label": "gray"
+    "label": "brown"
   },
   {
     "brand": "PPG",
@@ -18477,7 +18477,7 @@
     ],
     "name": "Bigfoot",
     "Id": "PPG1061-7",
-    "label": "gray"
+    "label": "brown"
   },
   {
     "brand": "PPG",
@@ -18489,7 +18489,7 @@
     ],
     "name": "Red Clay",
     "Id": "PPG16-32",
-    "label": "olive"
+    "label": "brown"
   },
   {
     "brand": "PPG",
@@ -18501,7 +18501,7 @@
     ],
     "name": "Cedar Chest",
     "Id": "PPG1065-7",
-    "label": "olive"
+    "label": "brown"
   },
   {
     "brand": "PPG",
@@ -18513,7 +18513,7 @@
     ],
     "name": "Burled Redwood",
     "Id": "PPG1067-7",
-    "label": "olive"
+    "label": "brown"
   },
   {
     "brand": "PPG",
@@ -18525,7 +18525,7 @@
     ],
     "name": "Baked Bean",
     "Id": "PPG1066-7",
-    "label": "gray"
+    "label": "brown"
   },
   {
     "brand": "PPG",
@@ -18537,7 +18537,7 @@
     ],
     "name": "Warm Wassail",
     "Id": "PPG1062-7",
-    "label": "olive"
+    "label": "brown"
   },
   {
     "brand": "PPG",
@@ -18549,7 +18549,7 @@
     ],
     "name": "Tampico Brown",
     "Id": "PPG16-23",
-    "label": "gray"
+    "label": "brown"
   },
   {
     "brand": "PPG",
@@ -18561,7 +18561,7 @@
     ],
     "name": "Spiced Cinnamon",
     "Id": "PPG1071-7",
-    "label": "gray"
+    "label": "brown"
   },
   {
     "brand": "PPG",
@@ -18609,7 +18609,7 @@
     ],
     "name": "Ginger",
     "Id": "PPG1082-7",
-    "label": "olive"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -18657,7 +18657,7 @@
     ],
     "name": "Spiced Cider",
     "Id": "PPG1068-7",
-    "label": "gray"
+    "label": "brown"
   },
   {
     "brand": "PPG",
@@ -18681,7 +18681,7 @@
     ],
     "name": "Ancient Copper",
     "Id": "PPG1063-7",
-    "label": "olive"
+    "label": "brown"
   },
   {
     "brand": "PPG",
@@ -18693,7 +18693,7 @@
     ],
     "name": "Hunt Club Red",
     "Id": "PPG16-29",
-    "label": "gray"
+    "label": "brown"
   },
   {
     "brand": "PPG",
@@ -18717,7 +18717,7 @@
     ],
     "name": "Fragrant Cloves",
     "Id": "PPG1199-7",
-    "label": "olive"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -18729,7 +18729,7 @@
     ],
     "name": "Mincemeat",
     "Id": "PPG1200-7",
-    "label": "olive"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -18741,7 +18741,7 @@
     ],
     "name": "Sesame Crunch",
     "Id": "PPG1198-7",
-    "label": "olive"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -18753,7 +18753,7 @@
     ],
     "name": "Bronze Eucalyptus",
     "Id": "PPG16-20",
-    "label": "olive"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -18765,7 +18765,7 @@
     ],
     "name": "Lucky Penny",
     "Id": "PPG1201-7",
-    "label": "olive"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -18777,7 +18777,7 @@
     ],
     "name": "Ginger Beer",
     "Id": "PPG1202-7",
-    "label": "olive"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -18837,7 +18837,7 @@
     ],
     "name": "Field Poppy",
     "Id": "PPG1195-7",
-    "label": "olive"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -18849,7 +18849,7 @@
     ],
     "name": "Cinnamon Stone",
     "Id": "PPG1193-7",
-    "label": "olive"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -18861,7 +18861,7 @@
     ],
     "name": "Tabasco",
     "Id": "PPG1192-7",
-    "label": "olive"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -18873,7 +18873,7 @@
     ],
     "name": "Orange Vermillion",
     "Id": "PPG1194-7",
-    "label": "olive"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -18885,7 +18885,7 @@
     ],
     "name": "Teaberry Blossom",
     "Id": "PPG1189-7",
-    "label": "gray"
+    "label": "brown"
   },
   {
     "brand": "PPG",
@@ -18993,7 +18993,7 @@
     ],
     "name": "Red Licorice",
     "Id": "PPG1186-7",
-    "label": "purple"
+    "label": "brown"
   },
   {
     "brand": "PPG",
@@ -19005,7 +19005,7 @@
     ],
     "name": "Magenta",
     "Id": "PPG1050-7",
-    "label": "purple"
+    "label": "brown"
   },
   {
     "brand": "PPG",
@@ -19017,7 +19017,7 @@
     ],
     "name": "Madeira Red",
     "Id": "PPG13-11",
-    "label": "purple"
+    "label": "brown"
   },
   {
     "brand": "PPG",
@@ -19029,7 +19029,7 @@
     ],
     "name": "Apple-A-Day",
     "Id": "PPG1051-7",
-    "label": "purple"
+    "label": "brown"
   },
   {
     "brand": "PPG",
@@ -19041,7 +19041,7 @@
     ],
     "name": "Crazed Cranberry",
     "Id": "PPG13-12",
-    "label": "gray"
+    "label": "brown"
   },
   {
     "brand": "PPG",
@@ -19053,7 +19053,7 @@
     ],
     "name": "Burning Bush",
     "Id": "PPG1057-7",
-    "label": "maroon"
+    "label": "brown"
   },
   {
     "brand": "PPG",
@@ -19065,7 +19065,7 @@
     ],
     "name": "Crushed Tomatoes",
     "Id": "PPG13-09",
-    "label": "gray"
+    "label": "brown"
   },
   {
     "brand": "PPG",
@@ -19077,7 +19077,7 @@
     ],
     "name": "Granada",
     "Id": "PPG17-12",
-    "label": "gray"
+    "label": "brown"
   },
   {
     "brand": "PPG",
@@ -19089,7 +19089,7 @@
     ],
     "name": "Red Gumball",
     "Id": "PPG1187-7",
-    "label": "maroon"
+    "label": "brown"
   },
   {
     "brand": "PPG",
@@ -19101,7 +19101,7 @@
     ],
     "name": "Rum Punch",
     "Id": "PPG1190-7",
-    "label": "olive"
+    "label": "brown"
   },
   {
     "brand": "PPG",
@@ -19113,7 +19113,7 @@
     ],
     "name": "Rum Raisin",
     "Id": "PPG1064-7",
-    "label": "olive"
+    "label": "brown"
   },
   {
     "brand": "PPG",
@@ -19125,7 +19125,7 @@
     ],
     "name": "Binge Watch",
     "Id": "PPG13-15",
-    "label": "olive"
+    "label": "brown"
   },
   {
     "brand": "PPG",
@@ -19137,7 +19137,7 @@
     ],
     "name": "Autumn Ridge",
     "Id": "PPG1058-7",
-    "label": "olive"
+    "label": "brown"
   },
   {
     "brand": "PPG",
@@ -19149,7 +19149,7 @@
     ],
     "name": "Candy Apple",
     "Id": "PPG13-10",
-    "label": "gray"
+    "label": "brown"
   },
   {
     "brand": "PPG",
@@ -19161,7 +19161,7 @@
     ],
     "name": "Blaze",
     "Id": "PPG13-16",
-    "label": "maroon"
+    "label": "brown"
   },
   {
     "brand": "PPG",
@@ -19173,7 +19173,7 @@
     ],
     "name": "Brick Dust",
     "Id": "PPG1056-7",
-    "label": "olive"
+    "label": "brown"
   },
   {
     "brand": "PPG",
@@ -19185,7 +19185,7 @@
     ],
     "name": "Ruby Lips",
     "Id": "PPG1052-7",
-    "label": "purple"
+    "label": "brown"
   },
   {
     "brand": "PPG",
@@ -19197,7 +19197,7 @@
     ],
     "name": "Burgundy Wine",
     "Id": "PPG1053-7",
-    "label": "maroon"
+    "label": "brown"
   },
   {
     "brand": "PPG",
@@ -19209,7 +19209,7 @@
     ],
     "name": "Bordeaux",
     "Id": "PPG1055-7",
-    "label": "gray"
+    "label": "brown"
   },
   {
     "brand": "PPG",
@@ -19221,7 +19221,7 @@
     ],
     "name": "Sweet Spiceberry",
     "Id": "PPG1059-7",
-    "label": "olive"
+    "label": "brown"
   },
   {
     "brand": "PPG",
@@ -19233,7 +19233,7 @@
     ],
     "name": "Fallingwater® Red",
     "Id": "PPG13-02",
-    "label": "gray"
+    "label": "brown"
   },
   {
     "brand": "PPG",
@@ -19245,7 +19245,7 @@
     ],
     "name": "Antique Mahogany",
     "Id": "PPG16-08",
-    "label": "gray"
+    "label": "brown"
   },
   {
     "brand": "PPG",
@@ -19257,7 +19257,7 @@
     ],
     "name": "Warm Mahogany",
     "Id": "PPG1060-7",
-    "label": "gray"
+    "label": "brown"
   },
   {
     "brand": "PPG",
@@ -19269,7 +19269,7 @@
     ],
     "name": "Mustang",
     "Id": "PPG1015-7",
-    "label": "gray"
+    "label": "brown"
   },
   {
     "brand": "PPG",
@@ -19281,7 +19281,7 @@
     ],
     "name": "Chocolate Croissant",
     "Id": "PPG16-24",
-    "label": "gray"
+    "label": "brown"
   },
   {
     "brand": "PPG",
@@ -19293,7 +19293,7 @@
     ],
     "name": "Chocolate Eclair",
     "Id": "PPG1054-7",
-    "label": "gray"
+    "label": "brown"
   },
   {
     "brand": "PPG",
@@ -19305,7 +19305,7 @@
     ],
     "name": "Chianti",
     "Id": "PPG13-06",
-    "label": "gray"
+    "label": "brown"
   },
   {
     "brand": "PPG",
@@ -19317,7 +19317,7 @@
     ],
     "name": "Enchanting Eggplant",
     "Id": "PPG13-07",
-    "label": "gray"
+    "label": "brown"
   },
   {
     "brand": "PPG",
@@ -19329,7 +19329,7 @@
     ],
     "name": "Dark Granite",
     "Id": "PPG1005-7",
-    "label": "olive"
+    "label": "brown"
   },
   {
     "brand": "PPG",
@@ -19341,7 +19341,7 @@
     ],
     "name": "Sarsaparilla",
     "Id": "PPG1018-7",
-    "label": "gray"
+    "label": "brown"
   },
   {
     "brand": "PPG",
@@ -19353,7 +19353,7 @@
     ],
     "name": "Chocolate Pretzel",
     "Id": "PPG1017-7",
-    "label": "gray"
+    "label": "brown"
   },
   {
     "brand": "PPG",
@@ -19365,7 +19365,7 @@
     ],
     "name": "Intrigue",
     "Id": "PPG1019-7",
-    "label": "gray"
+    "label": "brown"
   },
   {
     "brand": "PPG",
@@ -19785,7 +19785,7 @@
     ],
     "name": "Rose Glory",
     "Id": "PPG1181-5",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -19833,7 +19833,7 @@
     ],
     "name": "Smoked Salmon",
     "Id": "PPG1189-5",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -19893,7 +19893,7 @@
     ],
     "name": "Primrose",
     "Id": "PPG1182-5",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -20145,7 +20145,7 @@
     ],
     "name": "Riveter Rose",
     "Id": "PPG1017-4",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -20157,7 +20157,7 @@
     ],
     "name": "Slate Pebble",
     "Id": "PPG1005-4",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -20169,7 +20169,7 @@
     ],
     "name": "City Street",
     "Id": "PPG1018-3",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -20181,7 +20181,7 @@
     ],
     "name": "Fond Memory",
     "Id": "PPG1017-3",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -20193,7 +20193,7 @@
     ],
     "name": "Gray Shadows",
     "Id": "PPG1005-3",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -20205,7 +20205,7 @@
     ],
     "name": "Legendary",
     "Id": "PPG1019-3",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -20217,7 +20217,7 @@
     ],
     "name": "Subdued",
     "Id": "PPG1015-4",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -20229,7 +20229,7 @@
     ],
     "name": "Velveteen Crush",
     "Id": "PPG1060-4",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -20241,7 +20241,7 @@
     ],
     "name": "Parfait",
     "Id": "PPG1059-4",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -20253,7 +20253,7 @@
     ],
     "name": "Awakening",
     "Id": "PPG18-05",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -20265,7 +20265,7 @@
     ],
     "name": "Tawny Mushroom",
     "Id": "PPG1054-5",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -20289,7 +20289,7 @@
     ],
     "name": "Floral Tapestry",
     "Id": "PPG1052-4",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -20301,7 +20301,7 @@
     ],
     "name": "Mexicali Rose",
     "Id": "PPG18-06",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -20313,7 +20313,7 @@
     ],
     "name": "Pepperberry",
     "Id": "PPG1055-4",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -20325,7 +20325,7 @@
     ],
     "name": "Raffia Cream",
     "Id": "PPG1056-4",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -20337,7 +20337,7 @@
     ],
     "name": "Mesa Pink",
     "Id": "PPG1058-4",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -20349,7 +20349,7 @@
     ],
     "name": "Tea Time",
     "Id": "PPG1054-4",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -20361,7 +20361,7 @@
     ],
     "name": "Radiant Rouge",
     "Id": "PPG1053-4",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -20373,7 +20373,7 @@
     ],
     "name": "Coral Cove",
     "Id": "PPG1057-4",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -20385,7 +20385,7 @@
     ],
     "name": "Holland Tile",
     "Id": "PPG1064-5",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -20397,7 +20397,7 @@
     ],
     "name": "Pink Clay Pot",
     "Id": "PPG1051-4",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -20409,7 +20409,7 @@
     ],
     "name": "Madagascar Pink",
     "Id": "PPG1050-4",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -20421,7 +20421,7 @@
     ],
     "name": "Pink Flambe",
     "Id": "PPG1186-4",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -20433,7 +20433,7 @@
     ],
     "name": "River Rouge",
     "Id": "PPG1187-4",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -20445,7 +20445,7 @@
     ],
     "name": "Soft Salmon",
     "Id": "PPG1190-4",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -20457,7 +20457,7 @@
     ],
     "name": "Peach Beige",
     "Id": "PPG1064-4",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -20469,7 +20469,7 @@
     ],
     "name": "Riviera Rose",
     "Id": "PPG1189-4",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -20481,7 +20481,7 @@
     ],
     "name": "Salmon Pink",
     "Id": "PPG1188-4",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -20493,7 +20493,7 @@
     ],
     "name": "Primrose Garden",
     "Id": "PPG1185-4",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -20505,7 +20505,7 @@
     ],
     "name": "Pink Punch",
     "Id": "PPG1184-4",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -20517,7 +20517,7 @@
     ],
     "name": "Brandywine",
     "Id": "PPG1183-4",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -20529,7 +20529,7 @@
     ],
     "name": "Garden Party",
     "Id": "PPG1182-4",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -20541,7 +20541,7 @@
     ],
     "name": "Tickled Pink",
     "Id": "PPG1181-4",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -20553,7 +20553,7 @@
     ],
     "name": "Powder Rose",
     "Id": "PPG1184-3",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -20565,7 +20565,7 @@
     ],
     "name": "Precious Pink",
     "Id": "PPG1185-3",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -20577,7 +20577,7 @@
     ],
     "name": "Rosewine",
     "Id": "PPG1188-3",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -20589,7 +20589,7 @@
     ],
     "name": "Rose Pink",
     "Id": "PPG1189-3",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -20601,7 +20601,7 @@
     ],
     "name": "Texas Rose",
     "Id": "PPG1064-3",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -20613,7 +20613,7 @@
     ],
     "name": "Sonia Rose",
     "Id": "PPG1190-3",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -20625,7 +20625,7 @@
     ],
     "name": "Silver Strawberry",
     "Id": "PPG1187-3",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -20637,7 +20637,7 @@
     ],
     "name": "Jaguar Rose",
     "Id": "PPG1186-3",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -20649,7 +20649,7 @@
     ],
     "name": "Rose Melody",
     "Id": "PPG1183-3",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -20661,7 +20661,7 @@
     ],
     "name": "Mountain Laurel",
     "Id": "PPG1181-3",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -20673,7 +20673,7 @@
     ],
     "name": "Pale Primrose",
     "Id": "PPG1182-3",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -20685,7 +20685,7 @@
     ],
     "name": "Love In A Mist",
     "Id": "PPG1050-3",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -20697,7 +20697,7 @@
     ],
     "name": "Strawberry Mousse",
     "Id": "PPG1051-3",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -20709,7 +20709,7 @@
     ],
     "name": "Rose Petal",
     "Id": "PPG1057-3",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -20721,7 +20721,7 @@
     ],
     "name": "Kangaroo Paw",
     "Id": "PPG1060-3",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -20733,7 +20733,7 @@
     ],
     "name": "Tangy Taffy",
     "Id": "PPG1058-3",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -20745,7 +20745,7 @@
     ],
     "name": "Whirligig",
     "Id": "PPG1054-3",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -20757,7 +20757,7 @@
     ],
     "name": "Powdered Petals",
     "Id": "PPG1053-3",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -20769,7 +20769,7 @@
     ],
     "name": "Strawflower",
     "Id": "PPG1052-3",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -20781,7 +20781,7 @@
     ],
     "name": "Rose Hip",
     "Id": "PPG1055-3",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -20793,7 +20793,7 @@
     ],
     "name": "Ashes Of Roses",
     "Id": "PPG1056-3",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -20805,7 +20805,7 @@
     ],
     "name": "Reindeer",
     "Id": "PPG1059-3",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -20817,7 +20817,7 @@
     ],
     "name": "My Alibi",
     "Id": "PPG1018-2",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -20829,7 +20829,7 @@
     ],
     "name": "First Kiss",
     "Id": "PPG1017-2",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -20841,7 +20841,7 @@
     ],
     "name": "In The Buff",
     "Id": "PPG1019-2",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -20853,7 +20853,7 @@
     ],
     "name": "River Rock",
     "Id": "PPG18-02",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -20865,7 +20865,7 @@
     ],
     "name": "Elusion",
     "Id": "PPG1005-2",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -20877,7 +20877,7 @@
     ],
     "name": "Steel Me",
     "Id": "PPG1018-1",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -20889,7 +20889,7 @@
     ],
     "name": "Warmstone",
     "Id": "PPG1015-3",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -20901,7 +20901,7 @@
     ],
     "name": "China Silk",
     "Id": "PPG1060-2",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -20913,7 +20913,7 @@
     ],
     "name": "Romeo",
     "Id": "PPG1056-2",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -20925,7 +20925,7 @@
     ],
     "name": "Birthday Cake",
     "Id": "PPG1059-2",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -20937,7 +20937,7 @@
     ],
     "name": "Shangri La",
     "Id": "PPG1053-2",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -20949,7 +20949,7 @@
     ],
     "name": "Winter Peach",
     "Id": "PPG1060-1",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -20961,7 +20961,7 @@
     ],
     "name": "Sea Anemone",
     "Id": "PPG1056-1",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -20973,7 +20973,7 @@
     ],
     "name": "Cameo Peach",
     "Id": "PPG1058-2",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -20985,7 +20985,7 @@
     ],
     "name": "Cool Melon",
     "Id": "PPG1057-2",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -20997,7 +20997,7 @@
     ],
     "name": "Pink Cardoon",
     "Id": "PPG1051-2",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -21009,7 +21009,7 @@
     ],
     "name": "Pink Pail",
     "Id": "PPG1050-2",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -21045,7 +21045,7 @@
     ],
     "name": "Beauteous",
     "Id": "PPG1183-2",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -21057,7 +21057,7 @@
     ],
     "name": "Pleasing Pink",
     "Id": "PPG1184-2",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -21069,7 +21069,7 @@
     ],
     "name": "Pinky Swear",
     "Id": "PPG1186-2",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -21081,7 +21081,7 @@
     ],
     "name": "Kendall Rose",
     "Id": "PPG1185-2",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -21093,7 +21093,7 @@
     ],
     "name": "Adorbs",
     "Id": "PPG1187-2",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -22017,7 +22017,7 @@
     ],
     "name": "Pale Orchid",
     "Id": "PPG1175-2",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -22089,7 +22089,7 @@
     ],
     "name": "Wine Frost",
     "Id": "PPG1178-2",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -22101,7 +22101,7 @@
     ],
     "name": "Violet Whimsey",
     "Id": "PPG1174-2",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -22125,7 +22125,7 @@
     ],
     "name": "Cumberland Fog",
     "Id": "PPG1168-2",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -22137,7 +22137,7 @@
     ],
     "name": "Twinkle Blue",
     "Id": "PPG1165-2",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -22149,7 +22149,7 @@
     ],
     "name": "Rare Orchid",
     "Id": "PPG1169-2",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -22173,7 +22173,7 @@
     ],
     "name": "Little Lilac",
     "Id": "PPG1177-2",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -22185,7 +22185,7 @@
     ],
     "name": "Smoky Orchid",
     "Id": "PPG1179-2",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -22209,7 +22209,7 @@
     ],
     "name": "Rose Blush",
     "Id": "PPG18-18",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -22221,7 +22221,7 @@
     ],
     "name": "Lost Love",
     "Id": "PPG1047-2",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -22281,7 +22281,7 @@
     ],
     "name": "Ocean Dream",
     "Id": "PPG1042-3",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -22293,7 +22293,7 @@
     ],
     "name": "Spring Thaw",
     "Id": "PPG1013-2",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -22305,7 +22305,7 @@
     ],
     "name": "Irradiant Iris",
     "Id": "PPG1171-3",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -22365,7 +22365,7 @@
     ],
     "name": "Silver Screen",
     "Id": "PPG1014-3",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -22377,7 +22377,7 @@
     ],
     "name": "Fall Chill",
     "Id": "PPG1003-1",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -22389,7 +22389,7 @@
     ],
     "name": "Go To Gray",
     "Id": "PPG1004-1",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -22401,7 +22401,7 @@
     ],
     "name": "Balanced",
     "Id": "PPG1003-2",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -22413,7 +22413,7 @@
     ],
     "name": "Free Reign",
     "Id": "PPG1004-2",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -22425,7 +22425,7 @@
     ],
     "name": "Cool Slate",
     "Id": "PPG1002-3",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -22437,7 +22437,7 @@
     ],
     "name": "Hush",
     "Id": "PPG1004-3",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -22449,7 +22449,7 @@
     ],
     "name": "Luxurious",
     "Id": "PPG18-04",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -22461,7 +22461,7 @@
     ],
     "name": "Jack Rabbit",
     "Id": "PPG1014-4",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -22473,7 +22473,7 @@
     ],
     "name": "Silver Bells",
     "Id": "PPG1003-3",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -22485,7 +22485,7 @@
     ],
     "name": "Whirlwind",
     "Id": "PPG1013-3",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -22497,7 +22497,7 @@
     ],
     "name": "Old Mission Pink",
     "Id": "PPG1046-3",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -22509,7 +22509,7 @@
     ],
     "name": "Just Gorgeous",
     "Id": "PPG1047-3",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -22521,7 +22521,7 @@
     ],
     "name": "Rose Cloud",
     "Id": "PPG1048-3",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -22533,7 +22533,7 @@
     ],
     "name": "Silver Mauve",
     "Id": "PPG1179-3",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -22545,7 +22545,7 @@
     ],
     "name": "Shy Violet",
     "Id": "PPG1177-3",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -22557,7 +22557,7 @@
     ],
     "name": "Jam Session",
     "Id": "PPG1172-3",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -22569,7 +22569,7 @@
     ],
     "name": "Frosted Lilac",
     "Id": "PPG1173-3",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -22581,7 +22581,7 @@
     ],
     "name": "Violet Shadow",
     "Id": "PPG1170-3",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -22593,7 +22593,7 @@
     ],
     "name": "Glacier Pearl",
     "Id": "PPG1169-3",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -22605,7 +22605,7 @@
     ],
     "name": "Silver Chalice",
     "Id": "PPG1174-3",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -22617,7 +22617,7 @@
     ],
     "name": "Pale Mauve",
     "Id": "PPG1178-3",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -22629,7 +22629,7 @@
     ],
     "name": "Santolina Blooms",
     "Id": "PPG1045-3",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -22641,7 +22641,7 @@
     ],
     "name": "Tinted Rosewood",
     "Id": "PPG1044-3",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -22653,7 +22653,7 @@
     ],
     "name": "Summer Clover",
     "Id": "PPG1180-3",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -22665,7 +22665,7 @@
     ],
     "name": "Dusky Lilac",
     "Id": "PPG1176-3",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -22677,7 +22677,7 @@
     ],
     "name": "Lavender Haze",
     "Id": "PPG1175-3",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -22689,7 +22689,7 @@
     ],
     "name": "Debonaire",
     "Id": "PPG1167-3",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -22701,7 +22701,7 @@
     ],
     "name": "Pale Violet",
     "Id": "PPG1168-3",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -22713,7 +22713,7 @@
     ],
     "name": "Northern Exposure",
     "Id": "PPG1165-3",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -22725,7 +22725,7 @@
     ],
     "name": "Sweet Emily",
     "Id": "PPG1245-3",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -22737,7 +22737,7 @@
     ],
     "name": "Misty Violet",
     "Id": "PPG1247-3",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -22749,7 +22749,7 @@
     ],
     "name": "Sonora Rose",
     "Id": "PPG1251-3",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -22785,7 +22785,7 @@
     ],
     "name": "Globe Thistle",
     "Id": "PPG1246-3",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -22797,7 +22797,7 @@
     ],
     "name": "Lilac Breeze",
     "Id": "PPG1248-4",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -22809,7 +22809,7 @@
     ],
     "name": "French Lilac",
     "Id": "PPG1246-4",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -22821,7 +22821,7 @@
     ],
     "name": "Suenos",
     "Id": "PPG17-01",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -22833,7 +22833,7 @@
     ],
     "name": "Sea Lavender",
     "Id": "PPG1250-4",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -22845,7 +22845,7 @@
     ],
     "name": "Sweet Alyssum",
     "Id": "PPG1252-4",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -22857,7 +22857,7 @@
     ],
     "name": "Grape Glimmer",
     "Id": "PPG1249-3",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -22869,7 +22869,7 @@
     ],
     "name": "Syrian Violet",
     "Id": "PPG1250-3",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -22881,7 +22881,7 @@
     ],
     "name": "Pink Peony",
     "Id": "PPG1251-4",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -22893,7 +22893,7 @@
     ],
     "name": "Windsor Purple",
     "Id": "PPG1249-4",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -22905,7 +22905,7 @@
     ],
     "name": "Purple Dragon",
     "Id": "PPG1247-4",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -22917,7 +22917,7 @@
     ],
     "name": "Lilac Sachet",
     "Id": "PPG1245-4",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -22929,7 +22929,7 @@
     ],
     "name": "Lovely Lilac",
     "Id": "PPG1167-4",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -22941,7 +22941,7 @@
     ],
     "name": "Wild Lilac",
     "Id": "PPG1175-4",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -22953,7 +22953,7 @@
     ],
     "name": "Purple Essence",
     "Id": "PPG1176-4",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -22965,7 +22965,7 @@
     ],
     "name": "Light Mulberry",
     "Id": "PPG1180-4",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -22977,7 +22977,7 @@
     ],
     "name": "Crushed Roses",
     "Id": "PPG18-19",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -22989,7 +22989,7 @@
     ],
     "name": "Nostalgia",
     "Id": "PPG1049-3",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -23001,7 +23001,7 @@
     ],
     "name": "Mauvelous",
     "Id": "PPG1044-4",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -23013,7 +23013,7 @@
     ],
     "name": "Pink Potion",
     "Id": "PPG1045-4",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -23025,7 +23025,7 @@
     ],
     "name": "Soft Amethyst",
     "Id": "PPG1178-4",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -23037,7 +23037,7 @@
     ],
     "name": "Cloudberry",
     "Id": "PPG1174-4",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -23049,7 +23049,7 @@
     ],
     "name": "Spring Lilac",
     "Id": "PPG1170-4",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -23061,7 +23061,7 @@
     ],
     "name": "Lilac Time",
     "Id": "PPG1168-4",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -23073,7 +23073,7 @@
     ],
     "name": "Innuendo",
     "Id": "PPG1165-4",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -23085,7 +23085,7 @@
     ],
     "name": "Timeless Lilac",
     "Id": "PPG1169-4",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -23097,7 +23097,7 @@
     ],
     "name": "Silverberry",
     "Id": "PPG1173-4",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -23109,7 +23109,7 @@
     ],
     "name": "Lavish Lavender",
     "Id": "PPG1177-4",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -23121,7 +23121,7 @@
     ],
     "name": "Rose Marble",
     "Id": "PPG1179-4",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -23133,7 +23133,7 @@
     ],
     "name": "Rose Stain",
     "Id": "PPG1048-4",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -23145,7 +23145,7 @@
     ],
     "name": "Ancestral",
     "Id": "PPG1047-4",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -23157,7 +23157,7 @@
     ],
     "name": "High Society",
     "Id": "PPG1046-4",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -23169,7 +23169,7 @@
     ],
     "name": "Ash Grove",
     "Id": "PPG1172-4",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -23181,7 +23181,7 @@
     ],
     "name": "Cosmic",
     "Id": "PPG1171-4",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -23193,7 +23193,7 @@
     ],
     "name": "Glistening Gray",
     "Id": "PPG1043-4",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -23205,7 +23205,7 @@
     ],
     "name": "Blue Beard",
     "Id": "PPG1042-4",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -23217,7 +23217,7 @@
     ],
     "name": "Silver Charm",
     "Id": "PPG1013-4",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -23229,7 +23229,7 @@
     ],
     "name": "Gray Marble",
     "Id": "PPG1002-4",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -23241,7 +23241,7 @@
     ],
     "name": "Silver Service",
     "Id": "PPG1004-4",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -23253,7 +23253,7 @@
     ],
     "name": "Equilibrium",
     "Id": "PPG1003-4",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -23265,7 +23265,7 @@
     ],
     "name": "Amethyst Haze",
     "Id": "PPG13-23",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -23277,7 +23277,7 @@
     ],
     "name": "Coffee Custard",
     "Id": "PPG1047-5",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -23529,7 +23529,7 @@
     ],
     "name": "Palisade Orchid",
     "Id": "PPG1178-5",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -23553,7 +23553,7 @@
     ],
     "name": "Lighthearted Rose",
     "Id": "PPG1049-4",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -23565,7 +23565,7 @@
     ],
     "name": "Ashberry",
     "Id": "PPG1179-5",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -23637,7 +23637,7 @@
     ],
     "name": "Winsome Rose",
     "Id": "PPG1044-5",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -23649,7 +23649,7 @@
     ],
     "name": "Mauve Magic",
     "Id": "PPG1180-5",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -23661,7 +23661,7 @@
     ],
     "name": "Heather Glen",
     "Id": "PPG17-08",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -23733,7 +23733,7 @@
     ],
     "name": "Grape Arbor",
     "Id": "PPG1247-5",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -23745,7 +23745,7 @@
     ],
     "name": "Purple Statice",
     "Id": "PPG1249-5",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -23757,7 +23757,7 @@
     ],
     "name": "Moorland Heather",
     "Id": "PPG1251-5",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -23769,7 +23769,7 @@
     ],
     "name": "Chateau Rose",
     "Id": "PPG1252-5",
-    "label": "silver"
+    "label": "white"
   },
   {
     "brand": "PPG",
@@ -23781,7 +23781,7 @@
     ],
     "name": "Plum Perfect",
     "Id": "PPG1250-5",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -23793,7 +23793,7 @@
     ],
     "name": "Puturple",
     "Id": "PPG1248-5",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -23805,7 +23805,7 @@
     ],
     "name": "Mystic Iris",
     "Id": "PPG1246-5",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -23853,7 +23853,7 @@
     ],
     "name": "Daphne Rose",
     "Id": "PPG1252-6",
-    "label": "silver"
+    "label": "gray"
   },
   {
     "brand": "PPG",
@@ -24309,7 +24309,7 @@
     ],
     "name": "Purple Parlor",
     "Id": "PPG13-17",
-    "label": "gray"
+    "label": "brown"
   },
   {
     "brand": "PPG",
@@ -24321,7 +24321,7 @@
     ],
     "name": "French Toast",
     "Id": "PPG15-24",
-    "label": "gray"
+    "label": "brown"
   },
   {
     "brand": "PPG",
@@ -24333,7 +24333,7 @@
     ],
     "name": "Black Walnut",
     "Id": "PPG1014-7",
-    "label": "gray"
+    "label": "brown"
   },
   {
     "brand": "PPG",
@@ -24345,7 +24345,7 @@
     ],
     "name": "Blackhearth",
     "Id": "PPG1003-7",
-    "label": "gray"
+    "label": "brown"
   },
   {
     "brand": "PPG",
@@ -24357,7 +24357,7 @@
     ],
     "name": "Napoleon",
     "Id": "PPG1013-7",
-    "label": "gray"
+    "label": "brown"
   },
   {
     "brand": "PPG",
@@ -24369,7 +24369,7 @@
     ],
     "name": "Black Elegance",
     "Id": "PPG1004-7",
-    "label": "gray"
+    "label": "brown"
   },
   {
     "brand": "PPG",
@@ -24381,7 +24381,7 @@
     ],
     "name": "Phantom Mist",
     "Id": "PPG1002-7",
-    "label": "gray"
+    "label": "brown"
   },
   {
     "brand": "PPG",
@@ -24393,7 +24393,7 @@
     ],
     "name": "Blackberry",
     "Id": "PPG1172-7",
-    "label": "gray"
+    "label": "brown"
   },
   {
     "brand": "PPG",
@@ -24405,7 +24405,7 @@
     ],
     "name": "Purple Basil",
     "Id": "PPG1046-7",
-    "label": "gray"
+    "label": "brown"
   },
   {
     "brand": "PPG",
@@ -24417,7 +24417,7 @@
     ],
     "name": "Carob Chip",
     "Id": "PPG1047-7",
-    "label": "gray"
+    "label": "brown"
   },
   {
     "brand": "PPG",
@@ -24429,7 +24429,7 @@
     ],
     "name": "Pinot Noir",
     "Id": "PPG13-18",
-    "label": "gray"
+    "label": "brown"
   },
   {
     "brand": "PPG",
@@ -24441,7 +24441,7 @@
     ],
     "name": "Magic Spell",
     "Id": "PPG1173-7",
-    "label": "gray"
+    "label": "brown"
   },
   {
     "brand": "PPG",
@@ -24453,7 +24453,7 @@
     ],
     "name": "Royal Hyacinth",
     "Id": "PPG1169-7",
-    "label": "gray"
+    "label": "brown"
   },
   {
     "brand": "PPG",
@@ -24465,7 +24465,7 @@
     ],
     "name": "Chinaberry",
     "Id": "PPG1171-7",
-    "label": "gray"
+    "label": "brown"
   },
   {
     "brand": "PPG",
@@ -24477,7 +24477,7 @@
     ],
     "name": "Black Flame",
     "Id": "PPG1043-7",
-    "label": "gray"
+    "label": "brown"
   },
   {
     "brand": "PPG",
@@ -24489,7 +24489,7 @@
     ],
     "name": "Admiralty",
     "Id": "PPG1042-7",
-    "label": "gray"
+    "label": "brown"
   },
   {
     "brand": "PPG",
@@ -24501,7 +24501,7 @@
     ],
     "name": "Egyptian Violet",
     "Id": "PPG1168-7",
-    "label": "teal"
+    "label": "brown"
   },
   {
     "brand": "PPG",
@@ -24513,7 +24513,7 @@
     ],
     "name": "Victory Blue",
     "Id": "PPG1165-7",
-    "label": "teal"
+    "label": "brown"
   },
   {
     "brand": "PPG",
@@ -24525,7 +24525,7 @@
     ],
     "name": "Royal Indigo",
     "Id": "PPG1174-7",
-    "label": "gray"
+    "label": "brown"
   },
   {
     "brand": "PPG",
@@ -24537,7 +24537,7 @@
     ],
     "name": "Pansy Petal",
     "Id": "PPG1177-7",
-    "label": "gray"
+    "label": "brown"
   },
   {
     "brand": "PPG",
@@ -24549,7 +24549,7 @@
     ],
     "name": "Royal Plum",
     "Id": "PPG1178-7",
-    "label": "gray"
+    "label": "brown"
   },
   {
     "brand": "PPG",
@@ -24561,7 +24561,7 @@
     ],
     "name": "Positively Purple",
     "Id": "PPG13-08",
-    "label": "gray"
+    "label": "brown"
   },
   {
     "brand": "PPG",
@@ -24573,7 +24573,7 @@
     ],
     "name": "Love Potion",
     "Id": "PPG1179-7",
-    "label": "purple"
+    "label": "brown"
   },
   {
     "brand": "PPG",
@@ -24585,7 +24585,7 @@
     ],
     "name": "Gooseberry",
     "Id": "PPG1048-7",
-    "label": "gray"
+    "label": "brown"
   },
   {
     "brand": "PPG",
@@ -24597,7 +24597,7 @@
     ],
     "name": "Chilled Wine",
     "Id": "PPG1045-7",
-    "label": "gray"
+    "label": "brown"
   },
   {
     "brand": "PPG",
@@ -24609,7 +24609,7 @@
     ],
     "name": "Red Red Wine",
     "Id": "PPG1049-7",
-    "label": "gray"
+    "label": "brown"
   },
   {
     "brand": "PPG",
@@ -24621,7 +24621,7 @@
     ],
     "name": "Merlot",
     "Id": "PPG13-04",
-    "label": "purple"
+    "label": "brown"
   },
   {
     "brand": "PPG",
@@ -24633,7 +24633,7 @@
     ],
     "name": "Purple Cabbage",
     "Id": "PPG18-24",
-    "label": "purple"
+    "label": "brown"
   },
   {
     "brand": "PPG",
