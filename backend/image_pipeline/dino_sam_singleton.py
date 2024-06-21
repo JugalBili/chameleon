@@ -5,9 +5,11 @@ import cv2
 import skimage.exposure
 import numpy as np
 import torch
+import time
 
 from dino import Dino
 from sam import SAM
+from fsam import FSAM
 
 
 DEVICE = torch.device("cuda" if torch.cuda.is_available() else "cpu")
@@ -16,11 +18,15 @@ GD_FILENAME = "./models/groundingdino_swint_ogc.pth"
 GD_CONFIG_FILENAME = "./models/GroundingDINO_SwinT_OGC.py"
 SAM_FILENAME = "./models/sam_vit_h_4b8939.pth"
 SAM_TYPE = "vit_h"
+FSAM_FILENAME = "./models/FastSAM.pt"
 
 # hyper-param for GroundingDINO
 CAPTION = "wall"
-BOX_THRESHOLD = 0.25
-TEXT_THRESHOLD = 0.25
+BOX_THRESHOLD = 0.30
+TEXT_THRESHOLD = 0.35
+
+IOU_THRESHOLD = 0.9
+MASK_THRESHOLD = 0.45
 
 
 class Singleton:
@@ -67,8 +73,10 @@ class DinoSAMSingleton:
     def __init__(self):
         self.gd_predictor = Dino(GD_FILENAME, GD_CONFIG_FILENAME, DEVICE)
         print("GroundingDINO Model Loaded")
-        self.sam_predictor = SAM(SAM_FILENAME, SAM_TYPE, DEVICE)
+        self.sam_predictor = SAM(SAM_FILENAME, SAM_TYPE, "cuda")
         print("SAM Model Loaded")
+        self.fsam_predictor = FSAM(FSAM_FILENAME, DEVICE, MASK_THRESHOLD, IOU_THRESHOLD)
+        print("FastSAM Model Loaded")
 
     def run_pipeline(self, image_path, color):
         print(f"=== Starting Grounded SAM Pipeline for Image {image_path} ===\n")
@@ -78,7 +86,6 @@ class DinoSAMSingleton:
             image_pil, CAPTION, BOX_THRESHOLD, TEXT_THRESHOLD
         )
         masks = self.sam_predictor.run_inference(image_pil, pred_dict)
-        print(len(masks))
 
         boxed_image = self.gd_predictor.apply_boxes_to_image(image_pil, pred_dict)
         boxed_image.save(
@@ -94,6 +101,35 @@ class DinoSAMSingleton:
         recolored_image = self.recolor(image_cv, color, masks)
         cv2.imwrite(
             f"{os.path.splitext(os.path.basename(image_path))[0]}_recolored.png",
+            recolored_image,
+        )
+
+        print("\n=== Pipeline Finished ===\n")
+
+    def run_pipeline_fsam(self, image_path, color):
+        print(f"=== Starting Grounded FSAM Pipeline for Image {image_path} ===\n")
+        image_pil = Image.open(image_path).convert("RGB")  # load image
+
+        pred_dict = self.gd_predictor.run_inference(
+            image_pil, CAPTION, BOX_THRESHOLD, TEXT_THRESHOLD
+        )
+        masks = self.fsam_predictor.run_inference(image_pil, pred_dict)
+
+        boxed_image = self.gd_predictor.apply_boxes_to_image(image_pil, pred_dict)
+        boxed_image.save(
+            f"{os.path.splitext(os.path.basename(image_path))[0]}_boxed_fsam.jpg"
+        )
+        masked_image = self.fsam_predictor.apply_mask_to_image(image_pil, masks)
+        cv2.imwrite(
+            f"{os.path.splitext(os.path.basename(image_path))[0]}_mask_fsam.jpg",
+            masked_image,
+        )
+
+        print("\n=== Starting Image Recoloring ===\n")
+        image_cv = cv2.imread(image_path)
+        recolored_image = self.recolor(image_cv, color, masks)
+        cv2.imwrite(
+            f"{os.path.splitext(os.path.basename(image_path))[0]}_recolored_fsam.png",
             recolored_image,
         )
 
@@ -135,14 +171,23 @@ class DinoSAMSingleton:
         return image
 
 
-dir_path = os.path.dirname(os.path.realpath(__file__))
+if __name__ == "__main__":
+    print("Running pipeline test")
 
-color = [159, 201, 228]  # rgb
+    dir_path = os.path.dirname(os.path.realpath(__file__))
 
-inst1 = DinoSAMSingleton.instance()
-image1 = os.path.join(dir_path, "img.jpg")
-inst1.run_pipeline(image1, color)
+    color = [159, 201, 228]  # rgb
 
-inst2 = DinoSAMSingleton.instance()
-image2 = os.path.join(dir_path, "img2.jpg")
-inst2.run_pipeline(image2, color)
+    start = time.time()
+    inst1 = DinoSAMSingleton.instance()
+    end = time.time()
+    print(f"Loading models took {end-start} seconds!")
+    # image1 = os.path.join(dir_path, "tests/img.jpg")
+    # inst1.run_pipeline(image1, color)
+
+    inst2 = DinoSAMSingleton.instance()
+    image2 = os.path.join(dir_path, "tests/img2.jpg")
+    start = time.time()
+    inst2.run_pipeline(image2, color)
+    end = time.time()
+    print(f"Grounded SAM Pipeline took {end-start} seconds!")

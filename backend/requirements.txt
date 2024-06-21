@@ -26,3 +26,7 @@ setuptools
 pandas
 rq
 black
+
+# Fast SAM
+ultralytics == 8.0.120
+seaborn>=0.11.0
