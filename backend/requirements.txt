@@ -6,3 +6,27 @@ pydantic
 bcrypt==4.0.1
 passlib[bcrypt]
 email-validator
+
+torch
+torchvision
+transformers
+addict
+yapf
+timm
+numpy==1.26.3
+matplotlib
+onnx
+onnxruntime
+opencv-python
+scikit-image
+supervision
+pycocotools
+wheel
+setuptools
+pandas
+rq
+black
+
+# Fast SAM
+ultralytics == 8.0.120
+seaborn>=0.11.0
