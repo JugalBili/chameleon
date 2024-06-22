@@ -13,7 +13,7 @@ import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
 
 @Composable
-fun FirstScreen(navController: NavHostController, name: String) {
+fun ProfileScreen(navController: NavHostController) {
     Scaffold(
         content = { padding ->
             Row (
@@ -21,8 +21,8 @@ fun FirstScreen(navController: NavHostController, name: String) {
                     .fillMaxWidth(),
                 horizontalArrangement = Arrangement.Center
             ) {
-                Text (
-                    text = "This is the First Screen for $name",
+                Text(
+                    text = "This is the Profile Screen",
                     modifier = Modifier.padding(48.dp)
                 )
             }
@@ -34,10 +34,10 @@ fun FirstScreen(navController: NavHostController, name: String) {
                 horizontalArrangement = Arrangement.Center
             ) {
                 Button(
-                    onClick = { navController.navigate("landing_page") },
+                    onClick = { navController.navigate("login_page") },
                     modifier = Modifier.padding(16.dp)
                 ) {
-                    Text(text = "Go to MAIN SCREEN")
+                    Text(text = "Go to Login Screen")
                 }
             }
         }

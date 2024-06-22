@@ -2,7 +2,6 @@ package cs446.project.chameleon
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Button
@@ -13,48 +12,34 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
 
-
 @Composable
-fun LandingPage(navController: NavHostController) {
+fun CameraScreen(navController: NavHostController) {
     Scaffold(
-        modifier = Modifier.fillMaxSize(),
-
         content = { padding ->
             Row (
                 modifier = Modifier
-                    .fillMaxWidth()
-                    .padding(64.dp),
+                    .fillMaxWidth(),
                 horizontalArrangement = Arrangement.Center
             ) {
                 Text (
-                    text = "This is the landing page",
+                    text = "This is the Camera Screen",
                     modifier = Modifier.padding(48.dp)
                 )
             }
-
-
         },
         bottomBar = {
-            Row(
+            Row (
                 modifier = Modifier
-                    .fillMaxWidth()
-                    .padding(16.dp),
-                horizontalArrangement = Arrangement.SpaceEvenly
+                    .fillMaxWidth(),
+                horizontalArrangement = Arrangement.Center
             ) {
                 Button(
-                    onClick = { navController.navigate("first_screen/TESTBOBLINE84") },
+                    onClick = { navController.navigate("login_page") },
                     modifier = Modifier.padding(16.dp)
                 ) {
-                    Text(text = "Go to First Screen")
-                }
-                Button(
-                    onClick = { navController.navigate("second_screen") },
-                    modifier = Modifier.padding(16.dp)
-                ) {
-                    Text(text = "Go to Second Screen")
+                    Text(text = "Go to Login Screen")
                 }
             }
         }
-
     )
 }
