@@ -3,8 +3,10 @@
 ## Dependencies:
 
 - Node v20.14.0 (Tested)
-- Puppeteer `install with npm i puppeteer`
+- Puppeteer 
 
 ## Running the code
+
+`npm install`
 
 `node {path_to_file}`
