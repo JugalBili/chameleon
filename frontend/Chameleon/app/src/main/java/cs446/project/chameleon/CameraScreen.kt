@@ -22,7 +22,6 @@ import androidx.compose.material3.BottomSheetScaffold
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
-import androidx.compose.material3.Text
 import androidx.compose.material3.rememberBottomSheetScaffoldState
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
@@ -37,41 +36,6 @@ import androidx.core.content.ContextCompat
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavHostController
 import kotlinx.coroutines.launch
-
-
-
-//@Composable
-//fun CameraScreen(navController: NavHostController) {
-//    Scaffold(
-//        content = { padding ->
-//            Row (
-//                modifier = Modifier
-//                    .fillMaxWidth(),
-//                horizontalArrangement = Arrangement.Center
-//            ) {
-//                Text (
-//                    text = "This is the Camera Screen",
-//                    modifier = Modifier.padding(48.dp)
-//                )
-//            }
-//        },
-//        bottomBar = {
-//            Row (
-//                modifier = Modifier
-//                    .fillMaxWidth(),
-//                horizontalArrangement = Arrangement.Center
-//            ) {
-//                Button(
-//                    onClick = { navController.navigate("login_page") },
-//                    modifier = Modifier.padding(16.dp)
-//                ) {
-//                    Text(text = "Go to Login Screen")
-//                }
-//            }
-//        }
-//    )
-//}
-
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
