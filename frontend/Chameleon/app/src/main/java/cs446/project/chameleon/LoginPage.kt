@@ -47,12 +47,6 @@ fun LoginPage(navController: NavHostController) {
                 ) {
                     Text(text = "Go to Camera Screen")
                 }
-                Button(
-                    onClick = { navController.navigate("profile_screen") },
-                    modifier = Modifier.padding(10.dp).weight(1f)
-                ) {
-                    Text(text = "Go to Login Screen")
-                }
             }
         }
 

@@ -147,6 +147,7 @@ fun CameraScreen(navController: NavHostController) {
                 }
                 IconButton(
                     onClick = {
+                        navController.navigate("profile_screen")
                     }
                 ) {
                     Icon(
