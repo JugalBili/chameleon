@@ -17,16 +17,22 @@ router = APIRouter(
 )
 
 
-@router.get("/login")
+@router.get("/login-token")
 async def get_user(auth_token: Annotated[str, Depends(get_auth_token)],
                    AuthenticationService: Annotated[UserAuthenticationService, Depends(UserAuthenticationService)]):
     return await AuthenticationService.authenticateUser(auth_token)
 
 
-@router.post("/get-token")
+@router.post("/login")
 async def login_user(loginDto: UserLoginDto,
                      AuthenticationService: Annotated[UserAuthenticationService, Depends(UserAuthenticationService)]):
-    return await AuthenticationService.getUserToken(loginDto)
+    token = await AuthenticationService.getUserToken(loginDto)
+    # TODO: Make better later
+    user = await AuthenticationService.authenticateUser(f'Bearer {token.token}')
+    return {
+        "user": user,
+        "token": token
+    }
 
 
 @router.post("/register")
