@@ -38,6 +38,12 @@ class MainActivity : ComponentActivity() {
                     composable("camera_screen") {
                         CameraScreen(navController)
                     }
+                    composable("image_preview_screen") {
+                        ImagePreviewScreen(navController)
+                    }
+                    composable("image_result_screen") {
+                        ImageResultScreen(navController)
+                    }
                     composable("profile_screen") {
                         ProfileScreen(navController)
                     }
