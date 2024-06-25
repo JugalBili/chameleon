@@ -1,6 +1,7 @@
 package cs446.project.chameleon
 
 import android.graphics.Bitmap
+import android.graphics.BitmapFactory
 import android.graphics.Matrix
 import android.util.Log
 import androidx.camera.core.ImageCapture.OnImageCapturedCallback
@@ -8,6 +9,7 @@ import androidx.camera.core.ImageCaptureException
 import androidx.camera.core.ImageProxy
 import androidx.camera.view.CameraController
 import androidx.camera.view.LifecycleCameraController
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Row
@@ -30,6 +32,7 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
 import androidx.core.content.ContextCompat
@@ -76,6 +79,31 @@ fun CameraScreen(navController: NavHostController) {
                     .fillMaxSize()
             )
 
+            // take photo button
+            Box(
+                modifier = Modifier
+                    .align(Alignment.BottomCenter)
+                    .padding(bottom = 128.dp) // Adjust the padding as needed to position above the bottom bar
+                    .background(Color.Transparent)
+            ) {
+                IconButton(
+                    onClick = {
+                        takePhoto(
+                            controller = controller,
+                            onPhotoTaken = viewModel::onTakePhoto,
+                            context = context,
+                            navController = navController
+                        )
+                    },
+                    modifier = Modifier
+                ) {
+                    Icon(
+                        imageVector = Icons.Default.AddCircle,
+                        contentDescription = "Take photo"
+                    )
+                }
+            }
+
             Row(
                 modifier = Modifier
                     .fillMaxWidth()
@@ -100,7 +128,8 @@ fun CameraScreen(navController: NavHostController) {
                         takePhoto(
                             controller = controller,
                             onPhotoTaken = viewModel::onTakePhoto,
-                            context = context
+                            context = context,
+                            navController = navController
                         )
                     }
                 ) {
@@ -125,16 +154,11 @@ fun CameraScreen(navController: NavHostController) {
 }
 
 
-
-
-
-
-
-
 private fun takePhoto(
     controller: LifecycleCameraController,
     onPhotoTaken: (Bitmap) -> Unit,
-    context: android.content.Context
+    context: android.content.Context,
+    navController: NavHostController
 ) {
     controller.takePicture(
         ContextCompat.getMainExecutor(context),
@@ -156,6 +180,12 @@ private fun takePhoto(
                 )
 
                 onPhotoTaken(rotatedBitmap)
+                // pass to preview screen
+                // FOR DEMO PURPOSES, SET THE IMAGE TO THE DEMO ONE TODO fix after
+                val demoBitmap = BitmapFactory.decodeResource(context.resources, R.drawable.demo_before)
+
+                navController.currentBackStackEntry?.savedStateHandle?.set("capturedImage", demoBitmap)
+                navController.navigate("image_preview_screen")
             }
 
             override fun onError(exception: ImageCaptureException) {
