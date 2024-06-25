@@ -89,7 +89,9 @@ fun PaintItem(
             .size(100.dp)
             .background(colour)
             .clickable {
-                onClick(paint.id)
+                //onClick(paint.id)
+                // TODO: change this to pass smth else, this is just for demo
+                onClick(paint.name)
                 isSelected.value = !isSelected.value
             }
             .border(width = 2.dp, color = borderColour, shape = RectangleShape)

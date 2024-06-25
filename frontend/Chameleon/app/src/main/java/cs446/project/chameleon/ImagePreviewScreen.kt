@@ -6,6 +6,7 @@ import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -18,8 +19,10 @@ import androidx.compose.material.icons.filled.KeyboardArrowUp
 import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
+import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateListOf
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
@@ -43,6 +46,10 @@ fun ImagePreviewScreen(navController: NavHostController) {
 
     // FOR DEMO PURPOSES, final processed image TODO remove after
     val demoBitmap = BitmapFactory.decodeResource(LocalContext.current.resources, R.drawable.demo_after)
+
+    // Colour Selection Modal
+    val showModal = remember { mutableStateOf(false) }
+    val selectedPaintIds = remember { mutableStateListOf<String>() }
 
     Box(
         modifier = Modifier
@@ -73,48 +80,70 @@ fun ImagePreviewScreen(navController: NavHostController) {
             )
         }
 
-        Row(
-            modifier = Modifier
-                .fillMaxWidth()
-                .align(Alignment.BottomCenter)
-                .background(Color.Black.copy(alpha = 0.5f))
-                .padding(16.dp),
-            horizontalArrangement = Arrangement.SpaceAround
-        ) {
-            IconButton(onClick = {
+        Box(modifier = Modifier
+            .fillMaxWidth()
+            .align(Alignment.BottomCenter)) {
 
-            }) {
-                Icon(
-                    imageVector = Icons.Default.Home,
-                    contentDescription = "Empty button for now",
-                    tint = Color.White
-                )
-            }
-            IconButton(onClick = {
-
-            }) {
-                Icon(
-                    imageVector = Icons.Default.KeyboardArrowUp,
-                    contentDescription = "Color Picker",
-                    tint = Color.White
-                )
-            }
-            IconButton(onClick = {
-                // process the image, then display result
-                isProcessing = true
-                coroutineScope.launch {
-                    processImage(demoBitmap) { processedImage-> // TODO change demoBitmap to actual result
-                        navController.currentBackStackEntry?.savedStateHandle?.set("processedImage", processedImage)
-                        isProcessing = false
-                        navController.navigate("image_result_screen")
+            Column() {
+                if (selectedPaintIds.isNotEmpty() && !showModal.value) {
+                    Row(
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .background(Color.Black.copy(alpha = 0.5f))
+                            .padding(16.dp),
+                        horizontalArrangement = Arrangement.SpaceAround
+                    ) {
+                        Text("Selected paints: " + selectedPaintIds.joinToString(separator = ", "))
                     }
                 }
-            }) {
-                Icon(
-                    imageVector = Icons.Default.Check,
-                    contentDescription = "Generate Image",
-                    tint = Color.White
-                )
+
+                Row(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        //.align(Alignment.BottomCenter)
+                        .background(Color.Black.copy(alpha = 0.5f))
+                        .padding(16.dp),
+                    horizontalArrangement = Arrangement.SpaceAround
+                ) {
+                    IconButton(onClick = {
+
+                    }) {
+                        Icon(
+                            imageVector = Icons.Default.Home,
+                            contentDescription = "Empty button for now",
+                            tint = Color.White
+                        )
+                    }
+                    IconButton(onClick = {
+                        showModal.value = true
+                    }) {
+                        Icon(
+                            imageVector = Icons.Default.KeyboardArrowUp,
+                            contentDescription = "Color Picker",
+                            tint = Color.White
+                        )
+                    }
+                    IconButton(onClick = {
+                        // process the image, then display result
+                        isProcessing = true
+                        coroutineScope.launch {
+                            processImage(demoBitmap) { processedImage -> // TODO change demoBitmap to actual result
+                                navController.currentBackStackEntry?.savedStateHandle?.set(
+                                    "processedImage",
+                                    processedImage
+                                )
+                                isProcessing = false
+                                navController.navigate("image_result_screen")
+                            }
+                        }
+                    }) {
+                        Icon(
+                            imageVector = Icons.Default.Check,
+                            contentDescription = "Generate Image",
+                            tint = Color.White
+                        )
+                    }
+                }
             }
         }
 
@@ -122,6 +151,20 @@ fun ImagePreviewScreen(navController: NavHostController) {
             CircularProgressIndicator(
                 modifier = Modifier
                     .align(Alignment.Center)
+            )
+        }
+
+        if (showModal.value) {
+            ColourSelectionDialog(
+                onClose = { showModal.value = false },
+                onSubmit = { showModal.value = false },
+                onClick = { paintId ->
+                    if (selectedPaintIds.contains(paintId)) {
+                        selectedPaintIds.remove(paintId)
+                    } else {
+                        selectedPaintIds.add(paintId)
+                    }
+                }
             )
         }
     }
