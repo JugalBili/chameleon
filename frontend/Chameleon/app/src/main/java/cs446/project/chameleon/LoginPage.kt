@@ -36,6 +36,25 @@ fun LoginPage(navController: NavHostController) {
     val password = remember { mutableStateOf("") }
     val clicked = remember { mutableStateOf(false) }
 
+    val colours = listOf(
+        Color(0xFFD32F2F),
+        Color(0xFFFF5722),
+        Color(0xFFF57C00),
+        Color(0xFFFDD835),
+        Color(0xFF43A047),
+        Color(0xFF29B6F6),
+        Color(0xFF1E88E5),
+        Color(0xFF8E24AA),
+        Color(0xFF5E35B1)
+    )
+    val titleText = buildAnnotatedString {
+        "Chameleon".forEachIndexed { idx, char ->
+            withStyle(style = SpanStyle(color = colours[idx % colours.size])) {
+                append(char)
+            }
+        }
+    }
+
     val annotatedText = buildAnnotatedString {
         append("Don't have an account? Sign up ")
         pushStringAnnotation(tag = "signup", annotation = "here!")
@@ -53,7 +72,7 @@ fun LoginPage(navController: NavHostController) {
                 verticalArrangement = Arrangement.Center,
                 horizontalAlignment = Alignment.CenterHorizontally
             ) {
-                Text(text = "Chameleon", fontSize = 32.sp)
+                Text(text = titleText, fontSize = 32.sp)
                 Spacer(modifier = Modifier.height(24.dp))
 
                 OutlinedTextField(
