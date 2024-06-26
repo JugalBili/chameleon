@@ -45,7 +45,8 @@ fun ImagePreviewScreen(navController: NavHostController) {
     val coroutineScope = rememberCoroutineScope()
 
     // FOR DEMO PURPOSES, final processed image TODO remove after
-    val demoBitmap = BitmapFactory.decodeResource(LocalContext.current.resources, R.drawable.demo_after)
+    val demoBitmap = BitmapFactory.decodeResource(LocalContext.current.resources, R.drawable.demo_after_1)
+    val demoBitmap2 = BitmapFactory.decodeResource(LocalContext.current.resources, R.drawable.demo_after_2)
 
     // Colour Selection Modal
     val showModal = remember { mutableStateOf(false) }
@@ -127,10 +128,10 @@ fun ImagePreviewScreen(navController: NavHostController) {
                         // process the image, then display result
                         isProcessing = true
                         coroutineScope.launch {
-                            processImage(demoBitmap) { processedImage -> // TODO change demoBitmap to actual result
+                            processImage(listOf(demoBitmap, demoBitmap2)) { processedImages -> // TODO change demoBitmap to actual result
                                 navController.currentBackStackEntry?.savedStateHandle?.set(
-                                    "processedImage",
-                                    processedImage
+                                    "processedImages",
+                                    processedImages
                                 )
                                 isProcessing = false
                                 navController.navigate("image_result_screen")
@@ -171,10 +172,10 @@ fun ImagePreviewScreen(navController: NavHostController) {
 }
 
 // TODO implement
-suspend fun processImage(bitmap: Bitmap?, onProcessingComplete: (Bitmap) -> Unit) {
+suspend fun processImage(bitmap: List<Bitmap>?, onProcessingComplete: (List<Bitmap>) -> Unit) {
     if (bitmap == null) return
     // make backend call here; for the demo we are simulating the delay
-    delay(2000)
+    delay(10000)
 
     // return processed image
     onProcessingComplete(bitmap)

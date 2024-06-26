@@ -48,7 +48,7 @@ fun ColourSelectionDialog(
     paints.add(Paint("Id1", "PPG", "Viva La Bleu", listOf(151, 190, 226)))
     paints.add(Paint("Id2", "PPG", "Calypso Berry", listOf(197, 58, 75)))
     paints.add(Paint("Id3", "Benjamin Moore", "Blue Pearl", listOf(147, 160, 189)))
-    paints.add(Paint("Id4", "Benjamin Moore", "Palm Leaf", listOf(111, 153, 64)))
+    paints.add(Paint("Id4", "Benjamin Moore", "Grape Green", listOf(213, 216, 105)))
 
     Dialog(onDismissRequest = { onClose() }) {
         Card(modifier = Modifier
