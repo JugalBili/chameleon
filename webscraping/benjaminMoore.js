@@ -35,7 +35,7 @@ while (true) {
       const id = anchorChildren[1].innerText.trim() || "undefined";
 
       colors.push({
-        brand: "Benjamin_Moore",
+        brand: "Benjamin Moore",
         url,
         rgb,
         name: colorName,

@@ -15,11 +15,14 @@ const data = JSON.parse(
 const processedData = [];
 
 const brand = "Behr";
-const url = "";
+const url = "https://www.behr.com/consumer/colors/paint/";
 for (const paint of data) {
+  const name = paint["Color Name"];
+  if (processedData.some((obj) => obj.name === name)) {
+    continue;
+  }
   const rgb = rgbStringToArray(paint.RGB);
   const id = paint["Color Number"];
-  const name = paint["Color Name"];
   const hsl = RGBToHSL(rgb);
   const labelHSL = hslToColorName(hsl);
   const labelRGB = rgbToColorName(rgb);

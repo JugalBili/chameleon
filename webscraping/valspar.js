@@ -9,12 +9,13 @@ import {
 } from "./utils.js";
 
 const data = JSON.parse(
-  await readFile(new URL("kilz_raw.json", import.meta.url))
+  await readFile(new URL("valspar_raw.json", import.meta.url))
 );
 
 const processedData = [];
-const BASE_URL = "https://www.kilz.com/color/";
-const brand = "Kilz";
+
+const brand = "Valspar";
+const url = "https://www.valspar.com/en/colors/browse-colors";
 for (const paint of data) {
   const name = paint["Color Name"];
   if (processedData.some((obj) => obj.name === name)) {
@@ -22,7 +23,6 @@ for (const paint of data) {
   }
   const rgb = rgbStringToArray(paint.RGB);
   const id = paint["Color Number"];
-  const url = BASE_URL + name.toLowerCase().split(" ").join("-") + "-" + id;
   const hsl = RGBToHSL(rgb);
   const labelHSL = hslToColorName(hsl);
   const labelRGB = rgbToColorName(rgb);
@@ -32,7 +32,7 @@ for (const paint of data) {
 }
 const dataString = JSON.stringify(processedData, null, 2);
 try {
-  await fs.writeFile("./ProcessedData/kilz.json", dataString, "utf8");
+  await fs.writeFile("./ProcessedData/valspar.json", dataString, "utf8");
   console.log(
     `Successfully Fetched data. Found ${[processedData.length]} colors`
   );

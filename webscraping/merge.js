@@ -16,7 +16,14 @@ const db = getFirestore(app);
 // debug
 connectFirestoreEmulator(db, "127.0.0.1", 8080);
 
-const files = ["benjaminMoore.json", "ppg.json", "behr.json"];
+const files = [
+  "benjaminMoore.json",
+  "ppg.json",
+  "behr.json",
+  "kilz.json",
+  "dunnEdwards.json",
+  "valspar.json",
+];
 
 const paint_data = [];
 for (const file of files) {

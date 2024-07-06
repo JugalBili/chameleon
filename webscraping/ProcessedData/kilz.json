@@ -13375,24 +13375,6 @@
   },
   {
     "brand": "Kilz",
-    "url": "https://www.kilz.com/color/white-peony-TB-04",
-    "rgb": [
-      245,
-      237,
-      215
-    ],
-    "id": "TB-04",
-    "name": "White Peony",
-    "hsl": [
-      44,
-      60,
-      90.2
-    ],
-    "labelHSL": "yellow",
-    "labelRGB": "white"
-  },
-  {
-    "brand": "Kilz",
     "url": "https://www.kilz.com/color/ivory-porcelain-TB-05",
     "rgb": [
       246,
@@ -13405,24 +13387,6 @@
       38,
       62.5,
       90.6
-    ],
-    "labelHSL": "yellow",
-    "labelRGB": "white"
-  },
-  {
-    "brand": "Kilz",
-    "url": "https://www.kilz.com/color/champagne-white-TB-06",
-    "rgb": [
-      238,
-      227,
-      214
-    ],
-    "id": "TB-06",
-    "name": "Champagne White",
-    "hsl": [
-      32,
-      41.4,
-      88.6
     ],
     "labelHSL": "yellow",
     "labelRGB": "white"
@@ -13447,42 +13411,6 @@
   },
   {
     "brand": "Kilz",
-    "url": "https://www.kilz.com/color/reserved-white-TB-07",
-    "rgb": [
-      230,
-      225,
-      216
-    ],
-    "id": "TB-07",
-    "name": "Reserved White",
-    "hsl": [
-      39,
-      21.9,
-      87.5
-    ],
-    "labelHSL": "yellow",
-    "labelRGB": "white"
-  },
-  {
-    "brand": "Kilz",
-    "url": "https://www.kilz.com/color/flying-dove-TB-11",
-    "rgb": [
-      222,
-      216,
-      205
-    ],
-    "id": "TB-11",
-    "name": "Flying Dove",
-    "hsl": [
-      39,
-      20.5,
-      83.7
-    ],
-    "labelHSL": "yellow",
-    "labelRGB": "white"
-  },
-  {
-    "brand": "Kilz",
     "url": "https://www.kilz.com/color/antique-sterling-TB-33",
     "rgb": [
       203,
@@ -13498,42 +13426,6 @@
     ],
     "labelHSL": "gray",
     "labelRGB": "white"
-  },
-  {
-    "brand": "Kilz",
-    "url": "https://www.kilz.com/color/papyrus-TB-12",
-    "rgb": [
-      218,
-      204,
-      187
-    ],
-    "id": "TB-12",
-    "name": "Papyrus",
-    "hsl": [
-      33,
-      29.5,
-      79.4
-    ],
-    "labelHSL": "yellow",
-    "labelRGB": "white"
-  },
-  {
-    "brand": "Kilz",
-    "url": "https://www.kilz.com/color/bronze-mist-TB-13",
-    "rgb": [
-      206,
-      191,
-      171
-    ],
-    "id": "TB-13",
-    "name": "Bronze Mist",
-    "hsl": [
-      34,
-      26.3,
-      73.9
-    ],
-    "labelHSL": "yellow",
-    "labelRGB": "gray"
   },
   {
     "brand": "Kilz",
@@ -13570,24 +13462,6 @@
     ],
     "labelHSL": "gray",
     "labelRGB": "brown"
-  },
-  {
-    "brand": "Kilz",
-    "url": "https://www.kilz.com/color/portobello-TB-14",
-    "rgb": [
-      196,
-      186,
-      171
-    ],
-    "id": "TB-14",
-    "name": "Portobello",
-    "hsl": [
-      36,
-      17.5,
-      72
-    ],
-    "labelHSL": "yellow",
-    "labelRGB": "gray"
   },
   {
     "brand": "Kilz",
@@ -13843,24 +13717,6 @@
   },
   {
     "brand": "Kilz",
-    "url": "https://www.kilz.com/color/flying-dove-TB-11",
-    "rgb": [
-      222,
-      216,
-      205
-    ],
-    "id": "TB-11",
-    "name": "Flying Dove",
-    "hsl": [
-      39,
-      20.5,
-      83.7
-    ],
-    "labelHSL": "yellow",
-    "labelRGB": "white"
-  },
-  {
-    "brand": "Kilz",
     "url": "https://www.kilz.com/color/chalk-suede-TB-28",
     "rgb": [
       145,
@@ -14095,24 +13951,6 @@
   },
   {
     "brand": "Kilz",
-    "url": "https://www.kilz.com/color/blushing-white-TB-21",
-    "rgb": [
-      237,
-      231,
-      229
-    ],
-    "id": "TB-21",
-    "name": "Blushing White",
-    "hsl": [
-      15,
-      18.2,
-      91.4
-    ],
-    "labelHSL": "brown",
-    "labelRGB": "white"
-  },
-  {
-    "brand": "Kilz",
     "url": "https://www.kilz.com/color/angelic-pink-TB-91",
     "rgb": [
       245,
@@ -14164,24 +14002,6 @@
     ],
     "labelHSL": "red",
     "labelRGB": "brown"
-  },
-  {
-    "brand": "Kilz",
-    "url": "https://www.kilz.com/color/collector's-white-TB-31",
-    "rgb": [
-      233,
-      228,
-      226
-    ],
-    "id": "TB-31",
-    "name": "Collector'S White",
-    "hsl": [
-      17,
-      13.7,
-      90
-    ],
-    "labelHSL": "brown",
-    "labelRGB": "white"
   },
   {
     "brand": "Kilz",
@@ -14239,60 +14059,6 @@
   },
   {
     "brand": "Kilz",
-    "url": "https://www.kilz.com/color/windmill-white-TB-10",
-    "rgb": [
-      238,
-      231,
-      222
-    ],
-    "id": "TB-10",
-    "name": "Windmill White",
-    "hsl": [
-      34,
-      32,
-      90.2
-    ],
-    "labelHSL": "yellow",
-    "labelRGB": "white"
-  },
-  {
-    "brand": "Kilz",
-    "url": "https://www.kilz.com/color/champagne-white-TB-06",
-    "rgb": [
-      238,
-      227,
-      214
-    ],
-    "id": "TB-06",
-    "name": "Champagne White",
-    "hsl": [
-      32,
-      41.4,
-      88.6
-    ],
-    "labelHSL": "yellow",
-    "labelRGB": "white"
-  },
-  {
-    "brand": "Kilz",
-    "url": "https://www.kilz.com/color/angelic-pink-TB-91",
-    "rgb": [
-      245,
-      221,
-      207
-    ],
-    "id": "TB-91",
-    "name": "Angelic Pink",
-    "hsl": [
-      22,
-      65.5,
-      88.6
-    ],
-    "labelHSL": "orange",
-    "labelRGB": "white"
-  },
-  {
-    "brand": "Kilz",
     "url": "https://www.kilz.com/color/pottery-beige-TB-93",
     "rgb": [
       201,
@@ -14347,42 +14113,6 @@
   },
   {
     "brand": "Kilz",
-    "url": "https://www.kilz.com/color/ivory-porcelain-TB-05",
-    "rgb": [
-      246,
-      235,
-      216
-    ],
-    "id": "TB-05",
-    "name": "Ivory Porcelain",
-    "hsl": [
-      38,
-      62.5,
-      90.6
-    ],
-    "labelHSL": "yellow",
-    "labelRGB": "white"
-  },
-  {
-    "brand": "Kilz",
-    "url": "https://www.kilz.com/color/ancestral-TB-82",
-    "rgb": [
-      244,
-      227,
-      207
-    ],
-    "id": "TB-82",
-    "name": "Ancestral",
-    "hsl": [
-      32,
-      62.7,
-      88.4
-    ],
-    "labelHSL": "yellow",
-    "labelRGB": "white"
-  },
-  {
-    "brand": "Kilz",
     "url": "https://www.kilz.com/color/golden-compass-TB-87",
     "rgb": [
       207,
@@ -14416,24 +14146,6 @@
     ],
     "labelHSL": "orange",
     "labelRGB": "gray"
-  },
-  {
-    "brand": "Kilz",
-    "url": "https://www.kilz.com/color/ivory-porcelain-TB-05",
-    "rgb": [
-      246,
-      235,
-      216
-    ],
-    "id": "TB-05",
-    "name": "Ivory Porcelain",
-    "hsl": [
-      38,
-      62.5,
-      90.6
-    ],
-    "labelHSL": "yellow",
-    "labelRGB": "white"
   },
   {
     "brand": "Kilz",
@@ -14491,42 +14203,6 @@
   },
   {
     "brand": "Kilz",
-    "url": "https://www.kilz.com/color/white-peony-TB-04",
-    "rgb": [
-      245,
-      237,
-      215
-    ],
-    "id": "TB-04",
-    "name": "White Peony",
-    "hsl": [
-      44,
-      60,
-      90.2
-    ],
-    "labelHSL": "yellow",
-    "labelRGB": "white"
-  },
-  {
-    "brand": "Kilz",
-    "url": "https://www.kilz.com/color/spanish-fortress-TB-81",
-    "rgb": [
-      227,
-      215,
-      194
-    ],
-    "id": "TB-81",
-    "name": "Spanish Fortress",
-    "hsl": [
-      38,
-      37.1,
-      82.5
-    ],
-    "labelHSL": "yellow",
-    "labelRGB": "white"
-  },
-  {
-    "brand": "Kilz",
     "url": "https://www.kilz.com/color/yellow-lotus-TB-84",
     "rgb": [
       247,
@@ -14542,24 +14218,6 @@
     ],
     "labelHSL": "yellow",
     "labelRGB": "white"
-  },
-  {
-    "brand": "Kilz",
-    "url": "https://www.kilz.com/color/golden-compass-TB-87",
-    "rgb": [
-      207,
-      169,
-      116
-    ],
-    "id": "TB-87",
-    "name": "Golden Compass",
-    "hsl": [
-      35,
-      48.7,
-      63.3
-    ],
-    "labelHSL": "yellow",
-    "labelRGB": "gray"
   },
   {
     "brand": "Kilz",
@@ -14797,24 +14455,6 @@
   },
   {
     "brand": "Kilz",
-    "url": "https://www.kilz.com/color/almost-sage-TB-88",
-    "rgb": [
-      172,
-      172,
-      144
-    ],
-    "id": "TB-88",
-    "name": "Almost Sage",
-    "hsl": [
-      60,
-      14.4,
-      62
-    ],
-    "labelHSL": "yellow",
-    "labelRGB": "gray"
-  },
-  {
-    "brand": "Kilz",
     "url": "https://www.kilz.com/color/summer-haven-TB-75",
     "rgb": [
       163,
@@ -14845,78 +14485,6 @@
       92,
       8.7,
       57.1
-    ],
-    "labelHSL": "gray",
-    "labelRGB": "gray"
-  },
-  {
-    "brand": "Kilz",
-    "url": "https://www.kilz.com/color/loden-frost-TB-73",
-    "rgb": [
-      190,
-      197,
-      182
-    ],
-    "id": "TB-73",
-    "name": "Loden Frost",
-    "hsl": [
-      88,
-      11.5,
-      74.3
-    ],
-    "labelHSL": "yellow",
-    "labelRGB": "gray"
-  },
-  {
-    "brand": "Kilz",
-    "url": "https://www.kilz.com/color/patio-gray-TB-64",
-    "rgb": [
-      182,
-      189,
-      179
-    ],
-    "id": "TB-64",
-    "name": "Patio Gray",
-    "hsl": [
-      102,
-      7,
-      72.2
-    ],
-    "labelHSL": "gray",
-    "labelRGB": "gray"
-  },
-  {
-    "brand": "Kilz",
-    "url": "https://www.kilz.com/color/stone-cold-TB-66",
-    "rgb": [
-      156,
-      163,
-      157
-    ],
-    "id": "TB-66",
-    "name": "Stone Cold",
-    "hsl": [
-      129,
-      3.7,
-      62.5
-    ],
-    "labelHSL": "gray",
-    "labelRGB": "gray"
-  },
-  {
-    "brand": "Kilz",
-    "url": "https://www.kilz.com/color/lincoln-green-TB-68",
-    "rgb": [
-      129,
-      138,
-      131
-    ],
-    "id": "TB-68",
-    "name": "Lincoln Green",
-    "hsl": [
-      133,
-      3.7,
-      52.4
     ],
     "labelHSL": "gray",
     "labelRGB": "gray"
@@ -15247,24 +14815,6 @@
   },
   {
     "brand": "Kilz",
-    "url": "https://www.kilz.com/color/sailing-water-TB-53",
-    "rgb": [
-      182,
-      222,
-      219
-    ],
-    "id": "TB-53",
-    "name": "Sailing Water",
-    "hsl": [
-      176,
-      37.7,
-      79.2
-    ],
-    "labelHSL": "cyan",
-    "labelRGB": "white"
-  },
-  {
-    "brand": "Kilz",
     "url": "https://www.kilz.com/color/tropical-escape-TB-56",
     "rgb": [
       92,
@@ -15277,24 +14827,6 @@
       177,
       44.9,
       55.9
-    ],
-    "labelHSL": "cyan",
-    "labelRGB": "gray"
-  },
-  {
-    "brand": "Kilz",
-    "url": "https://www.kilz.com/color/pale-emerald-TB-57",
-    "rgb": [
-      109,
-      144,
-      147
-    ],
-    "id": "TB-57",
-    "name": "Pale Emerald",
-    "hsl": [
-      185,
-      15,
-      50.2
     ],
     "labelHSL": "cyan",
     "labelRGB": "gray"
@@ -15316,168 +14848,6 @@
     ],
     "labelHSL": "cyan",
     "labelRGB": "white"
-  },
-  {
-    "brand": "Kilz",
-    "url": "https://www.kilz.com/color/oceanic-TB-54",
-    "rgb": [
-      152,
-      198,
-      189
-    ],
-    "id": "TB-54",
-    "name": "Oceanic",
-    "hsl": [
-      168,
-      28.8,
-      68.6
-    ],
-    "labelHSL": "cyan",
-    "labelRGB": "gray"
-  },
-  {
-    "brand": "Kilz",
-    "url": "https://www.kilz.com/color/june-gloom-TB-67",
-    "rgb": [
-      134,
-      155,
-      151
-    ],
-    "id": "TB-67",
-    "name": "June Gloom",
-    "hsl": [
-      169,
-      9.5,
-      56.7
-    ],
-    "labelHSL": "gray",
-    "labelRGB": "gray"
-  },
-  {
-    "brand": "Kilz",
-    "url": "https://www.kilz.com/color/oceans-deep-TB-60",
-    "rgb": [
-      57,
-      82,
-      85
-    ],
-    "id": "TB-60",
-    "name": "Oceans Deep",
-    "hsl": [
-      186,
-      19.7,
-      27.8
-    ],
-    "labelHSL": "cyan",
-    "labelRGB": "brown"
-  },
-  {
-    "brand": "Kilz",
-    "url": "https://www.kilz.com/color/wind-chime-TB-41",
-    "rgb": [
-      223,
-      224,
-      226
-    ],
-    "id": "TB-41",
-    "name": "Wind Chime",
-    "hsl": [
-      220,
-      4.9,
-      88
-    ],
-    "labelHSL": "white",
-    "labelRGB": "white"
-  },
-  {
-    "brand": "Kilz",
-    "url": "https://www.kilz.com/color/brushed-metal-TB-32",
-    "rgb": [
-      204,
-      205,
-      206
-    ],
-    "id": "TB-32",
-    "name": "Brushed Metal",
-    "hsl": [
-      210,
-      2,
-      80.4
-    ],
-    "labelHSL": "white",
-    "labelRGB": "white"
-  },
-  {
-    "brand": "Kilz",
-    "url": "https://www.kilz.com/color/aviator-silver-TB-34",
-    "rgb": [
-      157,
-      160,
-      171
-    ],
-    "id": "TB-34",
-    "name": "Aviator Silver",
-    "hsl": [
-      227,
-      7.7,
-      64.3
-    ],
-    "labelHSL": "gray",
-    "labelRGB": "gray"
-  },
-  {
-    "brand": "Kilz",
-    "url": "https://www.kilz.com/color/december-nights-TB-36",
-    "rgb": [
-      124,
-      135,
-      142
-    ],
-    "id": "TB-36",
-    "name": "December Nights",
-    "hsl": [
-      203,
-      7.4,
-      52.2
-    ],
-    "labelHSL": "gray",
-    "labelRGB": "gray"
-  },
-  {
-    "brand": "Kilz",
-    "url": "https://www.kilz.com/color/brushed-metal-TB-32",
-    "rgb": [
-      204,
-      205,
-      206
-    ],
-    "id": "TB-32",
-    "name": "Brushed Metal",
-    "hsl": [
-      210,
-      2,
-      80.4
-    ],
-    "labelHSL": "white",
-    "labelRGB": "white"
-  },
-  {
-    "brand": "Kilz",
-    "url": "https://www.kilz.com/color/meadow-mauve-TB-26",
-    "rgb": [
-      178,
-      165,
-      159
-    ],
-    "id": "TB-26",
-    "name": "Meadow Mauve",
-    "hsl": [
-      19,
-      11,
-      66.1
-    ],
-    "labelHSL": "brown",
-    "labelRGB": "gray"
   },
   {
     "brand": "Kilz",
@@ -15514,113 +14884,5 @@
     ],
     "labelHSL": "purple",
     "labelRGB": "brown"
-  },
-  {
-    "brand": "Kilz",
-    "url": "https://www.kilz.com/color/northern-sky-TB-42",
-    "rgb": [
-      201,
-      214,
-      221
-    ],
-    "id": "TB-42",
-    "name": "Northern Sky",
-    "hsl": [
-      201,
-      22.7,
-      82.7
-    ],
-    "labelHSL": "cyan",
-    "labelRGB": "white"
-  },
-  {
-    "brand": "Kilz",
-    "url": "https://www.kilz.com/color/chambray-blue-TB-45",
-    "rgb": [
-      167,
-      185,
-      191
-    ],
-    "id": "TB-45",
-    "name": "Chambray Blue",
-    "hsl": [
-      195,
-      15.8,
-      70.2
-    ],
-    "labelHSL": "cyan",
-    "labelRGB": "gray"
-  },
-  {
-    "brand": "Kilz",
-    "url": "https://www.kilz.com/color/aviator-silver-TB-34",
-    "rgb": [
-      157,
-      160,
-      171
-    ],
-    "id": "TB-34",
-    "name": "Aviator Silver",
-    "hsl": [
-      227,
-      7.7,
-      64.3
-    ],
-    "labelHSL": "gray",
-    "labelRGB": "gray"
-  },
-  {
-    "brand": "Kilz",
-    "url": "https://www.kilz.com/color/high-tide-TB-47",
-    "rgb": [
-      140,
-      173,
-      203
-    ],
-    "id": "TB-47",
-    "name": "High Tide",
-    "hsl": [
-      209,
-      37.7,
-      67.3
-    ],
-    "labelHSL": "cyan",
-    "labelRGB": "gray"
-  },
-  {
-    "brand": "Kilz",
-    "url": "https://www.kilz.com/color/postcard-TB-25",
-    "rgb": [
-      182,
-      179,
-      177
-    ],
-    "id": "TB-25",
-    "name": "Postcard",
-    "hsl": [
-      24,
-      3.3,
-      70.4
-    ],
-    "labelHSL": "gray",
-    "labelRGB": "gray"
-  },
-  {
-    "brand": "Kilz",
-    "url": "https://www.kilz.com/color/chalk-suede-TB-28",
-    "rgb": [
-      145,
-      140,
-      135
-    ],
-    "id": "TB-28",
-    "name": "Chalk Suede",
-    "hsl": [
-      30,
-      4.3,
-      54.9
-    ],
-    "labelHSL": "gray",
-    "labelRGB": "gray"
   }
 ]

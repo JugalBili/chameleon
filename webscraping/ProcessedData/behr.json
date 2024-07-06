@@ -6249,24 +6249,6 @@
     "brand": "Behr",
     "url": "",
     "rgb": [
-      184,
-      154,
-      134
-    ],
-    "id": "250F-4",
-    "name": "Stone Brown",
-    "hsl": [
-      24,
-      26,
-      62.4
-    ],
-    "labelHSL": "brown",
-    "labelRGB": "gray"
-  },
-  {
-    "brand": "Behr",
-    "url": "",
-    "rgb": [
       142,
       113,
       91
@@ -7023,24 +7005,6 @@
     "brand": "Behr",
     "url": "",
     "rgb": [
-      202,
-      162,
-      127
-    ],
-    "id": "270F-4",
-    "name": "Peanut Butter",
-    "hsl": [
-      28,
-      41.4,
-      64.5
-    ],
-    "labelHSL": "brown",
-    "labelRGB": "gray"
-  },
-  {
-    "brand": "Behr",
-    "url": "",
-    "rgb": [
       186,
       152,
       102
@@ -7419,24 +7383,6 @@
     "brand": "Behr",
     "url": "",
     "rgb": [
-      182,
-      150,
-      122
-    ],
-    "id": "280F-4",
-    "name": "Burnt Almond",
-    "hsl": [
-      28,
-      29.1,
-      59.6
-    ],
-    "labelHSL": "brown",
-    "labelRGB": "gray"
-  },
-  {
-    "brand": "Behr",
-    "url": "",
-    "rgb": [
       153,
       127,
       88
@@ -7791,24 +7737,6 @@
       74.1
     ],
     "labelHSL": "yellow",
-    "labelRGB": "gray"
-  },
-  {
-    "brand": "Behr",
-    "url": "",
-    "rgb": [
-      213,
-      189,
-      167
-    ],
-    "id": 0.29,
-    "name": "Classic Taupe",
-    "hsl": [
-      29,
-      35.4,
-      74.5
-    ],
-    "labelHSL": "brown",
     "labelRGB": "gray"
   },
   {
@@ -8941,24 +8869,6 @@
       41,
       49.2,
       74.5
-    ],
-    "labelHSL": "yellow",
-    "labelRGB": "white"
-  },
-  {
-    "brand": "Behr",
-    "url": "",
-    "rgb": [
-      224,
-      198,
-      163
-    ],
-    "id": 0.32,
-    "name": "Riviera Sand",
-    "hsl": [
-      34,
-      49.6,
-      75.9
     ],
     "labelHSL": "yellow",
     "labelRGB": "white"
@@ -23295,24 +23205,6 @@
     "brand": "Behr",
     "url": "",
     "rgb": [
-      189,
-      167,
-      148
-    ],
-    "id": "700D-4",
-    "name": "Brown Teepee",
-    "hsl": [
-      28,
-      23.7,
-      66.1
-    ],
-    "labelHSL": "brown",
-    "labelRGB": "gray"
-  },
-  {
-    "brand": "Behr",
-    "url": "",
-    "rgb": [
       150,
       134,
       103
@@ -23325,24 +23217,6 @@
       49.6
     ],
     "labelHSL": "yellow",
-    "labelRGB": "gray"
-  },
-  {
-    "brand": "Behr",
-    "url": "",
-    "rgb": [
-      160,
-      136,
-      114
-    ],
-    "id": "700D-5",
-    "name": "Toffee Crunch",
-    "hsl": [
-      29,
-      19.5,
-      53.7
-    ],
-    "labelHSL": "brown",
     "labelRGB": "gray"
   },
   {
@@ -23673,24 +23547,6 @@
     "brand": "Behr",
     "url": "",
     "rgb": [
-      237,
-      223,
-      202
-    ],
-    "id": "710C-2",
-    "name": "Raffia Cream",
-    "hsl": [
-      36,
-      49.3,
-      86.1
-    ],
-    "labelHSL": "yellow",
-    "labelRGB": "white"
-  },
-  {
-    "brand": "Behr",
-    "url": "",
-    "rgb": [
       203,
       195,
       164
@@ -23709,24 +23565,6 @@
     "brand": "Behr",
     "url": "",
     "rgb": [
-      206,
-      188,
-      165
-    ],
-    "id": "710C-3",
-    "name": "Gobi Desert",
-    "hsl": [
-      34,
-      29.5,
-      72.7
-    ],
-    "labelHSL": "yellow",
-    "labelRGB": "gray"
-  },
-  {
-    "brand": "Behr",
-    "url": "",
-    "rgb": [
       181,
       171,
       135
@@ -23737,24 +23575,6 @@
       47,
       23.7,
       62
-    ],
-    "labelHSL": "yellow",
-    "labelRGB": "gray"
-  },
-  {
-    "brand": "Behr",
-    "url": "",
-    "rgb": [
-      186,
-      166,
-      140
-    ],
-    "id": "710D-4",
-    "name": "Harvest Brown",
-    "hsl": [
-      34,
-      25,
-      63.9
     ],
     "labelHSL": "yellow",
     "labelRGB": "gray"
@@ -23871,24 +23691,6 @@
     "brand": "Behr",
     "url": "",
     "rgb": [
-      190,
-      195,
-      188
-    ],
-    "id": 0.71,
-    "name": "Rhino",
-    "hsl": [
-      103,
-      5.5,
-      75.1
-    ],
-    "labelHSL": "gray",
-    "labelRGB": "gray"
-  },
-  {
-    "brand": "Behr",
-    "url": "",
-    "rgb": [
       152,
       179,
       165
@@ -23901,24 +23703,6 @@
       64.9
     ],
     "labelHSL": "green",
-    "labelRGB": "gray"
-  },
-  {
-    "brand": "Behr",
-    "url": "",
-    "rgb": [
-      158,
-      164,
-      159
-    ],
-    "id": "710F-4",
-    "name": "Sage Gray",
-    "hsl": [
-      130,
-      3.2,
-      63.1
-    ],
-    "labelHSL": "gray",
     "labelRGB": "gray"
   },
   {
@@ -24141,24 +23925,6 @@
     "brand": "Behr",
     "url": "",
     "rgb": [
-      223,
-      214,
-      203
-    ],
-    "id": "720C-2",
-    "name": "Chocolate Froth",
-    "hsl": [
-      33,
-      23.8,
-      83.5
-    ],
-    "labelHSL": "yellow",
-    "labelRGB": "white"
-  },
-  {
-    "brand": "Behr",
-    "url": "",
-    "rgb": [
       202,
       206,
       191
@@ -24169,24 +23935,6 @@
       76,
       13.3,
       77.8
-    ],
-    "labelHSL": "yellow",
-    "labelRGB": "white"
-  },
-  {
-    "brand": "Behr",
-    "url": "",
-    "rgb": [
-      205,
-      197,
-      186
-    ],
-    "id": "720C-3",
-    "name": "Wheat Bread",
-    "hsl": [
-      35,
-      16,
-      76.7
     ],
     "labelHSL": "yellow",
     "labelRGB": "white"
@@ -24225,24 +23973,6 @@
       46.1
     ],
     "labelHSL": "gray",
-    "labelRGB": "gray"
-  },
-  {
-    "brand": "Behr",
-    "url": "",
-    "rgb": [
-      142,
-      130,
-      115
-    ],
-    "id": "720D-5",
-    "name": "Mocha Accent",
-    "hsl": [
-      33,
-      10.7,
-      50.4
-    ],
-    "labelHSL": "yellow",
     "labelRGB": "gray"
   },
   {
@@ -24627,24 +24357,6 @@
     "brand": "Behr",
     "url": "",
     "rgb": [
-      175,
-      164,
-      149
-    ],
-    "id": "730D-4",
-    "name": "Garden Wall",
-    "hsl": [
-      35,
-      14,
-      63.5
-    ],
-    "labelHSL": "yellow",
-    "labelRGB": "gray"
-  },
-  {
-    "brand": "Behr",
-    "url": "",
-    "rgb": [
       148,
       151,
       117
@@ -24765,24 +24477,6 @@
       70.8
     ],
     "labelHSL": "cyan",
-    "labelRGB": "gray"
-  },
-  {
-    "brand": "Behr",
-    "url": "",
-    "rgb": [
-      168,
-      179,
-      180
-    ],
-    "id": "730F-4",
-    "name": "Flint Smoke",
-    "hsl": [
-      185,
-      7.4,
-      68.2
-    ],
-    "labelHSL": "gray",
     "labelRGB": "gray"
   },
   {
@@ -25167,24 +24861,6 @@
     "brand": "Behr",
     "url": "",
     "rgb": [
-      130,
-      144,
-      150
-    ],
-    "id": "740F-4",
-    "name": "Dark Storm Cloud",
-    "hsl": [
-      198,
-      8.7,
-      54.9
-    ],
-    "labelHSL": "gray",
-    "labelRGB": "gray"
-  },
-  {
-    "brand": "Behr",
-    "url": "",
-    "rgb": [
       81,
       117,
       122
@@ -25419,24 +25095,6 @@
     "brand": "Behr",
     "url": "",
     "rgb": [
-      231,
-      223,
-      210
-    ],
-    "id": "750C-2",
-    "name": "Hazelnut Cream",
-    "hsl": [
-      37,
-      30.4,
-      86.5
-    ],
-    "labelHSL": "yellow",
-    "labelRGB": "white"
-  },
-  {
-    "brand": "Behr",
-    "url": "",
-    "rgb": [
       209,
       210,
       188
@@ -25447,24 +25105,6 @@
       63,
       19.6,
       78
-    ],
-    "labelHSL": "yellow",
-    "labelRGB": "white"
-  },
-  {
-    "brand": "Behr",
-    "url": "",
-    "rgb": [
-      211,
-      202,
-      186
-    ],
-    "id": "750C-3",
-    "name": "Sandstone Cliff",
-    "hsl": [
-      38,
-      22.1,
-      77.8
     ],
     "labelHSL": "yellow",
     "labelRGB": "white"
@@ -26391,24 +26031,6 @@
     "brand": "Behr",
     "url": "",
     "rgb": [
-      106,
-      109,
-      111
-    ],
-    "id": "770F-5",
-    "name": "Dark Ash",
-    "hsl": [
-      204,
-      2.3,
-      42.5
-    ],
-    "labelHSL": "gray",
-    "labelRGB": "gray"
-  },
-  {
-    "brand": "Behr",
-    "url": "",
-    "rgb": [
       57,
       72,
       74
@@ -26751,24 +26373,6 @@
     "brand": "Behr",
     "url": "",
     "rgb": [
-      211,
-      213,
-      212
-    ],
-    "id": 0.78,
-    "name": "Sterling",
-    "hsl": [
-      150,
-      2.3,
-      83.1
-    ],
-    "labelHSL": "white",
-    "labelRGB": "white"
-  },
-  {
-    "brand": "Behr",
-    "url": "",
-    "rgb": [
       175,
       192,
       190
@@ -26787,24 +26391,6 @@
     "brand": "Behr",
     "url": "",
     "rgb": [
-      177,
-      177,
-      178
-    ],
-    "id": "780F-4",
-    "name": "Sparrow",
-    "hsl": [
-      240,
-      0.6,
-      69.6
-    ],
-    "labelHSL": "gray",
-    "labelRGB": "gray"
-  },
-  {
-    "brand": "Behr",
-    "url": "",
-    "rgb": [
       138,
       158,
       155
@@ -26814,24 +26400,6 @@
     "hsl": [
       171,
       9.3,
-      58
-    ],
-    "labelHSL": "gray",
-    "labelRGB": "gray"
-  },
-  {
-    "brand": "Behr",
-    "url": "",
-    "rgb": [
-      148,
-      148,
-      148
-    ],
-    "id": "780F-5",
-    "name": "Anonymous",
-    "hsl": [
-      0,
-      0,
       58
     ],
     "labelHSL": "gray",
@@ -27039,24 +26607,6 @@
     "brand": "Behr",
     "url": "",
     "rgb": [
-      221,
-      218,
-      210
-    ],
-    "id": "790C-2",
-    "name": "Silver Drop",
-    "hsl": [
-      44,
-      13.9,
-      84.5
-    ],
-    "labelHSL": "yellow",
-    "labelRGB": "white"
-  },
-  {
-    "brand": "Behr",
-    "url": "",
-    "rgb": [
       204,
       214,
       202
@@ -27075,24 +26625,6 @@
     "brand": "Behr",
     "url": "",
     "rgb": [
-      204,
-      202,
-      196
-    ],
-    "id": "790C-3",
-    "name": "Dolphin Fin",
-    "hsl": [
-      45,
-      7.3,
-      78.4
-    ],
-    "labelHSL": "gray",
-    "labelRGB": "white"
-  },
-  {
-    "brand": "Behr",
-    "url": "",
-    "rgb": [
       173,
       186,
       169
@@ -27105,24 +26637,6 @@
       69.6
     ],
     "labelHSL": "green",
-    "labelRGB": "gray"
-  },
-  {
-    "brand": "Behr",
-    "url": "",
-    "rgb": [
-      178,
-      175,
-      165
-    ],
-    "id": "790D-4",
-    "name": "Granite Boulder",
-    "hsl": [
-      46,
-      7.8,
-      67.3
-    ],
-    "labelHSL": "gray",
     "labelRGB": "gray"
   },
   {
@@ -27246,24 +26760,6 @@
     "hsl": [
       143,
       5.7,
-      55.5
-    ],
-    "labelHSL": "gray",
-    "labelRGB": "gray"
-  },
-  {
-    "brand": "Behr",
-    "url": "",
-    "rgb": [
-      146,
-      140,
-      137
-    ],
-    "id": "790F-4",
-    "name": "Creek Bend",
-    "hsl": [
-      20,
-      4,
       55.5
     ],
     "labelHSL": "gray",
@@ -33879,24 +33375,6 @@
     "brand": "Behr",
     "url": "",
     "rgb": [
-      89,
-      125,
-      141
-    ],
-    "id": "HDC-FL14-11",
-    "name": "Cotton Denim",
-    "hsl": [
-      198,
-      22.6,
-      45.1
-    ],
-    "labelHSL": "cyan",
-    "labelRGB": "gray"
-  },
-  {
-    "brand": "Behr",
-    "url": "",
-    "rgb": [
       51,
       76,
       102
@@ -35566,24 +35044,6 @@
     ],
     "labelHSL": "brown",
     "labelRGB": "gray"
-  },
-  {
-    "brand": "Behr",
-    "url": "",
-    "rgb": [
-      255,
-      209,
-      147
-    ],
-    "id": "HDC-SP14-7",
-    "name": "Full Bloom",
-    "hsl": [
-      34,
-      100,
-      78.8
-    ],
-    "labelHSL": "yellow",
-    "labelRGB": "white"
   },
   {
     "brand": "Behr",
@@ -49899,24 +49359,6 @@
     "brand": "Behr",
     "url": "",
     "rgb": [
-      177,
-      161,
-      152
-    ],
-    "id": "N180-4",
-    "name": "Moleskin",
-    "hsl": [
-      22,
-      13.8,
-      64.5
-    ],
-    "labelHSL": "brown",
-    "labelRGB": "gray"
-  },
-  {
-    "brand": "Behr",
-    "url": "",
-    "rgb": [
       131,
       122,
       111
@@ -50169,24 +49611,6 @@
     "brand": "Behr",
     "url": "",
     "rgb": [
-      167,
-      156,
-      147
-    ],
-    "id": "N200-4",
-    "name": "Rustic Taupe",
-    "hsl": [
-      27,
-      10.2,
-      61.6
-    ],
-    "labelHSL": "brown",
-    "labelRGB": "gray"
-  },
-  {
-    "brand": "Behr",
-    "url": "",
-    "rgb": [
       132,
       136,
       125
@@ -50421,24 +49845,6 @@
     "brand": "Behr",
     "url": "",
     "rgb": [
-      191,
-      179,
-      167
-    ],
-    "id": "N220-3",
-    "name": "Smokestack",
-    "hsl": [
-      30,
-      15.8,
-      70.2
-    ],
-    "labelHSL": "yellow",
-    "labelRGB": "gray"
-  },
-  {
-    "brand": "Behr",
-    "url": "",
-    "rgb": [
       159,
       159,
       144
@@ -50469,24 +49875,6 @@
       50
     ],
     "labelHSL": "gray",
-    "labelRGB": "gray"
-  },
-  {
-    "brand": "Behr",
-    "url": "",
-    "rgb": [
-      147,
-      133,
-      121
-    ],
-    "id": "N220-5",
-    "name": "Ottertail",
-    "hsl": [
-      28,
-      10.7,
-      52.5
-    ],
-    "labelHSL": "brown",
     "labelRGB": "gray"
   },
   {
@@ -50583,24 +49971,6 @@
     "brand": "Behr",
     "url": "",
     "rgb": [
-      201,
-      185,
-      174
-    ],
-    "id": "N230-3",
-    "name": "Armadillo",
-    "hsl": [
-      24,
-      20,
-      73.5
-    ],
-    "labelHSL": "brown",
-    "labelRGB": "gray"
-  },
-  {
-    "brand": "Behr",
-    "url": "",
-    "rgb": [
       165,
       156,
       140
@@ -50631,24 +50001,6 @@
       50.2
     ],
     "labelHSL": "yellow",
-    "labelRGB": "gray"
-  },
-  {
-    "brand": "Behr",
-    "url": "",
-    "rgb": [
-      151,
-      131,
-      117
-    ],
-    "id": "N230-5",
-    "name": "Dry Brown",
-    "hsl": [
-      25,
-      14,
-      52.5
-    ],
-    "labelHSL": "brown",
     "labelRGB": "gray"
   },
   {
@@ -50979,24 +50331,6 @@
     "brand": "Behr",
     "url": "",
     "rgb": [
-      223,
-      199,
-      176
-    ],
-    "id": "N260-2",
-    "name": "Almond Latte",
-    "hsl": [
-      29,
-      42.3,
-      78.2
-    ],
-    "labelHSL": "brown",
-    "labelRGB": "white"
-  },
-  {
-    "brand": "Behr",
-    "url": "",
-    "rgb": [
       200,
       181,
       151
@@ -51151,24 +50485,6 @@
       37,
       31.7,
       60.4
-    ],
-    "labelHSL": "yellow",
-    "labelRGB": "gray"
-  },
-  {
-    "brand": "Behr",
-    "url": "",
-    "rgb": [
-      190,
-      159,
-      128
-    ],
-    "id": "N270-4",
-    "name": "Oxford Street",
-    "hsl": [
-      30,
-      32.3,
-      62.4
     ],
     "labelHSL": "yellow",
     "labelRGB": "gray"
@@ -51807,24 +51123,6 @@
     "brand": "Behr",
     "url": "",
     "rgb": [
-      210,
-      204,
-      195
-    ],
-    "id": "N320-2",
-    "name": "Toasty Gray",
-    "hsl": [
-      36,
-      14.3,
-      79.4
-    ],
-    "labelHSL": "yellow",
-    "labelRGB": "white"
-  },
-  {
-    "brand": "Behr",
-    "url": "",
-    "rgb": [
       194,
       201,
       185
@@ -52357,24 +51655,6 @@
       127,
       8.3,
       59.8
-    ],
-    "labelHSL": "gray",
-    "labelRGB": "gray"
-  },
-  {
-    "brand": "Behr",
-    "url": "",
-    "rgb": [
-      153,
-      150,
-      143
-    ],
-    "id": "N360-4",
-    "name": "Battleship Gray",
-    "hsl": [
-      42,
-      4.7,
-      58
     ],
     "labelHSL": "gray",
     "labelRGB": "gray"
@@ -61599,24 +60879,6 @@
     "brand": "Behr",
     "url": "",
     "rgb": [
-      86,
-      68,
-      71
-    ],
-    "id": "PPU1-1",
-    "name": "Folklore",
-    "hsl": [
-      350,
-      11.7,
-      30.2
-    ],
-    "labelHSL": "red",
-    "labelRGB": "brown"
-  },
-  {
-    "brand": "Behr",
-    "url": "",
-    "rgb": [
       138,
       70,
       71
@@ -61797,24 +61059,6 @@
     "brand": "Behr",
     "url": "",
     "rgb": [
-      88,
-      62,
-      63
-    ],
-    "id": "PPU1-2",
-    "name": "Divine Wine",
-    "hsl": [
-      358,
-      17.3,
-      29.4
-    ],
-    "labelHSL": "red",
-    "labelRGB": "brown"
-  },
-  {
-    "brand": "Behr",
-    "url": "",
-    "rgb": [
       108,
       76,
       88
@@ -61828,168 +61072,6 @@
     ],
     "labelHSL": "red",
     "labelRGB": "brown"
-  },
-  {
-    "brand": "Behr",
-    "url": "",
-    "rgb": [
-      120,
-      100,
-      102
-    ],
-    "id": "PPU1-3",
-    "name": "Tibetan Temple",
-    "hsl": [
-      354,
-      9.1,
-      43.1
-    ],
-    "labelHSL": "gray",
-    "labelRGB": "gray"
-  },
-  {
-    "brand": "Behr",
-    "url": "",
-    "rgb": [
-      222,
-      135,
-      129
-    ],
-    "id": "PPU1-4",
-    "name": "Wild Watermelon",
-    "hsl": [
-      4,
-      58.5,
-      68.8
-    ],
-    "labelHSL": "red",
-    "labelRGB": "gray"
-  },
-  {
-    "brand": "Behr",
-    "url": "",
-    "rgb": [
-      224,
-      136,
-      129
-    ],
-    "id": "PPU1-4A",
-    "name": "Watermelon Punch",
-    "hsl": [
-      4,
-      60.5,
-      69.2
-    ],
-    "labelHSL": "red",
-    "labelRGB": "gray"
-  },
-  {
-    "brand": "Behr",
-    "url": "",
-    "rgb": [
-      204,
-      99,
-      89
-    ],
-    "id": "PPU1-5",
-    "name": "Japanese Kimono",
-    "hsl": [
-      5,
-      53,
-      57.5
-    ],
-    "labelHSL": "red",
-    "labelRGB": "gray"
-  },
-  {
-    "brand": "Behr",
-    "url": "",
-    "rgb": [
-      205,
-      99,
-      89
-    ],
-    "id": "PPU1-5A",
-    "name": "Red Coral",
-    "hsl": [
-      5,
-      53.7,
-      57.6
-    ],
-    "labelHSL": "red",
-    "labelRGB": "gray"
-  },
-  {
-    "brand": "Behr",
-    "url": "",
-    "rgb": [
-      167,
-      100,
-      101
-    ],
-    "id": "PPU1-6",
-    "name": "Rose Marquee",
-    "hsl": [
-      359,
-      27.6,
-      52.4
-    ],
-    "labelHSL": "red",
-    "labelRGB": "gray"
-  },
-  {
-    "brand": "Behr",
-    "url": "",
-    "rgb": [
-      161,
-      77,
-      82
-    ],
-    "id": "PPU1-7",
-    "name": "Powder Room",
-    "hsl": [
-      356,
-      35.3,
-      46.7
-    ],
-    "labelHSL": "red",
-    "labelRGB": "gray"
-  },
-  {
-    "brand": "Behr",
-    "url": "",
-    "rgb": [
-      145,
-      80,
-      80
-    ],
-    "id": "PPU1-8",
-    "name": "Pompeian Red",
-    "hsl": [
-      0,
-      28.9,
-      44.1
-    ],
-    "labelHSL": "red",
-    "labelRGB": "gray"
-  },
-  {
-    "brand": "Behr",
-    "url": "",
-    "rgb": [
-      136,
-      90,
-      86
-    ],
-    "id": "PPU1-9",
-    "name": "Red Willow",
-    "hsl": [
-      5,
-      22.5,
-      43.5
-    ],
-    "labelHSL": "red",
-    "labelRGB": "gray"
   },
   {
     "brand": "Behr",
@@ -62152,24 +61234,6 @@
     ],
     "labelHSL": "yellow",
     "labelRGB": "white"
-  },
-  {
-    "brand": "Behr",
-    "url": "",
-    "rgb": [
-      102,
-      118,
-      89
-    ],
-    "id": "PPU10-1",
-    "name": "Scallion",
-    "hsl": [
-      93,
-      14,
-      40.6
-    ],
-    "labelHSL": "green",
-    "labelRGB": "gray"
   },
   {
     "brand": "Behr",
@@ -62355,24 +61419,6 @@
     "brand": "Behr",
     "url": "",
     "rgb": [
-      126,
-      135,
-      96
-    ],
-    "id": "PPU10-2",
-    "name": "Tuscany Hillside",
-    "hsl": [
-      74,
-      16.9,
-      45.3
-    ],
-    "labelHSL": "yellow",
-    "labelRGB": "gray"
-  },
-  {
-    "brand": "Behr",
-    "url": "",
-    "rgb": [
       89,
       95,
       83
@@ -62386,132 +61432,6 @@
     ],
     "labelHSL": "gray",
     "labelRGB": "brown"
-  },
-  {
-    "brand": "Behr",
-    "url": "",
-    "rgb": [
-      128,
-      144,
-      96
-    ],
-    "id": "PPU10-3",
-    "name": "Green Energy",
-    "hsl": [
-      80,
-      20,
-      47.1
-    ],
-    "labelHSL": "yellow",
-    "labelRGB": "gray"
-  },
-  {
-    "brand": "Behr",
-    "url": "",
-    "rgb": [
-      147,
-      164,
-      98
-    ],
-    "id": "PPU10-4",
-    "name": "New Bamboo",
-    "hsl": [
-      75,
-      26.6,
-      51.4
-    ],
-    "labelHSL": "yellow",
-    "labelRGB": "gray"
-  },
-  {
-    "brand": "Behr",
-    "url": "",
-    "rgb": [
-      161,
-      172,
-      78
-    ],
-    "id": "PPU10-5",
-    "name": "Intoxication",
-    "hsl": [
-      67,
-      37.6,
-      49
-    ],
-    "labelHSL": "yellow",
-    "labelRGB": "gray"
-  },
-  {
-    "brand": "Behr",
-    "url": "",
-    "rgb": [
-      172,
-      176,
-      148
-    ],
-    "id": "PPU10-6",
-    "name": "Spring Walk",
-    "hsl": [
-      69,
-      15.1,
-      63.5
-    ],
-    "labelHSL": "yellow",
-    "labelRGB": "gray"
-  },
-  {
-    "brand": "Behr",
-    "url": "",
-    "rgb": [
-      177,
-      182,
-      136
-    ],
-    "id": "PPU10-7",
-    "name": "Lima Green",
-    "hsl": [
-      67,
-      24,
-      62.4
-    ],
-    "labelHSL": "yellow",
-    "labelRGB": "gray"
-  },
-  {
-    "brand": "Behr",
-    "url": "",
-    "rgb": [
-      192,
-      198,
-      169
-    ],
-    "id": "PPU10-8",
-    "name": "Minted Lemon",
-    "hsl": [
-      72,
-      20.3,
-      72
-    ],
-    "labelHSL": "yellow",
-    "labelRGB": "gray"
-  },
-  {
-    "brand": "Behr",
-    "url": "",
-    "rgb": [
-      203,
-      209,
-      187
-    ],
-    "id": "PPU10-9",
-    "name": "Chinese Jade",
-    "hsl": [
-      76,
-      19.3,
-      77.6
-    ],
-    "labelHSL": "yellow",
-    "labelRGB": "white"
   },
   {
     "brand": "Behr",
@@ -62673,24 +61593,6 @@
       67.1
     ],
     "labelHSL": "yellow",
-    "labelRGB": "gray"
-  },
-  {
-    "brand": "Behr",
-    "url": "",
-    "rgb": [
-      95,
-      108,
-      90
-    ],
-    "id": "PPU11-1",
-    "name": "Royal Orchard",
-    "hsl": [
-      103,
-      9.1,
-      38.8
-    ],
-    "labelHSL": "gray",
     "labelRGB": "gray"
   },
   {
@@ -62877,24 +61779,6 @@
     "brand": "Behr",
     "url": "",
     "rgb": [
-      122,
-      141,
-      115
-    ],
-    "id": "PPU11-2",
-    "name": "Shallot Bulb",
-    "hsl": [
-      104,
-      10.2,
-      50.2
-    ],
-    "labelHSL": "green",
-    "labelRGB": "gray"
-  },
-  {
-    "brand": "Behr",
-    "url": "",
-    "rgb": [
       77,
       96,
       83
@@ -62908,132 +61792,6 @@
     ],
     "labelHSL": "green",
     "labelRGB": "brown"
-  },
-  {
-    "brand": "Behr",
-    "url": "",
-    "rgb": [
-      119,
-      150,
-      110
-    ],
-    "id": "PPU11-3",
-    "name": "Botanical Green",
-    "hsl": [
-      107,
-      16,
-      51
-    ],
-    "labelHSL": "green",
-    "labelRGB": "gray"
-  },
-  {
-    "brand": "Behr",
-    "url": "",
-    "rgb": [
-      147,
-      154,
-      114
-    ],
-    "id": "PPU11-4",
-    "name": "Alamosa Green",
-    "hsl": [
-      71,
-      16.5,
-      52.5
-    ],
-    "labelHSL": "yellow",
-    "labelRGB": "gray"
-  },
-  {
-    "brand": "Behr",
-    "url": "",
-    "rgb": [
-      152,
-      169,
-      140
-    ],
-    "id": "PPU11-5",
-    "name": "Pesto Green",
-    "hsl": [
-      95,
-      14.4,
-      60.6
-    ],
-    "labelHSL": "green",
-    "labelRGB": "gray"
-  },
-  {
-    "brand": "Behr",
-    "url": "",
-    "rgb": [
-      166,
-      178,
-      145
-    ],
-    "id": "PPU11-6",
-    "name": "Willow Grove",
-    "hsl": [
-      82,
-      17.6,
-      63.3
-    ],
-    "labelHSL": "yellow",
-    "labelRGB": "gray"
-  },
-  {
-    "brand": "Behr",
-    "url": "",
-    "rgb": [
-      159,
-      166,
-      136
-    ],
-    "id": "PPU11-7",
-    "name": "Clary Sage",
-    "hsl": [
-      74,
-      14.4,
-      59.2
-    ],
-    "labelHSL": "yellow",
-    "labelRGB": "gray"
-  },
-  {
-    "brand": "Behr",
-    "url": "",
-    "rgb": [
-      175,
-      183,
-      151
-    ],
-    "id": "PPU11-8",
-    "name": "Moss Print",
-    "hsl": [
-      75,
-      18.2,
-      65.5
-    ],
-    "labelHSL": "yellow",
-    "labelRGB": "gray"
-  },
-  {
-    "brand": "Behr",
-    "url": "",
-    "rgb": [
-      176,
-      181,
-      161
-    ],
-    "id": "PPU11-9",
-    "name": "Environmental",
-    "hsl": [
-      75,
-      11.9,
-      67.1
-    ],
-    "labelHSL": "yellow",
-    "labelRGB": "gray"
   },
   {
     "brand": "Behr",
@@ -63196,24 +61954,6 @@
     ],
     "labelHSL": "gray",
     "labelRGB": "gray"
-  },
-  {
-    "brand": "Behr",
-    "url": "",
-    "rgb": [
-      61,
-      87,
-      89
-    ],
-    "id": "PPU12-1",
-    "name": "Abysse",
-    "hsl": [
-      184,
-      18.7,
-      29.4
-    ],
-    "labelHSL": "cyan",
-    "labelRGB": "brown"
   },
   {
     "brand": "Behr",
@@ -63399,24 +62139,6 @@
     "brand": "Behr",
     "url": "",
     "rgb": [
-      79,
-      108,
-      108
-    ],
-    "id": "PPU12-2",
-    "name": "Sequoia Lake",
-    "hsl": [
-      180,
-      15.5,
-      36.7
-    ],
-    "labelHSL": "cyan",
-    "labelRGB": "gray"
-  },
-  {
-    "brand": "Behr",
-    "url": "",
-    "rgb": [
       78,
       97,
       99
@@ -63429,132 +62151,6 @@
       34.7
     ],
     "labelHSL": "cyan",
-    "labelRGB": "gray"
-  },
-  {
-    "brand": "Behr",
-    "url": "",
-    "rgb": [
-      114,
-      144,
-      142
-    ],
-    "id": "PPU12-3",
-    "name": "Dragonfly",
-    "hsl": [
-      176,
-      11.9,
-      50.6
-    ],
-    "labelHSL": "cyan",
-    "labelRGB": "gray"
-  },
-  {
-    "brand": "Behr",
-    "url": "",
-    "rgb": [
-      135,
-      157,
-      154
-    ],
-    "id": "PPU12-4",
-    "name": "Agave",
-    "hsl": [
-      172,
-      10.1,
-      57.3
-    ],
-    "labelHSL": "cyan",
-    "labelRGB": "gray"
-  },
-  {
-    "brand": "Behr",
-    "url": "",
-    "rgb": [
-      147,
-      166,
-      159
-    ],
-    "id": "PPU12-5",
-    "name": "Lotus Leaf",
-    "hsl": [
-      158,
-      9.6,
-      61.4
-    ],
-    "labelHSL": "gray",
-    "labelRGB": "gray"
-  },
-  {
-    "brand": "Behr",
-    "url": "",
-    "rgb": [
-      152,
-      187,
-      185
-    ],
-    "id": "PPU12-6",
-    "name": "Lap Pool Blue",
-    "hsl": [
-      177,
-      20.5,
-      66.5
-    ],
-    "labelHSL": "cyan",
-    "labelRGB": "gray"
-  },
-  {
-    "brand": "Behr",
-    "url": "",
-    "rgb": [
-      152,
-      190,
-      179
-    ],
-    "id": "PPU12-7",
-    "name": "Spring Stream",
-    "hsl": [
-      163,
-      22.6,
-      67.1
-    ],
-    "labelHSL": "cyan",
-    "labelRGB": "gray"
-  },
-  {
-    "brand": "Behr",
-    "url": "",
-    "rgb": [
-      157,
-      184,
-      179
-    ],
-    "id": "PPU12-8",
-    "name": "Opal Silk",
-    "hsl": [
-      169,
-      16,
-      66.9
-    ],
-    "labelHSL": "cyan",
-    "labelRGB": "gray"
-  },
-  {
-    "brand": "Behr",
-    "url": "",
-    "rgb": [
-      165,
-      180,
-      175
-    ],
-    "id": "PPU12-9",
-    "name": "Frozen Pond",
-    "hsl": [
-      160,
-      9.1,
-      67.6
-    ],
-    "labelHSL": "gray",
     "labelRGB": "gray"
   },
   {
@@ -63715,24 +62311,6 @@
       194,
       28.1,
       67.3
-    ],
-    "labelHSL": "cyan",
-    "labelRGB": "gray"
-  },
-  {
-    "brand": "Behr",
-    "url": "",
-    "rgb": [
-      18,
-      125,
-      136
-    ],
-    "id": "PPU13-1",
-    "name": "Caribe",
-    "hsl": [
-      186,
-      76.6,
-      30.2
     ],
     "labelHSL": "cyan",
     "labelRGB": "gray"
@@ -63921,24 +62499,6 @@
     "brand": "Behr",
     "url": "",
     "rgb": [
-      84,
-      112,
-      117
-    ],
-    "id": "PPU13-2",
-    "name": "Juniper Berries",
-    "hsl": [
-      189,
-      16.4,
-      39.4
-    ],
-    "labelHSL": "cyan",
-    "labelRGB": "gray"
-  },
-  {
-    "brand": "Behr",
-    "url": "",
-    "rgb": [
       55,
       81,
       94
@@ -63952,132 +62512,6 @@
     ],
     "labelHSL": "cyan",
     "labelRGB": "brown"
-  },
-  {
-    "brand": "Behr",
-    "url": "",
-    "rgb": [
-      92,
-      120,
-      133
-    ],
-    "id": "PPU13-3",
-    "name": "Catalina Coast",
-    "hsl": [
-      199,
-      18.2,
-      44.1
-    ],
-    "labelHSL": "cyan",
-    "labelRGB": "gray"
-  },
-  {
-    "brand": "Behr",
-    "url": "",
-    "rgb": [
-      112,
-      129,
-      138
-    ],
-    "id": "PPU13-4",
-    "name": "Atlantic Shoreline",
-    "hsl": [
-      201,
-      10.4,
-      49
-    ],
-    "labelHSL": "cyan",
-    "labelRGB": "gray"
-  },
-  {
-    "brand": "Behr",
-    "url": "",
-    "rgb": [
-      94,
-      158,
-      161
-    ],
-    "id": "PPU13-5",
-    "name": "Bali Bliss",
-    "hsl": [
-      183,
-      26.3,
-      50
-    ],
-    "labelHSL": "cyan",
-    "labelRGB": "gray"
-  },
-  {
-    "brand": "Behr",
-    "url": "",
-    "rgb": [
-      111,
-      138,
-      141
-    ],
-    "id": "PPU13-6",
-    "name": "Polaris Blue",
-    "hsl": [
-      186,
-      11.9,
-      49.4
-    ],
-    "labelHSL": "cyan",
-    "labelRGB": "gray"
-  },
-  {
-    "brand": "Behr",
-    "url": "",
-    "rgb": [
-      112,
-      156,
-      165
-    ],
-    "id": "PPU13-7",
-    "name": "Voyage",
-    "hsl": [
-      190,
-      22.7,
-      54.3
-    ],
-    "labelHSL": "cyan",
-    "labelRGB": "gray"
-  },
-  {
-    "brand": "Behr",
-    "url": "",
-    "rgb": [
-      133,
-      164,
-      163
-    ],
-    "id": "PPU13-8",
-    "name": "Venus Teal",
-    "hsl": [
-      178,
-      14.6,
-      58.2
-    ],
-    "labelHSL": "cyan",
-    "labelRGB": "gray"
-  },
-  {
-    "brand": "Behr",
-    "url": "",
-    "rgb": [
-      148,
-      184,
-      195
-    ],
-    "id": "PPU13-9",
-    "name": "Tahoe Blue",
-    "hsl": [
-      194,
-      28.1,
-      67.3
-    ],
-    "labelHSL": "cyan",
-    "labelRGB": "gray"
   },
   {
     "brand": "Behr",
@@ -64237,24 +62671,6 @@
       203,
       22.7,
       64.5
-    ],
-    "labelHSL": "cyan",
-    "labelRGB": "gray"
-  },
-  {
-    "brand": "Behr",
-    "url": "",
-    "rgb": [
-      87,
-      114,
-      139
-    ],
-    "id": "PPU14-1",
-    "name": "Arrowhead Lake",
-    "hsl": [
-      209,
-      23,
-      44.3
     ],
     "labelHSL": "cyan",
     "labelRGB": "gray"
@@ -64443,24 +62859,6 @@
     "brand": "Behr",
     "url": "",
     "rgb": [
-      88,
-      122,
-      156
-    ],
-    "id": "PPU14-2",
-    "name": "Glass Sapphire",
-    "hsl": [
-      210,
-      27.9,
-      47.8
-    ],
-    "labelHSL": "blue",
-    "labelRGB": "gray"
-  },
-  {
-    "brand": "Behr",
-    "url": "",
-    "rgb": [
       62,
       72,
       85
@@ -64474,132 +62872,6 @@
     ],
     "labelHSL": "blue",
     "labelRGB": "brown"
-  },
-  {
-    "brand": "Behr",
-    "url": "",
-    "rgb": [
-      82,
-      120,
-      142
-    ],
-    "id": "PPU14-3",
-    "name": "Cayman Bay",
-    "hsl": [
-      202,
-      26.8,
-      43.9
-    ],
-    "labelHSL": "cyan",
-    "labelRGB": "gray"
-  },
-  {
-    "brand": "Behr",
-    "url": "",
-    "rgb": [
-      105,
-      142,
-      163
-    ],
-    "id": "PPU14-4",
-    "name": "French Court",
-    "hsl": [
-      202,
-      24,
-      52.5
-    ],
-    "labelHSL": "cyan",
-    "labelRGB": "gray"
-  },
-  {
-    "brand": "Behr",
-    "url": "",
-    "rgb": [
-      119,
-      133,
-      145
-    ],
-    "id": "PPU14-5",
-    "name": "Forever Denim",
-    "hsl": [
-      208,
-      10.6,
-      51.8
-    ],
-    "labelHSL": "cyan",
-    "labelRGB": "gray"
-  },
-  {
-    "brand": "Behr",
-    "url": "",
-    "rgb": [
-      130,
-      147,
-      162
-    ],
-    "id": "PPU14-6",
-    "name": "Coastal Vista",
-    "hsl": [
-      208,
-      14.7,
-      57.3
-    ],
-    "labelHSL": "cyan",
-    "labelRGB": "gray"
-  },
-  {
-    "brand": "Behr",
-    "url": "",
-    "rgb": [
-      130,
-      161,
-      190
-    ],
-    "id": "PPU14-7",
-    "name": "Hawaiian Sky",
-    "hsl": [
-      209,
-      31.6,
-      62.7
-    ],
-    "labelHSL": "cyan",
-    "labelRGB": "gray"
-  },
-  {
-    "brand": "Behr",
-    "url": "",
-    "rgb": [
-      145,
-      167,
-      189
-    ],
-    "id": "PPU14-8",
-    "name": "Paris",
-    "hsl": [
-      210,
-      25,
-      65.5
-    ],
-    "labelHSL": "blue",
-    "labelRGB": "gray"
-  },
-  {
-    "brand": "Behr",
-    "url": "",
-    "rgb": [
-      144,
-      169,
-      185
-    ],
-    "id": "PPU14-9",
-    "name": "Windsurf",
-    "hsl": [
-      203,
-      22.7,
-      64.5
-    ],
-    "labelHSL": "cyan",
-    "labelRGB": "gray"
   },
   {
     "brand": "Behr",
@@ -64762,24 +63034,6 @@
     ],
     "labelHSL": "blue",
     "labelRGB": "gray"
-  },
-  {
-    "brand": "Behr",
-    "url": "",
-    "rgb": [
-      65,
-      73,
-      106
-    ],
-    "id": "PPU15-1",
-    "name": "Nobility Blue",
-    "hsl": [
-      228,
-      24,
-      33.5
-    ],
-    "labelHSL": "blue",
-    "labelRGB": "brown"
   },
   {
     "brand": "Behr",
@@ -64965,24 +63219,6 @@
     "brand": "Behr",
     "url": "",
     "rgb": [
-      72,
-      83,
-      129
-    ],
-    "id": "PPU15-2",
-    "name": "Mozart",
-    "hsl": [
-      228,
-      28.4,
-      39.4
-    ],
-    "labelHSL": "blue",
-    "labelRGB": "gray"
-  },
-  {
-    "brand": "Behr",
-    "url": "",
-    "rgb": [
       74,
       78,
       85
@@ -64996,132 +63232,6 @@
     ],
     "labelHSL": "gray",
     "labelRGB": "brown"
-  },
-  {
-    "brand": "Behr",
-    "url": "",
-    "rgb": [
-      50,
-      87,
-      139
-    ],
-    "id": "PPU15-3",
-    "name": "Dark Cobalt Blue",
-    "hsl": [
-      215,
-      47.1,
-      37.1
-    ],
-    "labelHSL": "blue",
-    "labelRGB": "gray"
-  },
-  {
-    "brand": "Behr",
-    "url": "",
-    "rgb": [
-      71,
-      99,
-      135
-    ],
-    "id": "PPU15-4",
-    "name": "Mosaic Blue",
-    "hsl": [
-      214,
-      31.1,
-      40.4
-    ],
-    "labelHSL": "blue",
-    "labelRGB": "gray"
-  },
-  {
-    "brand": "Behr",
-    "url": "",
-    "rgb": [
-      72,
-      110,
-      174
-    ],
-    "id": "PPU15-5",
-    "name": "New Age Blue",
-    "hsl": [
-      218,
-      41.5,
-      48.2
-    ],
-    "labelHSL": "blue",
-    "labelRGB": "gray"
-  },
-  {
-    "brand": "Behr",
-    "url": "",
-    "rgb": [
-      92,
-      131,
-      181
-    ],
-    "id": "PPU15-6",
-    "name": "Neon Blue",
-    "hsl": [
-      214,
-      37.6,
-      53.5
-    ],
-    "labelHSL": "blue",
-    "labelRGB": "gray"
-  },
-  {
-    "brand": "Behr",
-    "url": "",
-    "rgb": [
-      118,
-      129,
-      149
-    ],
-    "id": "PPU15-7",
-    "name": "Tranquil Pond",
-    "hsl": [
-      219,
-      12.8,
-      52.4
-    ],
-    "labelHSL": "blue",
-    "labelRGB": "gray"
-  },
-  {
-    "brand": "Behr",
-    "url": "",
-    "rgb": [
-      131,
-      139,
-      154
-    ],
-    "id": "PPU15-8",
-    "name": "River Tour",
-    "hsl": [
-      219,
-      10.2,
-      55.9
-    ],
-    "labelHSL": "blue",
-    "labelRGB": "gray"
-  },
-  {
-    "brand": "Behr",
-    "url": "",
-    "rgb": [
-      117,
-      138,
-      162
-    ],
-    "id": "PPU15-9",
-    "name": "Hilo Bay",
-    "hsl": [
-      212,
-      19.5,
-      54.7
-    ],
-    "labelHSL": "blue",
-    "labelRGB": "gray"
   },
   {
     "brand": "Behr",
@@ -65283,24 +63393,6 @@
       73.7
     ],
     "labelHSL": "gray",
-    "labelRGB": "gray"
-  },
-  {
-    "brand": "Behr",
-    "url": "",
-    "rgb": [
-      88,
-      86,
-      131
-    ],
-    "id": "PPU16-1",
-    "name": "Aurora Splendor",
-    "hsl": [
-      243,
-      20.7,
-      42.5
-    ],
-    "labelHSL": "blue",
     "labelRGB": "gray"
   },
   {
@@ -65487,24 +63579,6 @@
     "brand": "Behr",
     "url": "",
     "rgb": [
-      100,
-      86,
-      129
-    ],
-    "id": "PPU16-2",
-    "name": "Vigorous Violet",
-    "hsl": [
-      260,
-      20,
-      42.2
-    ],
-    "labelHSL": "blue",
-    "labelRGB": "gray"
-  },
-  {
-    "brand": "Behr",
-    "url": "",
-    "rgb": [
       67,
       66,
       88
@@ -65518,132 +63592,6 @@
     ],
     "labelHSL": "blue",
     "labelRGB": "brown"
-  },
-  {
-    "brand": "Behr",
-    "url": "",
-    "rgb": [
-      121,
-      102,
-      158
-    ],
-    "id": "PPU16-3",
-    "name": "Purple Paradise",
-    "hsl": [
-      260,
-      22.4,
-      51
-    ],
-    "labelHSL": "blue",
-    "labelRGB": "gray"
-  },
-  {
-    "brand": "Behr",
-    "url": "",
-    "rgb": [
-      140,
-      126,
-      175
-    ],
-    "id": "PPU16-4",
-    "name": "Purple Agate",
-    "hsl": [
-      257,
-      23.4,
-      59
-    ],
-    "labelHSL": "blue",
-    "labelRGB": "gray"
-  },
-  {
-    "brand": "Behr",
-    "url": "",
-    "rgb": [
-      145,
-      145,
-      188
-    ],
-    "id": "PPU16-5",
-    "name": "Lily Of The Nile",
-    "hsl": [
-      240,
-      24.3,
-      65.3
-    ],
-    "labelHSL": "blue",
-    "labelRGB": "gray"
-  },
-  {
-    "brand": "Behr",
-    "url": "",
-    "rgb": [
-      228,
-      227,
-      232
-    ],
-    "id": "PPU16-6",
-    "name": "Lilac Mist",
-    "hsl": [
-      252,
-      9.8,
-      90
-    ],
-    "labelHSL": "white",
-    "labelRGB": "white"
-  },
-  {
-    "brand": "Behr",
-    "url": "",
-    "rgb": [
-      221,
-      212,
-      218
-    ],
-    "id": "PPU16-7",
-    "name": "Mystic Fairy",
-    "hsl": [
-      320,
-      11.7,
-      84.9
-    ],
-    "labelHSL": "purple",
-    "labelRGB": "white"
-  },
-  {
-    "brand": "Behr",
-    "url": "",
-    "rgb": [
-      209,
-      213,
-      226
-    ],
-    "id": "PPU16-8",
-    "name": "Hint Of Violet",
-    "hsl": [
-      226,
-      22.7,
-      85.3
-    ],
-    "labelHSL": "blue",
-    "labelRGB": "white"
-  },
-  {
-    "brand": "Behr",
-    "url": "",
-    "rgb": [
-      190,
-      183,
-      193
-    ],
-    "id": "PPU16-9",
-    "name": "Aster",
-    "hsl": [
-      282,
-      7.5,
-      73.7
-    ],
-    "labelHSL": "gray",
-    "labelRGB": "gray"
   },
   {
     "brand": "Behr",
@@ -65806,24 +63754,6 @@
     ],
     "labelHSL": "red",
     "labelRGB": "white"
-  },
-  {
-    "brand": "Behr",
-    "url": "",
-    "rgb": [
-      85,
-      71,
-      90
-    ],
-    "id": "PPU17-1",
-    "name": "Mata Hari",
-    "hsl": [
-      284,
-      11.8,
-      31.6
-    ],
-    "labelHSL": "purple",
-    "labelRGB": "brown"
   },
   {
     "brand": "Behr",
@@ -66027,132 +63957,6 @@
     "brand": "Behr",
     "url": "",
     "rgb": [
-      91,
-      64,
-      81
-    ],
-    "id": "PPU17-3",
-    "name": "Vixen",
-    "hsl": [
-      322,
-      17.4,
-      30.4
-    ],
-    "labelHSL": "purple",
-    "labelRGB": "brown"
-  },
-  {
-    "brand": "Behr",
-    "url": "",
-    "rgb": [
-      98,
-      87,
-      105
-    ],
-    "id": "PPU17-4",
-    "name": "Darkest Grape",
-    "hsl": [
-      277,
-      9.4,
-      37.6
-    ],
-    "labelHSL": "gray",
-    "labelRGB": "gray"
-  },
-  {
-    "brand": "Behr",
-    "url": "",
-    "rgb": [
-      101,
-      88,
-      101
-    ],
-    "id": "PPU17-5",
-    "name": "Preservation Plum",
-    "hsl": [
-      300,
-      6.9,
-      37.1
-    ],
-    "labelHSL": "gray",
-    "labelRGB": "gray"
-  },
-  {
-    "brand": "Behr",
-    "url": "",
-    "rgb": [
-      227,
-      220,
-      218
-    ],
-    "id": "PPU17-6",
-    "name": "Crushed Peony",
-    "hsl": [
-      13,
-      13.8,
-      87.3
-    ],
-    "labelHSL": "red",
-    "labelRGB": "white"
-  },
-  {
-    "brand": "Behr",
-    "url": "",
-    "rgb": [
-      233,
-      217,
-      213
-    ],
-    "id": "PPU17-7",
-    "name": "Vienna Lace",
-    "hsl": [
-      12,
-      31.2,
-      87.5
-    ],
-    "labelHSL": "red",
-    "labelRGB": "white"
-  },
-  {
-    "brand": "Behr",
-    "url": "",
-    "rgb": [
-      216,
-      193,
-      191
-    ],
-    "id": "PPU17-8",
-    "name": "Peony Blush",
-    "hsl": [
-      5,
-      24.3,
-      79.8
-    ],
-    "labelHSL": "red",
-    "labelRGB": "white"
-  },
-  {
-    "brand": "Behr",
-    "url": "",
-    "rgb": [
-      212,
-      190,
-      192
-    ],
-    "id": "PPU17-9",
-    "name": "Embroidery",
-    "hsl": [
-      355,
-      20.4,
-      78.8
-    ],
-    "labelHSL": "red",
-    "labelRGB": "white"
-  },
-  {
-    "brand": "Behr",
-    "url": "",
-    "rgb": [
       79,
       81,
       82
@@ -66310,24 +64114,6 @@
     ],
     "labelHSL": "yellow",
     "labelRGB": "white"
-  },
-  {
-    "brand": "Behr",
-    "url": "",
-    "rgb": [
-      79,
-      81,
-      82
-    ],
-    "id": "PPU18-1",
-    "name": "Cracked Pepper",
-    "hsl": [
-      200,
-      1.9,
-      31.6
-    ],
-    "labelHSL": "gray",
-    "labelRGB": "brown"
   },
   {
     "brand": "Behr",
@@ -66513,24 +64299,6 @@
     "brand": "Behr",
     "url": "",
     "rgb": [
-      89,
-      93,
-      98
-    ],
-    "id": "PPU18-2",
-    "name": "Pencil Point",
-    "hsl": [
-      213,
-      4.8,
-      36.7
-    ],
-    "labelHSL": "gray",
-    "labelRGB": "gray"
-  },
-  {
-    "brand": "Behr",
-    "url": "",
-    "rgb": [
       67,
       68,
       66
@@ -66544,132 +64312,6 @@
     ],
     "labelHSL": "gray",
     "labelRGB": "brown"
-  },
-  {
-    "brand": "Behr",
-    "url": "",
-    "rgb": [
-      110,
-      113,
-      116
-    ],
-    "id": "PPU18-3",
-    "name": "Antique Tin",
-    "hsl": [
-      210,
-      2.7,
-      44.3
-    ],
-    "labelHSL": "gray",
-    "labelRGB": "gray"
-  },
-  {
-    "brand": "Behr",
-    "url": "",
-    "rgb": [
-      141,
-      147,
-      151
-    ],
-    "id": "PPU18-4",
-    "name": "Dark Pewter",
-    "hsl": [
-      204,
-      4.6,
-      57.3
-    ],
-    "labelHSL": "gray",
-    "labelRGB": "gray"
-  },
-  {
-    "brand": "Behr",
-    "url": "",
-    "rgb": [
-      184,
-      188,
-      190
-    ],
-    "id": "PPU18-5",
-    "name": "French Silver",
-    "hsl": [
-      200,
-      4.4,
-      73.3
-    ],
-    "labelHSL": "gray",
-    "labelRGB": "gray"
-  },
-  {
-    "brand": "Behr",
-    "url": "",
-    "rgb": [
-      248,
-      248,
-      244
-    ],
-    "id": "PPU18-6",
-    "name": "Ultra Pure WhiteÂ®",
-    "hsl": [
-      60,
-      22.2,
-      96.5
-    ],
-    "labelHSL": "yellow",
-    "labelRGB": "white"
-  },
-  {
-    "brand": "Behr",
-    "url": "",
-    "rgb": [
-      240,
-      240,
-      233
-    ],
-    "id": "PPU18-7",
-    "name": "Falling Snow",
-    "hsl": [
-      60,
-      18.9,
-      92.7
-    ],
-    "labelHSL": "yellow",
-    "labelRGB": "white"
-  },
-  {
-    "brand": "Behr",
-    "url": "",
-    "rgb": [
-      229,
-      225,
-      220
-    ],
-    "id": "PPU18-8",
-    "name": "Painter's White",
-    "hsl": [
-      33,
-      14.8,
-      88
-    ],
-    "labelHSL": "yellow",
-    "labelRGB": "white"
-  },
-  {
-    "brand": "Behr",
-    "url": "",
-    "rgb": [
-      210,
-      204,
-      197
-    ],
-    "id": "PPU18-9",
-    "name": "Burnished Clay",
-    "hsl": [
-      32,
-      12.6,
-      79.8
-    ],
-    "labelHSL": "yellow",
-    "labelRGB": "white"
   },
   {
     "brand": "Behr",
@@ -66832,24 +64474,6 @@
     ],
     "labelHSL": "brown",
     "labelRGB": "gray"
-  },
-  {
-    "brand": "Behr",
-    "url": "",
-    "rgb": [
-      104,
-      62,
-      59
-    ],
-    "id": "PPU2-1",
-    "name": "Chipotle Paste",
-    "hsl": [
-      4,
-      27.6,
-      32
-    ],
-    "labelHSL": "red",
-    "labelRGB": "brown"
   },
   {
     "brand": "Behr",
@@ -67035,24 +64659,6 @@
     "brand": "Behr",
     "url": "",
     "rgb": [
-      122,
-      63,
-      57
-    ],
-    "id": "PPU2-2",
-    "name": "Red Pepper",
-    "hsl": [
-      6,
-      36.3,
-      35.1
-    ],
-    "labelHSL": "red",
-    "labelRGB": "brown"
-  },
-  {
-    "brand": "Behr",
-    "url": "",
-    "rgb": [
       117,
       85,
       78
@@ -67066,132 +64672,6 @@
     ],
     "labelHSL": "red",
     "labelRGB": "brown"
-  },
-  {
-    "brand": "Behr",
-    "url": "",
-    "rgb": [
-      140,
-      66,
-      61
-    ],
-    "id": "PPU2-3",
-    "name": "Allure",
-    "hsl": [
-      4,
-      39.3,
-      39.4
-    ],
-    "labelHSL": "red",
-    "labelRGB": "brown"
-  },
-  {
-    "brand": "Behr",
-    "url": "",
-    "rgb": [
-      232,
-      222,
-      214
-    ],
-    "id": "PPU2-4",
-    "name": "Pale Cashmere",
-    "hsl": [
-      27,
-      28.1,
-      87.5
-    ],
-    "labelHSL": "brown",
-    "labelRGB": "white"
-  },
-  {
-    "brand": "Behr",
-    "url": "",
-    "rgb": [
-      227,
-      213,
-      203
-    ],
-    "id": "PPU2-5",
-    "name": "Sheer Scarf",
-    "hsl": [
-      25,
-      30,
-      84.3
-    ],
-    "labelHSL": "brown",
-    "labelRGB": "white"
-  },
-  {
-    "brand": "Behr",
-    "url": "",
-    "rgb": [
-      217,
-      199,
-      191
-    ],
-    "id": "PPU2-6",
-    "name": "Wisp Of Mauve",
-    "hsl": [
-      18,
-      25.5,
-      80
-    ],
-    "labelHSL": "brown",
-    "labelRGB": "white"
-  },
-  {
-    "brand": "Behr",
-    "url": "",
-    "rgb": [
-      221,
-      194,
-      183
-    ],
-    "id": "PPU2-7",
-    "name": "Coral Stone",
-    "hsl": [
-      17,
-      35.8,
-      79.2
-    ],
-    "labelHSL": "brown",
-    "labelRGB": "white"
-  },
-  {
-    "brand": "Behr",
-    "url": "",
-    "rgb": [
-      207,
-      166,
-      153
-    ],
-    "id": "PPU2-8",
-    "name": "Pink Ginger",
-    "hsl": [
-      14,
-      36,
-      70.6
-    ],
-    "labelHSL": "red",
-    "labelRGB": "gray"
-  },
-  {
-    "brand": "Behr",
-    "url": "",
-    "rgb": [
-      190,
-      135,
-      117
-    ],
-    "id": "PPU2-9",
-    "name": "Ginger Rose",
-    "hsl": [
-      15,
-      36,
-      60.2
-    ],
-    "labelHSL": "brown",
-    "labelRGB": "gray"
   },
   {
     "brand": "Behr",
@@ -67351,24 +64831,6 @@
       27,
       45.9,
       73.9
-    ],
-    "labelHSL": "brown",
-    "labelRGB": "gray"
-  },
-  {
-    "brand": "Behr",
-    "url": "",
-    "rgb": [
-      191,
-      119,
-      86
-    ],
-    "id": "PPU3-1",
-    "name": "Moroccan Sky",
-    "hsl": [
-      19,
-      45.1,
-      54.3
     ],
     "labelHSL": "brown",
     "labelRGB": "gray"
@@ -67557,24 +65019,6 @@
     "brand": "Behr",
     "url": "",
     "rgb": [
-      194,
-      117,
-      69
-    ],
-    "id": "PPU3-2",
-    "name": "Marmalade Glaze",
-    "hsl": [
-      23,
-      50.6,
-      51.6
-    ],
-    "labelHSL": "brown",
-    "labelRGB": "gray"
-  },
-  {
-    "brand": "Behr",
-    "url": "",
-    "rgb": [
       99,
       77,
       69
@@ -67588,132 +65032,6 @@
     ],
     "labelHSL": "brown",
     "labelRGB": "brown"
-  },
-  {
-    "brand": "Behr",
-    "url": "",
-    "rgb": [
-      211,
-      134,
-      79
-    ],
-    "id": "PPU3-3",
-    "name": "Flaming Torch",
-    "hsl": [
-      25,
-      60,
-      56.9
-    ],
-    "labelHSL": "orange",
-    "labelRGB": "gray"
-  },
-  {
-    "brand": "Behr",
-    "url": "",
-    "rgb": [
-      242,
-      231,
-      218
-    ],
-    "id": "PPU3-4",
-    "name": "Ballet White",
-    "hsl": [
-      33,
-      48,
-      90.2
-    ],
-    "labelHSL": "yellow",
-    "labelRGB": "white"
-  },
-  {
-    "brand": "Behr",
-    "url": "",
-    "rgb": [
-      243,
-      222,
-      205
-    ],
-    "id": "PPU3-5",
-    "name": "Splendor",
-    "hsl": [
-      27,
-      61.3,
-      87.8
-    ],
-    "labelHSL": "orange",
-    "labelRGB": "white"
-  },
-  {
-    "brand": "Behr",
-    "url": "",
-    "rgb": [
-      230,
-      205,
-      184
-    ],
-    "id": "PPU3-6",
-    "name": "Venetian Mask",
-    "hsl": [
-      27,
-      47.9,
-      81.2
-    ],
-    "labelHSL": "brown",
-    "labelRGB": "white"
-  },
-  {
-    "brand": "Behr",
-    "url": "",
-    "rgb": [
-      240,
-      208,
-      181
-    ],
-    "id": "PPU3-7",
-    "name": "Pale Coral",
-    "hsl": [
-      27,
-      66.3,
-      82.5
-    ],
-    "labelHSL": "orange",
-    "labelRGB": "white"
-  },
-  {
-    "brand": "Behr",
-    "url": "",
-    "rgb": [
-      220,
-      196,
-      173
-    ],
-    "id": "PPU3-8",
-    "name": "Sienna Dust",
-    "hsl": [
-      29,
-      40.2,
-      77.1
-    ],
-    "labelHSL": "brown",
-    "labelRGB": "white"
-  },
-  {
-    "brand": "Behr",
-    "url": "",
-    "rgb": [
-      219,
-      185,
-      158
-    ],
-    "id": "PPU3-9",
-    "name": "Pumpkin Cream",
-    "hsl": [
-      27,
-      45.9,
-      73.9
-    ],
-    "labelHSL": "brown",
-    "labelRGB": "gray"
   },
   {
     "brand": "Behr",
@@ -67876,24 +65194,6 @@
     ],
     "labelHSL": "yellow",
     "labelRGB": "white"
-  },
-  {
-    "brand": "Behr",
-    "url": "",
-    "rgb": [
-      143,
-      106,
-      80
-    ],
-    "id": "PPU4-1",
-    "name": "Caramel Swirl",
-    "hsl": [
-      25,
-      28.3,
-      43.7
-    ],
-    "labelHSL": "brown",
-    "labelRGB": "gray"
   },
   {
     "brand": "Behr",
@@ -68079,24 +65379,6 @@
     "brand": "Behr",
     "url": "",
     "rgb": [
-      155,
-      119,
-      88
-    ],
-    "id": "PPU4-2",
-    "name": "Coco Rum",
-    "hsl": [
-      28,
-      27.6,
-      47.6
-    ],
-    "labelHSL": "brown",
-    "labelRGB": "gray"
-  },
-  {
-    "brand": "Behr",
-    "url": "",
-    "rgb": [
       112,
       85,
       62
@@ -68110,132 +65392,6 @@
     ],
     "labelHSL": "brown",
     "labelRGB": "brown"
-  },
-  {
-    "brand": "Behr",
-    "url": "",
-    "rgb": [
-      195,
-      133,
-      81
-    ],
-    "id": "PPU4-3",
-    "name": "Butter Rum",
-    "hsl": [
-      27,
-      48.7,
-      54.1
-    ],
-    "labelHSL": "brown",
-    "labelRGB": "gray"
-  },
-  {
-    "brand": "Behr",
-    "url": "",
-    "rgb": [
-      174,
-      146,
-      124
-    ],
-    "id": "PPU4-4",
-    "name": "Soft Chamois",
-    "hsl": [
-      26,
-      23.6,
-      58.4
-    ],
-    "labelHSL": "brown",
-    "labelRGB": "gray"
-  },
-  {
-    "brand": "Behr",
-    "url": "",
-    "rgb": [
-      190,
-      162,
-      135
-    ],
-    "id": "PPU4-5",
-    "name": "Basketry",
-    "hsl": [
-      29,
-      29.7,
-      63.7
-    ],
-    "labelHSL": "brown",
-    "labelRGB": "gray"
-  },
-  {
-    "brand": "Behr",
-    "url": "",
-    "rgb": [
-      190,
-      155,
-      122
-    ],
-    "id": "PPU4-6",
-    "name": "Teatime",
-    "hsl": [
-      29,
-      34.3,
-      61.2
-    ],
-    "labelHSL": "brown",
-    "labelRGB": "gray"
-  },
-  {
-    "brand": "Behr",
-    "url": "",
-    "rgb": [
-      201,
-      180,
-      156
-    ],
-    "id": "PPU4-7",
-    "name": "Mushroom Bisque",
-    "hsl": [
-      32,
-      29.4,
-      70
-    ],
-    "labelHSL": "yellow",
-    "labelRGB": "gray"
-  },
-  {
-    "brand": "Behr",
-    "url": "",
-    "rgb": [
-      219,
-      196,
-      172
-    ],
-    "id": "PPU4-8",
-    "name": "Plateau",
-    "hsl": [
-      31,
-      39.5,
-      76.7
-    ],
-    "labelHSL": "yellow",
-    "labelRGB": "white"
-  },
-  {
-    "brand": "Behr",
-    "url": "",
-    "rgb": [
-      249,
-      231,
-      213
-    ],
-    "id": "PPU4-9",
-    "name": "Cafe Cream",
-    "hsl": [
-      30,
-      75,
-      90.6
-    ],
-    "labelHSL": "yellow",
-    "labelRGB": "white"
   },
   {
     "brand": "Behr",
@@ -68398,24 +65554,6 @@
     ],
     "labelHSL": "yellow",
     "labelRGB": "white"
-  },
-  {
-    "brand": "Behr",
-    "url": "",
-    "rgb": [
-      76,
-      68,
-      62
-    ],
-    "id": "PPU5-1",
-    "name": "Espresso Beans",
-    "hsl": [
-      26,
-      10.1,
-      27.1
-    ],
-    "labelHSL": "brown",
-    "labelRGB": "brown"
   },
   {
     "brand": "Behr",
@@ -68601,24 +65739,6 @@
     "brand": "Behr",
     "url": "",
     "rgb": [
-      105,
-      91,
-      79
-    ],
-    "id": "PPU5-2",
-    "name": "Aging Barrel",
-    "hsl": [
-      28,
-      14.1,
-      36.1
-    ],
-    "labelHSL": "brown",
-    "labelRGB": "brown"
-  },
-  {
-    "brand": "Behr",
-    "url": "",
-    "rgb": [
       76,
       66,
       63
@@ -68632,132 +65752,6 @@
     ],
     "labelHSL": "gray",
     "labelRGB": "brown"
-  },
-  {
-    "brand": "Behr",
-    "url": "",
-    "rgb": [
-      126,
-      108,
-      96
-    ],
-    "id": "PPU5-3",
-    "name": "Antique Earth",
-    "hsl": [
-      24,
-      13.5,
-      43.5
-    ],
-    "labelHSL": "brown",
-    "labelRGB": "gray"
-  },
-  {
-    "brand": "Behr",
-    "url": "",
-    "rgb": [
-      130,
-      112,
-      96
-    ],
-    "id": "PPU5-4",
-    "name": "Mocha Latte",
-    "hsl": [
-      28,
-      15,
-      44.3
-    ],
-    "labelHSL": "brown",
-    "labelRGB": "gray"
-  },
-  {
-    "brand": "Behr",
-    "url": "",
-    "rgb": [
-      141,
-      121,
-      103
-    ],
-    "id": "PPU5-5",
-    "name": "Coconut Shell",
-    "hsl": [
-      28,
-      15.6,
-      47.8
-    ],
-    "labelHSL": "brown",
-    "labelRGB": "gray"
-  },
-  {
-    "brand": "Behr",
-    "url": "",
-    "rgb": [
-      150,
-      135,
-      119
-    ],
-    "id": "PPU5-6",
-    "name": "Ethiopia",
-    "hsl": [
-      31,
-      12.9,
-      52.7
-    ],
-    "labelHSL": "yellow",
-    "labelRGB": "gray"
-  },
-  {
-    "brand": "Behr",
-    "url": "",
-    "rgb": [
-      165,
-      151,
-      138
-    ],
-    "id": "PPU5-7",
-    "name": "Studio Taupe",
-    "hsl": [
-      29,
-      13,
-      59.4
-    ],
-    "labelHSL": "brown",
-    "labelRGB": "gray"
-  },
-  {
-    "brand": "Behr",
-    "url": "",
-    "rgb": [
-      204,
-      195,
-      182
-    ],
-    "id": "PPU5-8",
-    "name": "Sculptor Clay",
-    "hsl": [
-      35,
-      17.7,
-      75.7
-    ],
-    "labelHSL": "yellow",
-    "labelRGB": "white"
-  },
-  {
-    "brand": "Behr",
-    "url": "",
-    "rgb": [
-      243,
-      236,
-      227
-    ],
-    "id": "PPU5-9",
-    "name": "Bleached Linen",
-    "hsl": [
-      34,
-      40,
-      92.2
-    ],
-    "labelHSL": "yellow",
-    "labelRGB": "white"
   },
   {
     "brand": "Behr",
@@ -68920,24 +65914,6 @@
     ],
     "labelHSL": "yellow",
     "labelRGB": "white"
-  },
-  {
-    "brand": "Behr",
-    "url": "",
-    "rgb": [
-      157,
-      108,
-      56
-    ],
-    "id": "PPU6-1",
-    "name": "Curry Powder",
-    "hsl": [
-      31,
-      47.4,
-      41.8
-    ],
-    "labelHSL": "yellow",
-    "labelRGB": "gray"
   },
   {
     "brand": "Behr",
@@ -69123,24 +66099,6 @@
     "brand": "Behr",
     "url": "",
     "rgb": [
-      211,
-      153,
-      83
-    ],
-    "id": "PPU6-2",
-    "name": "Saffron Strands",
-    "hsl": [
-      33,
-      59.3,
-      57.6
-    ],
-    "labelHSL": "yellow",
-    "labelRGB": "gray"
-  },
-  {
-    "brand": "Behr",
-    "url": "",
-    "rgb": [
       135,
       116,
       72
@@ -69154,132 +66112,6 @@
     ],
     "labelHSL": "yellow",
     "labelRGB": "gray"
-  },
-  {
-    "brand": "Behr",
-    "url": "",
-    "rgb": [
-      236,
-      179,
-      112
-    ],
-    "id": "PPU6-3",
-    "name": "Sunburst",
-    "hsl": [
-      32,
-      76.5,
-      68.2
-    ],
-    "labelHSL": "yellow",
-    "labelRGB": "gray"
-  },
-  {
-    "brand": "Behr",
-    "url": "",
-    "rgb": [
-      230,
-      180,
-      115
-    ],
-    "id": "PPU6-4",
-    "name": "Pyramid Gold",
-    "hsl": [
-      34,
-      69.7,
-      67.6
-    ],
-    "labelHSL": "yellow",
-    "labelRGB": "gray"
-  },
-  {
-    "brand": "Behr",
-    "url": "",
-    "rgb": [
-      217,
-      172,
-      123
-    ],
-    "id": "PPU6-5",
-    "name": "Cork",
-    "hsl": [
-      31,
-      55.3,
-      66.7
-    ],
-    "labelHSL": "yellow",
-    "labelRGB": "gray"
-  },
-  {
-    "brand": "Behr",
-    "url": "",
-    "rgb": [
-      255,
-      195,
-      104
-    ],
-    "id": "PPU6-6",
-    "name": "Honey Locust",
-    "hsl": [
-      36,
-      100,
-      70.4
-    ],
-    "labelHSL": "yellow",
-    "labelRGB": "yellow"
-  },
-  {
-    "brand": "Behr",
-    "url": "",
-    "rgb": [
-      247,
-      198,
-      129
-    ],
-    "id": "PPU6-7",
-    "name": "Jackfruit",
-    "hsl": [
-      35,
-      88.1,
-      73.7
-    ],
-    "labelHSL": "yellow",
-    "labelRGB": "gray"
-  },
-  {
-    "brand": "Behr",
-    "url": "",
-    "rgb": [
-      244,
-      213,
-      171
-    ],
-    "id": "PPU6-8",
-    "name": "Pale Honey",
-    "hsl": [
-      35,
-      76.8,
-      81.4
-    ],
-    "labelHSL": "yellow",
-    "labelRGB": "white"
-  },
-  {
-    "brand": "Behr",
-    "url": "",
-    "rgb": [
-      248,
-      237,
-      217
-    ],
-    "id": "PPU6-9",
-    "name": "Polished Pearl",
-    "hsl": [
-      39,
-      68.9,
-      91.2
-    ],
-    "labelHSL": "yellow",
-    "labelRGB": "white"
   },
   {
     "brand": "Behr",
@@ -69465,24 +66297,6 @@
     "brand": "Behr",
     "url": "",
     "rgb": [
-      103,
-      88,
-      62
-    ],
-    "id": "PPU7-1",
-    "name": "Moss Stone",
-    "hsl": [
-      38,
-      24.8,
-      32.4
-    ],
-    "labelHSL": "yellow",
-    "labelRGB": "brown"
-  },
-  {
-    "brand": "Behr",
-    "url": "",
-    "rgb": [
       221,
       209,
       192
@@ -69663,24 +66477,6 @@
     "brand": "Behr",
     "url": "",
     "rgb": [
-      114,
-      97,
-      68
-    ],
-    "id": "PPU7-2",
-    "name": "Tree Swing",
-    "hsl": [
-      38,
-      25.3,
-      35.7
-    ],
-    "labelHSL": "yellow",
-    "labelRGB": "brown"
-  },
-  {
-    "brand": "Behr",
-    "url": "",
-    "rgb": [
       203,
       176,
       141
@@ -69784,150 +66580,6 @@
     ],
     "labelHSL": "yellow",
     "labelRGB": "brown"
-  },
-  {
-    "brand": "Behr",
-    "url": "",
-    "rgb": [
-      146,
-      129,
-      105
-    ],
-    "id": "PPU7-3",
-    "name": "Macchiato",
-    "hsl": [
-      35,
-      16.3,
-      49.2
-    ],
-    "labelHSL": "yellow",
-    "labelRGB": "gray"
-  },
-  {
-    "brand": "Behr",
-    "url": "",
-    "rgb": [
-      148,
-      128,
-      108
-    ],
-    "id": "PPU7-3A",
-    "name": "Sofisticata",
-    "hsl": [
-      30,
-      15.7,
-      50.2
-    ],
-    "labelHSL": "yellow",
-    "labelRGB": "gray"
-  },
-  {
-    "brand": "Behr",
-    "url": "",
-    "rgb": [
-      155,
-      131,
-      104
-    ],
-    "id": "PPU7-4",
-    "name": "Collectible",
-    "hsl": [
-      32,
-      20.3,
-      50.8
-    ],
-    "labelHSL": "yellow",
-    "labelRGB": "gray"
-  },
-  {
-    "brand": "Behr",
-    "url": "",
-    "rgb": [
-      167,
-      148,
-      129
-    ],
-    "id": "PPU7-5",
-    "name": "Pure Earth",
-    "hsl": [
-      30,
-      17.8,
-      58
-    ],
-    "labelHSL": "yellow",
-    "labelRGB": "gray"
-  },
-  {
-    "brand": "Behr",
-    "url": "",
-    "rgb": [
-      181,
-      161,
-      139
-    ],
-    "id": "PPU7-6",
-    "name": "Chateau",
-    "hsl": [
-      31,
-      22.1,
-      62.7
-    ],
-    "labelHSL": "yellow",
-    "labelRGB": "gray"
-  },
-  {
-    "brand": "Behr",
-    "url": "",
-    "rgb": [
-      192,
-      174,
-      151
-    ],
-    "id": "PPU7-7",
-    "name": "Riviera Beach",
-    "hsl": [
-      34,
-      24.6,
-      67.3
-    ],
-    "labelHSL": "yellow",
-    "labelRGB": "gray"
-  },
-  {
-    "brand": "Behr",
-    "url": "",
-    "rgb": [
-      210,
-      193,
-      169
-    ],
-    "id": "PPU7-8",
-    "name": "Baja",
-    "hsl": [
-      35,
-      31.3,
-      74.3
-    ],
-    "labelHSL": "yellow",
-    "labelRGB": "gray"
-  },
-  {
-    "brand": "Behr",
-    "url": "",
-    "rgb": [
-      215,
-      207,
-      193
-    ],
-    "id": "PPU7-9",
-    "name": "Aged Beige",
-    "hsl": [
-      38,
-      21.6,
-      80
-    ],
-    "labelHSL": "yellow",
-    "labelRGB": "white"
   },
   {
     "brand": "Behr",
@@ -70087,24 +66739,6 @@
       44,
       29.1,
       69
-    ],
-    "labelHSL": "yellow",
-    "labelRGB": "gray"
-  },
-  {
-    "brand": "Behr",
-    "url": "",
-    "rgb": [
-      123,
-      108,
-      78
-    ],
-    "id": "PPU8-1",
-    "name": "Olive",
-    "hsl": [
-      40,
-      22.4,
-      39.4
     ],
     "labelHSL": "yellow",
     "labelRGB": "gray"
@@ -70293,24 +66927,6 @@
     "brand": "Behr",
     "url": "",
     "rgb": [
-      146,
-      129,
-      97
-    ],
-    "id": "PPU8-2",
-    "name": "Gingko Tree",
-    "hsl": [
-      39,
-      20.2,
-      47.6
-    ],
-    "labelHSL": "yellow",
-    "labelRGB": "gray"
-  },
-  {
-    "brand": "Behr",
-    "url": "",
-    "rgb": [
       157,
       151,
       135
@@ -70414,132 +67030,6 @@
     ],
     "labelHSL": "yellow",
     "labelRGB": "brown"
-  },
-  {
-    "brand": "Behr",
-    "url": "",
-    "rgb": [
-      148,
-      137,
-      114
-    ],
-    "id": "PPU8-3",
-    "name": "Dry Pasture",
-    "hsl": [
-      41,
-      13.7,
-      51.4
-    ],
-    "labelHSL": "yellow",
-    "labelRGB": "gray"
-  },
-  {
-    "brand": "Behr",
-    "url": "",
-    "rgb": [
-      150,
-      139,
-      111
-    ],
-    "id": "PPU8-4",
-    "name": "Urban Safari",
-    "hsl": [
-      43,
-      15.7,
-      51.2
-    ],
-    "labelHSL": "yellow",
-    "labelRGB": "gray"
-  },
-  {
-    "brand": "Behr",
-    "url": "",
-    "rgb": [
-      168,
-      150,
-      105
-    ],
-    "id": "PPU8-5",
-    "name": "Eco Green",
-    "hsl": [
-      43,
-      26.6,
-      53.5
-    ],
-    "labelHSL": "yellow",
-    "labelRGB": "gray"
-  },
-  {
-    "brand": "Behr",
-    "url": "",
-    "rgb": [
-      170,
-      154,
-      122
-    ],
-    "id": "PPU8-6",
-    "name": "Exploring Khaki",
-    "hsl": [
-      40,
-      22,
-      57.3
-    ],
-    "labelHSL": "yellow",
-    "labelRGB": "gray"
-  },
-  {
-    "brand": "Behr",
-    "url": "",
-    "rgb": [
-      180,
-      162,
-      134
-    ],
-    "id": "PPU8-7",
-    "name": "Chamois Tan",
-    "hsl": [
-      37,
-      23.5,
-      61.6
-    ],
-    "labelHSL": "yellow",
-    "labelRGB": "gray"
-  },
-  {
-    "brand": "Behr",
-    "url": "",
-    "rgb": [
-      185,
-      171,
-      134
-    ],
-    "id": "PPU8-8",
-    "name": "Kaffir Lime",
-    "hsl": [
-      44,
-      26.7,
-      62.5
-    ],
-    "labelHSL": "yellow",
-    "labelRGB": "gray"
-  },
-  {
-    "brand": "Behr",
-    "url": "",
-    "rgb": [
-      199,
-      187,
-      153
-    ],
-    "id": "PPU8-9",
-    "name": "Tea Bag",
-    "hsl": [
-      44,
-      29.1,
-      69
-    ],
-    "labelHSL": "yellow",
-    "labelRGB": "gray"
   },
   {
     "brand": "Behr",
@@ -70702,24 +67192,6 @@
     ],
     "labelHSL": "yellow",
     "labelRGB": "gray"
-  },
-  {
-    "brand": "Behr",
-    "url": "",
-    "rgb": [
-      100,
-      95,
-      73
-    ],
-    "id": "PPU9-1",
-    "name": "Alligator Skin",
-    "hsl": [
-      49,
-      15.6,
-      33.9
-    ],
-    "labelHSL": "yellow",
-    "labelRGB": "brown"
   },
   {
     "brand": "Behr",
@@ -70905,24 +67377,6 @@
     "brand": "Behr",
     "url": "",
     "rgb": [
-      147,
-      131,
-      76
-    ],
-    "id": "PPU9-2",
-    "name": "Lucky Bamboo",
-    "hsl": [
-      46,
-      31.8,
-      43.7
-    ],
-    "labelHSL": "yellow",
-    "labelRGB": "gray"
-  },
-  {
-    "brand": "Behr",
-    "url": "",
-    "rgb": [
       179,
       177,
       151
@@ -71026,132 +67480,6 @@
     ],
     "labelHSL": "yellow",
     "labelRGB": "brown"
-  },
-  {
-    "brand": "Behr",
-    "url": "",
-    "rgb": [
-      149,
-      140,
-      69
-    ],
-    "id": "PPU9-3",
-    "name": "Retro Avocado",
-    "hsl": [
-      53,
-      36.7,
-      42.7
-    ],
-    "labelHSL": "yellow",
-    "labelRGB": "gray"
-  },
-  {
-    "brand": "Behr",
-    "url": "",
-    "rgb": [
-      166,
-      157,
-      116
-    ],
-    "id": "PPU9-4",
-    "name": "Fresh Olive",
-    "hsl": [
-      49,
-      21.9,
-      55.3
-    ],
-    "labelHSL": "yellow",
-    "labelRGB": "gray"
-  },
-  {
-    "brand": "Behr",
-    "url": "",
-    "rgb": [
-      177,
-      167,
-      113
-    ],
-    "id": "PPU9-5",
-    "name": "Natchez Moss",
-    "hsl": [
-      51,
-      29.1,
-      56.9
-    ],
-    "labelHSL": "yellow",
-    "labelRGB": "gray"
-  },
-  {
-    "brand": "Behr",
-    "url": "",
-    "rgb": [
-      191,
-      175,
-      102
-    ],
-    "id": "PPU9-6",
-    "name": "Riesling Grape",
-    "hsl": [
-      49,
-      41,
-      57.5
-    ],
-    "labelHSL": "yellow",
-    "labelRGB": "gray"
-  },
-  {
-    "brand": "Behr",
-    "url": "",
-    "rgb": [
-      199,
-      192,
-      119
-    ],
-    "id": "PPU9-7",
-    "name": "Fresh Sprout",
-    "hsl": [
-      55,
-      41.7,
-      62.4
-    ],
-    "labelHSL": "yellow",
-    "labelRGB": "gray"
-  },
-  {
-    "brand": "Behr",
-    "url": "",
-    "rgb": [
-      180,
-      172,
-      133
-    ],
-    "id": "PPU9-8",
-    "name": "Tarragon Tease",
-    "hsl": [
-      50,
-      23.9,
-      61.4
-    ],
-    "labelHSL": "yellow",
-    "labelRGB": "gray"
-  },
-  {
-    "brand": "Behr",
-    "url": "",
-    "rgb": [
-      184,
-      179,
-      150
-    ],
-    "id": "PPU9-9",
-    "name": "Seedling",
-    "hsl": [
-      51,
-      19.3,
-      65.5
-    ],
-    "labelHSL": "yellow",
-    "labelRGB": "gray"
   },
   {
     "brand": "Behr",
@@ -83343,24 +79671,6 @@
     "brand": "Behr",
     "url": "",
     "rgb": [
-      250,
-      253,
-      247
-    ],
-    "id": "W-B-500",
-    "name": "Ultra Pure White",
-    "hsl": [
-      90,
-      60,
-      98
-    ],
-    "labelHSL": "green",
-    "labelRGB": "white"
-  },
-  {
-    "brand": "Behr",
-    "url": "",
-    "rgb": [
       241,
       251,
       241
@@ -83445,24 +79755,6 @@
       93.9
     ],
     "labelHSL": "blue",
-    "labelRGB": "white"
-  },
-  {
-    "brand": "Behr",
-    "url": "",
-    "rgb": [
-      242,
-      241,
-      229
-    ],
-    "id": "W-B-700",
-    "name": "Swiss Coffee",
-    "hsl": [
-      55,
-      33.3,
-      92.4
-    ],
-    "labelHSL": "yellow",
     "labelRGB": "white"
   },
   {
@@ -83623,42 +79915,6 @@
       52,
       56.1,
       92
-    ],
-    "labelHSL": "yellow",
-    "labelRGB": "white"
-  },
-  {
-    "brand": "Behr",
-    "url": "",
-    "rgb": [
-      247,
-      238,
-      220
-    ],
-    "id": "W-D-310",
-    "name": "Linen White",
-    "hsl": [
-      40,
-      62.8,
-      91.6
-    ],
-    "labelHSL": "yellow",
-    "labelRGB": "white"
-  },
-  {
-    "brand": "Behr",
-    "url": "",
-    "rgb": [
-      236,
-      226,
-      197
-    ],
-    "id": "W-D-320",
-    "name": "Navajo White",
-    "hsl": [
-      45,
-      50.6,
-      84.9
     ],
     "labelHSL": "yellow",
     "labelRGB": "white"
@@ -83937,24 +80193,6 @@
     "brand": "Behr",
     "url": "",
     "rgb": [
-      248,
-      249,
-      242
-    ],
-    "id": "W-F-200",
-    "name": "Polar Bear",
-    "hsl": [
-      69,
-      36.8,
-      96.3
-    ],
-    "labelHSL": "yellow",
-    "labelRGB": "white"
-  },
-  {
-    "brand": "Behr",
-    "url": "",
-    "rgb": [
       242,
       240,
       230
@@ -84009,42 +80247,6 @@
     "brand": "Behr",
     "url": "",
     "rgb": [
-      244,
-      236,
-      217
-    ],
-    "id": "W-F-310",
-    "name": "Cottage White",
-    "hsl": [
-      42,
-      55.1,
-      90.4
-    ],
-    "labelHSL": "yellow",
-    "labelRGB": "white"
-  },
-  {
-    "brand": "Behr",
-    "url": "",
-    "rgb": [
-      231,
-      226,
-      202
-    ],
-    "id": "W-F-320",
-    "name": "Antique White",
-    "hsl": [
-      50,
-      37.7,
-      84.9
-    ],
-    "labelHSL": "yellow",
-    "labelRGB": "white"
-  },
-  {
-    "brand": "Behr",
-    "url": "",
-    "rgb": [
       247,
       246,
       238
@@ -84075,42 +80277,6 @@
       89.2
     ],
     "labelHSL": "yellow",
-    "labelRGB": "white"
-  },
-  {
-    "brand": "Behr",
-    "url": "",
-    "rgb": [
-      231,
-      233,
-      215
-    ],
-    "id": "W-F-420",
-    "name": "Off White",
-    "hsl": [
-      67,
-      29,
-      87.8
-    ],
-    "labelHSL": "yellow",
-    "labelRGB": "white"
-  },
-  {
-    "brand": "Behr",
-    "url": "",
-    "rgb": [
-      242,
-      247,
-      245
-    ],
-    "id": "W-F-500",
-    "name": "Frost",
-    "hsl": [
-      156,
-      23.8,
-      95.9
-    ],
-    "labelHSL": "cyan",
     "labelRGB": "white"
   },
   {
@@ -84183,24 +80349,6 @@
       94.7
     ],
     "labelHSL": "yellow",
-    "labelRGB": "white"
-  },
-  {
-    "brand": "Behr",
-    "url": "",
-    "rgb": [
-      238,
-      242,
-      238
-    ],
-    "id": "W-F-620",
-    "name": "White",
-    "hsl": [
-      120,
-      13.3,
-      94.1
-    ],
-    "labelHSL": "green",
     "labelRGB": "white"
   },
   {

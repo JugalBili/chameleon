@@ -17,9 +17,12 @@ const processedData = [];
 const brand = "Dunn Edwards";
 const BASE_URL = "https://www.dunnedwards.com/colors/browser/";
 for (const paint of data) {
+  const name = paint["Color Name"];
+  if (processedData.some((obj) => obj.name === name)) {
+    continue;
+  }
   const rgb = rgbStringToArray(paint.RGB);
   const id = paint["Color Number"];
-  const name = paint["Color Name"];
   const hsl = RGBToHSL(rgb);
   const url = BASE_URL + id.toLowerCase();
   const labelHSL = hslToColorName(hsl);
