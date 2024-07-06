@@ -134,3 +134,16 @@ export const hslToColorName = (hsl) => {
 
   return color;
 };
+
+export const createColorEntry = (
+  brand,
+  url,
+  rgb,
+  id,
+  name,
+  hsl,
+  labelHSL,
+  labelRGB
+) => {
+  return { brand, url, rgb, id, name, hsl, labelHSL, labelRGB };
+};

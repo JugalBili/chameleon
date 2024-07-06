@@ -23,13 +23,13 @@ const colors = await page.$eval(
       const colorName = a.querySelector("h3").innerText ?? "undefined";
       const rgb = window.getComputedStyle(a).backgroundColor;
       // genericLabel = rgbToColorName(rgb[0], rgb[1], rgb[2]);
-      const Id = a.querySelector("span").innerText ?? "undefined";
+      const id = a.querySelector("span").innerText ?? "undefined";
       return {
         brand: "PPG",
         url: painturl,
         rgb,
         name: colorName,
-        Id,
+        id,
       };
     });
     // return anchorElements.map((a) => a.href);
@@ -52,7 +52,7 @@ if (colors) {
   });
   const dataString = JSON.stringify(processedColors, null, 2);
   try {
-    await fs.writeFile("ppg.json", dataString, "utf8");
+    await fs.writeFile("./ProcessedData/ppg.json", dataString, "utf8");
     console.log(
       `Successfully Fetched data. Found ${[processedColors.length]} colors`
     );

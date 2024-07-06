@@ -1,7 +1,8 @@
 {
-  "main": "ppg.js",
   "type": "module",
   "dependencies": {
+    "firebase": "^10.12.2",
+    "firebase-admin": "^12.2.0",
     "puppeteer": "^22.11.2"
   }
 }

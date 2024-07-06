@@ -32,14 +32,14 @@ while (true) {
       const url = anchor.href;
       const anchorChildren = anchor.querySelectorAll("p");
       const colorName = anchorChildren[0].innerText.trim() || "undefined";
-      const Id = anchorChildren[1].innerText.trim() || "undefined";
+      const id = anchorChildren[1].innerText.trim() || "undefined";
 
       colors.push({
         brand: "Benjamin Moore",
         url,
         rgb,
         name: colorName,
-        Id,
+        id,
       });
     }
 
@@ -59,7 +59,7 @@ while (true) {
   try {
     await page.waitForSelector(
       'button[aria-label="Go to next page"]:not([disabled])',
-      { timeout: 500 }
+      { timeout: 5000 } // had to increase this limit because my laptop cannot find this button in 0.5ms
     );
   } catch (error) {
     // If next button is not found, break the loop
@@ -83,14 +83,14 @@ const backgroundColors = await page.evaluate(() => {
     const url = anchor.href;
     const anchorChildren = anchor.querySelectorAll("p");
     const colorName = anchorChildren[0].innerText.trim() || "undefined";
-    const Id = anchorChildren[1].innerText.trim() || "undefined";
+    const id = anchorChildren[1].innerText.trim() || "undefined";
 
     colors.push({
       brand: "Benjamin Moore",
       url,
       rgb,
       name: colorName,
-      Id,
+      id,
     });
   }
   return colors;
@@ -114,7 +114,11 @@ if (colors.length) {
   });
   const dataString = JSON.stringify(processedColors, null, 2);
   try {
-    await fs.writeFile("benjaminMoore.json", dataString, "utf8");
+    await fs.writeFile(
+      "./ProcessedData/benjaminMoore.json",
+      dataString,
+      "utf8"
+    );
     console.log(
       `Successfully Fetched data. Found ${[processedColors.length]} colors`
     );
