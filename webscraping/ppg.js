@@ -52,7 +52,7 @@ if (colors) {
   });
   const dataString = JSON.stringify(processedColors, null, 2);
   try {
-    await fs.writeFile("ppg.json", dataString, "utf8");
+    await fs.writeFile("./ProcessedData/ppg.json", dataString, "utf8");
     console.log(
       `Successfully Fetched data. Found ${[processedColors.length]} colors`
     );
