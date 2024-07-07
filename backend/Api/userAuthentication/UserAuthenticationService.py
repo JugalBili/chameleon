@@ -1,6 +1,5 @@
-from fastapi import Depends, HTTPException
+from fastapi import HTTPException
 from .UserAuthenticationRepository import UserAuthenticationRepository
-from typing import Annotated
 from .CreateUserDto import CreateUserDTO
 from .UserLoginDto import UserLoginDto
 from pydantic import BaseModel
@@ -14,7 +13,7 @@ class AuthToken(BaseModel):
 
 class UserAuthenticationService(object):
     def __init__(self,
-                 repository: Annotated[UserAuthenticationRepository, Depends(UserAuthenticationRepository)]) -> None:
+                 repository: UserAuthenticationRepository) -> None:
         self.repository = repository
 
     # realistically, this method should be a middleware but I can't figure out how to do that properly with this library
