@@ -3,10 +3,7 @@ from firebase_admin import firestore_async
 from google.cloud.firestore_v1 import DocumentSnapshot
 from .CreateUserDto import CreateUserDTO
 from .UserLoginDto import UserLoginDto
-from ..dependencies import getEnv
-from ..config import Settings
-from typing import Annotated, Union
-from pydantic import BaseModel
+from typing import Union
 from datetime import datetime, timedelta, timezone
 import jwt
 from jwt.exceptions import InvalidTokenError
@@ -40,7 +37,7 @@ class User:
 
 
 class UserAuthenticationRepository:
-    def __init__(self, env: Annotated[Settings, Depends(getEnv)]) -> None:
+    def __init__(self, env) -> None:
         self.collectionRef = firestore_async.client().collection('users')
         self.signingKey = env.jwt_signing_key
         self.signingAlgorithm = "HS256"
