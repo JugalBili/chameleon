@@ -14,7 +14,7 @@ const app = initializeApp(credentials);
 const db = getFirestore(app);
 
 // debug
-// connectFirestoreEmulator(db, "127.0.0.1", 8080);
+connectFirestoreEmulator(db, "127.0.0.1", 8080);
 
 const files = [
   "benjaminMoore.json",
@@ -36,24 +36,32 @@ const merged_data = {};
 for (const dataset of paint_data) {
   for (const paint of dataset) {
     const rgb = paint.rgb;
-    const key = `${rgb[0]},${rgb[1]},${rgb[2]}`;
+    const rgb_map = {
+      r: rgb[0],
+      g: rgb[1],
+      b: rgb[2],
+    };
+    const hsl = paint.hsl;
+    const hsl_map = {
+      h: hsl[0],
+      s: hsl[1],
+      l: hsl[2],
+    };
+    const key = paint.id;
     const brand = paint.brand;
     const brand_data = {
       brand,
       url: paint.url,
       name: paint.name,
-      id: paint.id,
+      id: key,
+      rgb: rgb_map,
+      hsl: hsl_map,
+      labelRGB: paint.labelRGB,
+      labelHSL: paint.labelHSL,
     };
     if (!merged_data[key]) {
-      merged_data[key] = {
-        rgb,
-        hsl: paint.hsl,
-        labelHSL: paint.labelHSL,
-        labelRGB: paint.labelRGB,
-        companies: [],
-      };
+      merged_data[key] = brand_data;
     }
-    merged_data[key].companies.push(brand_data);
   }
 }
 
