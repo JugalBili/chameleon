@@ -118,5 +118,6 @@ class ImageRepository:
         ret = []
         for blob in blobs:
             filename = blob.name.split("/")[-1]
-            ret.append(filename)
+            r,g,b,paintId = self._parse_metadata_from_blob(blob)
+            ret.append(GetImageResponse(image_hash=filename, rgb=RGB(r=r, g=g, b=b), paintId=paintId))
         return ret

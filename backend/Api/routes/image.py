@@ -2,9 +2,10 @@ from fastapi import APIRouter, Depends, UploadFile, Form, File, HTTPException, R
 from ..image.RGB import ImageUploadDTO
 from pydantic import ValidationError
 from ..image.imageService import ImageService
-from typing import Annotated
+from typing import Annotated, List
 from ..dependencies import get_image_service, get_user
 from ..userAuthentication.UserAuthenticationRepository import User
+from ..image.getImageResponse import GetImageResponse
 router = APIRouter(
     # specify subroute. All routes in this file will be in the form of /login/{whatever}
     prefix="/image",
@@ -24,9 +25,11 @@ def get_image_by_hash(image_service: Annotated['ImageService',Depends(get_image_
     
 @router.get("/list/{image_hash}")
 def get_image_by_hash(image_service: Annotated['ImageService',Depends(get_image_service)],
-                    user: Annotated['User', Depends(get_user)], 
+                    # user: Annotated['User', Depends(get_user)], 
                     image_hash: str
                     ):
+    user = User(email="test", firstname="Test", lastname="Test", uid="Test")
+    
     return image_service.get_image_summary_by_hash(user, image_hash)
 
 @router.post("/")
