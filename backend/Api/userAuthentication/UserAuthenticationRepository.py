@@ -1,6 +1,6 @@
 from fastapi import HTTPException, Depends
 from firebase_admin import firestore_async
-from google.cloud.firestore_v1 import DocumentSnapshot
+from google.cloud.firestore_v1 import DocumentSnapshot, FieldFilter
 from .CreateUserDto import CreateUserDTO
 from .UserLoginDto import UserLoginDto
 from typing import Union
@@ -75,7 +75,7 @@ class UserAuthenticationRepository:
 
     async def getUserFromLogin(self, loginDto: UserLoginDto) -> Union[User, None]:
         try:
-            query = self.collectionRef.where("email", "==", loginDto.email)
+            query = self.collectionRef.where(filter=FieldFilter("email", "==", loginDto.email))
             users = [user async for user in query.stream()]
             if len(users) == 0:
                 return None
@@ -89,7 +89,7 @@ class UserAuthenticationRepository:
 
     async def getUserFromEmail(self, email: str):
         try:
-            query = self.collectionRef.where("email", "==", email)
+            query = self.collectionRef.where(filter=FieldFilter("email", "==", email))
             users = [user async for user in query.stream()]
             if len(users) == 0:
                 return None
