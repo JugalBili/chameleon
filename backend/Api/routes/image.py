@@ -1,4 +1,4 @@
-from fastapi import APIRouter, Depends, UploadFile, Form, File, HTTPException
+from fastapi import APIRouter, Depends, UploadFile, Form, File, HTTPException, Response
 from ..image.RGB import ImageUploadDTO
 from pydantic import ValidationError
 from ..image.imageService import ImageService
@@ -14,19 +14,28 @@ router = APIRouter(
     responses={401: {"description": "Incorrect Login information"}},
 )
 
-@router.post("/",
-             responses={
-                 200: {
-                     "content": {"image/jpeg": {}}
-                 }
-             })
-async def upload_file(repository: Annotated['ImageService',Depends(get_image_service)],
-                    #   user: Annotated['User', Depends(get_user)], 
-                      file: UploadFile = File(...), colors: str = Form(...)):
+@router.get("/{image_hash}")
+def get_image_by_hash(image_service: Annotated['ImageService',Depends(get_image_service)],
+                    user: Annotated['User', Depends(get_user)], 
+                    image_hash: str
+                    ):
+    image = image_service.get_image_by_hash(user, image_hash)
+    return Response(content=image.image_bytes, media_type=image.contentType)
+    
+@router.get("/list/{image_hash}")
+def get_image_by_hash(image_service: Annotated['ImageService',Depends(get_image_service)],
+                    user: Annotated['User', Depends(get_user)], 
+                    image_hash: str
+                    ):
+    return image_service.get_image_summary_by_hash(user, image_hash)
+
+@router.post("/")
+async def upload_file(image_service: Annotated['ImageService',Depends(get_image_service)],
+                    user: Annotated['User', Depends(get_user)], 
+                    file: UploadFile = File(...), colors: str = Form(...)):
     try:
-        user = User("test@test.com", "Test", "Test", "Test")
         color_list = [ImageUploadDTO(**color) for color in eval(colors)]
     except (SyntaxError, ValidationError, TypeError) as e:
         raise HTTPException(status_code=422, detail=f"Invalid 'colors' input: {e}")
     
-    return await repository.upload_and_process_image(user, file, color_list)
+    return await image_service.upload_and_process_image(user, file, color_list)

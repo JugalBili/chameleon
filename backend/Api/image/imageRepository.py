@@ -1,8 +1,10 @@
 import hashlib
 import io
 from firebase_admin import storage
+from google.cloud.storage import Blob
 from fastapi import UploadFile, HTTPException
 from ..userAuthentication.UserAuthenticationRepository import User
+from .imageData import Image
 from .getImageResponse import GetImageResponse
 from .RGB import RGB, ImageUploadDTO
 
@@ -35,10 +37,9 @@ class ImageRepository:
             "paintId": upload_request.paintId
         }
     
-    def _parse_metadata_from_blob(self, blob):
+    def _parse_metadata_from_blob(self, blob: Blob):
         blob.reload()
         metadata = blob.metadata
-        print(metadata)
         if metadata is None:
             return None, None, None, None
         r = metadata.get("r", None)
@@ -66,14 +67,27 @@ class ImageRepository:
         blob.upload_from_file(content_file, content_type=file.content_type)
         return GetImageResponse(image_hash=file_name, rgb=dto.color, paintId=dto.paintId)
     
-    def get_raw_image_by_hash(self, user: User, image_hash: str) -> None | GetImageResponse:
+    def _get_image_from_blob(self, blob: Blob) -> Image:
+        image_bytes = blob.download_as_bytes()
+        # image_bytes = io.BytesIO()
+        # blob.download_as_string(image_bytes)
+        # image_bytes.seek(0)
+        return Image(image_bytes= image_bytes, contentType= blob.content_type)
+    
+    def get_raw_image_by_hash(self, user: User, image_hash: str, download_image: bool = False) -> None | GetImageResponse:
         base_path = f"{user.uid}/{image_hash}/"
         file_name = f"{image_hash}"
         base_path += file_name
         blob = self.bucket.blob(base_path)
-        return GetImageResponse(image_hash=image_hash, rgb=None, paintId=None) if blob.exists() else None
+        if not blob.exists():
+            return None
+        if download_image:
+            raw_image = self._get_image_from_blob(blob)
+        else:
+            raw_image = None
+        return GetImageResponse(image_hash=image_hash, rgb=None, paintId=None, image_data=raw_image)
     
-    def get_processed_image_by_hash(self, user: User,image_hash: str) -> None | GetImageResponse:
+    def get_processed_image_by_hash(self, user: User,image_hash: str, download_image:bool = False) -> None | GetImageResponse:
         raw_hash = image_hash.split("-")[0]
         path = f"{user.uid}/{raw_hash}/{self.processed_image_path}/{image_hash}"
         blob = self.bucket.blob(path)
@@ -86,8 +100,23 @@ class ImageRepository:
         r,g,b,paintId = self._parse_metadata_from_blob(blob)
         if not r or not g or not b or not paintId:
             raise self.metadata_exception
-        return GetImageResponse(image_hash=image_hash, rgb=RGB(r=r,g=g,b=b), paintId=paintId)
+        if download_image:
+            raw_image = self._get_image_from_blob(blob)
+        else:
+            raw_image= None
+        return GetImageResponse(image_hash=image_hash, rgb=RGB(r=r,g=g,b=b), paintId=paintId, image_data=raw_image)
 
     def check_image_exists_for_id(self, user: User, image_hash: str, dto: ImageUploadDTO):
         file_name = f"{image_hash}-{dto.paintId}"
         return self.get_processed_image_by_hash(user, file_name)
+    
+    def get_all_processed_images(self, user: User, raw_hash: str):
+        path = f"{user.uid}/{raw_hash}/{self.processed_image_path}"
+        blobs = self.bucket.list_blobs(prefix=path)
+        if not blobs:
+            return []
+        ret = []
+        for blob in blobs:
+            filename = blob.name.split("/")[-1]
+            ret.append(filename)
+        return ret

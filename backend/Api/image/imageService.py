@@ -44,4 +44,26 @@ class ImageService:
             "original_image": image_hash,
             "processed_images": processed_images
         }
+    def get_image_by_hash(self, user:User, hash: str):
+        is_raw_image = len(hash.split("-")) == 1
+        if is_raw_image:
+            image = self.repository.get_raw_image_by_hash(user, hash, True)
+            if image is None or image.image_data is None:
+                raise HTTPException(status_code=404)
+            return image.image_data
+        else:
+            image = self.repository.get_processed_image_by_hash(user, hash, True)
+            if image is None or image.image_data is None:
+                raise HTTPException(status_code=404)
+            return image.image_data
     
+    def get_image_summary_by_hash(self, user: User, hash:str):
+        raw_image = self.repository.get_raw_image_by_hash(user, hash)
+        if raw_image is None:
+            raise HTTPException(status_code=404)
+
+        processed_files = self.repository.get_all_processed_images(user, hash)
+        return {
+            "original_image": raw_image.image_hash,
+            "processed_images": processed_files
+        }
