@@ -4,7 +4,8 @@ from fastapi import Request, HTTPException,Depends
 from typing import Annotated
 from .userAuthentication.UserAuthenticationRepository import UserAuthenticationRepository
 from .userAuthentication.UserAuthenticationService import UserAuthenticationService
-
+from .image.imageRepository import ImageRepository
+from .image.imageService import ImageService
 @lru_cache()
 def getEnv():
     return Settings()
@@ -15,6 +16,12 @@ def get_authentication_repository(env: Annotated[Settings, Depends(getEnv)]):
 def get_authentication_service(repository: Annotated['UserAuthenticationRepository', Depends(get_authentication_repository)]):
     return UserAuthenticationService(repository)
 
+def get_image_repository():
+    return ImageRepository()
+
+def get_image_service(repository: Annotated['ImageRepository', Depends(get_image_repository)]):
+    return ImageService(repository)
+    
 def get_auth_token(request: Request):
     token = request.headers.get('Authorization')
     if token is None:
