@@ -25,10 +25,9 @@ def get_image_by_hash(image_service: Annotated['ImageService',Depends(get_image_
     
 @router.get("/list/{image_hash}")
 def get_image_by_hash(image_service: Annotated['ImageService',Depends(get_image_service)],
-                    # user: Annotated['User', Depends(get_user)], 
+                    user: Annotated['User', Depends(get_user)], 
                     image_hash: str
                     ):
-    user = User(email="test", firstname="Test", lastname="Test", uid="Test")
     
     return image_service.get_image_summary_by_hash(user, image_hash)
 
