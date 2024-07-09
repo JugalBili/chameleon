@@ -14,7 +14,7 @@ const app = initializeApp(credentials);
 const db = getFirestore(app);
 
 // debug
-connectFirestoreEmulator(db, "127.0.0.1", 8080);
+// connectFirestoreEmulator(db, "127.0.0.1", 8080);
 
 const files = [
   "benjaminMoore.json",
