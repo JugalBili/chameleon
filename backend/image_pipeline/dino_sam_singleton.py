@@ -104,7 +104,6 @@ class DinoSAMSingleton:
         print("\n=== Starting Image Recoloring ===\n")
         image_cv = cv2.imread(image_path)
         buckets = self.create_buckets(image_cv, masks)
-        print(buckets)
 
         masks = self.merge_masks(buckets, masks)
         masked_image = self.sam_predictor.apply_mask_to_image(image_pil, masks)
