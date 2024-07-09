@@ -10,7 +10,7 @@ async def lifespan(app: FastAPI):
     env = getEnv()
     use_emulator = env.use_firebase_emulator
     cred = credentials.Certificate('./firebase-auth.json')
-    if use_emulator:
+    if use_emulator.lower() == 'true':
         os.environ['FIRESTORE_EMULATOR_HOST'] = 'localhost:8080'
         print("using emulators")
     firebase_admin.initialize_app(cred, {
