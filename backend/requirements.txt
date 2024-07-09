@@ -26,6 +26,7 @@ setuptools
 pandas
 rq
 black
+colormath
 
 # Fast SAM
 ultralytics == 8.0.120

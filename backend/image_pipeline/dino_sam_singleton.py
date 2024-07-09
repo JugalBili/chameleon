@@ -7,6 +7,7 @@ import numpy as np
 import torch
 import time
 
+from color_helper import calc_delta_CIEDE2000
 from dino import Dino
 from sam import SAM
 from fsam import FSAM
@@ -25,6 +26,10 @@ CAPTION = "wall"
 BOX_THRESHOLD = 0.30
 TEXT_THRESHOLD = 0.35
 
+# Parameter for Mask Bucketing
+MAX_DELTA = 30
+
+# hyper-param for FastSAM
 IOU_THRESHOLD = 0.9
 MASK_THRESHOLD = 0.45
 
@@ -98,6 +103,14 @@ class DinoSAMSingleton:
 
         print("\n=== Starting Image Recoloring ===\n")
         image_cv = cv2.imread(image_path)
+        buckets = self.create_buckets(image_cv, masks)
+
+        masks = self.merge_masks(buckets, masks)
+        masked_image = self.sam_predictor.apply_mask_to_image(image_pil, masks)
+        masked_image.save(
+            f"{os.path.splitext(os.path.basename(image_path))[0]}_mask_merged.jpg"
+        )
+
         recolored_image = self.recolor(image_cv, color, masks)
         cv2.imwrite(
             f"{os.path.splitext(os.path.basename(image_path))[0]}_recolored.png",
@@ -135,6 +148,55 @@ class DinoSAMSingleton:
 
         print("\n=== Pipeline Finished ===\n")
 
+    def create_buckets(self, image_cv, masks):
+        buckets = {}
+
+        image_lab = cv2.cvtColor(image_cv, cv2.COLOR_BGR2LAB)
+
+        for i in range(len(masks)):
+            mask = (masks[i].astype(np.uint8) * 255).astype(np.uint8)
+            ave_color = cv2.mean(image_lab, mask=mask)[:3]
+
+            if not buckets:
+                buckets[len(buckets) + 1] = {"avg": list(ave_color), "masks": [i]}
+            else:
+                smallest_delta = float("inf")
+                best_bucket = -1
+
+                for key in buckets.keys():
+                    ave_bucket_color = buckets[key]["avg"]
+                    distance = calc_delta_CIEDE2000(ave_bucket_color, ave_color)
+                    if distance < smallest_delta:
+                        smallest_delta = distance
+                        best_bucket = key
+
+                if best_bucket != -1:
+                    if smallest_delta > MAX_DELTA:
+                        buckets[len(buckets) + 1] = {
+                            "avg": list(ave_color),
+                            "masks": [i],
+                        }
+                    else:
+                        buckets[key]["avg"] = np.mean(
+                            np.array([buckets[key]["avg"], ave_color]), axis=0
+                        ).tolist()
+                        buckets[key]["masks"].append(i)
+        return buckets
+
+    def merge_masks(self, buckets, masks):
+        new_masks = []
+
+        for key in buckets.keys():
+            mask_list = buckets[key]["masks"]
+            new_mask = None
+            for index in mask_list:
+                if new_mask is None:
+                    new_mask = masks[index]
+                else:
+                    new_mask = np.logical_or(new_mask, masks[index])
+            new_masks.append(new_mask)
+        return new_masks
+
     def recolor(self, image_cv, color_rgb, masks):
         image = copy.deepcopy(image_cv).astype(np.int16)
         color_bgr = color_rgb[::-1]
@@ -145,6 +207,7 @@ class DinoSAMSingleton:
 
             # get average bgr color of masked section
             ave_color = cv2.mean(image, mask=mask)[:3]
+            print(f"Average color = {ave_color}")
 
             # compute difference colors and make into an image the same size as input
             diff_color = desired_color - ave_color
@@ -176,7 +239,13 @@ if __name__ == "__main__":
 
     dir_path = os.path.dirname(os.path.realpath(__file__))
 
-    color = [159, 201, 228]  # rgb
+    # PPG "Viva La Bleu"
+    # "PPG1242-3"
+    color = [151, 190, 226]  # rgb
+
+    # # Benjamin Moore "Grape Green"
+    # # "2027-40"
+    # color = [213, 216, 105]  # rgb
 
     start = time.time()
     inst1 = DinoSAMSingleton.instance()
@@ -186,7 +255,7 @@ if __name__ == "__main__":
     # inst1.run_pipeline(image1, color)
 
     inst2 = DinoSAMSingleton.instance()
-    image2 = os.path.join(dir_path, "tests/img2.jpg")
+    image2 = os.path.join(dir_path, "tests/IMG_9084.JPG")
     start = time.time()
     inst2.run_pipeline(image2, color)
     end = time.time()
