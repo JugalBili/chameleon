@@ -1,7 +1,7 @@
 from fastapi import APIRouter, Depends, UploadFile, Form, File, HTTPException, Response
 from shared.data_classes import ImageUploadDTO
 from pydantic import ValidationError
-from Api.service.image_service import ImageService
+from shared.service.image_service import ImageService
 from typing import Annotated
 from Api.dependencies import get_image_service, get_user
 from Api.repository.user_authentication_repository import User
