@@ -31,7 +31,6 @@ def list_image_for_hash(image_service: Annotated['ImageService', Depends(get_ima
                         user: Annotated['User', Depends(get_user)],
                         image_hash: str
                         ):
-    user = User(email="Test", firstname="Test", lastname="Test", uid="Test")
     return image_service.get_image_summary_by_hash(user, image_hash)
 
 
@@ -47,5 +46,4 @@ async def upload_file(image_service: Annotated['ImageService', Depends(get_image
         raise HTTPException(status_code=422, detail=f"Invalid 'colors' input: {e}")
     except Exception as e:
         raise HTTPException(status_code=422, detail=f"invalid color input: {e}")
-    user = User(email="Test", firstname="Test", lastname="Test", uid="Test")
     return await image_service.upload_and_process_image(user, file, color_list)
