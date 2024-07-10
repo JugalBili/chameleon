@@ -2,9 +2,11 @@ import firebase_admin
 import os
 from firebase_admin import credentials
 from fastapi import FastAPI
-from .routes import login, image
+from Api.routes import login, image
 from contextlib import asynccontextmanager
-from .dependencies import getEnv
+from Api.dependencies import getEnv
+
+
 @asynccontextmanager
 async def lifespan(app: FastAPI):
     env = getEnv()
@@ -18,6 +20,8 @@ async def lifespan(app: FastAPI):
     })
     yield
     print("good bye")
+
+
 # initialize fastAPI
 app = FastAPI(lifespan=lifespan)
 app.include_router(login.router)

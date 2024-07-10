@@ -1,8 +1,7 @@
 from fastapi import HTTPException, Depends
 from firebase_admin import firestore_async
 from google.cloud.firestore_v1 import DocumentSnapshot, FieldFilter
-from .CreateUserDto import CreateUserDTO
-from .UserLoginDto import UserLoginDto
+from Api.data_classes import CreateUserDTO, UserLoginDto
 from typing import Union
 from datetime import datetime, timedelta, timezone
 import jwt
@@ -49,7 +48,7 @@ class UserAuthenticationRepository:
     def __hash_password(self, plaintext):
         return self.pwd_context.hash(plaintext)
 
-    def createAccessToken(self, user: User) -> str:
+    def create_access_token(self, user: User) -> str:
         data: dict = {"usr": user.email}
         to_encode = data.copy()
         expiration_date = datetime.now(timezone.utc) + timedelta(days=10)
@@ -57,7 +56,7 @@ class UserAuthenticationRepository:
         token = jwt.encode(to_encode, self.signingKey, self.signingAlgorithm)
         return token
 
-    async def authenticateAccessTokenAsync(self, token: str) -> User:
+    async def authenticate_access_token_async(self, token: str) -> User:
         try:
             payload = jwt.decode(token, self.signingKey, [self.signingAlgorithm])
             identification = payload.get("usr")
@@ -68,26 +67,26 @@ class UserAuthenticationRepository:
                 raise HTTPException(status_code=401, detail="Token is expired")
         except InvalidTokenError:
             raise HTTPException(status_code=401, detail="Could not validate credentials")
-        user = await self.getUserFromEmail(identification)
+        user = await self.get_user_from_email(identification)
         if user is None:
             raise HTTPException(status_code=401, detail="Could not validate credentials")
         return user
 
-    async def getUserFromLogin(self, loginDto: UserLoginDto) -> Union[User, None]:
+    async def get_user_from_login(self, login_dto: UserLoginDto) -> Union[User, None]:
         try:
-            query = self.collectionRef.where(filter=FieldFilter("email", "==", loginDto.email))
+            query = self.collectionRef.where(filter=FieldFilter("email", "==", login_dto.email))
             users = [user async for user in query.stream()]
             if len(users) == 0:
                 return None
             user_document = users[0]
-            if self.__verify_password(loginDto.password, user_document.get("password")):
+            if self.__verify_password(login_dto.password, user_document.get("password")):
                 return User.from_firestore_document(user_document)
             else:
                 return None
         except Exception as e:
             raise HTTPException(status_code=500, detail=str(e))
 
-    async def getUserFromEmail(self, email: str):
+    async def get_user_from_email(self, email: str):
         try:
             query = self.collectionRef.where(filter=FieldFilter("email", "==", email))
             users = [user async for user in query.stream()]
@@ -98,20 +97,20 @@ class UserAuthenticationRepository:
         except Exception as e:
             raise HTTPException(status_code=500, detail=str(e))
 
-    def __create_user_snapshot(self, createuserDto: CreateUserDTO):
+    def __create_user_snapshot(self, create_user_dto: CreateUserDTO):
         return {
-            "email": createuserDto.email,
-            "firstname": createuserDto.firstname,
-            "lastname": createuserDto.lastname,
-            "password": self.__hash_password(createuserDto.password)
+            "email": create_user_dto.email,
+            "firstname": create_user_dto.firstname,
+            "lastname": create_user_dto.lastname,
+            "password": self.__hash_password(create_user_dto.password)
         }
 
-    async def createUserAsync(self, createUserDTO: CreateUserDTO) -> User:
-        new_user_document_dict = self.__create_user_snapshot(createUserDTO)
+    async def create_user_async(self, create_user_dto: CreateUserDTO) -> User:
+        new_user_document_dict = self.__create_user_snapshot(create_user_dto)
         try:
             new_user_document = await self.collectionRef.add(new_user_document_dict)
             uid = new_user_document[1].id  # this gets the document ID that was just created
         except Exception as e:
             raise HTTPException(status_code=500, detail=str(e))
-        newUser = User(createUserDTO.email, createUserDTO.firstname, createUserDTO.lastname, uid)
+        newUser = User(create_user_dto.email, create_user_dto.firstname, create_user_dto.lastname, uid)
         return newUser

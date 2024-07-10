@@ -1,25 +1,27 @@
-from .imageRepository import ImageRepository
+from shared.repository.image.imageRepository import ImageRepository
 from fastapi import UploadFile, HTTPException
 from typing import List
-from ..userAuthentication.UserAuthenticationRepository import User
-from .RGB import ImageUploadDTO
+from Api.repository.userAuthentication.UserAuthenticationRepository import User
+from Api.data_classes import ImageUploadDTO
+
+
 class ImageService:
     def __init__(self,
                  repository: ImageRepository) -> None:
         self.repository = repository
-    
+
     async def upload_and_process_image(self, user: User, file: UploadFile, colors: List[ImageUploadDTO]):
         # validate that file is image
         if not file.content_type.startswith('image'):
             raise HTTPException(status_code=422, detail=f"Expected image file but received: {file.content_type}")
-        
-        image_hash = await self.repository.upload_unprocessed_image(user,  file)
+
+        image_hash = await self.repository.upload_unprocessed_image(user.uid, file)
         processed_images = []
-        #go through RGB
+        # go through RGB
         # check if image exists
         # if it doesn't make call to image pipeline
         for DTO in colors:
-            image_response = self.repository.check_image_exists_for_id(user, image_hash, DTO)
+            image_response = self.repository.check_image_exists_for_id(user.uid, image_hash, DTO)
             if image_response is not None:
                 response = {
                     "uid": user.uid,
@@ -32,7 +34,7 @@ class ImageService:
                 # TODO: figure out best way to send data to image pipeline
 
                 # call fetch image
-                image_response = await self.repository.upload_processed_image(user, file, DTO)
+                image_response = await self.repository.upload_processed_image(user.uid, file, DTO)
                 response = {
                     "uid": user.uid,
                     "rgb": image_response.rgb,
@@ -44,25 +46,26 @@ class ImageService:
             "original_image": image_hash,
             "processed_images": processed_images
         }
-    def get_image_by_hash(self, user:User, hash: str):
+
+    def get_image_by_hash(self, user: User, hash: str):
         is_raw_image = len(hash.split("-")) == 1
         if is_raw_image:
-            image = self.repository.get_raw_image_by_hash(user, hash, True)
+            image = self.repository.get_raw_image_by_hash(user.uid, hash, True)
             if image is None or image.image_data is None:
                 raise HTTPException(status_code=404)
             return image.image_data
         else:
-            image = self.repository.get_processed_image_by_hash(user, hash, True)
+            image = self.repository.get_processed_image_by_hash(user.uid, hash, True)
             if image is None or image.image_data is None:
                 raise HTTPException(status_code=404)
             return image.image_data
-    
-    def get_image_summary_by_hash(self, user: User, hash:str):
-        raw_image = self.repository.get_raw_image_by_hash(user, hash)
+
+    def get_image_summary_by_hash(self, user: User, hash: str):
+        raw_image = self.repository.get_raw_image_by_hash(user.uid, hash)
         if raw_image is None:
             raise HTTPException(status_code=404)
 
-        processed_files = self.repository.get_all_processed_images(user, hash)
+        processed_files = self.repository.get_all_processed_images(user.uid, hash)
         return {
             "original_image": raw_image.image_hash,
             "processed_images": processed_files
