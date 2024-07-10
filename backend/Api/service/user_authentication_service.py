@@ -1,5 +1,5 @@
 from fastapi import HTTPException
-from Api.repository.UserAuthenticationRepository import UserAuthenticationRepository
+from Api.repository.user_authentication_repository import UserAuthenticationRepository
 from Api.data_classes import CreateUserDTO, UserLoginDto
 from pydantic import BaseModel
 from email_validator import validate_email, EmailNotValidError

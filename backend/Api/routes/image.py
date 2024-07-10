@@ -4,7 +4,7 @@ from pydantic import ValidationError
 from Api.service.image_service import ImageService
 from typing import Annotated
 from Api.dependencies import get_image_service, get_user
-from Api.repository.UserAuthenticationRepository import User
+from Api.repository.user_authentication_repository import User
 import json
 
 router = APIRouter(
