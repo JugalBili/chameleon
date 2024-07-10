@@ -6,6 +6,7 @@ from typing import Annotated, List
 from ..dependencies import get_image_service, get_user
 from ..userAuthentication.UserAuthenticationRepository import User
 from ..image.getImageResponse import GetImageResponse
+import json
 router = APIRouter(
     # specify subroute. All routes in this file will be in the form of /login/{whatever}
     prefix="/image",
@@ -33,11 +34,19 @@ def get_image_by_hash(image_service: Annotated['ImageService',Depends(get_image_
 
 @router.post("/")
 async def upload_file(image_service: Annotated['ImageService',Depends(get_image_service)],
-                    user: Annotated['User', Depends(get_user)], 
-                    file: UploadFile = File(...), colors: str = Form(...)):
+                    # user: Annotated['User', Depends(get_user)], 
+                    file: UploadFile = File(...), 
+                    colors: str = Form(...)):
+    # try:
+    #     color_list = [ImageUploadDTO(**color) for color in eval(colors)]
+    # except (SyntaxError, ValidationError, TypeError) as e:
+    #     raise HTTPException(status_code=422, detail=f"Invalid 'colors' input: {e}")
     try:
-        color_list = [ImageUploadDTO(**color) for color in eval(colors)]
+        raw_colors = json.loads(colors)
+        color_list = [ImageUploadDTO(**color) for color in raw_colors]
     except (SyntaxError, ValidationError, TypeError) as e:
         raise HTTPException(status_code=422, detail=f"Invalid 'colors' input: {e}")
-    
+    except Exception as e:
+        raise HTTPException(status_code=422, detail=f"invalid color input: {e}")
+    user = User(email="Test", firstname="Test", lastname="Test", uid="Test")
     return await image_service.upload_and_process_image(user, file, color_list)
