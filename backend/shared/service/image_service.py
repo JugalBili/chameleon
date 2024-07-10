@@ -1,4 +1,4 @@
-from shared.repository.imageRepository import ImageRepository
+from shared.repository.image_repository import ImageRepository
 from fastapi import UploadFile, HTTPException
 from typing import List
 from shared.data_classes import ImageUploadDTO
