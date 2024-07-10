@@ -3,7 +3,7 @@ import io
 from firebase_admin import storage
 from google.cloud.storage import Blob
 from fastapi import UploadFile, HTTPException
-from Api.data_classes import RGB, GetImageResponse, ImageUploadDTO, Image
+from shared.data_classes import RGB, GetImageResponse, ImageUploadDTO, Image
 
 
 class ImageRepository:

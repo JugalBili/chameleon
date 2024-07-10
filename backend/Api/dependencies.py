@@ -5,7 +5,7 @@ from typing import Annotated
 from Api.repository.userAuthentication.UserAuthenticationRepository import UserAuthenticationRepository
 from Api.service.userAuthentication.UserAuthenticationService import UserAuthenticationService
 from shared.repository.image.imageRepository import ImageRepository
-from Api.image.imageService import ImageService
+from Api.service.image.imageService import ImageService
 
 
 @lru_cache()

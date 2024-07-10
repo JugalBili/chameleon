@@ -2,7 +2,7 @@ from shared.repository.image.imageRepository import ImageRepository
 from fastapi import UploadFile, HTTPException
 from typing import List
 from Api.repository.userAuthentication.UserAuthenticationRepository import User
-from Api.data_classes import ImageUploadDTO
+from shared.data_classes import ImageUploadDTO
 
 
 class ImageService:
