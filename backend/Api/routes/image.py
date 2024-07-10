@@ -6,6 +6,7 @@ from typing import Annotated, List
 from ..dependencies import get_image_service, get_user
 from ..userAuthentication.UserAuthenticationRepository import User
 from ..image.getImageResponse import GetImageResponse
+import ast
 router = APIRouter(
     # specify subroute. All routes in this file will be in the form of /login/{whatever}
     prefix="/image",
@@ -36,7 +37,7 @@ async def upload_file(image_service: Annotated['ImageService',Depends(get_image_
                     user: Annotated['User', Depends(get_user)], 
                     file: UploadFile = File(...), colors: str = Form(...)):
     try:
-        color_list = [ImageUploadDTO(**color) for color in eval(colors)]
+        color_list = [ImageUploadDTO(**color) for color in ast.literal_eval(colors)]
     except (SyntaxError, ValidationError, TypeError) as e:
         raise HTTPException(status_code=422, detail=f"Invalid 'colors' input: {e}")
     
