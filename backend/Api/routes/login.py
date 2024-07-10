@@ -3,9 +3,9 @@ from typing import Annotated
 from fastapi import APIRouter, Depends
 
 from Api.data_classes import CreateUserDTO, UserLoginDto
-from Api.service.userAuthentication.UserAuthenticationService import UserAuthenticationService
+from Api.service.user_authentication_service import UserAuthenticationService
 from Api.dependencies import get_user, get_authentication_service
-from Api.repository.userAuthentication.UserAuthenticationRepository import User
+from Api.repository.UserAuthenticationRepository import User
 
 router = APIRouter(
     # specify sub-route. All routes in this file will be in the form of /login/{whatever}

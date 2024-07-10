@@ -2,10 +2,10 @@ from functools import lru_cache
 from Api.config import Settings
 from fastapi import Request, HTTPException, Depends
 from typing import Annotated
-from Api.repository.userAuthentication.UserAuthenticationRepository import UserAuthenticationRepository
-from Api.service.userAuthentication.UserAuthenticationService import UserAuthenticationService
-from shared.repository.image.imageRepository import ImageRepository
-from Api.service.image.imageService import ImageService
+from Api.repository.UserAuthenticationRepository import UserAuthenticationRepository
+from Api.service.user_authentication_service import UserAuthenticationService
+from shared.repository.imageRepository import ImageRepository
+from Api.service.image_service import ImageService
 
 
 @lru_cache()

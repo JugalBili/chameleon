@@ -7,6 +7,6 @@ class UserLoginDto(BaseModel):
     password: str
 
 
-class CreateUserDTO(UserLoginDto):
+class CreateUserDto(UserLoginDto):
     firstname: str
     lastname: str
