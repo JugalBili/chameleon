@@ -2,7 +2,7 @@ from typing import Annotated
 
 from fastapi import APIRouter, Depends
 
-from Api.data_classes import CreateUserDTO, UserLoginDto
+from Api.data_classes import CreateUserDto, UserLoginDto
 from Api.service.user_authentication_service import UserAuthenticationService
 from Api.dependencies import get_user, get_authentication_service
 from Api.repository.user_authentication_repository import User
@@ -35,6 +35,6 @@ async def login_user(loginDto: UserLoginDto,
 
 
 @router.post("/register")
-async def login_user(newUser: CreateUserDTO,
+async def login_user(newUser: CreateUserDto,
                      AuthenticationService: Annotated[UserAuthenticationService, Depends(get_authentication_service)]):
     return await AuthenticationService.create_user(newUser)

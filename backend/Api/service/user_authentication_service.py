@@ -1,6 +1,6 @@
 from fastapi import HTTPException
 from Api.repository.user_authentication_repository import UserAuthenticationRepository
-from Api.data_classes import CreateUserDTO, UserLoginDto
+from Api.data_classes import CreateUserDto, UserLoginDto
 from pydantic import BaseModel
 from email_validator import validate_email, EmailNotValidError
 
@@ -27,7 +27,7 @@ class UserAuthenticationService(object):
             raise HTTPException(status_code=401, detail="Invalid Username and/or password")
         return AuthToken(token=self.repository.create_access_token(user), token_type="Bearer")
 
-    async def create_user(self, createUserDto: CreateUserDTO):
+    async def create_user(self, createUserDto: CreateUserDto):
         user = await self.repository.get_user_from_email(createUserDto.email)
         if user is not None:
             raise HTTPException(status_code=409, detail="User exists")
