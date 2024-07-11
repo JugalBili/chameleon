@@ -128,8 +128,6 @@ class DinoSAMSingleton:
             )
             colored_images.append(recolored_image)
         
-        masks = [mask.tolist() for mask in masks]
-        
         return masks, colored_images
 
         print("\n=== Pipeline Finished ===\n")
