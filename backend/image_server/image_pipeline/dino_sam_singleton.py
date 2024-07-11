@@ -83,9 +83,10 @@ class DinoSAMSingleton:
         self.fsam_predictor = FSAM(FSAM_FILENAME, DEVICE, MASK_THRESHOLD, IOU_THRESHOLD)
         print("FastSAM Model Loaded")
 
-    def run_pipeline(self, image_path, color):
-        print(f"=== Starting Grounded SAM Pipeline for Image {image_path} ===\n")
-        image_pil = Image.open(image_path).convert("RGB")  # load image
+    def run_pipeline(self, image_cv, image_name, colors):
+        print(f"=== Starting Grounded SAM Pipeline for Image {image_name} ===\n")
+        # image_pil = Image.open(image_name).convert("RGB")  # load image
+        image_pil = Image.fromarray(cv2.cvtColor(image_cv, cv2.COLOR_BGR2RGB)) 
 
         pred_dict = self.gd_predictor.run_inference(
             image_pil, CAPTION, BOX_THRESHOLD, TEXT_THRESHOLD
@@ -94,28 +95,35 @@ class DinoSAMSingleton:
 
         boxed_image = self.gd_predictor.apply_boxes_to_image(image_pil, pred_dict)
         boxed_image.save(
-            f"{os.path.splitext(os.path.basename(image_path))[0]}_boxed.jpg"
+            f"{os.path.splitext(os.path.basename(image_name))[0]}_boxed.jpg"
         )
         masked_image = self.sam_predictor.apply_mask_to_image(image_pil, masks)
         masked_image.save(
-            f"{os.path.splitext(os.path.basename(image_path))[0]}_mask.jpg"
+            f"{os.path.splitext(os.path.basename(image_name))[0]}_mask.jpg"
         )
 
         print("\n=== Starting Image Recoloring ===\n")
-        image_cv = cv2.imread(image_path)
+        # image_cv = cv2.imread(image_name)
         buckets = self.create_buckets(image_cv, masks)
 
         masks = self.merge_masks(buckets, masks)
         masked_image = self.sam_predictor.apply_mask_to_image(image_pil, masks)
         masked_image.save(
-            f"{os.path.splitext(os.path.basename(image_path))[0]}_mask_merged.jpg"
+            f"{os.path.splitext(os.path.basename(image_name))[0]}_mask_merged.jpg"
         )
 
-        recolored_image = self.recolor(image_cv, color, masks)
-        cv2.imwrite(
-            f"{os.path.splitext(os.path.basename(image_path))[0]}_recolored.png",
-            recolored_image,
-        )
+        colored_images = []
+        
+        for color in colors:
+            recolored_image = self.recolor(image_cv, color, masks)
+            color_string = "-".join([str(val) for val in color])
+            cv2.imwrite(
+                f"{os.path.splitext(os.path.basename(image_name))[0]}_recolored_{color_string}.png",
+                recolored_image,
+            )
+            colored_images.append(recolored_image)
+        
+        return masks, colored_images
 
         print("\n=== Pipeline Finished ===\n")
 
@@ -255,8 +263,9 @@ if __name__ == "__main__":
     # inst1.run_pipeline(image1, color)
 
     inst2 = DinoSAMSingleton.instance()
-    image2 = os.path.join(dir_path, "tests/IMG_9084.JPG")
+    image2_path = os.path.join(dir_path, "tests/img2.jpg")
+    image2_cv = cv2.imread(image2_path, cv2.IMREAD_COLOR)
     start = time.time()
-    inst2.run_pipeline(image2, color)
+    inst2.run_pipeline(image2_cv, os.path.basename(image2_path), [color])
     end = time.time()
     print(f"Grounded SAM Pipeline took {end-start} seconds!")

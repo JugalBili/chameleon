@@ -1,9 +1,10 @@
 import hashlib
 import io
+import json
 from firebase_admin import storage
 from google.cloud.storage import Blob
 from fastapi import UploadFile, HTTPException
-from shared.data_classes import RGB, GetImageResponse, ImageUploadDTO, Image
+from shared.data_classes import RGB, GetImageResponse, ColorDTO, Image, GetJSONResponse
 
 
 class ImageRepository:
@@ -28,12 +29,12 @@ class ImageRepository:
         return image_hash
 
     @staticmethod
-    def _create_metadata(upload_request: ImageUploadDTO):
+    def _create_metadata(upload_request: ColorDTO):
         return {
             "r": upload_request.color.r,
             "g": upload_request.color.g,
             "b": upload_request.color.b,
-            "paintId": upload_request.paintId
+            "paint_id": upload_request.paint_id
         }
 
     @staticmethod
@@ -48,26 +49,51 @@ class ImageRepository:
         paintId = metadata.get("paintId", None)
         return r, g, b, paintId
 
-    # temp function for testing while image pipeline is getting developed.
-    # Replace calls to this function with Image Pipeline Service after completion
-    async def upload_processed_image(self, uid: str, file: UploadFile, dto: ImageUploadDTO):
-        await file.seek(0)
-        content = await file.read()
-        image_hash = hashlib.sha256(content).hexdigest()
-        base_path = f"{uid}/{image_hash}/{self.processed_image_path}"
-        file_name = f"{image_hash}-{dto.paintId}"
-        image_path = f"{base_path}/{file_name}"
+    async def upload_processed_image(self, uid: str, raw_image_hash: str, image_bytes, dto: ColorDTO):
+        base_path = f"{uid}/{raw_image_hash}/{self.processed_image_path}"
+        processed_image_hash = f"{raw_image_hash}-{dto.paintId}"
+        image_path = f"{base_path}/{processed_image_hash}"
         blob = self.bucket.blob(image_path)
         if blob.exists():
             r, g, b, paintId = self._parse_metadata_from_blob(blob)
             if not r or not g or not b or not paintId:
                 raise self.metadata_exception
-            return GetImageResponse(image_hash=file_name, rgb=RGB(r=r, g=g, b=b), paintId=paintId)
-        content_file = io.BytesIO(content)
+            return GetImageResponse(image_hash=processed_image_hash, rgb=RGB(r=r, g=g, b=b), paintId=paintId)
         blob.metadata = self._create_metadata(dto)
-        blob.upload_from_file(content_file, content_type=file.content_type)
-        return GetImageResponse(image_hash=file_name, rgb=dto.color, paintId=dto.paintId)
+        blob.upload_from_string(image_bytes, content_type="image/jpg")
 
+        # return GetImageResponse(image_hash=file_name, rgb=dto.color, paintId=dto.paintId)
+        return processed_image_hash
+
+    async def upload_json(self, uid: str, raw_image_hash: str, json_dict: dict):
+        base_path = f"{uid}/{raw_image_hash}"
+        file_name = f"{raw_image_hash}.json"
+        image_path = f"{base_path}/{file_name}"
+
+        json_str = json.dumps(json_dict)
+        blob = self.bucket.blob(image_path)
+
+        blob.upload_from_string(json_str, content_type="application/json")
+        return GetJSONResponse(image_hash=raw_image_hash)
+    
+    @staticmethod
+    def _get_json_from_blob(self, blob: Blob) -> dict:
+        json_string = blob.download_as_text()
+        dict_obj = json.loads(json_string)
+
+        return dict_obj
+    
+    def get_json_by_hash(self, uid: str, image_hash: str) -> None | GetJSONResponse:
+        base_path = f"{uid}/{image_hash}/"
+        file_name = f"{image_hash}.json"
+        base_path += file_name
+        blob = self.bucket.blob(base_path)
+        if not blob.exists():
+            return None
+        obj = self._get_json_from_blob(blob)
+
+        return GetJSONResponse(image_hash=image_hash, json_data=obj)
+    
     @staticmethod
     def _get_image_from_blob(blob: Blob) -> Image:
         image_bytes = blob.download_as_bytes()
@@ -110,8 +136,8 @@ class ImageRepository:
             raw_image = None
         return GetImageResponse(image_hash=image_hash, rgb=RGB(r=r, g=g, b=b), paintId=paintId, image_data=raw_image)
 
-    def check_image_exists_for_id(self, uid: str, image_hash: str, dto: ImageUploadDTO):
-        file_name = f"{image_hash}-{dto.paintId}"
+    def check_image_exists_for_id(self, uid: str, image_hash: str, dto: ColorDTO):
+        file_name = f"{image_hash}-{dto.paint_id}"
         return self.get_processed_image_by_hash(uid, file_name)
 
     def get_all_processed_images(self, uid: str, raw_hash: str):
