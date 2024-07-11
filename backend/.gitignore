@@ -1,6 +1,12 @@
 # Created by https://www.toptal.com/developers/gitignore/api/python
 # Edit at https://www.toptal.com/developers/gitignore?templates=python
 
+
+
+# Environment Variables and Secrets
+.env
+firebase-auth-image-server.json
+
 ### Python ###
 # Byte-compiled / optimized / DLL files
 __pycache__/
