@@ -36,7 +36,7 @@ def list_image_for_hash(image_service: Annotated['ImageService', Depends(get_ima
 
 @router.post("/")
 async def upload_file(image_service: Annotated['ImageService', Depends(get_image_service)],
-                      user: Annotated['User', Depends(get_user)],
+                    #   user: Annotated['User', Depends(get_user)],
                       file: UploadFile = File(...),
                       colors: str = Form(...)):
     try:
@@ -46,4 +46,5 @@ async def upload_file(image_service: Annotated['ImageService', Depends(get_image
         raise HTTPException(status_code=422, detail=f"Invalid 'colors' input: {e}")
     except Exception as e:
         raise HTTPException(status_code=422, detail=f"invalid color input: {e}")
+    user = User(email="a@a.com", firstname="test", lastname="test", uid="12345")
     return await image_service.upload_and_process_image(user.uid, file, color_list)

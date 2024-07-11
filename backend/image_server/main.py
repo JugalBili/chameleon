@@ -3,6 +3,9 @@ import os
 from firebase_admin import credentials
 from fastapi import FastAPI
 from contextlib import asynccontextmanager
+import sys
+
+sys.path.append(os.path.join("\\".join(os.path.dirname(__file__).split("\\")[:-1])))
 
 from routes import image_processing
 from dependencies import getEnv

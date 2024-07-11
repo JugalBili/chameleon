@@ -1,11 +1,13 @@
 import firebase_admin
+import sys 
 import os
 from firebase_admin import credentials
 from fastapi import FastAPI
-from Api.routes import login, image
 from contextlib import asynccontextmanager
-from Api.dependencies import getEnv
 
+sys.path.append(os.path.join("\\".join(os.path.dirname(__file__).split("\\")[:-1])))
+from Api.routes import login, image
+from Api.dependencies import getEnv
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):

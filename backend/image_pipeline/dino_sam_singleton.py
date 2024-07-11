@@ -6,6 +6,10 @@ import skimage.exposure
 import numpy as np
 import torch
 import time
+import sys
+
+cur_path = os.path.join(os.path.dirname(__file__))
+sys.path.append(cur_path)
 
 from color_helper import calc_delta_CIEDE2000
 from dino import Dino
@@ -13,13 +17,14 @@ from sam import SAM
 from fsam import FSAM
 
 
+
 DEVICE = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 DEVICE = "cpu"
-GD_FILENAME = "./models/groundingdino_swint_ogc.pth"
-GD_CONFIG_FILENAME = "./models/GroundingDINO_SwinT_OGC.py"
-SAM_FILENAME = "./models/sam_vit_h_4b8939.pth"
+GD_FILENAME = os.path.join(cur_path, "models/groundingdino_swint_ogc.pth")
+GD_CONFIG_FILENAME = os.path.join(cur_path, "models/GroundingDINO_SwinT_OGC.py")
+SAM_FILENAME =  os.path.join(cur_path, "models/sam_vit_h_4b8939.pth")
 SAM_TYPE = "vit_h"
-FSAM_FILENAME = "./models/FastSAM.pt"
+FSAM_FILENAME =  os.path.join(cur_path, "models/FastSAM.pt")
 
 # hyper-param for GroundingDINO
 CAPTION = "wall"
@@ -122,6 +127,8 @@ class DinoSAMSingleton:
                 recolored_image,
             )
             colored_images.append(recolored_image)
+        
+        masks = [mask.tolist() for mask in masks]
         
         return masks, colored_images
 

@@ -1,6 +1,8 @@
 import hashlib
 import io
 import json
+import numpy as np
+import cv2
 from firebase_admin import storage
 from google.cloud.storage import Blob
 from fastapi import UploadFile, HTTPException
@@ -51,7 +53,7 @@ class ImageRepository:
 
     async def upload_processed_image(self, uid: str, raw_image_hash: str, image_bytes, dto: ColorDTO):
         base_path = f"{uid}/{raw_image_hash}/{self.processed_image_path}"
-        processed_image_hash = f"{raw_image_hash}-{dto.paintId}"
+        processed_image_hash = f"{raw_image_hash}-{dto.paint_id}"
         image_path = f"{base_path}/{processed_image_hash}"
         blob = self.bucket.blob(image_path)
         if blob.exists():
@@ -73,12 +75,12 @@ class ImageRepository:
         json_str = json.dumps(json_dict)
         blob = self.bucket.blob(image_path)
 
-        blob.upload_from_string(json_str, content_type="application/json")
+        blob.upload_from_string(json_str.encode('utf-8'), content_type="application/json")
         return GetJSONResponse(image_hash=raw_image_hash)
     
     @staticmethod
     def _get_json_from_blob(self, blob: Blob) -> dict:
-        json_string = blob.download_as_text()
+        json_string = blob.download_as_string().decode('utf-8')
         dict_obj = json.loads(json_string)
 
         return dict_obj

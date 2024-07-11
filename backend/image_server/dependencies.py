@@ -1,5 +1,5 @@
 from functools import lru_cache
-from Api.config import Settings
+from image_server.config import Settings
 from shared.repository.image_repository import ImageRepository
 
 

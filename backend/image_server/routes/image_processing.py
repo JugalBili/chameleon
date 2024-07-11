@@ -5,10 +5,14 @@ import time
 from typing import Annotated
 from pydantic import BaseModel
 from fastapi import APIRouter, Depends, Header
+import sys 
+import os
+# print(os.path.join(os.getcwd()))
+sys.path.append(os.path.join(os.getcwd()))
 
-from image_server.dependencies import get_image_repository
+from dependencies import get_image_repository
 from shared.data_classes import Image, GetImageResponse, GetJSONResponse, ColorDTO, RGB, ImageData, GetProcessedResponse
-from image_server.image_pipeline.dino_sam_singleton import DinoSAMSingleton
+from image_pipeline.dino_sam_singleton import DinoSAMSingleton
 
 
 router = APIRouter(
@@ -24,7 +28,7 @@ router = APIRouter(
 pipeline_lock = asyncio.Lock()
 
 
-@router.post("/generate", response_model = list[GetImageResponse])
+@router.post("/generate", response_model = list[GetProcessedResponse])
 async def generate_image(image_data: ImageData,  
                      image_repository: Annotated['ImageRepository',Depends(get_image_repository)]):
     global pipeline_lock
@@ -39,26 +43,28 @@ async def generate_image(image_data: ImageData,
         json_data = image_json_response.json_data
 
     image_bytes = image_response.image_data.image_bytes
-    image_cv = cv2.imdecode(np.asarray(image_bytes, dtype="uint8") , cv2.IMREAD_COLOR)
+    image_cv = cv2.imdecode(np.frombuffer(image_bytes, dtype="uint8") , cv2.IMREAD_COLOR)
     
     colored_images = []
     masks = []
     
-    pipeline_lock.acquire()
+    await pipeline_lock.acquire()
+    print(pipeline_lock.locked())
     
     ds_instance = DinoSAMSingleton.instance()
         
     if json_data and json_data["masks"]:
         masks = json_data["masks"]
         for color in image_data.colors:
-            rgb = [color.rgb.r, color.rgb.g, color.rgb.b]
+            rgb = [color.color.r, color.color.g, color.color.b]
             recolored_image = ds_instance.recolor(image_cv, rgb, masks)
             colored_images.append(recolored_image)
     else:
-        rgb_colors = [[color.rgb.r, color.rgb.g, color.rgb.b] for color in image_data.colors]
+        rgb_colors = [[color.color.r, color.color.g, color.color.b] for color in image_data.colors]
         masks, colored_images = ds_instance.run_pipeline(image_cv, image_data.raw_image_hash, rgb_colors)
     
-    pipeline_lock.release()
+    if pipeline_lock.locked():
+        pipeline_lock.release()
   
     if not json_data:
         json_data["masks"] = masks
@@ -75,7 +81,7 @@ async def generate_image(image_data: ImageData,
             "timestamp": time.time(),
         }) 
     
-    image_repository.upload_json(image_data.uid, image_data.raw_image_hash, json_data)
+    await image_repository.upload_json(image_data.uid, image_data.raw_image_hash, json_data)
     response = []
 
     for i in range(len(colored_images)):
