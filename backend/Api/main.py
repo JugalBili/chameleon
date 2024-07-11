@@ -26,3 +26,8 @@ async def lifespan(app: FastAPI):
 app = FastAPI(lifespan=lifespan)
 app.include_router(login.router)
 app.include_router(image.router)
+
+
+@app.get("/")
+def test():
+    return {"Hello": "World"}
