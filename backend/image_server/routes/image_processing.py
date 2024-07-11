@@ -53,6 +53,10 @@ async def generate_image(image_data: ImageData,
     masks = []
     
     await pipeline_lock.acquire()
+<<<<<<< HEAD
+=======
+    print(pipeline_lock.locked())
+>>>>>>> 41bd278 (Image Server half working)
     
     ds_instance = DinoSAMSingleton.instance()
         
@@ -75,9 +79,13 @@ async def generate_image(image_data: ImageData,
     
     if pipeline_lock.locked():
         pipeline_lock.release()
+<<<<<<< HEAD
     
     # First time processing this image
     bmp_buffers = []
+=======
+  
+>>>>>>> 41bd278 (Image Server half working)
     if not json_data:
         for i in range(len(masks)):
             masks[i][masks[i] > 0] = 1
