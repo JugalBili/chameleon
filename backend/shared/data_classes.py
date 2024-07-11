@@ -1,5 +1,5 @@
-﻿from pydantic import BaseModel
-
+﻿from pydantic import BaseModel, ConfigDict
+import io
 
 class RGB(BaseModel):
     r: int
@@ -32,6 +32,12 @@ class GetProcessedResponse(BaseModel):
 class GetJSONResponse(BaseModel):
     image_hash: str
     json_data: dict | None = None
+
+class GetMaskResponse(BaseModel):
+    model_config = ConfigDict(arbitrary_types_allowed=True)
+    
+    image_hash: str
+    mask_data: io.BytesIO | None = None
 
     
 class ImageData(BaseModel):

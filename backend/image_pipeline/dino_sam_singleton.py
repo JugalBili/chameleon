@@ -128,8 +128,6 @@ class DinoSAMSingleton:
             )
             colored_images.append(recolored_image)
         
-        masks = [mask.tolist() for mask in masks]
-        
         return masks, colored_images
 
         print("\n=== Pipeline Finished ===\n")
@@ -222,7 +220,7 @@ class DinoSAMSingleton:
 
             # get average bgr color of masked section
             ave_color = cv2.mean(image, mask=mask)[:3]
-            print(f"Average color = {ave_color}")
+            # print(f"Average color = {ave_color}")
 
             # compute difference colors and make into an image the same size as input
             diff_color = desired_color - ave_color

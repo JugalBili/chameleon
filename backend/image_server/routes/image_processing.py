@@ -1,3 +1,4 @@
+import PIL.Image
 import numpy as np
 import cv2
 import asyncio
@@ -7,11 +8,14 @@ from pydantic import BaseModel
 from fastapi import APIRouter, Depends, Header
 import sys 
 import os
+import io
+import PIL
+
 # print(os.path.join(os.getcwd()))
 sys.path.append(os.path.join(os.getcwd()))
 
 from dependencies import get_image_repository
-from shared.data_classes import Image, GetImageResponse, GetJSONResponse, ColorDTO, RGB, ImageData, GetProcessedResponse
+from shared.data_classes import Image, GetImageResponse, GetJSONResponse, ColorDTO, RGB, ImageData, GetProcessedResponse, GetMaskResponse
 from image_pipeline.dino_sam_singleton import DinoSAMSingleton
 
 
@@ -49,12 +53,18 @@ async def generate_image(image_data: ImageData,
     masks = []
     
     await pipeline_lock.acquire()
-    print(pipeline_lock.locked())
     
     ds_instance = DinoSAMSingleton.instance()
         
     if json_data and json_data["masks"]:
-        masks = json_data["masks"]
+        mask_responses : list[GetMaskResponse] = image_repository.get_masks_by_hash(image_data.uid, image_data.raw_image_hash, json_data["masks"])
+        
+        for reponse in mask_responses:
+            pil_mask = PIL.Image.open(reponse.mask_data)
+            mask = np.array(pil_mask)
+            mask = (mask > 0).astype(np.uint8)
+            masks.append(mask)
+            
         for color in image_data.colors:
             rgb = [color.color.r, color.color.g, color.color.b]
             recolored_image = ds_instance.recolor(image_cv, rgb, masks)
@@ -65,9 +75,22 @@ async def generate_image(image_data: ImageData,
     
     if pipeline_lock.locked():
         pipeline_lock.release()
-  
+    
+    # First time processing this image
+    bmp_buffers = []
     if not json_data:
-        json_data["masks"] = masks
+        for i in range(len(masks)):
+            masks[i][masks[i] > 0] = 1
+            masks[i] = masks[i] * 255
+            pil_mask = PIL.Image.fromarray(masks[i])
+            masks[i] = pil_mask.convert('1')
+            buffer = io.BytesIO()
+            masks[i].save(buffer, format="BMP")
+            bmp_buffers.append(buffer)
+        
+        mask_hashes = await image_repository.upload_masks(image_data.uid, image_data.raw_image_hash, bmp_buffers)
+        
+        json_data["masks"] = mask_hashes
         json_data["uid"] = image_data.uid
         json_data["raw_image_hash"] = image_data.raw_image_hash
         json_data["processed"] = []
