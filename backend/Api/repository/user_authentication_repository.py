@@ -1,7 +1,7 @@
 from fastapi import HTTPException, Depends
 from firebase_admin import firestore_async
 from google.cloud.firestore_v1 import DocumentSnapshot, FieldFilter
-from Api.data_classes import CreateUserDTO, UserLoginDto
+from Api.data_classes import CreateUserDto, UserLoginDto
 from typing import Union
 from datetime import datetime, timedelta, timezone
 import jwt
@@ -97,7 +97,7 @@ class UserAuthenticationRepository:
         except Exception as e:
             raise HTTPException(status_code=500, detail=str(e))
 
-    def __create_user_snapshot(self, create_user_dto: CreateUserDTO):
+    def __create_user_snapshot(self, create_user_dto: CreateUserDto):
         return {
             "email": create_user_dto.email,
             "firstname": create_user_dto.firstname,
@@ -105,7 +105,7 @@ class UserAuthenticationRepository:
             "password": self.__hash_password(create_user_dto.password)
         }
 
-    async def create_user_async(self, create_user_dto: CreateUserDTO) -> User:
+    async def create_user_async(self, create_user_dto: CreateUserDto) -> User:
         new_user_document_dict = self.__create_user_snapshot(create_user_dto)
         try:
             new_user_document = await self.collectionRef.add(new_user_document_dict)
