@@ -20,6 +20,7 @@ async def lifespan(app: FastAPI):
     firebase_admin.initialize_app(cred, {
         'storageBucket': env.firebase_storage_bucket_url
     })
+    ds_instance = DinoSAMSingleton.instance()
     yield
     print("good bye")
 
