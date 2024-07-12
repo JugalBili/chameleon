@@ -24,7 +24,6 @@ GD_FILENAME = os.path.join(cur_path, "models/groundingdino_swint_ogc.pth")
 GD_CONFIG_FILENAME = os.path.join(cur_path, "models/GroundingDINO_SwinT_OGC.py")
 SAM_FILENAME =  os.path.join(cur_path, "models/sam_vit_h_4b8939.pth")
 SAM_TYPE = "vit_h"
-# FSAM_FILENAME =  os.path.join(cur_path, "models/FastSAM.pt")
 
 # hyper-param for GroundingDINO
 CAPTION = "wall"
@@ -83,14 +82,12 @@ class DinoSAMSingleton:
     def __init__(self):
         self.gd_predictor = Dino(GD_FILENAME, GD_CONFIG_FILENAME, DEVICE)
         print("GroundingDINO Model Loaded")
-        self.sam_predictor = SAM(SAM_FILENAME, SAM_TYPE, "cpu")
+        self.sam_predictor = SAM(SAM_FILENAME, SAM_TYPE, "cuda")
         print("SAM Model Loaded")
-        # self.fsam_predictor = FSAM(FSAM_FILENAME, DEVICE, MASK_THRESHOLD, IOU_THRESHOLD)
         print("FastSAM Model Loaded")
 
     def run_pipeline(self, image_cv, image_name, colors):
         print(f"=== Starting Grounded SAM Pipeline for Image {image_name} ===\n")
-        # image_pil = Image.open(image_name).convert("RGB")  # load image
         image_pil = Image.fromarray(cv2.cvtColor(image_cv, cv2.COLOR_BGR2RGB)) 
 
         pred_dict = self.gd_predictor.run_inference(
@@ -108,7 +105,6 @@ class DinoSAMSingleton:
         )
 
         print("\n=== Starting Image Recoloring ===\n")
-        # image_cv = cv2.imread(image_name)
         buckets = self.create_buckets(image_cv, masks)
 
         masks = self.merge_masks(buckets, masks)
@@ -139,16 +135,13 @@ class DinoSAMSingleton:
         pred_dict = self.gd_predictor.run_inference(
             image_pil, CAPTION, BOX_THRESHOLD, TEXT_THRESHOLD
         )
-        # masks = self.fsam_predictor.run_inference(image_pil, pred_dict)
 
         boxed_image = self.gd_predictor.apply_boxes_to_image(image_pil, pred_dict)
         boxed_image.save(
             f"{os.path.splitext(os.path.basename(image_path))[0]}_boxed_fsam.jpg"
         )
-        # masked_image = self.fsam_predictor.apply_mask_to_image(image_pil, masks)
         cv2.imwrite(
             f"{os.path.splitext(os.path.basename(image_path))[0]}_mask_fsam.jpg",
-            # masked_image,
         )
 
         print("\n=== Starting Image Recoloring ===\n")
@@ -156,7 +149,6 @@ class DinoSAMSingleton:
         # recolored_image = self.recolor(image_cv, color, masks)
         cv2.imwrite(
             f"{os.path.splitext(os.path.basename(image_path))[0]}_recolored_fsam.png",
-            # recolored_image,
         )
 
         print("\n=== Pipeline Finished ===\n")
