@@ -21,7 +21,7 @@ async def lifespan(app: FastAPI):
         'storageBucket': env.firebase_storage_bucket_url
     })
     # Initialize Pipeline Models
-    # ds_instance = DinoSAMSingleton.instance()
+    ds_instance = DinoSAMSingleton.instance()
     yield
     print("good bye")
 

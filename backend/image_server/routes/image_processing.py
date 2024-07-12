@@ -76,7 +76,6 @@ async def generate_image(image_data: ImageData,
     
     if pipeline_lock.locked():
         pipeline_lock.release()
-    
     # First time processing this image
     bmp_buffers = []
     if not json_data:
