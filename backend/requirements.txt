@@ -27,6 +27,7 @@ pandas
 rq
 black
 colormath
+clip
 
 # Fast SAM
 ultralytics == 8.0.120
