@@ -17,6 +17,7 @@ sys.path.append(os.path.join(os.getcwd()))
 from dependencies import get_image_repository
 from shared.data_classes import Image, GetImageResponse, GetJSONResponse, ColorDTO, RGB, ImageData, GetProcessedResponse, GetMaskResponse
 from image_pipeline.dino_sam_singleton import DinoSAMSingleton
+from shared.repository.image_repository import ImageRepository
 
 
 router = APIRouter(

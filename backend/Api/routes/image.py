@@ -1,10 +1,11 @@
 from fastapi import APIRouter, Depends, UploadFile, Form, File, HTTPException, Response
-from shared.data_classes import ColorDTO
+from shared.data_classes import ColorDTO, ImageData
 from pydantic import ValidationError
 from shared.service.image_service import ImageService
 from typing import Annotated
-from Api.dependencies import get_image_service, get_user
+from Api.dependencies import get_image_service, get_user, get_image_server_client
 from Api.repository.user_authentication_repository import User
+from Api.client.image_server_client import ImageServerClient
 import json
 
 router = APIRouter(
@@ -19,18 +20,20 @@ router = APIRouter(
 
 @router.get("/{image_hash}")
 def get_image_by_hash(image_service: Annotated['ImageService', Depends(get_image_service)],
-                      user: Annotated['User', Depends(get_user)],
+                    #   user: Annotated['User', Depends(get_user)],
                       image_hash: str
                       ):
+    user = User(email="a@a.com", firstname="test", lastname="test", uid="test")
     image = image_service.get_image_by_hash(user.uid, image_hash)
     return Response(content=image.image_bytes, media_type=image.contentType)
 
 
 @router.get("/list/{image_hash}")
 def list_image_for_hash(image_service: Annotated['ImageService', Depends(get_image_service)],
-                        user: Annotated['User', Depends(get_user)],
+                        # user: Annotated['User', Depends(get_user)],
                         image_hash: str
                         ):
+    user = User(email="a@a.com", firstname="test", lastname="test", uid="test")
     return image_service.get_image_summary_by_hash(user.uid, image_hash)
 
 

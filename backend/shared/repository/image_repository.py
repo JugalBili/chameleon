@@ -50,7 +50,7 @@ class ImageRepository:
         r = metadata.get("r", None)
         g = metadata.get("g", None)
         b = metadata.get("b", None)
-        paintId = metadata.get("paintId", None)
+        paintId = metadata.get("paint_id", None)
         return r, g, b, paintId
 
     async def upload_processed_image(self, uid: str, raw_image_hash: str, image_bytes, dto: ColorDTO):

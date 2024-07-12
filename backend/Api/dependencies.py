@@ -6,7 +6,7 @@ from Api.repository.user_authentication_repository import UserAuthenticationRepo
 from Api.service.user_authentication_service import UserAuthenticationService
 from shared.repository.image_repository import ImageRepository
 from shared.service.image_service import ImageService
-
+from Api.client.image_server_client import ImageServerClient
 
 @lru_cache()
 def getEnv():
@@ -25,10 +25,11 @@ def get_authentication_service(
 def get_image_repository():
     return ImageRepository()
 
+def get_image_server_client(env: Annotated[Settings, Depends(getEnv)]):
+    return ImageServerClient(env=env)
 
-def get_image_service(repository: Annotated['ImageRepository', Depends(get_image_repository)]):
-    return ImageService(repository)
-
+def get_image_service(repository: Annotated['ImageRepository', Depends(get_image_repository)], client: Annotated['ImageServerClient', Depends(get_image_server_client)]):
+    return ImageService(repository, client)
 
 def get_auth_token(request: Request):
     token = request.headers.get('Authorization')
