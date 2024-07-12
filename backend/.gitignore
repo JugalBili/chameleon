@@ -128,7 +128,6 @@ celerybeat.pid
 *.sage.py
 
 # Environments
-Api/.env
 .venv
 env/
 venv/
@@ -294,4 +293,8 @@ fabric.properties
 .idea/**/azureSettings.xml
 
 # End of https://www.toptal.com/developers/gitignore/api/pycharm
+
+# Environment Variables and Secrets
+.env
+firebase-auth-image-server.json
 firebase-auth.json

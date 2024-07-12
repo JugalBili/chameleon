@@ -1,6 +1,6 @@
 import os, sys
 
-sys.path.append(os.path.join(os.getcwd(), "FastSAM"))
+sys.path.append(os.path.join(os.path.dirname(__file__), "FastSAM"))
 
 import copy
 from PIL import Image

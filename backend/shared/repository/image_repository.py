@@ -1,15 +1,19 @@
 import hashlib
 import io
+import json
+import numpy as np
+import cv2
 from firebase_admin import storage
 from google.cloud.storage import Blob
 from fastapi import UploadFile, HTTPException
-from shared.data_classes import RGB, GetImageResponse, ImageUploadDTO, Image
+from shared.data_classes import RGB, GetImageResponse, ColorDTO, Image, GetJSONResponse, GetMaskResponse
 
 
 class ImageRepository:
     def __init__(self) -> None:
         self.bucket = storage.bucket()
         self.processed_image_path = "processed"
+        self.masks_path = "masks"
         self.metadata_exception = HTTPException(status_code=500, detail="Error encountered: invalid metadata")
 
     async def upload_unprocessed_image(self, uid: str, file: UploadFile):
@@ -25,15 +29,16 @@ class ImageRepository:
             return image_hash
         content_file = io.BytesIO(content)
         blob.upload_from_file(content_file, content_type=file.content_type)
+        blob.make_private()
         return image_hash
 
     @staticmethod
-    def _create_metadata(upload_request: ImageUploadDTO):
+    def _create_metadata(upload_request: ColorDTO):
         return {
             "r": upload_request.color.r,
             "g": upload_request.color.g,
             "b": upload_request.color.b,
-            "paintId": upload_request.paintId
+            "paint_id": upload_request.paint_id
         }
 
     @staticmethod
@@ -48,32 +53,101 @@ class ImageRepository:
         paintId = metadata.get("paintId", None)
         return r, g, b, paintId
 
-    # temp function for testing while image pipeline is getting developed.
-    # Replace calls to this function with Image Pipeline Service after completion
-    async def upload_processed_image(self, uid: str, file: UploadFile, dto: ImageUploadDTO):
-        await file.seek(0)
-        content = await file.read()
-        image_hash = hashlib.sha256(content).hexdigest()
-        base_path = f"{uid}/{image_hash}/{self.processed_image_path}"
-        file_name = f"{image_hash}-{dto.paintId}"
-        image_path = f"{base_path}/{file_name}"
+    async def upload_processed_image(self, uid: str, raw_image_hash: str, image_bytes, dto: ColorDTO):
+        base_path = f"{uid}/{raw_image_hash}/{self.processed_image_path}"
+        processed_image_hash = f"{raw_image_hash}-{dto.paint_id}"
+        image_path = f"{base_path}/{processed_image_hash}"
         blob = self.bucket.blob(image_path)
         if blob.exists():
             r, g, b, paintId = self._parse_metadata_from_blob(blob)
             if not r or not g or not b or not paintId:
                 raise self.metadata_exception
-            return GetImageResponse(image_hash=file_name, rgb=RGB(r=r, g=g, b=b), paintId=paintId)
-        content_file = io.BytesIO(content)
+            return GetImageResponse(image_hash=processed_image_hash, rgb=RGB(r=r, g=g, b=b), paintId=paintId)
         blob.metadata = self._create_metadata(dto)
-        blob.upload_from_file(content_file, content_type=file.content_type)
-        return GetImageResponse(image_hash=file_name, rgb=dto.color, paintId=dto.paintId)
+        blob.upload_from_string(image_bytes, content_type="image/jpg")
+        blob.make_private()
 
+        # return GetImageResponse(image_hash=file_name, rgb=dto.color, paintId=dto.paintId)
+        return processed_image_hash
+    
+    async def upload_masks(self, uid: str, raw_image_hash: str, buffers: list[io.BytesIO]):
+        uploaded_mask_hashes = []
+        for i in range(len(buffers)):
+            base_path = f"{uid}/{raw_image_hash}/{self.masks_path}"
+            file_name = f"{raw_image_hash}-{i}"
+            image_path = f"{base_path}/{file_name}"
+
+            buffers[i].seek(0)
+            blob = self.bucket.blob(image_path)
+
+            blob.upload_from_file(buffers[i], content_type="image/bmp")
+            blob.make_private()
+            uploaded_mask_hashes.append(file_name)
+
+        return uploaded_mask_hashes
+
+    @staticmethod
+    def _get_mask_from_blob(blob: Blob) -> dict:
+        bmp_buffer = io.BytesIO() 
+        blob.download_to_file(bmp_buffer)
+        bmp_buffer.seek(0)
+
+        return bmp_buffer
+
+    def get_masks_by_hash(self, uid: str, image_hash: str, mask_hashes: list[str]) -> None | GetMaskResponse:
+        mask_responses = []
+        
+        base_path = f"{uid}/{image_hash}/{self.masks_path}"
+
+        for i in range(len(mask_hashes)):
+            file_name = f"{mask_hashes[i]}"
+            mask_path = f"{base_path}/{file_name}"
+            blob = self.bucket.blob(mask_path)
+            if not blob.exists():
+                pass
+            buffer = self._get_mask_from_blob(blob)
+            blob.make_private()
+            
+            response = GetMaskResponse(image_hash=image_hash, mask_data=buffer)
+            mask_responses.append(response)
+
+        return mask_responses
+
+    async def upload_json(self, uid: str, raw_image_hash: str, json_dict: dict):
+        base_path = f"{uid}/{raw_image_hash}"
+        file_name = f"{raw_image_hash}.json"
+        image_path = f"{base_path}/{file_name}"
+
+        json_str = json.dumps(json_dict)
+        blob = self.bucket.blob(image_path)
+
+        blob.upload_from_string(json_str.encode('utf-8'), content_type="application/json")
+        blob.make_private()
+        return GetJSONResponse(image_hash=raw_image_hash)
+    
+    @staticmethod
+    def _get_json_from_blob(blob: Blob) -> dict:
+        json_string = blob.download_as_string().decode('utf-8')
+        dict_obj = json.loads(json_string)
+
+        return dict_obj
+    
+    def get_json_by_hash(self, uid: str, image_hash: str) -> None | GetJSONResponse:
+        base_path = f"{uid}/{image_hash}/"
+        file_name = f"{image_hash}.json"
+        base_path += file_name
+        blob = self.bucket.blob(base_path)
+        if not blob.exists():
+            return None
+        obj = self._get_json_from_blob(blob)
+        blob.make_private()
+
+        return GetJSONResponse(image_hash=image_hash, json_data=obj)
+    
     @staticmethod
     def _get_image_from_blob(blob: Blob) -> Image:
         image_bytes = blob.download_as_bytes()
-        # image_bytes = io.BytesIO()
-        # blob.download_as_string(image_bytes)
-        # image_bytes.seek(0)
+
         return Image(image_bytes=image_bytes, contentType=blob.content_type)
 
     def get_raw_image_by_hash(self, uid: str, image_hash: str,
@@ -88,6 +162,7 @@ class ImageRepository:
             raw_image = self._get_image_from_blob(blob)
         else:
             raw_image = None
+        blob.make_private()
         return GetImageResponse(image_hash=image_hash, rgb=None, paintId=None, image_data=raw_image)
 
     def get_processed_image_by_hash(self, uid: str, image_hash: str,
@@ -108,10 +183,11 @@ class ImageRepository:
             raw_image = self._get_image_from_blob(blob)
         else:
             raw_image = None
+        blob.make_private()
         return GetImageResponse(image_hash=image_hash, rgb=RGB(r=r, g=g, b=b), paintId=paintId, image_data=raw_image)
 
-    def check_image_exists_for_id(self, uid: str, image_hash: str, dto: ImageUploadDTO):
-        file_name = f"{image_hash}-{dto.paintId}"
+    def check_image_exists_for_id(self, uid: str, image_hash: str, dto: ColorDTO):
+        file_name = f"{image_hash}-{dto.paint_id}"
         return self.get_processed_image_by_hash(uid, file_name)
 
     def get_all_processed_images(self, uid: str, raw_hash: str):
@@ -123,5 +199,6 @@ class ImageRepository:
         for blob in blobs:
             filename = blob.name.split("/")[-1]
             r, g, b, paintId = self._parse_metadata_from_blob(blob)
+            blob.make_private()
             ret.append(GetImageResponse(image_hash=filename, rgb=RGB(r=r, g=g, b=b), paintId=paintId))
         return ret

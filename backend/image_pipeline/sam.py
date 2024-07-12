@@ -1,14 +1,11 @@
 import os, sys
-
-sys.path.append(os.path.join(os.getcwd(), "segment_anything"))
-
 import copy
 from PIL import Image
 import torch
 import numpy as np
 
+sys.path.append(os.path.join(os.path.dirname(__file__), "segment_anything"))
 from segment_anything import sam_model_registry, SamPredictor
-import numpy as np
 
 
 class SAM:

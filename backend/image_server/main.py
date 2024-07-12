@@ -1,30 +1,33 @@
 import firebase_admin
-import sys 
 import os
 from firebase_admin import credentials
 from fastapi import FastAPI
 from contextlib import asynccontextmanager
+import sys
 
 sys.path.append(os.path.join("\\".join(os.path.dirname(__file__).split("\\")[:-1])))
-from Api.routes import login, image
-from Api.dependencies import getEnv
+
+from routes import image_processing
+from dependencies import getEnv
+from image_pipeline.dino_sam_singleton import DinoSAMSingleton
+
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
     env = getEnv()
-    use_emulator = env.use_firebase_emulator
-    cred = credentials.Certificate('./firebase-auth.json')
-    if use_emulator.lower() == 'true':
-        os.environ['FIRESTORE_EMULATOR_HOST'] = 'localhost:8080'
-        print("using emulators")
+    cred = credentials.Certificate('./firebase-auth-image-server.json')
+
     firebase_admin.initialize_app(cred, {
         'storageBucket': env.firebase_storage_bucket_url
     })
+    ds_instance = DinoSAMSingleton.instance()
     yield
     print("good bye")
 
 
+# Initialize Pipeline Models
+ds_instance = DinoSAMSingleton.instance()
+
 # initialize fastAPI
 app = FastAPI(lifespan=lifespan)
-app.include_router(login.router)
-app.include_router(image.router)
+app.include_router(image_processing.router)

@@ -1,5 +1,5 @@
 from fastapi import APIRouter, Depends, UploadFile, Form, File, HTTPException, Response
-from shared.data_classes import ImageUploadDTO
+from shared.data_classes import ColorDTO
 from pydantic import ValidationError
 from shared.service.image_service import ImageService
 from typing import Annotated
@@ -41,9 +41,10 @@ async def upload_file(image_service: Annotated['ImageService', Depends(get_image
                       colors: str = Form(...)):
     try:
         raw_colors = json.loads(colors)
-        color_list = [ImageUploadDTO(**color) for color in raw_colors]
+        color_list = [ColorDTO(**color) for color in raw_colors]
     except (SyntaxError, ValidationError, TypeError) as e:
         raise HTTPException(status_code=422, detail=f"Invalid 'colors' input: {e}")
     except Exception as e:
         raise HTTPException(status_code=422, detail=f"invalid color input: {e}")
+
     return await image_service.upload_and_process_image(user.uid, file, color_list)
