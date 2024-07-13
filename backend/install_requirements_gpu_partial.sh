@@ -6,8 +6,8 @@ which pip
 
 echo "== Installing from requirements_gpu.txt =="
 pip install -r requirements_gpu.txt
-pip uninstall --no-input torch torchvision
-pip install --force-reinstall torch torchvision --index-url https://download.pytorch.org/whl/cu118
+pip uninstall torch torchvision
+pip install torch torchvision --index-url https://download.pytorch.org/whl/cu118
 
 cd "$SCRIPT_DIR/image_pipeline"
 
