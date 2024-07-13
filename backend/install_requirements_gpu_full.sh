@@ -19,10 +19,12 @@ echo "== Installing from segment_anything =="
 pip install -e ./segment_anything
 
 echo "== Installing from GroundingDino =="
-rm -rf "/c/temp/GroundingDINO"
+LINK_DIR="/c/temp/GroundingDINO"
+rm -rf $LINK_DIR
 ln -s "$SCRIPT_DIR/image_pipeline/GroundingDINO" "/c/temp/"
-cd "/c/temp/GroundingDINO"
-pip install -e .
+cd "$LINK_DIR"
+pip install -v -e .
+cp "$LINK_DIR/groundingdino/_C.cp310-win_amd64.pyd" "$SCRIPT_DIR/image_pipeline/GroundingDINO/groundingdino/_C.cp310-win_amd64.pyd"
 rm -rf "/c/temp/GroundingDINO"
 
 echo "== Downloading Models =="
