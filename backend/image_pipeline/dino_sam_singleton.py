@@ -14,17 +14,13 @@ sys.path.append(cur_path)
 from color_helper import calc_delta_CIEDE2000
 from dino import Dino
 from sam import SAM
-from fsam import FSAM
-
 
 
 DEVICE = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-DEVICE = "cpu"
 GD_FILENAME = os.path.join(cur_path, "models/groundingdino_swint_ogc.pth")
 GD_CONFIG_FILENAME = os.path.join(cur_path, "models/GroundingDINO_SwinT_OGC.py")
 SAM_FILENAME =  os.path.join(cur_path, "models/sam_vit_h_4b8939.pth")
 SAM_TYPE = "vit_h"
-FSAM_FILENAME =  os.path.join(cur_path, "models/FastSAM.pt")
 
 # hyper-param for GroundingDINO
 CAPTION = "wall"
@@ -33,10 +29,6 @@ TEXT_THRESHOLD = 0.35
 
 # Parameter for Mask Bucketing
 MAX_DELTA = 30
-
-# hyper-param for FastSAM
-IOU_THRESHOLD = 0.9
-MASK_THRESHOLD = 0.45
 
 
 class Singleton:
@@ -81,16 +73,13 @@ class Singleton:
 @Singleton
 class DinoSAMSingleton:
     def __init__(self):
-        self.gd_predictor = Dino(GD_FILENAME, GD_CONFIG_FILENAME, DEVICE)
+        self.gd_predictor = Dino(GD_FILENAME, GD_CONFIG_FILENAME, 'cpu')
         print("GroundingDINO Model Loaded")
-        self.sam_predictor = SAM(SAM_FILENAME, SAM_TYPE, "cuda")
+        self.sam_predictor = SAM(SAM_FILENAME, SAM_TYPE, DEVICE)
         print("SAM Model Loaded")
-        self.fsam_predictor = FSAM(FSAM_FILENAME, DEVICE, MASK_THRESHOLD, IOU_THRESHOLD)
-        print("FastSAM Model Loaded")
 
     def run_pipeline(self, image_cv, image_name, colors):
         print(f"=== Starting Grounded SAM Pipeline for Image {image_name} ===\n")
-        # image_pil = Image.open(image_name).convert("RGB")  # load image
         image_pil = Image.fromarray(cv2.cvtColor(image_cv, cv2.COLOR_BGR2RGB)) 
 
         pred_dict = self.gd_predictor.run_inference(
@@ -99,67 +88,37 @@ class DinoSAMSingleton:
         masks = self.sam_predictor.run_inference(image_pil, pred_dict)
 
         boxed_image = self.gd_predictor.apply_boxes_to_image(image_pil, pred_dict)
-        boxed_image.save(
-            f"{os.path.splitext(os.path.basename(image_name))[0]}_boxed.jpg"
-        )
+        # boxed_image.save(
+        #     f"{os.path.splitext(os.path.basename(image_name))[0]}_boxed.jpg"
+        # )
         masked_image = self.sam_predictor.apply_mask_to_image(image_pil, masks)
-        masked_image.save(
-            f"{os.path.splitext(os.path.basename(image_name))[0]}_mask.jpg"
-        )
+        # masked_image.save(
+        #     f"{os.path.splitext(os.path.basename(image_name))[0]}_mask.jpg"
+        # )
 
         print("\n=== Starting Image Recoloring ===\n")
-        # image_cv = cv2.imread(image_name)
         buckets = self.create_buckets(image_cv, masks)
 
         masks = self.merge_masks(buckets, masks)
         masked_image = self.sam_predictor.apply_mask_to_image(image_pil, masks)
-        masked_image.save(
-            f"{os.path.splitext(os.path.basename(image_name))[0]}_mask_merged.jpg"
-        )
+        # masked_image.save(
+        #     f"{os.path.splitext(os.path.basename(image_name))[0]}_mask_merged.jpg"
+        # )
 
         colored_images = []
         
         for color in colors:
             recolored_image = self.recolor(image_cv, color, masks)
             color_string = "-".join([str(val) for val in color])
-            cv2.imwrite(
-                f"{os.path.splitext(os.path.basename(image_name))[0]}_recolored_{color_string}.png",
-                recolored_image,
-            )
+            # cv2.imwrite(
+            #     f"{os.path.splitext(os.path.basename(image_name))[0]}_recolored_{color_string}.png",
+            #     recolored_image,
+            # )
             colored_images.append(recolored_image)
         
+        print("\n=== Pipeline Finished ===\n")
+                
         return masks, colored_images
-
-        print("\n=== Pipeline Finished ===\n")
-
-    def run_pipeline_fsam(self, image_path, color):
-        print(f"=== Starting Grounded FSAM Pipeline for Image {image_path} ===\n")
-        image_pil = Image.open(image_path).convert("RGB")  # load image
-
-        pred_dict = self.gd_predictor.run_inference(
-            image_pil, CAPTION, BOX_THRESHOLD, TEXT_THRESHOLD
-        )
-        masks = self.fsam_predictor.run_inference(image_pil, pred_dict)
-
-        boxed_image = self.gd_predictor.apply_boxes_to_image(image_pil, pred_dict)
-        boxed_image.save(
-            f"{os.path.splitext(os.path.basename(image_path))[0]}_boxed_fsam.jpg"
-        )
-        masked_image = self.fsam_predictor.apply_mask_to_image(image_pil, masks)
-        cv2.imwrite(
-            f"{os.path.splitext(os.path.basename(image_path))[0]}_mask_fsam.jpg",
-            masked_image,
-        )
-
-        print("\n=== Starting Image Recoloring ===\n")
-        image_cv = cv2.imread(image_path)
-        recolored_image = self.recolor(image_cv, color, masks)
-        cv2.imwrite(
-            f"{os.path.splitext(os.path.basename(image_path))[0]}_recolored_fsam.png",
-            recolored_image,
-        )
-
-        print("\n=== Pipeline Finished ===\n")
 
     def create_buckets(self, image_cv, masks):
         buckets = {}

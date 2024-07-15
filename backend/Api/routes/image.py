@@ -46,5 +46,4 @@ async def upload_file(image_service: Annotated['ImageService', Depends(get_image
         raise HTTPException(status_code=422, detail=f"Invalid 'colors' input: {e}")
     except Exception as e:
         raise HTTPException(status_code=422, detail=f"invalid color input: {e}")
-
     return await image_service.upload_and_process_image(user.uid, file, color_list)

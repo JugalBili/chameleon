@@ -6,7 +6,7 @@ from contextlib import asynccontextmanager
 import sys
 
 sys.path.append(os.path.join("\\".join(os.path.dirname(__file__).split("\\")[:-1])))
-
+sys.path.append(os.path.join(os.path.dirname(__file__)))
 from routes import image_processing
 from dependencies import getEnv
 from image_pipeline.dino_sam_singleton import DinoSAMSingleton
@@ -20,13 +20,10 @@ async def lifespan(app: FastAPI):
     firebase_admin.initialize_app(cred, {
         'storageBucket': env.firebase_storage_bucket_url
     })
+    # Initialize Pipeline Models
     ds_instance = DinoSAMSingleton.instance()
     yield
     print("good bye")
-
-
-# Initialize Pipeline Models
-ds_instance = DinoSAMSingleton.instance()
 
 # initialize fastAPI
 app = FastAPI(lifespan=lifespan)
