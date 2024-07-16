@@ -1,3 +1,30 @@
+- [Dependencies](#dependencies)
+- [Installation](#installation)
+  - [CPU Only](#cpu-only)
+    - [1. Create Virtual Environment](#1-create-virtual-environment)
+    - [2. Install Requirements](#2-install-requirements)
+  - [Partial GPU](#partial-gpu)
+    - [1. Download Visual Studio 2022](#1-download-visual-studio-2022)
+    - [2. Install CUDA ToolKit 11.8](#2-install-cuda-toolkit-118)
+    - [3. Install cuDNN 8.9.4](#3-install-cudnn-894)
+    - [4. Create Virtual Environment](#4-create-virtual-environment)
+    - [5. Install Requirements](#5-install-requirements)
+  - [Full GPU](#full-gpu)
+    - [1. Install Visual Studio 2022, CUDA and cuDNN](#1-install-visual-studio-2022-cuda-and-cudnn)
+    - [2. Add CL Compiler to Path](#2-add-cl-compiler-to-path)
+    - [3. Install Ninja Build Toolchain](#3-install-ninja-build-toolchain)
+    - [4. Create Virtual Environment](#4-create-virtual-environment-1)
+    - [5. Install Requirements](#5-install-requirements-1)
+  - [Linux Installation (WIP)](#linux-installation-wip)
+- [Running the backend](#running-the-backend)
+  - [Backend Requirements:](#backend-requirements)
+- [Local Testing](#local-testing)
+  - [emulator installation](#emulator-installation)
+  - [enable emulator for local build](#enable-emulator-for-local-build)
+    - [For Windows:](#for-windows)
+
+---
+
 # Dependencies
 
 This project requires the following dependencies. Ensure you have them before beginning.
@@ -117,7 +144,7 @@ Before installing requirements, ensure `CUDA_HOME` environmental variable is act
 export CUDA_HOME='/c/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v11.8'
 ```
 
-### Full GPU
+## Full GPU
 
 With Full GPU insallation, both the SAM model and the GroundingDINO model will use GPU. Average time to generate a colored image will be ~8 seconds.
 
@@ -168,7 +195,7 @@ Before executing, modify the CUDA_HOME path in line 9 to match the path above
 ./install_requirements_gpu_full.sh
 ```
 
-# Linux Installation (WIP)
+##  Linux Installation (WIP)
 - need g++ & gcc <= 11.0.0
 - need cuda 11.8 and cudnn 8.9.4 (https://gist.github.com/Autonomousanz/5469efa0f91af4a6376ff60eeecf179c) (https://developer.nvidia.com/rdp/cudnn-archive)
   - chaneg scruipt to install drivers 555 
