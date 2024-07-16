@@ -10,6 +10,7 @@ import androidx.core.content.ContextCompat
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import cs446.project.chameleon.gallery.GalleryPage
 import cs446.project.chameleon.ui.theme.ChameleonTheme
 
 class MainActivity : ComponentActivity() {
@@ -28,9 +29,10 @@ class MainActivity : ComponentActivity() {
             ChameleonTheme {
                 val navController = rememberNavController()
 
+                // TODO: change back start destination
                 NavHost(
                     navController = navController,
-                    startDestination = "login_page"
+                    startDestination = "gallery_page"
                 ) {
                     composable("login_page") {
                         LoginPage(navController)
@@ -46,6 +48,9 @@ class MainActivity : ComponentActivity() {
                     }
                     composable("profile_screen") {
                         ProfileScreen(navController)
+                    }
+                    composable("gallery_page") {
+                        GalleryPage(navController)
                     }
                 }
             }
