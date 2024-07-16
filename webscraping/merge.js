@@ -1,4 +1,5 @@
 import { readFile } from "fs/promises";
+import fs from "fs/promises";
 import { initializeApp } from "firebase/app";
 import {
   getFirestore,
@@ -19,10 +20,10 @@ const db = getFirestore(app);
 const files = [
   "benjaminMoore.json",
   "ppg.json",
-  "behr.json",
-  "kilz.json",
+  // "behr.json",
+  // "kilz.json",
   "dunnEdwards.json",
-  "valspar.json",
+  // "valspar.json",
 ];
 
 const paint_data = [];
@@ -65,21 +66,27 @@ for (const dataset of paint_data) {
   }
 }
 
-let batch = writeBatch(db);
-const collectionName = "paints";
-let numDocuments = 0;
-for (const [key, value] of Object.entries(merged_data)) {
-  numDocuments += 1;
-  const paintRef = doc(db, collectionName, key);
-  batch.set(paintRef, value);
-  if (numDocuments === 500) {
-    await batch.commit();
-    batch = writeBatch(db);
-    numDocuments = 0;
-  }
+try {
+  await fs.writeFile("paints.json", JSON.stringify(merged_data), "utf8");
+} catch (err) {
+  console.error("Error writing to file", err);
 }
 
-if (numDocuments > 0) {
-  await batch.commit(db);
-}
+// let batch = writeBatch(db);
+// const collectionName = "paints";
+// let numDocuments = 0;
+// for (const [key, value] of Object.entries(merged_data)) {
+//   numDocuments += 1;
+//   const paintRef = doc(db, collectionName, key);
+//   batch.set(paintRef, value);
+//   if (numDocuments === 500) {
+//     await batch.commit();
+//     batch = writeBatch(db);
+//     numDocuments = 0;
+//   }
+// }
+
+// if (numDocuments > 0) {
+//   await batch.commit(db);
+// }
 process.exit(0);
