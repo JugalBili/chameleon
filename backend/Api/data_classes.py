@@ -18,5 +18,9 @@ class ImageRequestListResponse(BaseModel):
     processed_images: List[GetProcessedResponse]
 
 class History(BaseModel):
+    base_image: str
     last_accessed: datetime
     colors: List[ColorDTO] = []
+
+class HistoryList(BaseModel):
+    history: List[History]
