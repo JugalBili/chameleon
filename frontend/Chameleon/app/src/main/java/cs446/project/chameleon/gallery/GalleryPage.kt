@@ -20,6 +20,7 @@ import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
@@ -34,22 +35,19 @@ import androidx.compose.ui.text.style.TextDecoration
 import androidx.compose.ui.text.withStyle
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavHostController
+import cs446.project.chameleon.MainViewModel
 import cs446.project.chameleon.Paint
 
 
 @Composable
-fun GalleryPage(navController: NavHostController) {
+fun GalleryPage(
+    navController: NavHostController,
+    mainViewModel: MainViewModel = viewModel()
+) {
 
-    // TODO: hard-coded paints for now
-    val paints = mutableListOf<Paint>()
-    paints.add(Paint("Id1", "PPG", "Viva La Bleu", listOf(151, 190, 226)))
-    paints.add(Paint("Id2", "PPG", "Calypso Berry", listOf(197, 58, 75)))
-    paints.add(Paint("Id3", "Benjamin Moore", "Blue Pearl", listOf(147, 160, 189)))
-    paints.add(Paint("Id4", "Benjamin Moore", "Grape Green", listOf(213, 216, 105)))
-    for (i in 1..100) {
-        paints.add(Paint("Id4", "Benjamin Moore", "Grape Green", listOf(213, 216, 105)))
-    }
+    val paints by mainViewModel.paints.collectAsState()
 
     // Handle search filters
     var searchQuery by remember { mutableStateOf("") }
