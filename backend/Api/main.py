@@ -6,7 +6,7 @@ from fastapi import FastAPI
 from contextlib import asynccontextmanager
 
 sys.path.append(os.path.join("\\".join(os.path.dirname(__file__).split("\\")[:-1])))
-from Api.routes import login, image, history
+from Api.routes import login, image, history, gallery
 from Api.dependencies import getEnv
 
 
@@ -30,3 +30,4 @@ app = FastAPI(lifespan=lifespan)
 app.include_router(login.router)
 app.include_router(image.router)
 app.include_router(history.router)
+app.include_router(gallery.router)

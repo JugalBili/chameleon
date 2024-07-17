@@ -59,10 +59,7 @@ class ImageRepository:
         image_path = f"{base_path}/{processed_image_hash}"
         blob = self.bucket.blob(image_path)
         if blob.exists():
-            r, g, b, paintId = self._parse_metadata_from_blob(blob)
-            if not r or not g or not b or not paintId:
-                raise self.metadata_exception
-            return GetImageResponse(image_hash=processed_image_hash, rgb=RGB(r=r, g=g, b=b), paintId=paintId)
+            return processed_image_hash
         blob.metadata = self._create_metadata(dto)
         blob.upload_from_string(image_bytes, content_type="image/jpg")
         blob.make_private()
