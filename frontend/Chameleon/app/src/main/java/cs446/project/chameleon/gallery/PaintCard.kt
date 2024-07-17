@@ -28,7 +28,7 @@ import cs446.project.chameleon.Paint
 @Composable
 fun PaintCard(
     paint: Paint,
-    onClick: (String) -> Unit
+    onClick: (Paint) -> Unit
 ) {
     val isSelected = remember { mutableStateOf(false) }
     val colour = Color(red = paint.rgb[0], green = paint.rgb[1], blue = paint.rgb[2])
@@ -39,6 +39,7 @@ fun PaintCard(
             .border(2.dp, Color.Black, RoundedCornerShape(16.dp))
             .clip(RoundedCornerShape(16.dp))
             .height(175.dp).width(150.dp)
+            .clickable(onClick = { onClick(paint) })
     ) {
 
         Column(Modifier.fillMaxSize()) {

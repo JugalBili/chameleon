@@ -7,10 +7,12 @@ import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
+import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import cs446.project.chameleon.gallery.GalleryPage
+import cs446.project.chameleon.gallery.PaintReview
 import cs446.project.chameleon.ui.theme.ChameleonTheme
 
 class MainActivity : ComponentActivity() {
@@ -27,6 +29,7 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             ChameleonTheme {
+                val paintViewModel: MainViewModel = viewModel()
                 val navController = rememberNavController()
 
                 // TODO: change back start destination
@@ -50,7 +53,10 @@ class MainActivity : ComponentActivity() {
                         ProfileScreen(navController)
                     }
                     composable("gallery_page") {
-                        GalleryPage(navController)
+                        GalleryPage(navController, paintViewModel)
+                    }
+                    composable("paint_review") {
+                        PaintReview(navController, paintViewModel)
                     }
                 }
             }

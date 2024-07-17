@@ -15,13 +15,17 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
+import androidx.lifecycle.viewmodel.compose.viewModel
+import androidx.navigation.NavHostController
+import cs446.project.chameleon.MainViewModel
 import cs446.project.chameleon.Paint
 
 @Composable
 fun PaintGallery(
-    paints: List<Paint>
+    paints: List<Paint>,
+    navController: NavHostController,
+    mainViewModel: MainViewModel
 ) {
-    var selectedPaintId by remember { mutableStateOf("") }
 
     LazyVerticalGrid(
         modifier = Modifier
@@ -35,13 +39,9 @@ fun PaintGallery(
         items(paints) { paint ->
             PaintCard(
                 paint = paint,
-                onClick = { paintId ->
-                    selectedPaintId = paintId
-                    //if (selectedPaintIds.contains(paintId)) {
-                    //    selectedPaintIds.remove(paintId)
-                    //} else {
-                    //    selectedPaintIds.add(paintId)
-                    //}
+                onClick = { paint ->
+                    mainViewModel.updateSelectedPaint(paint)
+                    navController.navigate("paint_review")
                 }
             )
         }

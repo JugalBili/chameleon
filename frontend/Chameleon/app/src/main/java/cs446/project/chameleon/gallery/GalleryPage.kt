@@ -44,7 +44,7 @@ import cs446.project.chameleon.Paint
 @Composable
 fun GalleryPage(
     navController: NavHostController,
-    mainViewModel: MainViewModel = viewModel()
+    mainViewModel: MainViewModel
 ) {
 
     val paints by mainViewModel.paints.collectAsState()
@@ -89,7 +89,9 @@ fun GalleryPage(
 
                 // Paint Gallery
                 PaintGallery(
-                    paints = filteredPaints
+                    paints = filteredPaints,
+                    navController = navController,
+                    mainViewModel = mainViewModel
                 )
             }
         },
