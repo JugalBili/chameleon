@@ -24,3 +24,6 @@ class History(BaseModel):
 
 class HistoryList(BaseModel):
     history: List[History]
+
+class Favorites(BaseModel):
+    favorites: List[ColorDTO] = []
