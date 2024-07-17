@@ -1,8 +1,7 @@
 import hashlib
 import io
 import json
-import numpy as np
-import cv2
+from typing import List
 from firebase_admin import storage
 from google.cloud.storage import Blob
 from fastapi import UploadFile, HTTPException
@@ -35,9 +34,9 @@ class ImageRepository:
     @staticmethod
     def _create_metadata(upload_request: ColorDTO):
         return {
-            "r": upload_request.color.r,
-            "g": upload_request.color.g,
-            "b": upload_request.color.b,
+            "r": upload_request.rgb.r,
+            "g": upload_request.rgb.g,
+            "b": upload_request.rgb.b,
             "paint_id": upload_request.paint_id
         }
 
@@ -195,7 +194,7 @@ class ImageRepository:
         blobs = self.bucket.list_blobs(prefix=path)
         if not blobs:
             return []
-        ret = []
+        ret: List[GetImageResponse] = []
         for blob in blobs:
             filename = blob.name.split("/")[-1]
             r, g, b, paintId = self._parse_metadata_from_blob(blob)
