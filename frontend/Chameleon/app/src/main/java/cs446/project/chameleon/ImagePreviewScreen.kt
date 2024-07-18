@@ -35,11 +35,15 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
+import cs446.project.chameleon.composables.ColourSelectionDialog
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.delay
 
 @Composable
-fun ImagePreviewScreen(navController: NavHostController) {
+fun ImagePreviewScreen(
+    navController: NavHostController,
+    paintViewModel: MainViewModel
+) {
     val capturedImage = navController.previousBackStackEntry?.savedStateHandle?.get<Bitmap>("capturedImage")
     var isProcessing by remember { mutableStateOf(false) }
     val coroutineScope = rememberCoroutineScope()
@@ -159,13 +163,14 @@ fun ImagePreviewScreen(navController: NavHostController) {
             ColourSelectionDialog(
                 onClose = { showModal.value = false },
                 onSubmit = { showModal.value = false },
-                onClick = { paintId ->
-                    if (selectedPaintIds.contains(paintId)) {
-                        selectedPaintIds.remove(paintId)
+                onClick = { paint ->
+                    if (selectedPaintIds.contains(paint.id)) {
+                        selectedPaintIds.remove(paint.id)
                     } else {
-                        selectedPaintIds.add(paintId)
+                        selectedPaintIds.add(paint.id)
                     }
-                }
+                },
+                paintViewModel = paintViewModel
             )
         }
     }

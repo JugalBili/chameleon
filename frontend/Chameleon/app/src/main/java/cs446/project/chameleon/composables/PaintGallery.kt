@@ -1,4 +1,4 @@
-package cs446.project.chameleon.gallery
+package cs446.project.chameleon.composables
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.PaddingValues
@@ -12,7 +12,6 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
 import cs446.project.chameleon.MainViewModel
-import cs446.project.chameleon.composables.PaintCard
 import cs446.project.chameleon.data.model.Paint
 
 @Composable
@@ -21,7 +20,6 @@ fun PaintGallery(
     navController: NavHostController,
     mainViewModel: MainViewModel
 ) {
-
     LazyVerticalGrid(
         modifier = Modifier.fillMaxSize().padding(12.dp),
         columns = GridCells.Fixed(3),

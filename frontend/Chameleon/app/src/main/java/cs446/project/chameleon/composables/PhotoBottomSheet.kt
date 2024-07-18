@@ -1,4 +1,4 @@
-package cs446.project.chameleon
+package cs446.project.chameleon.composables
 
 import android.graphics.Bitmap
 import androidx.compose.foundation.Image
