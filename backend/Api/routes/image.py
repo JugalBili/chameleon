@@ -34,7 +34,7 @@ def list_image_for_hash(image_service: Annotated['ImageService', Depends(get_ima
                         image_hash: str
                         ):
     summary = image_service.get_image_summary_by_hash(user.uid, image_hash)
-    history_service.update_history(user, summary['original_image'], [])
+    history_service.update_history(user, summary.original_image, [])
     return summary
 
 

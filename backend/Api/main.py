@@ -5,7 +5,7 @@ from firebase_admin import credentials
 from fastapi import FastAPI
 from contextlib import asynccontextmanager
 
-sys.path.append(os.path.join("\\".join(os.path.dirname(__file__).split("\\")[:-1])))
+sys.path.append(os.path.join(os.sep.join(os.path.dirname(__file__).split(os.sep)[:-1])))
 from Api.routes import login, image, history, gallery
 from Api.dependencies import getEnv
 

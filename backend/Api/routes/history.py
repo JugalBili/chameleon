@@ -15,15 +15,6 @@ router = APIRouter(
     responses={401: {"description": "Incorrect Login information"}},
 )
 
-@router.post("/")
-async def test(
-    history_service: Annotated["HistoryService", Depends(get_history_service)],
-    user: Annotated['User', Depends(get_user)]
-):
-    colors = []
-    colors.append(ColorDTO(paint_id="something", color= RGB(r=0, g=0, b=0)))
-    colors.append(ColorDTO(paint_id="something_else", color= RGB(r=1, g=2, b=3)))
-    return await history_service.update_history(user, "aaa", colors)
 @router.get("/")
 async def get_user_history(
     history_service: Annotated["HistoryService", Depends(get_history_service)],
