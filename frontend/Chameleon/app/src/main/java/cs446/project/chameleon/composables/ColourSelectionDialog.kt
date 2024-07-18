@@ -1,4 +1,4 @@
-package cs446.project.chameleon
+package cs446.project.chameleon.composables
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
@@ -26,14 +26,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.RectangleShape
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.window.Dialog
-
-// TODO: probably make this its own file
-data class Paint(
-    val id: String,
-    val brand: String,
-    val name: String,
-    val rgb: List<Int>
-)
+import cs446.project.chameleon.data.model.Paint
 
 
 @Composable

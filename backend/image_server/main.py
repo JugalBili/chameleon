@@ -5,7 +5,7 @@ from fastapi import FastAPI
 from contextlib import asynccontextmanager
 import sys
 
-sys.path.append(os.path.join("\\".join(os.path.dirname(__file__).split("\\")[:-1])))
+sys.path.append(os.path.join(os.sep.join(os.path.dirname(__file__).split(os.sep)[:-1])))
 sys.path.append(os.path.join(os.path.dirname(__file__)))
 from routes import image_processing
 from dependencies import getEnv

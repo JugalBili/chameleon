@@ -7,8 +7,8 @@
 | June 17 2024 | 3     | 3     | 3     | 3     | 3     | 3     | Sprint Kickoff, Assigning Roles         |
 | June 18 2024 | 5     | 3     | 0     | 0     | 0     | 0     | Setup ML Model, Firebase Authentication |
 | June 19 2024 | 5     | 3     | 2.5   | 2.5   | 2.5   | 0     | Setup Photo Recolouring, Setup UI       |
-| June 21 2024 | 0     | 0     | 0     | 2     | 0     | 0     | Test/setup Camera Func.                 |
-| June 22 2024 | 0     | 0     | 0     | 3.5   | 0     | 0     | Integrate Camera Func. into app         |
-| June 25 2024 | 0     | 0     | 5     | 1     | 5     | 0     | Setup UI for paints and image recolours |
-| June 27 2024 | 1     | 0     | 2     | 2     | 0     | 0     | Writing Deliverable 3                   |
+| June 21 2024 | 0     | 2     | 0     | 2     | 0     | 0     | Test/setup Camera Func.                 |
+| June 22 2024 | 0     | 2     | 0     | 3.5   | 0     | 0     | Integrate Camera Func. into app         |
+| June 25 2024 | 0     | 2     | 5     | 1     | 5     | 0     | Setup UI for paints and image recolours |
+| June 27 2024 | 1     | 3     | 2     | 2     | 0     | 0     | Writing Deliverable 3                   |
 | -            | -     | -     | -     | -     | -     | -     | -                                       |

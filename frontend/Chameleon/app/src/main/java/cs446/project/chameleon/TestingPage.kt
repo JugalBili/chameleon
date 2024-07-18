@@ -14,6 +14,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
+import cs446.project.chameleon.composables.ColourSelectionDialog
 
 
 // TODO: delete this
