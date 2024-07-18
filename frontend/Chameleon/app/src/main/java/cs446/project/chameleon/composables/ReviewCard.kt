@@ -1,4 +1,4 @@
-package cs446.project.chameleon.gallery
+package cs446.project.chameleon.composables
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
