@@ -5,8 +5,11 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
+import androidx.compose.runtime.collectAsState
+import androidx.compose.runtime.getValue
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
+import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
@@ -27,6 +30,7 @@ class MainActivity : ComponentActivity() {
         setContent {
             ChameleonTheme {
                 val navController = rememberNavController()
+                val viewModel = viewModel<MainViewModel>()
 
                 NavHost(
                     navController = navController,
@@ -36,7 +40,7 @@ class MainActivity : ComponentActivity() {
                         LoginPage(navController)
                     }
                     composable("camera_screen") {
-                        CameraScreen(navController)
+                        CameraScreen(navController, viewModel)
                     }
                     composable("image_preview_screen") {
                         ImagePreviewScreen(navController)
@@ -45,7 +49,7 @@ class MainActivity : ComponentActivity() {
                         ImageResultScreen(navController)
                     }
                     composable("profile_screen") {
-                        ProfileScreen(navController)
+                        ProfileScreen(navController, viewModel)
                     }
                 }
             }

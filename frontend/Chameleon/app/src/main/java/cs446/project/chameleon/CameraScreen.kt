@@ -42,7 +42,10 @@ import kotlinx.coroutines.launch
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun CameraScreen(navController: NavHostController) {
+fun CameraScreen(
+    navController: NavHostController,
+    mainViewModel: MainViewModel = viewModel()
+) {
     val context = LocalContext.current
     val scope = rememberCoroutineScope()
     val scaffoldState = rememberBottomSheetScaffoldState()
@@ -54,18 +57,13 @@ fun CameraScreen(navController: NavHostController) {
         }
     }
 
-    val viewModel = viewModel<MainViewModel>()
-    val bitmaps by viewModel.bitmaps.collectAsState()
+    val bitmaps by mainViewModel.bitmaps.collectAsState()
 
     BottomSheetScaffold(
         scaffoldState = scaffoldState,
         sheetPeekHeight = 0.dp,
         sheetContent = {
-            PhotoBottomSheetContent(
-                bitmaps = bitmaps,
-                modifier = Modifier
-                    .fillMaxWidth()
-            )
+
         }
     ) { padding ->
         Box(
@@ -90,7 +88,7 @@ fun CameraScreen(navController: NavHostController) {
                     onClick = {
                         takePhoto(
                             controller = controller,
-                            onPhotoTaken = viewModel::onTakePhoto,
+                            onPhotoTaken = mainViewModel::onTakePhoto,
                             context = context,
                             navController = navController
                         )
@@ -127,7 +125,7 @@ fun CameraScreen(navController: NavHostController) {
                     onClick = {
                         takePhoto(
                             controller = controller,
-                            onPhotoTaken = viewModel::onTakePhoto,
+                            onPhotoTaken = mainViewModel::onTakePhoto,
                             context = context,
                             navController = navController
                         )

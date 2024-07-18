@@ -9,18 +9,17 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
-import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.lazy.items
-import androidx.compose.material3.Button
 import androidx.compose.material3.Card
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.collectAsState
+import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
@@ -28,37 +27,62 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.RectangleShape
 import androidx.compose.ui.unit.dp
+import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavHostController
 
 @Composable
-fun ProfileScreen(navController: NavHostController) {
+fun ProfileScreen(
+    navController: NavHostController,
+    mainViewModel: MainViewModel = viewModel()
+) {
+
+    val bitmaps by mainViewModel.bitmaps.collectAsState()
+
     val paints = mutableListOf<Paint>()
     paints.add(Paint("Id1", "PPG", "Viva La Bleu", listOf(151, 190, 226)))
     paints.add(Paint("Id2", "PPG", "Calypso Berry", listOf(197, 58, 75)))
     paints.add(Paint("Id3", "Benjamin Moore", "Blue Pearl", listOf(147, 160, 189)))
     paints.add(Paint("Id4", "Benjamin Moore", "Grape Green", listOf(213, 216, 105)))
 
+    val items = mutableListOf<Item>()
+    for (bitmap in bitmaps) {
+        items.add(Item(bitmap, listOf(Color(0xFFD0BCFF))))
+    }
+
+
     Scaffold(
         content = { padding ->
             Column (
                 modifier = Modifier
                     .fillMaxWidth(),
-                verticalArrangement = Arrangement.Top
+                verticalArrangement = Arrangement.Top,
+                horizontalAlignment = Alignment.CenterHorizontally
+
             ) {
                 Text(
                     text = "Firstname Lastname",
                     modifier = Modifier.padding(48.dp)
+
+                )
+
+                Text(
+                    text = "Favourites",
+                    modifier = Modifier.padding(48.dp)
+
                 )
 
                 Card(modifier = Modifier
                     .padding(16.dp)
-                    .width(300.dp)) {
-                    Column(modifier = Modifier.padding(16.dp).fillMaxWidth(), horizontalAlignment = Alignment.CenterHorizontally) {
+                    .width(400.dp)) {
+                    Column(modifier = Modifier
+                        .padding(16.dp)
+                        .fillMaxWidth(), horizontalAlignment = Alignment.CenterHorizontally) {
                         LazyRow(modifier = Modifier.fillMaxWidth(), verticalAlignment = Alignment.CenterVertically) {
                             items(items = paints.chunked(1)) { paintsPerRow ->
                                 Row(verticalAlignment = Alignment.CenterVertically) {
                                     for (paint in paintsPerRow) {
                                         PaintItem1(paint = paint)
+                                        Spacer(modifier = Modifier.width(16.dp))
                                     }
                                 }
                             }
@@ -66,21 +90,26 @@ fun ProfileScreen(navController: NavHostController) {
 
                     }
                 }
+
+                Text(
+                    text = "History",
+                    modifier = Modifier.padding(48.dp)
+
+                )
+
+//                PhotoBottomSheetContent(
+//                    bitmaps = bitmaps,
+//                    modifier = Modifier
+//                        .fillMaxWidth(),
+//                    onPhotoClick = { bitmap ->
+//
+//                    }
+//                )
+                LazyColumnExample(items)
             }
         },
         bottomBar = {
-            Row (
-                modifier = Modifier
-                    .fillMaxWidth(),
-                horizontalArrangement = Arrangement.Center
-            ) {
-                Button(
-                    onClick = { navController.navigate("camera_screen") },
-                    modifier = Modifier.padding(16.dp)
-                ) {
-                    Text(text = "Go to Camera Screen")
-                }
-            }
+            NavBar(navController)
         }
     )
 }
@@ -95,7 +124,7 @@ fun PaintItem1(
 
     Column(horizontalAlignment = Alignment.CenterHorizontally) {
         Box(modifier = Modifier
-            .size(100.dp)
+            .size(200.dp)
             .background(colour)
             .clickable {
             }
