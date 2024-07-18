@@ -32,7 +32,6 @@ class MainActivity : ComponentActivity() {
                 val paintViewModel: MainViewModel = viewModel()
                 val navController = rememberNavController()
 
-                // TODO: change back start destination
                 NavHost(
                     navController = navController,
                     startDestination = "login_page"
