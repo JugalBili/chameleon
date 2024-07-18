@@ -58,5 +58,4 @@ class MainViewModel: ViewModel() {
         _selectedPaint = paint
         Log.d("MainViewModel", "Paint updated: $_selectedPaint")
     }
-
 }
