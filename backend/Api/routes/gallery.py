@@ -34,10 +34,9 @@ async def get_user_review(
 @router.get("/review/all/{paint_id}")
 async def get_all_reviews(
     gallery_service: Annotated["GalleryService", Depends(get_gallery_service)],
-    # user: Annotated["User", Depends(get_user)],
+    user: Annotated["User", Depends(get_user)],
     paint_id: str,
 ):
-    user = User(email="email", firstname="test", lastname="test", uid="testing")
 
     reviews = await gallery_service.get_all_reviews_by_paint(paint_id)
     return reviews.reviews
@@ -46,13 +45,12 @@ async def get_all_reviews(
 @router.post("/get-image")
 def get_image_by_hash(
     gallery_service: Annotated["GalleryService", Depends(get_gallery_service)],
-    # user: Annotated["User", Depends(get_user)],
+    user: Annotated["User", Depends(get_user)],
     review_dto: ReviewImageDto,
 ):
     image = gallery_service.get_image_by_hash(
         review_dto.paint_id, review_dto.image_hash
     )
-    user = User(email="email", firstname="test", lastname="test", uid="testing")
 
     return Response(content=image.image_bytes, media_type=image.contentType)
 
@@ -60,7 +58,7 @@ def get_image_by_hash(
 @router.post("/create-review")
 async def upload_file(
     gallery_service: Annotated["GalleryService", Depends(get_gallery_service)],
-    # user: Annotated["User", Depends(get_user)],
+    user: Annotated["User", Depends(get_user)],
     file: UploadFile | None = None,
     review: str = Form(...),
 ):
@@ -70,7 +68,6 @@ async def upload_file(
         raise HTTPException(status_code=422, detail=f"Invalid 'image_info' input: {e}")
     except Exception as e:
         raise HTTPException(status_code=422, detail=f"invalid image_info input: {e}")
-    user = User(email="email", firstname="test", lastname="test", uid="testing")
     if file:
         image_hash = await gallery_service.upload_image(user, file, review_dto.paint_id)
         review_dto.image_hashes.append(image_hash)
