@@ -23,6 +23,7 @@ import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
 import cs446.project.chameleon.MainViewModel
 import cs446.project.chameleon.composables.NavBar
+import cs446.project.chameleon.composables.PaintGallery
 
 @Composable
 fun GalleryPage(
