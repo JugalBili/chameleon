@@ -1,5 +1,4 @@
 ﻿from firebase_admin import firestore_async
-from google.cloud.firestore_v1 import DocumentSnapshot, FieldFilter
 import datetime
 from Api.repository.user_authentication_repository import User
 from shared.data_classes import ColorDTO
@@ -9,7 +8,7 @@ from fastapi import HTTPException
 from Api.data_classes import History, HistoryList
 class HistoryRepository:
     def __init__(self):
-        self.collectionRef = firestore_async.client().collection("history")
+        self.collection_ref = firestore_async.client().collection("history")
 
     @staticmethod
     def _add_colors_to_history(history: History, colors: List[ColorDTO]):
@@ -23,7 +22,7 @@ class HistoryRepository:
 
     async def updateHistory(self, user: User, image_hash: str, colors: List[ColorDTO]):
         history_ref = (
-            self.collectionRef.document(user.uid)
+            self.collection_ref.document(user.uid)
             .collection("history")
             .document(image_hash)
         )
@@ -46,7 +45,7 @@ class HistoryRepository:
 
     async def getHistory(self, user: User):
         collection_ref = (
-            self.collectionRef.document(user.uid).collection("history")
+            self.collection_ref.document(user.uid).collection("history")
         )
         query = collection_ref.order_by("last_accessed",
                                          direction=firestore_async.Query.DESCENDING

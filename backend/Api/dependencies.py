@@ -12,7 +12,8 @@ from Api.service.user_authentication_service import UserAuthenticationService
 from shared.repository.image_repository import ImageRepository
 from shared.service.image_service import ImageService
 from Api.client.image_server_client import ImageServerClient
-
+from Api.repository.favorites_repository import FavoritesRepository
+from Api.service.favorites_service import FavoritesService
 
 @lru_cache()
 def getEnv():
@@ -55,6 +56,11 @@ def get_history_service(
 ):
     return HistoryService(repository)
 
+def get_favorites_repository():
+    return FavoritesRepository()
+
+def get_favorites_service(repository: Annotated["FavoritesRepository", Depends(get_favorites_repository)]):
+    return FavoritesService(repository)
 def get_gallery_repository():
     return GalleryRepository()
 
