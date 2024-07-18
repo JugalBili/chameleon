@@ -16,18 +16,15 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
-import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Favorite
 import androidx.compose.material.icons.outlined.FavoriteBorder
 import androidx.compose.material3.Button
-import androidx.compose.material3.ButtonColors
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
-import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -41,10 +38,9 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavHostController
 import cs446.project.chameleon.MainViewModel
-import cs446.project.chameleon.Paint
+import cs446.project.chameleon.data.model.Review
 
 @Composable
 fun PaintReview(
@@ -52,10 +48,9 @@ fun PaintReview(
     mainViewModel: MainViewModel
 ) {
     val paint = mainViewModel.getSelectedPaint() ?: return
-    Log.d("MainViewModel", "Paint queried: $paint")
-
     val colour = Color(red = paint.rgb[0], green = paint.rgb[1], blue = paint.rgb[2])
 
+    // TODO: get the default value of isLiked from user data
     var isLiked by remember { mutableStateOf(false) }
 
     // TODO: hard-coded values for now
@@ -69,26 +64,18 @@ fun PaintReview(
 
     Scaffold(
         modifier = Modifier.fillMaxSize(),
-
-        // Page Content
         content = { padding ->
             Column(
-                modifier = Modifier
-                    .fillMaxSize()
-                    .padding(top = 40.dp),
+                modifier = Modifier.fillMaxSize().padding(top = 40.dp),
                 horizontalAlignment = Alignment.CenterHorizontally
             ) {
 
                 // Paint Info
                 Row(
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .padding(12.dp, top = 40.dp),
+                    modifier = Modifier.fillMaxWidth().padding(12.dp, top = 40.dp),
                     horizontalArrangement = Arrangement.SpaceEvenly,
                     verticalAlignment = Alignment.CenterVertically
                 ) {
-
-                    // Paint Colour
                     Box(
                         modifier = Modifier
                             .border(2.dp, Color.Black, RoundedCornerShape(16.dp))
@@ -98,29 +85,24 @@ fun PaintReview(
                             .background(colour)
                     )
 
-                    // Paint Details
                     Column() {
                         Text(text = paint.name, fontSize = 14.sp)
                         Text(text = paint.id, fontSize = 12.sp) // TODO: change this to paint code
                         Text(text = paint.brand, fontSize = 12.sp)
                     }
 
-                    // "Try" Button
                     Button(
+                        modifier = Modifier.padding(start = 8.dp),
                         onClick = { /*TODO*/ },
                         colors = ButtonDefaults.buttonColors(containerColor = Color.Black),
                         shape = RoundedCornerShape(16.dp)
-                        //modifier = Modifier.padding(start = 8.dp)
                     ) {
                         Text(text = "Try", color = Color.White)
                     }
 
-                    // "Like" Button
                     IconButton(
-                        onClick = { isLiked = !isLiked },
-                        modifier = Modifier
-                            .padding(start = 8.dp)
-                            .size(48.dp)
+                        modifier = Modifier.padding(start = 8.dp).size(48.dp),
+                        onClick = { isLiked = !isLiked }
                     ) {
                         Icon(
                             imageVector = if (isLiked) Icons.Filled.Favorite else Icons.Outlined.FavoriteBorder,
@@ -130,15 +112,13 @@ fun PaintReview(
                     }
                 }
 
-                // DIVIDER
                 HorizontalDivider(
-                    modifier = Modifier.padding(top = 20.dp, bottom = 10.dp),
+                    modifier = Modifier.padding(top = 20.dp, bottom = 26.dp),
                     thickness = 3.dp,
-                    color = Color.Gray
+                    color = Color.Black
                 )
-                Spacer(modifier = Modifier.height(16.dp))
 
-                // REVIEWS
+                // Paint reviews
                 LazyColumn(modifier = Modifier.fillMaxWidth()) {
                     items(reviews) { review ->
                         ReviewCard(review = review)
@@ -148,9 +128,14 @@ fun PaintReview(
 
             }
         },
-
-        // BOTTOMBAR: navigation between sections
         bottomBar = {
+            Button(
+                onClick = { navController.navigate("gallery_page") },
+                colors = ButtonDefaults.buttonColors(containerColor = Color.Black),
+                shape = RoundedCornerShape(16.dp)
+            ) {
+                Text(text = "Return to Gallery", color = Color.White)
+            }
             // TODO: add reusable composable here for the buttons to navigate between sections
         }
     )

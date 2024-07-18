@@ -35,7 +35,7 @@ class MainActivity : ComponentActivity() {
                 // TODO: change back start destination
                 NavHost(
                     navController = navController,
-                    startDestination = "gallery_page"
+                    startDestination = "login_page"
                 ) {
                     composable("login_page") {
                         LoginPage(navController)
