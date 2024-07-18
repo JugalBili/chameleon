@@ -22,6 +22,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
 import cs446.project.chameleon.MainViewModel
+import cs446.project.chameleon.composables.NavBar
 
 @Composable
 fun GalleryPage(
@@ -42,7 +43,9 @@ fun GalleryPage(
         modifier = Modifier.fillMaxSize(),
         content = { padding ->
             Column(
-                modifier = Modifier.fillMaxSize().padding(top = 40.dp),
+                modifier = Modifier
+                    .fillMaxSize()
+                    .padding(top = 40.dp),
                 horizontalAlignment = Alignment.CenterHorizontally
             ) {
 
@@ -72,7 +75,7 @@ fun GalleryPage(
             }
         },
         bottomBar = {
-            // TODO: add reusable composable here for the buttons to navigate between sections
+            NavBar(navController = navController)
         }
     )
 }

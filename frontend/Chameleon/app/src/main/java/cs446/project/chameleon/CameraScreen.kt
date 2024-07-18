@@ -54,6 +54,7 @@ fun CameraScreen(navController: NavHostController) {
     val bitmaps by viewModel.bitmaps.collectAsState()
 
     Scaffold (
+        modifier = Modifier.fillMaxSize(),
         content = { padding ->
             Box(
                 modifier = Modifier
@@ -92,7 +93,7 @@ fun CameraScreen(navController: NavHostController) {
             }
         },
         bottomBar = {
-            NavBar(navController)
+            NavBar(navController = navController)
         }
     )
 }

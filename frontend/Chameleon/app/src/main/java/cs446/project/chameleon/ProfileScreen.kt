@@ -2,6 +2,7 @@ package cs446.project.chameleon
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Button
@@ -16,6 +17,7 @@ import cs446.project.chameleon.composables.NavBar
 @Composable
 fun ProfileScreen(navController: NavHostController) {
     Scaffold(
+        modifier = Modifier.fillMaxSize(),
         content = { padding ->
             Row (
                 modifier = Modifier
@@ -29,7 +31,7 @@ fun ProfileScreen(navController: NavHostController) {
             }
         },
         bottomBar = {
-            NavBar(navController)
+            NavBar(navController = navController)
         }
     )
 }
