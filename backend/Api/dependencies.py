@@ -5,6 +5,8 @@ from typing import Annotated
 
 from Api.repository.history_repository import HistoryRepository
 from Api.repository.user_authentication_repository import UserAuthenticationRepository
+from Api.service.gallery_service import GalleryService
+from Api.repository.gallery_repository import GalleryRepository
 from Api.service.history_service import HistoryService
 from Api.service.user_authentication_service import UserAuthenticationService
 from shared.repository.image_repository import ImageRepository
@@ -59,6 +61,14 @@ def get_favorites_repository():
 
 def get_favorites_service(repository: Annotated["FavoritesRepository", Depends(get_favorites_repository)]):
     return FavoritesService(repository)
+def get_gallery_repository():
+    return GalleryRepository()
+
+def get_gallery_service(
+    repository: Annotated["GalleryRepository", Depends(get_gallery_repository)]
+):
+    return GalleryService(repository)
+
 
 def get_auth_token(request: Request):
     token = request.headers.get("Authorization")
