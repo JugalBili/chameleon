@@ -1,5 +1,6 @@
 package cs446.project.chameleon.data.remote
 
+import cs446.project.chameleon.data.model.History
 import cs446.project.chameleon.data.model.ImageResponse
 import cs446.project.chameleon.data.model.LoginRequest
 import cs446.project.chameleon.data.model.LoginResponse
@@ -8,6 +9,7 @@ import cs446.project.chameleon.data.model.Token
 import cs446.project.chameleon.data.model.User
 import okhttp3.MultipartBody
 import okhttp3.RequestBody
+import okhttp3.Response
 import okhttp3.ResponseBody
 import retrofit2.http.Body
 import retrofit2.http.GET
@@ -42,5 +44,12 @@ interface ApiService {
                           @Part file: MultipartBody.Part,
                           @Part("colors") colors: RequestBody
     ):ImageResponse
+
+    
+    // history endpoints
+    @GET("history")
+    suspend fun getHistory(@Header("Authorization") token: String): History
+
+
 
 }
