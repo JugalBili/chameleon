@@ -11,6 +11,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
+import cs446.project.chameleon.composables.NavBar
 
 @Composable
 fun ProfileScreen(navController: NavHostController) {
@@ -28,18 +29,7 @@ fun ProfileScreen(navController: NavHostController) {
             }
         },
         bottomBar = {
-            Row (
-                modifier = Modifier
-                    .fillMaxWidth(),
-                horizontalArrangement = Arrangement.Center
-            ) {
-                Button(
-                    onClick = { navController.navigate("login_page") },
-                    modifier = Modifier.padding(16.dp)
-                ) {
-                    Text(text = "Go to Login Screen")
-                }
-            }
+            NavBar(navController)
         }
     )
 }
