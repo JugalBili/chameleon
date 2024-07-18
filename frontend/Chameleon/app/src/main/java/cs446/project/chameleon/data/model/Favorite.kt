@@ -1,6 +1,8 @@
 package cs446.project.chameleon.data.model
 
+import com.google.gson.annotations.SerializedName
+
 data class Favorite (
-    val paintId: String,
+    @SerializedName("paint_id") val paintId: String,
     val color: RGB
 )
