@@ -4,7 +4,7 @@ from typing import List
 from shared.data_classes import ColorDTO, ImageData, GetProcessedResponse, RGB
 from Api.data_classes import ImageRequestListResponse
 from Api.client.image_server_client import ImageServerClient
-
+from shared.data_classes import GetImageResponse, GetProcessedResponse, ColorDTO
 class ImageService:
     def __init__(self,
                  repository: ImageRepository,
@@ -30,7 +30,7 @@ class ImageService:
                 response = GetProcessedResponse(
                     uid=uid, processed_image_hash=image_hash, color=ColorDTO(
                         paint_id=image_response.paintId,
-                        color=RGB(
+                        rgb=RGB(
                             r=image_response.rgb.r,
                             g=image_response.rgb.g,
                             b=image_response.rgb.b
@@ -60,13 +60,19 @@ class ImageService:
                 raise HTTPException(status_code=404)
             return image.image_data
 
+    @staticmethod
+    def _get_image_response_to_get_processed_response(uid: str, get_image_responses: List[GetImageResponse]):
+        ret: List[GetProcessedResponse] = []
+        for image_response in get_image_responses:
+            processed_response = GetProcessedResponse(uid=uid, processed_image_hash=image_response.image_hash, color=ColorDTO(paint_id=image_response.paintId, rgb=image_response.rgb))
+            ret.append(processed_response)
+        return ret
+
     def get_image_summary_by_hash(self, uid: str, hash: str):
         raw_image = self.repository.get_raw_image_by_hash(uid, hash)
         if raw_image is None:
             raise HTTPException(status_code=404)
 
         processed_files = self.repository.get_all_processed_images(uid, hash)
-        return {
-            "original_image": raw_image.image_hash,
-            "processed_images": processed_files
-        }
+        processed_response = self._get_image_response_to_get_processed_response(uid, processed_files)
+        return ImageRequestListResponse(original_image=raw_image.image_hash, processed_images=processed_response)

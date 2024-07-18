@@ -9,7 +9,7 @@ class RGB(BaseModel):
 
 class ColorDTO(BaseModel):
     paint_id: str
-    color: RGB
+    rgb: RGB
 
 
 class Image(BaseModel):

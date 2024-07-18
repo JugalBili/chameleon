@@ -67,11 +67,11 @@ async def generate_image(image_data: ImageData,
             masks.append(mask)
             
         for color in image_data.colors:
-            rgb = [color.color.r, color.color.g, color.color.b]
+            rgb = [color.rgb.r, color.rgb.g, color.rgb.b]
             recolored_image = ds_instance.recolor(image_cv, rgb, masks)
             colored_images.append(recolored_image)
     else:
-        rgb_colors = [[color.color.r, color.color.g, color.color.b] for color in image_data.colors]
+        rgb_colors = [[color.rgb.r, color.rgb.g, color.rgb.b] for color in image_data.colors]
         masks, colored_images = ds_instance.run_pipeline(image_cv, image_data.raw_image_hash, rgb_colors)
     
     if pipeline_lock.locked():
@@ -97,7 +97,7 @@ async def generate_image(image_data: ImageData,
     
     for i in range(len(image_data.colors)):
         color_item = image_data.colors[i]
-        rgb = [color_item.color.r, color_item.color.g, color_item.color.b]
+        rgb = [color_item.rgb.r, color_item.rgb.g, color_item.rgb.b]
         json_data["processed"].append({
             "paint_id" :  color_item.paint_id,
             "rgb" : rgb,
