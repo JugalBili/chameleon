@@ -1,6 +1,5 @@
 from firebase_admin import firestore_async, storage
 from google.cloud.storage import Blob
-from typing import List
 from pydantic import ValidationError
 from fastapi import HTTPException, UploadFile
 import hashlib
@@ -8,13 +7,12 @@ import io
 import datetime
 
 from Api.repository.user_authentication_repository import User
-from shared.data_classes import ColorDTO, Image
+from shared.data_classes import Image
 from Api.data_classes import (
     GetReviewImageResponse,
     Review,
     ReviewList,
     ReviewDto,
-    UploadReviewImageDto,
 )
 from typing import List
 
@@ -70,25 +68,25 @@ class GalleryRepository:
             image_hash=image_hash, paint_id=paint_id, image_data=image
         )
 
-    async def get_paint_user_reviews(self, paint_id: str, user: User):
+    async def get_paint_user_reviews_or_throw(self, paint_id: str, user: User):
         review_ref = (
             self.collectionRef.document(paint_id)
             .collection("reviews")
             .document(user.uid)
         )
         review_doc = await review_ref.get()
-        review_list: List[Review] = []
-        if review_doc.exists:
-            try:
-                data = review_doc.to_dict()
-                review = Review(**data)
-                review_list.append(review)
-            except (SyntaxError, ValidationError, TypeError) as e:
-                raise HTTPException(
-                    status_code=500, detail=f"Error parsing review: {e}"
-                )
+        if not review_doc.exists:
+            raise HTTPException(
+                status_code=404,
+                detail="User review cannot be found. Please create a new review.",
+            )
+        try:
+            data = review_doc.to_dict()
+            review = Review(**data)
+        except (SyntaxError, ValidationError, TypeError) as e:
+            raise HTTPException(status_code=500, detail=f"Error parsing review: {e}")
 
-        return ReviewList(reviews=review_list)
+        return review
 
     async def get_paint_reviews(self, paint_id: str):
         collection_ref = self.collectionRef.document(paint_id).collection("reviews")

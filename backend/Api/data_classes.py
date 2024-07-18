@@ -42,7 +42,7 @@ class ReviewImageDto(BaseModel):
 class ReviewDto(BaseModel):
     paint_id: str
     review: str
-    image_hashes: List[str]
+    image_hashes: List[str] = []
 
 
 class Review(BaseModel):
