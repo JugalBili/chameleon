@@ -43,7 +43,7 @@ class MainActivity : ComponentActivity() {
                         CameraScreen(navController)
                     }
                     composable("image_preview_screen") {
-                        ImagePreviewScreen(navController)
+                        ImagePreviewScreen(navController, paintViewModel)
                     }
                     composable("image_result_screen") {
                         ImageResultScreen(navController)
