@@ -1,6 +1,5 @@
 package cs446.project.chameleon.gallery
 
-import android.util.Log
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Arrangement
@@ -40,6 +39,8 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
 import cs446.project.chameleon.MainViewModel
+import cs446.project.chameleon.composables.NavBar
+import cs446.project.chameleon.composables.ReviewCard
 import cs446.project.chameleon.data.model.Review
 
 @Composable
@@ -129,14 +130,7 @@ fun PaintReview(
             }
         },
         bottomBar = {
-            Button(
-                onClick = { navController.navigate("gallery_page") },
-                colors = ButtonDefaults.buttonColors(containerColor = Color.Black),
-                shape = RoundedCornerShape(16.dp)
-            ) {
-                Text(text = "Return to Gallery", color = Color.White)
-            }
-            // TODO: add reusable composable here for the buttons to navigate between sections
+            NavBar(navController = navController)
         }
     )
 }

@@ -10,20 +10,15 @@ import androidx.camera.core.ImageProxy
 import androidx.camera.view.CameraController
 import androidx.camera.view.LifecycleCameraController
 import androidx.compose.foundation.background
-import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
-import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.AccountCircle
 import androidx.compose.material.icons.filled.AddCircle
-import androidx.compose.material.icons.filled.Menu
-import androidx.compose.material3.BottomSheetScaffold
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
+import androidx.compose.material3.Scaffold
 import androidx.compose.material3.rememberBottomSheetScaffoldState
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
@@ -38,7 +33,8 @@ import androidx.compose.ui.unit.dp
 import androidx.core.content.ContextCompat
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavHostController
-import kotlinx.coroutines.launch
+import cs446.project.chameleon.composables.CameraPreview
+import cs446.project.chameleon.composables.NavBar
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -57,98 +53,49 @@ fun CameraScreen(navController: NavHostController) {
     val viewModel = viewModel<MainViewModel>()
     val bitmaps by viewModel.bitmaps.collectAsState()
 
-    BottomSheetScaffold(
-        scaffoldState = scaffoldState,
-        sheetPeekHeight = 0.dp,
-        sheetContent = {
-            PhotoBottomSheetContent(
-                bitmaps = bitmaps,
-                modifier = Modifier
-                    .fillMaxWidth()
-            )
-        }
-    ) { padding ->
-        Box(
-            modifier = Modifier
-                .fillMaxSize()
-                .padding(padding)
-        ) {
-            CameraPreview(
-                controller = controller,
-                modifier = Modifier
-                    .fillMaxSize()
-            )
-
-            // take photo button
+    Scaffold (
+        modifier = Modifier.fillMaxSize(),
+        content = { padding ->
             Box(
                 modifier = Modifier
-                    .align(Alignment.BottomCenter)
-                    .padding(bottom = 128.dp) // Adjust the padding as needed to position above the bottom bar
-                    .background(Color.Transparent)
+                    .fillMaxSize()
+                    .padding(padding)
             ) {
-                IconButton(
-                    onClick = {
-                        takePhoto(
-                            controller = controller,
-                            onPhotoTaken = viewModel::onTakePhoto,
-                            context = context,
-                            navController = navController
-                        )
-                    },
+                CameraPreview(
+                    controller = controller,
                     modifier = Modifier
-                ) {
-                    Icon(
-                        imageVector = Icons.Default.AddCircle,
-                        contentDescription = "Take photo"
-                    )
-                }
-            }
+                        .fillMaxSize()
+                )
 
-            Row(
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .align(Alignment.BottomCenter)
-                    .padding(16.dp),
-                horizontalArrangement = Arrangement.SpaceAround
-            ) {
-                IconButton(
-                    onClick = {
-                        navController.navigate("gallery_page")
-                    }
+                Box(
+                    modifier = Modifier
+                        .align(Alignment.BottomCenter)
+                        .padding(bottom = 128.dp) // Adjust the padding as needed to position above the bottom bar
+                        .background(Color.Transparent)
                 ) {
-                    Icon(
-                        imageVector = Icons.Default.Menu,
-                        contentDescription = "Open gallery"
-                    )
-                }
-                IconButton(
-                    onClick = {
-                        takePhoto(
-                            controller = controller,
-                            onPhotoTaken = viewModel::onTakePhoto,
-                            context = context,
-                            navController = navController
+                    IconButton(
+                        onClick = {
+                            takePhoto(
+                                controller = controller,
+                                onPhotoTaken = viewModel::onTakePhoto,
+                                context = context,
+                                navController = navController
+                            )
+                        },
+                        modifier = Modifier
+                    ) {
+                        Icon(
+                            imageVector = Icons.Default.AddCircle,
+                            contentDescription = "Take photo"
                         )
                     }
-                ) {
-                    Icon(
-                        imageVector = Icons.Default.AddCircle,
-                        contentDescription = "Take photo"
-                    )
-                }
-                IconButton(
-                    onClick = {
-                        navController.navigate("profile_screen")
-                    }
-                ) {
-                    Icon(
-                        imageVector = Icons.Default.AccountCircle,
-                        contentDescription = "Open Profile"
-                    )
                 }
             }
+        },
+        bottomBar = {
+            NavBar(navController = navController)
         }
-    }
+    )
 }
 
 
