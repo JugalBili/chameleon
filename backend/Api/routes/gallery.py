@@ -21,10 +21,9 @@ router = APIRouter(
 @router.get("/review/{paint_id}")
 async def get_user_review(
     gallery_service: Annotated["GalleryService", Depends(get_gallery_service)],
-    # user: Annotated["User", Depends(get_user)],
+    user: Annotated["User", Depends(get_user)],
     paint_id: str,
 ):
-    user = User(email="email", firstname="test", lastname="test", uid="testing")
 
     review = await gallery_service.get_paint_review_by_user(paint_id, user)
 
