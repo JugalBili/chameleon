@@ -35,6 +35,7 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
+import cs446.project.chameleon.composables.ColourSelectionDialog
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.delay
 

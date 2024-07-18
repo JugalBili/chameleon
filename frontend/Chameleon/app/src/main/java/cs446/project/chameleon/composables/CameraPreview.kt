@@ -1,4 +1,4 @@
-package cs446.project.chameleon
+package cs446.project.chameleon.composables
 
 import androidx.camera.view.LifecycleCameraController
 import androidx.camera.view.PreviewView
