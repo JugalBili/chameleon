@@ -33,7 +33,7 @@ async def get_user_review(
 @router.get("/review/all/{paint_id}")
 async def get_all_reviews(
     gallery_service: Annotated["GalleryService", Depends(get_gallery_service)],
-    # user: Annotated["User", Depends(get_user)],
+    user: Annotated["User", Depends(get_user)],
     paint_id: str,
 ):
 
