@@ -41,9 +41,10 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.compose.ui.window.Dialog
 import androidx.compose.ui.window.DialogProperties
+import cs446.project.chameleon.MainViewModel
 import cs446.project.chameleon.composables.PaintCard
 import cs446.project.chameleon.data.model.Paint
-import cs446.project.chameleon.gallery.PaintGallery
+import cs446.project.chameleon.composables.PaintGallery
 
 
 @Composable
