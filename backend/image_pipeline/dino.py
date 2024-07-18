@@ -1,11 +1,11 @@
 import os, sys
-
-sys.path.append(os.path.join(os.getcwd(), "GroundingDINO"))
-
 import copy
 from PIL import Image, ImageDraw, ImageFont
 import torch
 import numpy as np
+
+# sys.path.append(os.path.join(os.getcwd(), "GroundingDino"))
+sys.path.append(os.path.join(os.path.dirname(__file__), "GroundingDino"))
 
 # Grounding DINO
 import GroundingDINO.groundingdino.datasets.transforms as T
