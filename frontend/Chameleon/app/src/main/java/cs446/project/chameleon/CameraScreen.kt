@@ -113,9 +113,7 @@ fun CameraScreen(navController: NavHostController) {
             ) {
                 IconButton(
                     onClick = {
-                        scope.launch {
-                            scaffoldState.bottomSheetState.expand()
-                        }
+                        navController.navigate("gallery_page")
                     }
                 ) {
                     Icon(
