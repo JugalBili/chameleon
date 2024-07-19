@@ -35,6 +35,7 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavHostController
 import cs446.project.chameleon.composables.CameraPreview
 import cs446.project.chameleon.composables.NavBar
+import cs446.project.chameleon.composables.styling.Screen
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -53,49 +54,43 @@ fun CameraScreen(navController: NavHostController) {
     val viewModel = viewModel<MainViewModel>()
     val bitmaps by viewModel.bitmaps.collectAsState()
 
-    Scaffold (
-        modifier = Modifier.fillMaxSize(),
-        content = { padding ->
-            Box(
+    Screen(navController) { padding ->
+        Box(
+            modifier = Modifier
+                .fillMaxSize()
+                .padding(padding)
+        ) {
+            CameraPreview(
+                controller = controller,
                 modifier = Modifier
                     .fillMaxSize()
-                    .padding(padding)
-            ) {
-                CameraPreview(
-                    controller = controller,
-                    modifier = Modifier
-                        .fillMaxSize()
-                )
+            )
 
-                Box(
-                    modifier = Modifier
-                        .align(Alignment.BottomCenter)
-                        .padding(bottom = 128.dp) // Adjust the padding as needed to position above the bottom bar
-                        .background(Color.Transparent)
-                ) {
-                    IconButton(
-                        onClick = {
-                            takePhoto(
-                                controller = controller,
-                                onPhotoTaken = viewModel::onTakePhoto,
-                                context = context,
-                                navController = navController
-                            )
-                        },
-                        modifier = Modifier
-                    ) {
-                        Icon(
-                            imageVector = Icons.Default.AddCircle,
-                            contentDescription = "Take photo"
+            Box(
+                modifier = Modifier
+                    .align(Alignment.BottomCenter)
+                    .padding(bottom = 128.dp) // Adjust the padding as needed to position above the bottom bar
+                    .background(Color.Transparent)
+            ) {
+                IconButton(
+                    onClick = {
+                        takePhoto(
+                            controller = controller,
+                            onPhotoTaken = viewModel::onTakePhoto,
+                            context = context,
+                            navController = navController
                         )
-                    }
+                    },
+                    modifier = Modifier
+                ) {
+                    Icon(
+                        imageVector = Icons.Default.AddCircle,
+                        contentDescription = "Take photo"
+                    )
                 }
             }
-        },
-        bottomBar = {
-            NavBar(navController = navController)
         }
-    )
+    }
 }
 
 

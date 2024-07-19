@@ -92,7 +92,7 @@ class ImageService:
     def get_image_summary_by_hash(self, uid: str, hash: str):
         raw_image = self.repository.get_raw_image_by_hash(uid, hash)
         if raw_image is None:
-            raise HTTPException(status_code=404)
+            raise HTTPException(status_code=404, detail=f"Could not retrieve image with hash: {hash}")
 
         processed_files = self.repository.get_all_processed_images(uid, hash)
         processed_response = self._get_image_response_to_get_processed_response(
@@ -101,3 +101,9 @@ class ImageService:
         return ImageRequestListResponse(
             original_image=raw_image.image_hash, processed_images=processed_response
         )
+
+    def get_image_zip_from_raw_hash(self, uid:str, raw_image_hash: str):
+        zip_data = self.repository.bulk_retrieve_images_from_raw_image_hash(uid, raw_image_hash)
+        if zip_data is None:
+            raise HTTPException(status_code=404, detail=f"Could not bulk retrieve image with hash: {raw_image_hash}")
+        return zip_data

@@ -1,13 +1,16 @@
 package cs446.project.chameleon
 
+import android.annotation.SuppressLint
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
+import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
@@ -19,6 +22,7 @@ import androidx.compose.material.icons.filled.KeyboardArrowUp
 import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
+import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
@@ -29,16 +33,23 @@ import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.drawBehind
+import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.asImageBitmap
+import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.res.vectorResource
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
 import cs446.project.chameleon.composables.ColourSelectionDialog
+import cs446.project.chameleon.composables.NavBar
+import cs446.project.chameleon.composables.SelectionBar
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.delay
 
+@SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
 @Composable
 fun ImagePreviewScreen(
     navController: NavHostController,
@@ -56,83 +67,44 @@ fun ImagePreviewScreen(
     val showModal = remember { mutableStateOf(false) }
     val selectedPaintIds = remember { mutableStateListOf<String>() }
 
-    Box(
-        modifier = Modifier
-            .fillMaxSize()
-            .background(Color.Black)
-    ) {
-        capturedImage?.let { image ->
-            Image(
-                bitmap = image.asImageBitmap(),
-                contentDescription = "Captured Photo",
-                modifier = Modifier
-                    .fillMaxSize(),
-                contentScale = ContentScale.Crop
-            )
-        }
-
-        // Retake Button
-        IconButton(
-            onClick = { navController.popBackStack() },
-            modifier = Modifier
-                .align(Alignment.TopStart)
-                .padding(32.dp)
-        ) {
-            Icon(
-                imageVector = Icons.AutoMirrored.Filled.ArrowBack,
-                contentDescription = "Retake Photo",
-                tint = Color.White
-            )
-        }
-
-        Box(modifier = Modifier
-            .fillMaxWidth()
-            .align(Alignment.BottomCenter)) {
-
-            Column() {
-                if (selectedPaintIds.isNotEmpty() && !showModal.value) {
-                    Row(
+    Scaffold(
+        modifier = Modifier.fillMaxSize(),
+        content = {
+            capturedImage?.let { image ->
+                Image(
+                    bitmap = image.asImageBitmap(),
+                    contentDescription = "Captured Photo",
+                    modifier = Modifier
+                        .fillMaxSize(),
+                    contentScale = ContentScale.Crop
+                )
+                if (isProcessing) {
+                    Box(
                         modifier = Modifier
-                            .fillMaxWidth()
-                            .background(Color.Black.copy(alpha = 0.5f))
-                            .padding(16.dp),
-                        horizontalArrangement = Arrangement.SpaceAround
+                            .fillMaxSize()
+                            .background(Color(0x80000000)) // Optional: Add a semi-transparent background
                     ) {
-                        Text("Selected paints: " + selectedPaintIds.joinToString(separator = ", "))
+                        CircularProgressIndicator(
+                            modifier = Modifier.align(Alignment.Center)
+                        )
                     }
                 }
-
-                Row(
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        //.align(Alignment.BottomCenter)
-                        .background(Color.Black.copy(alpha = 0.5f))
-                        .padding(16.dp),
-                    horizontalArrangement = Arrangement.SpaceAround
-                ) {
-                    IconButton(onClick = {
-
-                    }) {
-                        Icon(
-                            imageVector = Icons.Default.Home,
-                            contentDescription = "Empty button for now",
-                            tint = Color.White
-                        )
-                    }
-                    IconButton(onClick = {
-                        showModal.value = true
-                    }) {
-                        Icon(
-                            imageVector = Icons.Default.KeyboardArrowUp,
-                            contentDescription = "Color Picker",
-                            tint = Color.White
-                        )
-                    }
-                    IconButton(onClick = {
+            }},
+        bottomBar = {
+            Column {
+                // Selection bar
+                SelectionBar(
+                    onAddClick = { showModal.value = true },
+                    onProcessClick = {
                         // process the image, then display result
                         isProcessing = true
                         coroutineScope.launch {
-                            processImage(listOf(demoBitmap, demoBitmap2)) { processedImages -> // TODO change demoBitmap to actual result
+                            processImage(
+                                listOf(
+                                    demoBitmap,
+                                    demoBitmap2
+                                )
+                            ) { processedImages -> // TODO change demoBitmap to actual result
                                 navController.currentBackStackEntry?.savedStateHandle?.set(
                                     "processedImages",
                                     processedImages
@@ -141,38 +113,29 @@ fun ImagePreviewScreen(
                                 navController.navigate("image_result_screen")
                             }
                         }
-                    }) {
-                        Icon(
-                            imageVector = Icons.Default.Check,
-                            contentDescription = "Generate Image",
-                            tint = Color.White
-                        )
                     }
-                }
+                )
+
+
+                // Nav bar
+                NavBar(navController = navController)
             }
         }
+    )
 
-        if (isProcessing) {
-            CircularProgressIndicator(
-                modifier = Modifier
-                    .align(Alignment.Center)
-            )
-        }
-
-        if (showModal.value) {
-            ColourSelectionDialog(
-                onClose = { showModal.value = false },
-                onSubmit = { showModal.value = false },
-                onClick = { paint ->
-                    if (selectedPaintIds.contains(paint.id)) {
-                        selectedPaintIds.remove(paint.id)
-                    } else {
-                        selectedPaintIds.add(paint.id)
-                    }
-                },
-                paintViewModel = paintViewModel
-            )
-        }
+    if (showModal.value) {
+        ColourSelectionDialog(
+            onClose = { showModal.value = false },
+            onSubmit = { showModal.value = false },
+            onClick = { paint ->
+                if (selectedPaintIds.contains(paint.id)) {
+                    selectedPaintIds.remove(paint.id)
+                } else {
+                    selectedPaintIds.add(paint.id)
+                }
+            },
+            paintViewModel = paintViewModel
+        )
     }
 }
 
@@ -185,4 +148,3 @@ suspend fun processImage(bitmap: List<Bitmap>?, onProcessingComplete: (List<Bitm
     // return processed image
     onProcessingComplete(bitmap)
 }
-
