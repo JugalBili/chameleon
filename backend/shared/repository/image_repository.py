@@ -1,6 +1,7 @@
 import hashlib
 import io
 import json
+import zipfile
 from typing import List
 from firebase_admin import storage
 from google.cloud.storage import Blob
@@ -232,3 +233,35 @@ class ImageRepository:
                 )
             )
         return ret
+    @staticmethod
+    def _get_content_type_extension(content_type: str):
+        # expect type of type/file_extension
+        return content_type.split("/")[-1]
+    def bulk_retrieve_images_from_raw_image_hash(self, uid: str, raw_image_hash: str) -> io.BytesIO | None:
+        base_path = f"{self.base_collection_name}/{uid}/{raw_image_hash}"
+        file_name = f"{raw_image_hash}"
+        raw_image_path = f"{base_path}/{file_name}"
+        raw_image_blob = self.bucket.blob(raw_image_path)
+        if not raw_image_blob.exists():
+            return None
+        processed_image_collection_path = f"{base_path}/{self.processed_image_path}"
+        processed_image_blobs = self.bucket.list_blobs(prefix=processed_image_collection_path)
+
+        zip_data = io.BytesIO()
+        with zipfile.ZipFile(zip_data, mode="w", compression=zipfile.ZIP_DEFLATED) as zipf:
+            raw_image_blob.reload()
+            file_type = self._get_content_type_extension(raw_image_blob.content_type)
+            raw_image_content = raw_image_blob.download_as_bytes()
+
+            zipf.writestr(zipfile.ZipInfo(f"{raw_image_hash}.{file_type}"), raw_image_content)
+
+            for processed_blob in processed_image_blobs:
+                processed_blob.reload()
+                file_type = self._get_content_type_extension(processed_blob.content_type)
+                filename = processed_blob.name.split("/")[-1]
+                blob_content = processed_blob.download_as_bytes()
+                zip_info = zipfile.ZipInfo(f"{filename}.{file_type}")
+                zipf.writestr(zip_info, blob_content)
+        
+        zip_data.seek(0)
+        return zip_data
