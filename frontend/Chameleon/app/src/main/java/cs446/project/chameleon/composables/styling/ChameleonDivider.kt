@@ -8,7 +8,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 
 @Composable
-fun SectionDivider() {
+fun ChameleonDivider() {
 
     HorizontalDivider(
         modifier = Modifier.padding(top = 12.dp, bottom = 12.dp),

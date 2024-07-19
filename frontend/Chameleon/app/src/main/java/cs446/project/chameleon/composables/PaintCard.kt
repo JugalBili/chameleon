@@ -9,6 +9,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Text
@@ -21,6 +22,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.LocalConfiguration
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import cs446.project.chameleon.data.model.Paint
@@ -39,12 +41,17 @@ fun PaintCard(
         Color.Black
     }
 
+//    val configuration = LocalConfiguration.current
+//    val screenWidth = configuration.screenWidthDp.dp
+//    val screenHeight = configuration.screenHeightDp.dp
+
     Box(
         modifier = Modifier
             .border(2.dp, borderColour, RoundedCornerShape(16.dp))
             .clip(RoundedCornerShape(16.dp))
+//            .size(width = screenWidth / 5, height = screenHeight / 10)
             .height(175.dp)
-            .width(150.dp)
+            .width(175.dp)
             .clickable(onClick = {
                 if (toggleBorder) {
                     isSelected = !isSelected

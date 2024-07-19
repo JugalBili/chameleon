@@ -4,7 +4,7 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.ColumnScope
 import androidx.compose.foundation.layout.PaddingValues
-import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -14,13 +14,14 @@ import androidx.compose.ui.unit.dp
 @Composable
 fun CenteredColumn(
     padding: PaddingValues = PaddingValues(0.dp),
+    fullWidth: Boolean = true,
     centerHorizontally: Boolean = true,
     centerVertically: Boolean = true,
     content: @Composable ColumnScope.() -> Unit
 ) {
 
     Column(
-        modifier = Modifier.padding(padding),
+        modifier = Modifier.then(if (fullWidth) Modifier.fillMaxWidth() else Modifier).padding(padding),
         horizontalAlignment = if (centerHorizontally) {
             Alignment.CenterHorizontally
         } else {

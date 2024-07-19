@@ -1,32 +1,24 @@
 package cs446.project.chameleon.gallery
 
-import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
-import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.height
-import androidx.compose.foundation.layout.padding
-import androidx.compose.material3.OutlinedTextField
-import androidx.compose.material3.Scaffold
-import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
-import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
 import cs446.project.chameleon.MainViewModel
-import cs446.project.chameleon.composables.NavBar
 import cs446.project.chameleon.composables.PaintGallery
+import cs446.project.chameleon.composables.constants.HEADER
 import cs446.project.chameleon.composables.styling.CenteredColumn
+import cs446.project.chameleon.composables.styling.ChameleonDivider
+import cs446.project.chameleon.composables.styling.ChameleonText
 import cs446.project.chameleon.composables.styling.Screen
 import cs446.project.chameleon.composables.styling.SearchBox
-import cs446.project.chameleon.composables.styling.SectionDivider
-import cs446.project.chameleon.composables.styling.SectionTitle
 
 @Composable
 fun GalleryPage(
@@ -47,8 +39,8 @@ fun GalleryPage(
         CenteredColumn(padding = padding) {
 
             // Title
-            SectionTitle("Paint Gallery")
-            SectionDivider()
+            ChameleonText("Gallery Page", HEADER)
+            ChameleonDivider()
             Spacer(modifier = Modifier.height(12.dp))
 
             // Search field

@@ -42,10 +42,10 @@ import cs446.project.chameleon.MainViewModel
 import cs446.project.chameleon.composables.NavBar
 import cs446.project.chameleon.composables.ReviewCard
 import cs446.project.chameleon.composables.styling.CenteredColumn
+import cs446.project.chameleon.composables.styling.ChameleonDivider
 import cs446.project.chameleon.composables.styling.ColouredBox
 import cs446.project.chameleon.composables.styling.PrimaryButton
 import cs446.project.chameleon.composables.styling.Screen
-import cs446.project.chameleon.composables.styling.SectionDivider
 import cs446.project.chameleon.data.model.Review
 
 @Composable
@@ -73,13 +73,15 @@ fun PaintReview(
 
             // Paint Info
             Row(
-                modifier = Modifier.fillMaxWidth().padding(12.dp),
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(12.dp),
                 horizontalArrangement = Arrangement.SpaceEvenly,
                 verticalAlignment = Alignment.CenterVertically
             ) {
                 ColouredBox(colour = colour)
 
-                CenteredColumn(centerHorizontally = false) {
+                CenteredColumn(fullWidth = false, centerHorizontally = false) {
                     Text(text = paint.name, fontSize = 14.sp)
                     Text(text = paint.id, fontSize = 12.sp) // TODO: change this to paint code
                     Text(text = paint.brand, fontSize = 12.sp)
@@ -101,7 +103,7 @@ fun PaintReview(
                     )
                 }
             }
-            SectionDivider()
+            ChameleonDivider()
 
             // Paint reviews
             LazyColumn(modifier = Modifier.fillMaxWidth()) {
