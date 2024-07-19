@@ -41,12 +41,17 @@ import androidx.navigation.NavHostController
 import cs446.project.chameleon.MainViewModel
 import cs446.project.chameleon.composables.NavBar
 import cs446.project.chameleon.composables.ReviewCard
+import cs446.project.chameleon.composables.styling.CenteredColumn
+import cs446.project.chameleon.composables.styling.ColouredBox
+import cs446.project.chameleon.composables.styling.PrimaryButton
+import cs446.project.chameleon.composables.styling.Screen
+import cs446.project.chameleon.composables.styling.SectionDivider
 import cs446.project.chameleon.data.model.Review
 import cs446.project.chameleon.data.model.ReviewOLD
 
 @Composable
 fun PaintReview(
-    navController: NavHostController, // TODO: do we need this?
+    navController: NavHostController,
     mainViewModel: MainViewModel
 ) {
     val paint = mainViewModel.getSelectedPaint() ?: return
@@ -64,74 +69,48 @@ fun PaintReview(
                 "entire house ")
     )
 
-    Scaffold(
-        modifier = Modifier.fillMaxSize(),
-        content = { padding ->
-            Column(
-                modifier = Modifier.fillMaxSize().padding(top = 40.dp),
-                horizontalAlignment = Alignment.CenterHorizontally
+    Screen(navController) { padding ->
+        CenteredColumn(padding = padding, centerVertically = false) {
+
+            // Paint Info
+            Row(
+                modifier = Modifier.fillMaxWidth().padding(12.dp),
+                horizontalArrangement = Arrangement.SpaceEvenly,
+                verticalAlignment = Alignment.CenterVertically
             ) {
+                ColouredBox(colour = colour)
 
-                // Paint Info
-                Row(
-                    modifier = Modifier.fillMaxWidth().padding(12.dp, top = 40.dp),
-                    horizontalArrangement = Arrangement.SpaceEvenly,
-                    verticalAlignment = Alignment.CenterVertically
-                ) {
-                    Box(
-                        modifier = Modifier
-                            .border(2.dp, Color.Black, RoundedCornerShape(16.dp))
-                            .clip(RoundedCornerShape(16.dp))
-                            .height(100.dp)
-                            .width(100.dp)
-                            .background(colour)
-                    )
-
-                    Column() {
-                        Text(text = paint.name, fontSize = 14.sp)
-                        Text(text = paint.id, fontSize = 12.sp) // TODO: change this to paint code
-                        Text(text = paint.brand, fontSize = 12.sp)
-                    }
-
-                    Button(
-                        modifier = Modifier.padding(start = 8.dp),
-                        onClick = { /*TODO*/ },
-                        colors = ButtonDefaults.buttonColors(containerColor = Color.Black),
-                        shape = RoundedCornerShape(16.dp)
-                    ) {
-                        Text(text = "Try", color = Color.White)
-                    }
-
-                    IconButton(
-                        modifier = Modifier.padding(start = 8.dp).size(48.dp),
-                        onClick = { isLiked = !isLiked }
-                    ) {
-                        Icon(
-                            imageVector = if (isLiked) Icons.Filled.Favorite else Icons.Outlined.FavoriteBorder,
-                            contentDescription = null,
-                            tint = if (isLiked) Color.Red else Color.Black
-                        )
-                    }
+                CenteredColumn(centerHorizontally = false) {
+                    Text(text = paint.name, fontSize = 14.sp)
+                    Text(text = paint.id, fontSize = 12.sp) // TODO: change this to paint code
+                    Text(text = paint.brand, fontSize = 12.sp)
                 }
 
-                HorizontalDivider(
-                    modifier = Modifier.padding(top = 20.dp, bottom = 26.dp),
-                    thickness = 3.dp,
-                    color = Color.Black
+                PrimaryButton(
+                    text = "Try!",
+                    onClick = { navController.navigate("camera_screen") }
                 )
 
-                // Paint reviews
-                LazyColumn(modifier = Modifier.fillMaxWidth()) {
-                    items(reviews) { review ->
-                        ReviewCard(review = review)
-                        Spacer(modifier = Modifier.height(16.dp))
-                    }
+                IconButton(
+                    modifier = Modifier.size(48.dp),
+                    onClick = { isLiked = !isLiked }
+                ) {
+                    Icon(
+                        imageVector = if (isLiked) Icons.Filled.Favorite else Icons.Outlined.FavoriteBorder,
+                        contentDescription = null,
+                        tint = if (isLiked) Color.Red else Color.Black
+                    )
                 }
-
             }
-        },
-        bottomBar = {
-            NavBar(navController = navController)
+            SectionDivider()
+
+            // Paint reviews
+            LazyColumn(modifier = Modifier.fillMaxWidth()) {
+                items(reviews) { review ->
+                    ReviewCard(review = review)
+                    Spacer(modifier = Modifier.height(16.dp))
+                }
+            }
         }
-    )
+    }
 }
