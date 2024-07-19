@@ -1,6 +1,7 @@
 package cs446.project.chameleon.data.remote
 
 import cs446.project.chameleon.data.model.Favorite
+import cs446.project.chameleon.data.model.FavoriteResponse
 import cs446.project.chameleon.data.model.History
 import cs446.project.chameleon.data.model.ImageResponse
 import cs446.project.chameleon.data.model.LoginRequest
@@ -56,7 +57,7 @@ interface ApiService {
 
     // favorite endpoints
     @GET("favorite")
-    suspend fun getFavorite(@Header("Authorization") token: String): List<Favorite>
+    suspend fun getFavorite(@Header("Authorization") token: String): FavoriteResponse
 
     @POST("favorite")
     suspend fun postFavorite(@Header("Authorization") token: String, @Body favorite: Favorite): Unit

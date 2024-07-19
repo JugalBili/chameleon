@@ -4,5 +4,5 @@ import com.google.gson.annotations.SerializedName
 
 data class Favorite (
     @SerializedName("paint_id") val paintId: String,
-    val color: RGB
+    val rgb: RGB
 )
