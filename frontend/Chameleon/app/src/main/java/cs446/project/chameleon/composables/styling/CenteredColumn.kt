@@ -20,7 +20,7 @@ fun CenteredColumn(
 ) {
 
     Column(
-        modifier = Modifier.fillMaxSize().padding(padding),
+        modifier = Modifier.padding(padding),
         horizontalAlignment = if (centerHorizontally) {
             Alignment.CenterHorizontally
         } else {
