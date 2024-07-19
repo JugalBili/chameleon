@@ -26,6 +26,15 @@ def get_image_by_hash(image_service: Annotated['ImageService', Depends(get_image
     image = image_service.get_image_by_hash(user.uid, image_hash)
     return Response(content=image.image_bytes, media_type=image.contentType)
 
+@router.get("/bulk/{image_hash}")
+def get_all_images_for_hash(image_service: Annotated['ImageService', Depends(get_image_service)],
+                            user: Annotated['User', Depends(get_user)],
+                            image_hash: str):
+    zip_file = image_service.get_image_zip_from_raw_hash(user.uid, image_hash)
+    headers = {
+        "Content-Disposition": "attachment; filename=images.zip"
+    }
+    return Response(zip_file.getvalue(), headers=headers, media_type="application/zip")
 
 @router.get("/list/{image_hash}")
 def list_image_for_hash(image_service: Annotated['ImageService', Depends(get_image_service)],
