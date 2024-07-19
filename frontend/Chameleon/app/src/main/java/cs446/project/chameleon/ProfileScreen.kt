@@ -13,25 +13,20 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
 import cs446.project.chameleon.composables.NavBar
+import cs446.project.chameleon.composables.styling.Screen
 
 @Composable
 fun ProfileScreen(navController: NavHostController) {
-    Scaffold(
-        modifier = Modifier.fillMaxSize(),
-        content = { padding ->
-            Row (
-                modifier = Modifier
-                    .fillMaxWidth(),
-                horizontalArrangement = Arrangement.Center
-            ) {
-                Text(
-                    text = "This is the Profile Screen",
-                    modifier = Modifier.padding(48.dp)
-                )
-            }
-        },
-        bottomBar = {
-            NavBar(navController = navController)
+    Screen(navController) { padding ->
+        Row (
+            modifier = Modifier
+                .fillMaxWidth(),
+            horizontalArrangement = Arrangement.Center
+        ) {
+            Text(
+                text = "This is the Profile Screen",
+                modifier = Modifier.padding(48.dp)
+            )
         }
-    )
+    }
 }
