@@ -19,7 +19,7 @@ from sam import SAM
 DEVICE = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 GD_FILENAME = os.path.join(cur_path, "models/groundingdino_swint_ogc.pth")
 GD_CONFIG_FILENAME = os.path.join(cur_path, "models/GroundingDINO_SwinT_OGC.py")
-SAM_FILENAME =  os.path.join(cur_path, "models/sam_vit_h_4b8939.pth")
+SAM_FILENAME = os.path.join(cur_path, "models/sam_vit_h_4b8939.pth")
 SAM_TYPE = "vit_h"
 
 # hyper-param for GroundingDINO
@@ -73,14 +73,14 @@ class Singleton:
 @Singleton
 class DinoSAMSingleton:
     def __init__(self):
-        self.gd_predictor = Dino(GD_FILENAME, GD_CONFIG_FILENAME, 'cpu')
+        self.gd_predictor = Dino(GD_FILENAME, GD_CONFIG_FILENAME, "cpu")
         print("GroundingDINO Model Loaded")
         self.sam_predictor = SAM(SAM_FILENAME, SAM_TYPE, DEVICE)
         print("SAM Model Loaded")
 
     def run_pipeline(self, image_cv, image_name, colors):
         print(f"=== Starting Grounded SAM Pipeline for Image {image_name} ===\n")
-        image_pil = Image.fromarray(cv2.cvtColor(image_cv, cv2.COLOR_BGR2RGB)) 
+        image_pil = Image.fromarray(cv2.cvtColor(image_cv, cv2.COLOR_BGR2RGB))
 
         pred_dict = self.gd_predictor.run_inference(
             image_pil, CAPTION, BOX_THRESHOLD, TEXT_THRESHOLD
@@ -106,7 +106,7 @@ class DinoSAMSingleton:
         # )
 
         colored_images = []
-        
+
         for color in colors:
             recolored_image = self.recolor(image_cv, color, masks)
             color_string = "-".join([str(val) for val in color])
@@ -115,9 +115,9 @@ class DinoSAMSingleton:
             #     recolored_image,
             # )
             colored_images.append(recolored_image)
-        
+
         print("\n=== Pipeline Finished ===\n")
-                
+
         return masks, colored_images
 
     def create_buckets(self, image_cv, masks):
