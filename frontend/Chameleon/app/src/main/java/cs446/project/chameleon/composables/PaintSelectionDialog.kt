@@ -29,7 +29,7 @@ import androidx.compose.ui.window.DialogProperties
 import cs446.project.chameleon.MainViewModel
 import cs446.project.chameleon.composables.PaintCard
 import cs446.project.chameleon.data.model.Paint
-import cs446.project.chameleon.composables.constants.HEADER
+import cs446.project.chameleon.constants.HEADER
 import cs446.project.chameleon.composables.styling.CenteredColumn
 import cs446.project.chameleon.composables.styling.ChameleonDivider
 import cs446.project.chameleon.composables.styling.ChameleonText
