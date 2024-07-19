@@ -15,9 +15,10 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import cs446.project.chameleon.data.model.Review
+import cs446.project.chameleon.data.model.ReviewOLD
 
 @Composable
-fun ReviewCard(review: Review) {
+fun ReviewCard(review: ReviewOLD) {
 
     Card(
         modifier = Modifier.fillMaxWidth().padding(12.dp),

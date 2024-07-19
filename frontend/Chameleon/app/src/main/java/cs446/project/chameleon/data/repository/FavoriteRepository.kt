@@ -2,7 +2,6 @@ package cs446.project.chameleon.data.repository
 
 import cs446.project.chameleon.Constants.BASE_URL
 import cs446.project.chameleon.data.model.Favorite
-import cs446.project.chameleon.data.model.FavoriteResponse
 import cs446.project.chameleon.data.remote.ApiService
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
@@ -20,7 +19,7 @@ class FavoriteRepository {
     }
 
     suspend fun getFavorites(authToken: String): List<Favorite> {
-        val favoriteResponse: FavoriteResponse = apiService.getFavorite("Bearer $authToken")
+        val favoriteResponse = apiService.getFavorite("Bearer $authToken")
         return favoriteResponse.favorites
     }
 

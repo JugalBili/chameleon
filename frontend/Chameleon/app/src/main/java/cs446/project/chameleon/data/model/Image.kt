@@ -18,3 +18,9 @@ data class RGB (
     val g: Int,
     val b: Int
 )
+
+data class HSL (
+    val h: Float,
+    val s: Float,
+    val l: Float
+)

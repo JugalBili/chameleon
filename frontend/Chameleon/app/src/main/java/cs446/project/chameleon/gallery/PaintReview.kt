@@ -42,6 +42,7 @@ import cs446.project.chameleon.MainViewModel
 import cs446.project.chameleon.composables.NavBar
 import cs446.project.chameleon.composables.ReviewCard
 import cs446.project.chameleon.data.model.Review
+import cs446.project.chameleon.data.model.ReviewOLD
 
 @Composable
 fun PaintReview(
@@ -56,9 +57,9 @@ fun PaintReview(
 
     // TODO: hard-coded values for now
     val reviews = listOf(
-        Review("John", "Doe", "2024-07-17", "ayo this slaps"),
-        Review("John", "Smith", "2024-07-17", "ayo this also slaps"),
-        Review("John", "UninspiredLastName", "2024-07-17", "uwu this colour looks soo good! Can’t" +
+        ReviewOLD("John", "Doe", "2024-07-17", "ayo this slaps"),
+        ReviewOLD("John", "Smith", "2024-07-17", "ayo this also slaps"),
+        ReviewOLD("John", "UninspiredLastName", "2024-07-17", "uwu this colour looks soo good! Can’t" +
                 " wait till I buy more of it and color my " +
                 "entire house ")
     )
