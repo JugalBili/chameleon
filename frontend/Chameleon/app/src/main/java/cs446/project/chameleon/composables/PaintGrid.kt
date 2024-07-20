@@ -12,13 +12,15 @@ import androidx.compose.foundation.lazy.grid.items
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
+import cs446.project.chameleon.PaintViewModel
 import cs446.project.chameleon.data.model.Paint
 
 @Composable
 fun PaintGrid(
     paints: List<Paint>,
     maxHeight: Float = 0.5f,
-    onPaintClick: (Paint) -> Unit
+    onPaintClick: (Paint) -> Unit,
+    paintViewModel: PaintViewModel? = null
 ) {
 
     Box(modifier = Modifier.fillMaxWidth().fillMaxHeight(maxHeight)) {
@@ -33,7 +35,11 @@ fun PaintGrid(
                 PaintCard(
                     paint = paint,
                     onClick = onPaintClick,
-                    toggleBorder = true
+                    selected = if (paintViewModel != null) {
+                        paint in paintViewModel.selectedPaints
+                    } else {
+                        false
+                    }
                 )
             }
         }

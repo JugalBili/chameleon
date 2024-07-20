@@ -1,5 +1,7 @@
 package cs446.project.chameleon
 
+import android.os.Build
+import androidx.annotation.RequiresApi
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
@@ -32,11 +34,13 @@ import cs446.project.chameleon.composables.styling.ChameleonDivider
 import cs446.project.chameleon.composables.styling.ColouredBox
 import cs446.project.chameleon.composables.styling.PrimaryButton
 import cs446.project.chameleon.composables.styling.Screen
+import cs446.project.chameleon.data.model.Review
 import cs446.project.chameleon.utils.getColour
-import cs446.project.chameleon.data.model.ReviewOLD
+import java.time.Instant
 
+@RequiresApi(Build.VERSION_CODES.O)
 @Composable
-fun PaintReview(
+fun PaintReviewsScreen(
     navController: NavHostController,
     paintViewModel: PaintViewModel
 ) {
@@ -47,11 +51,9 @@ fun PaintReview(
 
     // TODO: hard-coded values for now
     val reviews = listOf(
-        ReviewOLD("John", "Doe", "2024-07-17", "ayo this slaps"),
-        ReviewOLD("John", "Smith", "2024-07-17", "ayo this also slaps"),
-        ReviewOLD("John", "UninspiredLastName", "2024-07-17", "uwu this colour looks soo good! Can’t" +
-                " wait till I buy more of it and color my " +
-                "entire house ")
+        Review("PPG1065-2", "1", "Ayo this slaps", Instant.now(), listOf("")),
+        Review("PPG1065-2", "2", "Yea I agree", Instant.now(), listOf("")),
+        Review("PPG1065-2", "3", "Weird name but aight", Instant.now(), listOf(""))
     )
 
     Screen(navController) { padding ->
@@ -69,14 +71,14 @@ fun PaintReview(
 
                 CenteredColumn(fullWidth = false, centerHorizontally = false) {
                     Text(text = paint.name, fontSize = 14.sp)
-                    Text(text = paint.id, fontSize = 12.sp) // TODO: change this to paint code
+                    Text(text = paint.id, fontSize = 12.sp)
                     Text(text = paint.brand, fontSize = 12.sp)
                 }
 
                 PrimaryButton(
                     text = "Try!",
                     onClick = {
-                        paintViewModel.addSelectedPaint(paint)
+                        paintViewModel.updateSelectedPaints(paint)
                         navController.navigate("camera_screen")
                     }
                 )

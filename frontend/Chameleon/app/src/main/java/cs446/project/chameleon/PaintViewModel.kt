@@ -5,6 +5,7 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateListOf
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
+import androidx.compose.runtime.snapshots.SnapshotStateList
 import androidx.lifecycle.ViewModel
 import cs446.project.chameleon.data.model.HSL
 import cs446.project.chameleon.data.model.Paint
@@ -22,18 +23,15 @@ class PaintViewModel: ViewModel() {
     // Selected paints (for recolours)
     private var _selectedPaints = mutableStateListOf<Paint>()
     val selectedPaints: List<Paint> get() = _selectedPaints
-    fun addSelectedPaint(paint: Paint) {
-        _selectedPaints.add(paint)
-    }
-    fun removeSelectedPaint(paint: Paint) {
-        _selectedPaints.remove(paint)
-    }
     fun updateSelectedPaints(paint: Paint) {
         if (paint in selectedPaints) {
-            removeSelectedPaint(paint)
+            _selectedPaints.remove(paint)
         } else {
-            addSelectedPaint(paint)
+            _selectedPaints.add(paint)
         }
+    }
+    fun clearSelectedPaints() {
+        _selectedPaints.clear()
     }
 
     // Selected paint (for reviews)

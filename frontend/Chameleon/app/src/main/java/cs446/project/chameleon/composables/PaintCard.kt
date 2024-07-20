@@ -30,30 +30,21 @@ import cs446.project.chameleon.data.model.Paint
 fun PaintCard(
     paint: Paint,
     onClick: (Paint) -> Unit,
-    toggleBorder: Boolean = false
+    selected: Boolean = false
 ) {
-    var isSelected by remember { mutableStateOf(false) }
-    val borderColour = if (isSelected && toggleBorder) {
+    val borderColour = if (selected) {
         Color.Green
     } else {
         Color.Black
     }
 
-//    val configuration = LocalConfiguration.current
-//    val screenWidth = configuration.screenWidthDp.dp
-//    val screenHeight = configuration.screenHeightDp.dp
-
     Box(
         modifier = Modifier
             .border(2.dp, borderColour, RoundedCornerShape(16.dp))
             .clip(RoundedCornerShape(16.dp))
-//            .size(width = screenWidth / 5, height = screenHeight / 10)
             .height(175.dp)
             .width(175.dp)
             .clickable(onClick = {
-                if (toggleBorder) {
-                    isSelected = !isSelected
-                }
                 onClick(paint)
             })
     ) {

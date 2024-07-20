@@ -42,8 +42,7 @@ fun FavouritesBar(
                 items(paints) { paint ->
                     PaintCard(
                         paint = paint,
-                        onClick = onClick,
-                        toggleBorder = true
+                        onClick = onClick
                     )
                 }
             }

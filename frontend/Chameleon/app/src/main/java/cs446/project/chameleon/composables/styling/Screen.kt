@@ -10,7 +10,6 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
 import cs446.project.chameleon.composables.NavBar
-import cs446.project.chameleon.composables.PaintGallery
 
 @Composable
 fun Screen(
