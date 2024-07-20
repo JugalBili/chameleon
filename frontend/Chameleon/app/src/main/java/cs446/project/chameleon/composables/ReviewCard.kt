@@ -1,5 +1,7 @@
 package cs446.project.chameleon.composables
 
+import android.os.Build
+import androidx.annotation.RequiresApi
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -14,11 +16,18 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
+import cs446.project.chameleon.composables.styling.ChameleonDivider
+import cs446.project.chameleon.composables.styling.ChameleonText
 import cs446.project.chameleon.data.model.Review
-import cs446.project.chameleon.data.model.ReviewOLD
+import cs446.project.chameleon.utils.BODY
+import cs446.project.chameleon.utils.formatTimestamp
 
+@RequiresApi(Build.VERSION_CODES.O)
 @Composable
-fun ReviewCard(review: ReviewOLD) {
+fun ReviewCard(review: Review) {
+
+    // TODO: query the user associated with the review.uid to get the name
+    val name = "John UninspiredLastName"
 
     Card(
         modifier = Modifier.fillMaxWidth().padding(12.dp),
@@ -31,17 +40,12 @@ fun ReviewCard(review: ReviewOLD) {
                 verticalAlignment = Alignment.CenterVertically,
                 horizontalArrangement = Arrangement.SpaceBetween
             ) {
-                Text(text = "${review.firstName} ${review.lastName}")
-                Text(text = review.date)
+                Text(text = name)
+                Text(text = formatTimestamp(review.timeStamp))
             }
 
-            HorizontalDivider(
-                modifier = Modifier.padding(top = 10.dp, bottom = 10.dp),
-                thickness = 3.dp,
-                color = Color.Gray
-            )
-
-            Text(text = review.reviewText)
+            ChameleonDivider()
+            ChameleonText(review.review, BODY)
         }
     }
 }

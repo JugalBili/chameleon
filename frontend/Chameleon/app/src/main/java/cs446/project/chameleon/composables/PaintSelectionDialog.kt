@@ -51,11 +51,15 @@ fun PaintSelectionDialog(
     val favouritePaints = paints // TODO: implement actual favourite system
 
     var paintGroup by remember { mutableStateOf(PAINT_SELECTION_OPTIONS[0]) }
+    var saved by remember { mutableStateOf(false) }
 
 
     Dialog(
         properties = DialogProperties( usePlatformDefaultWidth = false ),
-        onDismissRequest = { onClose() }
+        onDismissRequest = {
+            if (!saved) paintViewModel.clearSelectedPaints()
+            onClose()
+        }
     ) {
         Card(modifier = Modifier.fillMaxWidth(0.9f)) {
             CenteredColumn(modifier = Modifier.padding(vertical = 12.dp), centerVertically = false) {
@@ -96,11 +100,18 @@ fun PaintSelectionDialog(
                     },
                     onPaintClick = { paint ->
                         paintViewModel.updateSelectedPaints(paint)
-                    }
+                    },
+                    paintViewModel = paintViewModel
                 )
                 Spacer(modifier = smallSpacing)
 
-                PrimaryButton("Submit", onSubmit)
+                PrimaryButton(
+                    "Submit",
+                    onClick = {
+                        saved = true
+                        onSubmit()
+                    }
+                )
             }
         }
     }

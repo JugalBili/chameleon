@@ -14,7 +14,7 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
-import cs446.project.chameleon.composables.PaintGallery
+import cs446.project.chameleon.composables.PaintGrid
 import cs446.project.chameleon.utils.HEADER
 import cs446.project.chameleon.composables.styling.CenteredColumn
 import cs446.project.chameleon.composables.styling.CenteredRow
@@ -28,11 +28,11 @@ import cs446.project.chameleon.utils.COLOUR_FILTER
 import cs446.project.chameleon.utils.NAME_FILTER
 
 @Composable
-fun GalleryPage(
+fun PaintGalleryScreen(
     navController: NavHostController,
-    mainViewModel: PaintViewModel
+    paintViewModel: PaintViewModel
 ) {
-    val paints by mainViewModel.paints.collectAsState()
+    val paints by paintViewModel.paints.collectAsState()
 
     // Handle search filters
     val filters = listOf(NAME_FILTER, BRAND_FILTER, COLOUR_FILTER)
@@ -83,11 +83,12 @@ fun GalleryPage(
             }
             Spacer(modifier = Modifier.height(32.dp))
 
-            // Paint Gallery
-            PaintGallery(
+            PaintGrid(
                 paints = filteredPaints,
-                navController = navController,
-                mainViewModel = mainViewModel
+                onPaintClick = { paint ->
+                    paintViewModel.updateSelectedPaint(paint)
+                    navController.navigate("paint_review")
+                }
             )
         }
     }
