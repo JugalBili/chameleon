@@ -28,7 +28,7 @@ fun Dropdown(
             onExpandedChange = { expanded = !expanded }
         ) {
             TextField(
-                value = selectedOption, 
+                value = selectedOption,
                 onValueChange = {},
                 readOnly = true,
                 trailingIcon = { ExposedDropdownMenuDefaults.TrailingIcon(expanded = expanded) }

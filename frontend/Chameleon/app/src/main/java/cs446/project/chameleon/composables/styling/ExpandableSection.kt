@@ -25,6 +25,7 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import cs446.project.chameleon.utils.HEADER
+import cs446.project.chameleon.utils.SUBHEADER
 
 @Composable
 fun ExpandableSection(
@@ -38,7 +39,7 @@ fun ExpandableSection(
             modifier = Modifier.fillMaxWidth().clickable { expanded = !expanded }.padding(16.dp),
             horizontalArrangement = Arrangement.SpaceBetween
         ) {
-            ChameleonText(sectionTitle, HEADER)
+            ChameleonText(sectionTitle, SUBHEADER)
             Icon(
                 imageVector = if (expanded) Icons.Default.KeyboardArrowUp else Icons.Default.KeyboardArrowDown,
                 contentDescription = if (expanded) "Collapse" else "Expand"

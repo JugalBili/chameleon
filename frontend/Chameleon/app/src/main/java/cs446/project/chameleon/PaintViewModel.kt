@@ -28,6 +28,13 @@ class PaintViewModel: ViewModel() {
     fun removeSelectedPaint(paint: Paint) {
         _selectedPaints.remove(paint)
     }
+    fun updateSelectedPaints(paint: Paint) {
+        if (paint in selectedPaints) {
+            removeSelectedPaint(paint)
+        } else {
+            addSelectedPaint(paint)
+        }
+    }
 
     // Selected paint (for reviews)
     private var _selectedPaint: Paint? by mutableStateOf(null)
