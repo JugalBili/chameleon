@@ -5,12 +5,16 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 
 @Composable
-fun SearchBox(searchQuery: String, onChange: (String) -> Unit) {
+fun SearchBox(
+    searchQuery: String,
+    placeholderText: String = "Search",
+    onChange: (String) -> Unit
+) {
 
     OutlinedTextField(
         value = searchQuery,
         onValueChange = onChange,
-        placeholder = { Text("Search") },
+        placeholder = { Text(placeholderText) },
         singleLine = true
     )
 }

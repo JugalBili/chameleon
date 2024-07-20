@@ -29,7 +29,7 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             ChameleonTheme {
-                val paintViewModel: MainViewModel = viewModel()
+                val paintViewModel: PaintViewModel = viewModel()
                 val navController = rememberNavController()
 
                 NavHost(

@@ -39,6 +39,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
 import cs446.project.chameleon.MainViewModel
+import cs446.project.chameleon.PaintViewModel
 import cs446.project.chameleon.composables.NavBar
 import cs446.project.chameleon.composables.ReviewCard
 import cs446.project.chameleon.composables.styling.CenteredColumn
@@ -46,16 +47,16 @@ import cs446.project.chameleon.composables.styling.ChameleonDivider
 import cs446.project.chameleon.composables.styling.ColouredBox
 import cs446.project.chameleon.composables.styling.PrimaryButton
 import cs446.project.chameleon.composables.styling.Screen
+import cs446.project.chameleon.constants.getColour
 import cs446.project.chameleon.data.model.Review
 import cs446.project.chameleon.data.model.ReviewOLD
 
 @Composable
 fun PaintReview(
     navController: NavHostController,
-    mainViewModel: MainViewModel
+    mainViewModel: PaintViewModel
 ) {
     val paint = mainViewModel.getSelectedPaint() ?: return
-    val colour = Color(red = paint.rgb[0], green = paint.rgb[1], blue = paint.rgb[2])
 
     // TODO: get the default value of isLiked from user data
     var isLiked by remember { mutableStateOf(false) }
@@ -80,7 +81,7 @@ fun PaintReview(
                 horizontalArrangement = Arrangement.SpaceEvenly,
                 verticalAlignment = Alignment.CenterVertically
             ) {
-                ColouredBox(colour = colour)
+                ColouredBox(colour = getColour(paint.rgb))
 
                 CenteredColumn(fullWidth = false, centerHorizontally = false) {
                     Text(text = paint.name, fontSize = 14.sp)

@@ -53,7 +53,7 @@ import kotlinx.coroutines.delay
 @Composable
 fun ImagePreviewScreen(
     navController: NavHostController,
-    paintViewModel: MainViewModel
+    paintViewModel: PaintViewModel
 ) {
     val capturedImage = navController.previousBackStackEntry?.savedStateHandle?.get<Bitmap>("capturedImage")
     var isProcessing by remember { mutableStateOf(false) }

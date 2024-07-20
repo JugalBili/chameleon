@@ -27,6 +27,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.window.Dialog
 import androidx.compose.ui.window.DialogProperties
 import cs446.project.chameleon.MainViewModel
+import cs446.project.chameleon.PaintViewModel
 import cs446.project.chameleon.composables.PaintCard
 import cs446.project.chameleon.data.model.Paint
 import cs446.project.chameleon.constants.HEADER
@@ -41,7 +42,7 @@ fun PaintSelectionDialog(
     onClose: () -> Unit,
     onSubmit: () -> Unit,
     onClick: (Paint) -> Unit,
-    paintViewModel: MainViewModel
+    paintViewModel: PaintViewModel
 ) {
     val paints by paintViewModel.paints.collectAsState()
     val favouritedPaints = paints // TODO: implement actual favouriting system

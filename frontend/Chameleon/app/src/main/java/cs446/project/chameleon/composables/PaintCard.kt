@@ -25,6 +25,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalConfiguration
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import cs446.project.chameleon.constants.getColour
 import cs446.project.chameleon.data.model.Paint
 
 @Composable
@@ -33,7 +34,6 @@ fun PaintCard(
     onClick: (Paint) -> Unit,
     toggleBorder: Boolean = false
 ) {
-    val colour = Color(red = paint.rgb[0], green = paint.rgb[1], blue = paint.rgb[2])
     var isSelected by remember { mutableStateOf(false) }
     val borderColour = if (isSelected && toggleBorder) {
         Color.Green
@@ -62,7 +62,7 @@ fun PaintCard(
         Column(Modifier.fillMaxSize()) {
 
             // Colour
-            Box(modifier = Modifier.fillMaxWidth().weight(1f).background(colour))
+            Box(modifier = Modifier.fillMaxWidth().weight(1f).background(getColour(paint.rgb)))
 
             // Paint details
             Box(modifier = Modifier.fillMaxWidth().weight(1f).padding(8.dp)) {
