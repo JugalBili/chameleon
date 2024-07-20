@@ -5,3 +5,5 @@ const val BRAND_FILTER = "Brand"
 const val COLOUR_FILTER = "Colour"
 
 val PAINT_SELECTION_OPTIONS = listOf("Favourites", "Red", "Orange", "Yellow", "Green", "Blue", "Purple", "White", "Brown", "Gray", "Black")
+
+const val TIMESTAMP_FORMAT = "yyyy-MM-dd HH:mm"

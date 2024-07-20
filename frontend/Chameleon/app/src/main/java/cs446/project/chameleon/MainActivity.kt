@@ -1,10 +1,12 @@
 package cs446.project.chameleon
 
 import android.content.pm.PackageManager
+import android.os.Build
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
+import androidx.annotation.RequiresApi
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.lifecycle.viewmodel.compose.viewModel
@@ -14,6 +16,7 @@ import androidx.navigation.compose.rememberNavController
 import cs446.project.chameleon.ui.theme.ChameleonTheme
 
 class MainActivity : ComponentActivity() {
+    @RequiresApi(Build.VERSION_CODES.O) // TODO: remove these RequiresAPI annotations if the Timestamp type changes
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -50,10 +53,10 @@ class MainActivity : ComponentActivity() {
                         ProfileScreen(navController)
                     }
                     composable("gallery_page") {
-                        GalleryPage(navController, paintViewModel)
+                        PaintGalleryScreen(navController, paintViewModel)
                     }
                     composable("paint_review") {
-                        PaintReview(navController, paintViewModel)
+                        PaintReviewsScreen(navController, paintViewModel)
                     }
                 }
             }

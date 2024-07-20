@@ -28,7 +28,7 @@ import cs446.project.chameleon.utils.COLOUR_FILTER
 import cs446.project.chameleon.utils.NAME_FILTER
 
 @Composable
-fun GalleryPage(
+fun PaintGalleryScreen(
     navController: NavHostController,
     mainViewModel: PaintViewModel
 ) {
