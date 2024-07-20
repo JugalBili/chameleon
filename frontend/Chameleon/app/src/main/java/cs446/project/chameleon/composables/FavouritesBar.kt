@@ -26,7 +26,7 @@ fun FavouritesBar(
 ) {
 
     Box(modifier = Modifier.fillMaxWidth().fillMaxHeight(0.3f)) {
-        CenteredColumn(padding = PaddingValues(16.dp), centerHorizontally = false) {
+        CenteredColumn(modifier = Modifier.padding(16.dp), centerHorizontally = false) {
 
             ChameleonText("Favourites", SUBHEADER)
             ChameleonDivider()

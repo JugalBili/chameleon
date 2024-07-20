@@ -14,7 +14,7 @@ import androidx.compose.ui.unit.dp
 
 @Composable
 fun CenteredRow(
-    padding: PaddingValues = PaddingValues(0.dp),
+    modifier: Modifier = Modifier,
     fullWidth: Boolean = true,
     centerHorizontally: Boolean = true,
     centerVertically: Boolean = true,
@@ -22,7 +22,7 @@ fun CenteredRow(
 ) {
 
     Row (
-        modifier = Modifier.then(if (fullWidth) Modifier.fillMaxWidth() else Modifier).padding(padding),
+        modifier = modifier.then(if (fullWidth) Modifier.fillMaxWidth() else Modifier),
         verticalAlignment = if (centerVertically) {
             Alignment.CenterVertically
         } else {

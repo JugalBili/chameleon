@@ -44,7 +44,7 @@ import cs446.project.chameleon.utils.smallSpacing
 fun PaintSelectionDialog(
     onClose: () -> Unit,
     onSubmit: () -> Unit,
-    onClick: (Paint) -> Unit,
+    onClick: (Paint) -> Unit, // TODO: integrate with this to the ImagePreviewScreen
     paintViewModel: PaintViewModel
 ) {
     val paints by paintViewModel.paints.collectAsState()
@@ -58,14 +58,14 @@ fun PaintSelectionDialog(
         onDismissRequest = { onClose() }
     ) {
         Card(modifier = Modifier.fillMaxWidth(0.9f)) {
-            CenteredColumn(padding = PaddingValues(vertical = 12.dp), centerVertically = false) {
+            CenteredColumn(modifier = Modifier.padding(vertical = 12.dp), centerVertically = false) {
 
                 // Title
                 ChameleonText("Select up to 4 colours", HEADER)
                 ChameleonDivider()
 
                 // Row of selected colours
-                CenteredRow(padding = PaddingValues(8.dp), centerHorizontally = false) {
+                CenteredRow(modifier = Modifier.padding(vertical = 8.dp), centerHorizontally = false) {
                     Box(modifier = Modifier.padding(horizontal = 8.dp)) {
                         ChameleonText("Selected\nPaints: ")
                     }

@@ -51,7 +51,7 @@ fun GalleryPage(
     }
 
     Screen(navController) { padding ->
-        CenteredColumn(padding = padding) {
+        CenteredColumn(modifier = Modifier.padding(padding)) {
 
             // Title
             ChameleonText("Gallery Page", HEADER)

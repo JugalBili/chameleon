@@ -55,7 +55,7 @@ fun PaintReview(
     )
 
     Screen(navController) { padding ->
-        CenteredColumn(padding = padding, centerVertically = false) {
+        CenteredColumn(modifier = Modifier.padding(padding), centerVertically = false) {
 
             // Paint Info
             Row(
