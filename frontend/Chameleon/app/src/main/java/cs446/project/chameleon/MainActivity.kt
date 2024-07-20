@@ -11,8 +11,6 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-import cs446.project.chameleon.gallery.GalleryPage
-import cs446.project.chameleon.gallery.PaintReview
 import cs446.project.chameleon.ui.theme.ChameleonTheme
 
 class MainActivity : ComponentActivity() {

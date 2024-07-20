@@ -1,4 +1,4 @@
-package cs446.project.chameleon.constants
+package cs446.project.chameleon.utils
 
 import androidx.compose.ui.unit.TextUnit
 import androidx.compose.ui.unit.sp

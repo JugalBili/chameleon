@@ -1,4 +1,4 @@
-package cs446.project.chameleon.gallery
+package cs446.project.chameleon
 
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Spacer
@@ -14,9 +14,8 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
-import cs446.project.chameleon.PaintViewModel
 import cs446.project.chameleon.composables.PaintGallery
-import cs446.project.chameleon.constants.HEADER
+import cs446.project.chameleon.utils.HEADER
 import cs446.project.chameleon.composables.styling.CenteredColumn
 import cs446.project.chameleon.composables.styling.CenteredRow
 import cs446.project.chameleon.composables.styling.ChameleonDivider
@@ -24,9 +23,9 @@ import cs446.project.chameleon.composables.styling.ChameleonText
 import cs446.project.chameleon.composables.styling.Dropdown
 import cs446.project.chameleon.composables.styling.Screen
 import cs446.project.chameleon.composables.styling.SearchBox
-import cs446.project.chameleon.constants.BRAND_FILTER
-import cs446.project.chameleon.constants.COLOUR_FILTER
-import cs446.project.chameleon.constants.NAME_FILTER
+import cs446.project.chameleon.utils.BRAND_FILTER
+import cs446.project.chameleon.utils.COLOUR_FILTER
+import cs446.project.chameleon.utils.NAME_FILTER
 
 @Composable
 fun GalleryPage(

@@ -1,4 +1,4 @@
-package cs446.project.chameleon.constants
+package cs446.project.chameleon.utils
 
 const val NAME_FILTER = "Name"
 const val BRAND_FILTER = "Brand"

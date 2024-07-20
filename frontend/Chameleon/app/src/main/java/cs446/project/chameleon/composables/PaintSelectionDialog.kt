@@ -11,11 +11,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.grid.GridCells
 import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
 import androidx.compose.foundation.lazy.grid.items
-import androidx.compose.foundation.lazy.items
-import androidx.compose.material3.Button
 import androidx.compose.material3.Card
-import androidx.compose.material3.OutlinedTextField
-import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
@@ -26,11 +22,9 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.window.Dialog
 import androidx.compose.ui.window.DialogProperties
-import cs446.project.chameleon.MainViewModel
 import cs446.project.chameleon.PaintViewModel
-import cs446.project.chameleon.composables.PaintCard
 import cs446.project.chameleon.data.model.Paint
-import cs446.project.chameleon.constants.HEADER
+import cs446.project.chameleon.utils.HEADER
 import cs446.project.chameleon.composables.styling.CenteredColumn
 import cs446.project.chameleon.composables.styling.ChameleonDivider
 import cs446.project.chameleon.composables.styling.ChameleonText

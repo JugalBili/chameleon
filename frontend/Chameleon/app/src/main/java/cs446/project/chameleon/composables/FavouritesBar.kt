@@ -10,12 +10,9 @@ import androidx.compose.foundation.lazy.grid.GridCells
 import androidx.compose.foundation.lazy.grid.LazyHorizontalGrid
 import androidx.compose.foundation.lazy.grid.items
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.collectAsState
-import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import cs446.project.chameleon.MainViewModel
-import cs446.project.chameleon.constants.SUBHEADER
+import cs446.project.chameleon.utils.SUBHEADER
 import cs446.project.chameleon.composables.styling.CenteredColumn
 import cs446.project.chameleon.composables.styling.ChameleonDivider
 import cs446.project.chameleon.composables.styling.ChameleonText

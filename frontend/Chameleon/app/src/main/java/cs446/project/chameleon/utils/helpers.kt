@@ -1,4 +1,4 @@
-package cs446.project.chameleon.constants
+package cs446.project.chameleon.utils
 
 import androidx.compose.ui.graphics.Color
 import cs446.project.chameleon.data.model.RGB
