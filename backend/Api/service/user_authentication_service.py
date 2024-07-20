@@ -32,7 +32,7 @@ class UserAuthenticationService(object):
         if user is not None:
             raise HTTPException(status_code=409, detail="User exists")
         try:
-            validate_email(createUserDto.email, check_deliverability=False)
+            validate_email(createUserDto.email)
         except EmailNotValidError as e:
             raise HTTPException(status_code=409, detail=str(e))
         user = await self.repository.create_user_async(createUserDto)
