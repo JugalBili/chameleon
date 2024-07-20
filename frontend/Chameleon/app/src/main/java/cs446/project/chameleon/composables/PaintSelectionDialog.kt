@@ -2,20 +2,18 @@ package cs446.project.chameleon.composables
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.grid.GridCells
 import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
 import androidx.compose.foundation.lazy.grid.items
-import androidx.compose.foundation.lazy.items
-import androidx.compose.material3.Button
 import androidx.compose.material3.Card
-import androidx.compose.material3.OutlinedTextField
-import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
@@ -26,76 +24,81 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.window.Dialog
 import androidx.compose.ui.window.DialogProperties
-import cs446.project.chameleon.MainViewModel
-import cs446.project.chameleon.composables.PaintCard
+import cs446.project.chameleon.PaintViewModel
 import cs446.project.chameleon.data.model.Paint
-import cs446.project.chameleon.constants.HEADER
+import cs446.project.chameleon.utils.HEADER
 import cs446.project.chameleon.composables.styling.CenteredColumn
+import cs446.project.chameleon.composables.styling.CenteredRow
 import cs446.project.chameleon.composables.styling.ChameleonDivider
 import cs446.project.chameleon.composables.styling.ChameleonText
+import cs446.project.chameleon.composables.styling.ColouredBox
+import cs446.project.chameleon.composables.styling.Dropdown
+import cs446.project.chameleon.composables.styling.ExpandableSection
 import cs446.project.chameleon.composables.styling.PrimaryButton
 import cs446.project.chameleon.composables.styling.SearchBox
+import cs446.project.chameleon.utils.PAINT_SELECTION_OPTIONS
+import cs446.project.chameleon.utils.getColour
+import cs446.project.chameleon.utils.smallSpacing
 
 @Composable
 fun PaintSelectionDialog(
     onClose: () -> Unit,
     onSubmit: () -> Unit,
-    onClick: (Paint) -> Unit,
-    paintViewModel: MainViewModel
+    onClick: (Paint) -> Unit, // TODO: integrate with this to the ImagePreviewScreen
+    paintViewModel: PaintViewModel
 ) {
     val paints by paintViewModel.paints.collectAsState()
-    val favouritedPaints = paints // TODO: implement actual favouriting system
+    val favouritePaints = paints // TODO: implement actual favourite system
 
-    // Handle search filters
-    var searchQuery by remember { mutableStateOf("") }
-    val filteredPaints = if (searchQuery.isEmpty()) {
-        paints
-    } else {
-        paints.filter { it.name.contains(searchQuery, ignoreCase = true) }
-    }
+    var paintGroup by remember { mutableStateOf(PAINT_SELECTION_OPTIONS[0]) }
+
 
     Dialog(
         properties = DialogProperties( usePlatformDefaultWidth = false ),
         onDismissRequest = { onClose() }
     ) {
         Card(modifier = Modifier.fillMaxWidth(0.9f)) {
-            CenteredColumn(padding = PaddingValues(vertical = 12.dp), centerVertically = false) {
+            CenteredColumn(modifier = Modifier.padding(vertical = 12.dp), centerVertically = false) {
 
                 // Title
                 ChameleonText("Select up to 4 colours", HEADER)
                 ChameleonDivider()
 
-                // Search field
-                SearchBox(searchQuery, onChange = { update -> searchQuery = update })
-                Spacer(modifier = Modifier.height(32.dp))
-
-                // Favourite paints
-                FavouritesBar(favouritedPaints, onClick)
-                Spacer(modifier = Modifier.height(16.dp))
-
-                // All paints
-                Box(modifier = Modifier
-                    .fillMaxWidth()
-                    .fillMaxHeight(0.5f)) {
-                    LazyVerticalGrid(
-                        modifier = Modifier
-                            .fillMaxWidth()
-                            .padding(horizontal = 4.dp),
-                        columns = GridCells.Fixed(3),
-                        contentPadding = PaddingValues(4.dp),
-                        horizontalArrangement = Arrangement.spacedBy(8.dp),
-                        verticalArrangement = Arrangement.spacedBy(8.dp)
-                    ) {
-                        items(filteredPaints) { paint ->
-                            PaintCard(
-                                paint = paint,
-                                onClick = onClick,
-                                toggleBorder = true
-                            )
-                        }
+                // Row of selected colours
+                CenteredRow(modifier = Modifier.padding(vertical = 8.dp), centerHorizontally = false) {
+                    Box(modifier = Modifier.padding(horizontal = 8.dp)) {
+                        ChameleonText("Selected\nPaints: ")
+                    }
+                    paintViewModel.selectedPaints.forEach { paint ->
+                        ColouredBox(
+                            getColour(paint.rgb),
+                            Modifier
+                                .height(75.dp)
+                                .width(75.dp)
+                                .padding(horizontal = 8.dp)
+                        )
                     }
                 }
-                Spacer(modifier = Modifier.height(16.dp))
+
+                // Paint choices
+                Dropdown(
+                    options = PAINT_SELECTION_OPTIONS,
+                    updateSelectedOption = { group ->
+                        paintGroup = group
+                    }
+                )
+                Spacer(modifier = smallSpacing)
+                PaintGrid(
+                    paints = if (paintGroup == "Favourites") {
+                        favouritePaints
+                    } else {
+                        paints.filter { it.labelHSL.contains(paintGroup, ignoreCase = true) }
+                    },
+                    onPaintClick = { paint ->
+                        paintViewModel.updateSelectedPaints(paint)
+                    }
+                )
+                Spacer(modifier = smallSpacing)
 
                 PrimaryButton("Submit", onSubmit)
             }

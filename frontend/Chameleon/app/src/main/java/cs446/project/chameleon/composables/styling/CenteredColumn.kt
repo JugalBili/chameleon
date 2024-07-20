@@ -13,7 +13,7 @@ import androidx.compose.ui.unit.dp
 
 @Composable
 fun CenteredColumn(
-    padding: PaddingValues = PaddingValues(0.dp),
+    modifier: Modifier = Modifier,
     fullWidth: Boolean = true,
     centerHorizontally: Boolean = true,
     centerVertically: Boolean = true,
@@ -21,7 +21,7 @@ fun CenteredColumn(
 ) {
 
     Column(
-        modifier = Modifier.then(if (fullWidth) Modifier.fillMaxWidth() else Modifier).padding(padding),
+        modifier = modifier.then(if (fullWidth) Modifier.fillMaxWidth() else Modifier),
         horizontalAlignment = if (centerHorizontally) {
             Alignment.CenterHorizontally
         } else {

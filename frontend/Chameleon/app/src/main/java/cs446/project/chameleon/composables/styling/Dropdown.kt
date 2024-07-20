@@ -11,7 +11,7 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
-import cs446.project.chameleon.constants.BODY
+import cs446.project.chameleon.utils.BODY
 
 @OptIn(ExperimentalMaterialApi::class)
 @Composable
@@ -28,7 +28,7 @@ fun Dropdown(
             onExpandedChange = { expanded = !expanded }
         ) {
             TextField(
-                value = selectedOption, 
+                value = selectedOption,
                 onValueChange = {},
                 readOnly = true,
                 trailingIcon = { ExposedDropdownMenuDefaults.TrailingIcon(expanded = expanded) }

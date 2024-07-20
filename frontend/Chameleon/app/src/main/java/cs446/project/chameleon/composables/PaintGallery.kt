@@ -12,13 +12,14 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
 import cs446.project.chameleon.MainViewModel
+import cs446.project.chameleon.PaintViewModel
 import cs446.project.chameleon.data.model.Paint
 
 @Composable
 fun PaintGallery(
     paints: List<Paint>,
     navController: NavHostController,
-    mainViewModel: MainViewModel
+    mainViewModel: PaintViewModel
 ) {
     LazyVerticalGrid(
         modifier = Modifier.fillMaxSize().padding(12.dp),

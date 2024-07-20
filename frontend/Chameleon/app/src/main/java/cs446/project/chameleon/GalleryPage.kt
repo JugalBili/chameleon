@@ -1,15 +1,10 @@
-package cs446.project.chameleon.gallery
+package cs446.project.chameleon
 
-import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Box
-import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
-import androidx.compose.material.DropdownMenu
-import androidx.compose.material.DropdownMenuItem
-import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
@@ -19,9 +14,8 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
-import cs446.project.chameleon.MainViewModel
 import cs446.project.chameleon.composables.PaintGallery
-import cs446.project.chameleon.constants.HEADER
+import cs446.project.chameleon.utils.HEADER
 import cs446.project.chameleon.composables.styling.CenteredColumn
 import cs446.project.chameleon.composables.styling.CenteredRow
 import cs446.project.chameleon.composables.styling.ChameleonDivider
@@ -29,30 +23,35 @@ import cs446.project.chameleon.composables.styling.ChameleonText
 import cs446.project.chameleon.composables.styling.Dropdown
 import cs446.project.chameleon.composables.styling.Screen
 import cs446.project.chameleon.composables.styling.SearchBox
-import cs446.project.chameleon.constants.BODY
+import cs446.project.chameleon.utils.BRAND_FILTER
+import cs446.project.chameleon.utils.COLOUR_FILTER
+import cs446.project.chameleon.utils.NAME_FILTER
 
 @Composable
 fun GalleryPage(
     navController: NavHostController,
-    mainViewModel: MainViewModel
+    mainViewModel: PaintViewModel
 ) {
     val paints by mainViewModel.paints.collectAsState()
 
     // Handle search filters
-    val filters = listOf("Name", "Brand")
+    val filters = listOf(NAME_FILTER, BRAND_FILTER, COLOUR_FILTER)
     var filter by remember { mutableStateOf(filters[0]) }
     var filterQuery by remember { mutableStateOf("") }
+    var placeholderText by remember { mutableStateOf("Search by name (e.g. Light Sky)") }
 
-    val filteredPaints = if (filter == filters[0]) {
+    val filteredPaints = if (filter == NAME_FILTER) {
         paints.filter { it.name.contains(filterQuery, ignoreCase = true) }
-    } else if (filter == filters[1]) {
+    } else if (filter == BRAND_FILTER) {
         paints.filter { it.brand.contains(filterQuery, ignoreCase = true) }
+    } else if (filter == COLOUR_FILTER) {
+        paints.filter { it.labelHSL.contains(filterQuery, ignoreCase = true) }
     } else {
         paints
     }
 
     Screen(navController) { padding ->
-        CenteredColumn(padding = padding) {
+        CenteredColumn(modifier = Modifier.padding(padding)) {
 
             // Title
             ChameleonText("Gallery Page", HEADER)
@@ -62,11 +61,26 @@ fun GalleryPage(
             // Search field
             CenteredRow() {
                 Box(modifier = Modifier.fillMaxWidth(0.3f).padding(end = 8.dp)) {
-                    Dropdown(filters, updateSelectedOption = { option -> filter = option })
+                    Dropdown(
+                        filters,
+                        updateSelectedOption = { option ->
+                            filter = option
+                            filterQuery = ""
+                            placeholderText = when (filter) {
+                                NAME_FILTER -> "Search by name (e.g. Light Sky)"
+                                BRAND_FILTER -> "Search by brand (e.g. PPG)"
+                                COLOUR_FILTER -> "Search by colour (e.g. blue)"
+                                else -> "Search"
+                            }
+                        }
+                    )
                 }
-                SearchBox(filterQuery, onChange = { update -> filterQuery = update })
+                SearchBox(
+                    filterQuery,
+                    placeholderText,
+                    onChange = { update -> filterQuery = update }
+                )
             }
-
             Spacer(modifier = Modifier.height(32.dp))
 
             // Paint Gallery
