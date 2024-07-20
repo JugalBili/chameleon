@@ -28,6 +28,7 @@ import cs446.project.chameleon.utils.HEADER
 import cs446.project.chameleon.composables.styling.CenteredColumn
 import cs446.project.chameleon.composables.styling.ChameleonDivider
 import cs446.project.chameleon.composables.styling.ChameleonText
+import cs446.project.chameleon.composables.styling.ExpandableSection
 import cs446.project.chameleon.composables.styling.PrimaryButton
 import cs446.project.chameleon.composables.styling.SearchBox
 
@@ -60,36 +61,38 @@ fun PaintSelectionDialog(
                 ChameleonText("Select up to 4 colours", HEADER)
                 ChameleonDivider()
 
-                // Search field
-                SearchBox(searchQuery, onChange = { update -> searchQuery = update })
-                Spacer(modifier = Modifier.height(32.dp))
+                // Row of selected colours
 
-                // Favourite paints
-                FavouritesBar(favouritedPaints, onClick)
-                Spacer(modifier = Modifier.height(16.dp))
-
-                // All paints
-                Box(modifier = Modifier
-                    .fillMaxWidth()
-                    .fillMaxHeight(0.5f)) {
-                    LazyVerticalGrid(
-                        modifier = Modifier
-                            .fillMaxWidth()
-                            .padding(horizontal = 4.dp),
-                        columns = GridCells.Fixed(3),
-                        contentPadding = PaddingValues(4.dp),
-                        horizontalArrangement = Arrangement.spacedBy(8.dp),
-                        verticalArrangement = Arrangement.spacedBy(8.dp)
-                    ) {
-                        items(filteredPaints) { paint ->
-                            PaintCard(
-                                paint = paint,
-                                onClick = onClick,
-                                toggleBorder = true
-                            )
+                // Favourites
+                ExpandableSection(sectionTitle = "Favourites") {
+                    // TODO: make reusable paint grid thing
+                    Box(modifier = Modifier
+                        .fillMaxWidth()
+                        .fillMaxHeight(0.5f)) {
+                        LazyVerticalGrid(
+                            modifier = Modifier
+                                .fillMaxWidth()
+                                .padding(horizontal = 4.dp),
+                            columns = GridCells.Fixed(3),
+                            contentPadding = PaddingValues(4.dp),
+                            horizontalArrangement = Arrangement.spacedBy(8.dp),
+                            verticalArrangement = Arrangement.spacedBy(8.dp)
+                        ) {
+                            items(filteredPaints) { paint ->
+                                PaintCard(
+                                    paint = paint,
+                                    onClick = onClick,
+                                    toggleBorder = true
+                                )
+                            }
                         }
                     }
                 }
+
+                // All paints, sorted by colour group
+
+                // All paints
+
                 Spacer(modifier = Modifier.height(16.dp))
 
                 PrimaryButton("Submit", onSubmit)

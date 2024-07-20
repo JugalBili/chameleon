@@ -75,7 +75,10 @@ fun PaintReview(
 
                 PrimaryButton(
                     text = "Try!",
-                    onClick = { navController.navigate("camera_screen") }
+                    onClick = {
+                        paintViewModel.addSelectedPaint(paint)
+                        navController.navigate("camera_screen")
+                    }
                 )
 
                 IconButton(

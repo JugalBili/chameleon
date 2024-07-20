@@ -2,6 +2,7 @@ package cs446.project.chameleon
 
 import android.util.Log
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateListOf
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
 import androidx.lifecycle.ViewModel
@@ -18,7 +19,17 @@ class PaintViewModel: ViewModel() {
     private val _paints = MutableStateFlow<List<Paint>>(emptyList())
     val paints: StateFlow<List<Paint>> get() = _paints.asStateFlow()
 
-    // User-selected paints
+    // Selected paints (for recolours)
+    private var _selectedPaints = mutableStateListOf<Paint>()
+    val selectedPaints: List<Paint> get() = _selectedPaints
+    fun addSelectedPaint(paint: Paint) {
+        _selectedPaints.add(paint)
+    }
+    fun removeSelectedPaint(paint: Paint) {
+        _selectedPaints.remove(paint)
+    }
+
+    // Selected paint (for reviews)
     private var _selectedPaint: Paint? by mutableStateOf(null)
     fun getSelectedPaint(): Paint? {
         return _selectedPaint
