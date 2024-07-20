@@ -43,8 +43,8 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.vectorResource
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
-import cs446.project.chameleon.composables.ColourSelectionDialog
 import cs446.project.chameleon.composables.NavBar
+import cs446.project.chameleon.composables.PaintSelectionDialog
 import cs446.project.chameleon.composables.SelectionBar
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.delay
@@ -124,7 +124,7 @@ fun ImagePreviewScreen(
     )
 
     if (showModal.value) {
-        ColourSelectionDialog(
+        PaintSelectionDialog(
             onClose = { showModal.value = false },
             onSubmit = { showModal.value = false },
             onClick = { paint ->
