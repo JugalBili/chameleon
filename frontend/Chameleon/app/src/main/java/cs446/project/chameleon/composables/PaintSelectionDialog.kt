@@ -100,7 +100,8 @@ fun PaintSelectionDialog(
                     },
                     onPaintClick = { paint ->
                         paintViewModel.updateSelectedPaints(paint)
-                    }
+                    },
+                    paintViewModel = paintViewModel
                 )
                 Spacer(modifier = smallSpacing)
 
