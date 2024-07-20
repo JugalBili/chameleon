@@ -1,0 +1,2 @@
+docker tag chameleon-api northamerica-northeast2-docker.pkg.dev/{project-id}/chameleon-api/chameleon-api
+docker push chameleon-api northamerica-northeast2-docker.pkg.dev/{project-id}/chameleon-api/chameleon-api:latest

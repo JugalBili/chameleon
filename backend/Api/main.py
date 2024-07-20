@@ -32,3 +32,8 @@ app.include_router(image.router)
 app.include_router(history.router)
 app.include_router(gallery.router)
 app.include_router(favorites.router)
+
+# just a test endpoint to ensure our service is running correctly
+@app.get("/")
+def test():
+    return {"hello": "world"}
