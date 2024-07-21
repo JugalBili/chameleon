@@ -37,13 +37,17 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.asImageBitmap
+import androidx.navigation.NavHostController
 import cs446.project.chameleon.composables.styling.ColouredBox
+import cs446.project.chameleon.data.viewmodel.ImageViewModel
 import cs446.project.chameleon.data.viewmodel.UIHistory
 import cs446.project.chameleon.utils.getColour
 
 @Composable
 fun HistoryRows(
-    history: List<UIHistory>
+    navController: NavHostController,
+    history: List<UIHistory>,
+    imageViewModel: ImageViewModel
 ) {
     Box(modifier = Modifier.fillMaxWidth().fillMaxHeight()) {
         CenteredColumn(modifier = Modifier.padding(16.dp), centerHorizontally = false) {
@@ -63,7 +67,9 @@ fun HistoryRows(
                             .padding(8.dp)
                             .border(1.dp, Color.Black, RoundedCornerShape(16.dp))
                             .padding(8.dp)
-                            .clickable {  },
+                            .clickable {
+                                imageViewModel.onHistoryRowClick(item)
+                                navController.navigate("image_result_screen")},
                         verticalAlignment = Alignment.CenterVertically
                     ) {
                         item {
@@ -84,7 +90,7 @@ fun HistoryRows(
                                     .border(2.dp, Color.Black, RoundedCornerShape(16.dp))
                                     .background(Color.Transparent)
                             ) {
-                                Box(modifier = Modifier.fillMaxSize().clip(RoundedCornerShape(16.dp)).background(color))
+                                Box(modifier = Modifier.fillMaxSize().clip(RoundedCornerShape(16.dp)).background(Color(color.rgb.r, color.rgb.g, color.rgb.b)))
                             }
                         }
                     }

@@ -15,6 +15,7 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import cs446.project.chameleon.data.viewmodel.ImageViewModel
 import cs446.project.chameleon.data.viewmodel.UserViewModel
 import cs446.project.chameleon.ui.theme.ChameleonTheme
 
@@ -40,6 +41,7 @@ class MainActivity : ComponentActivity() {
             ChameleonTheme {
                 val userViewModel: UserViewModel = UserViewModel(listOf(demoBitmap, demoBitmap1, demoBitmap2))
                 val paintViewModel: PaintViewModel = viewModel()
+                val imageViewModel: ImageViewModel = viewModel()
                 val navController = rememberNavController()
 
                 NavHost(
@@ -50,16 +52,16 @@ class MainActivity : ComponentActivity() {
                         LoginPage(navController)
                     }
                     composable("camera_screen") {
-                        CameraScreen(navController)
+                        CameraScreen(navController, imageViewModel)
                     }
                     composable("image_preview_screen") {
-                        ImagePreviewScreen(navController, paintViewModel)
+                        ImagePreviewScreen(navController, paintViewModel, imageViewModel)
                     }
                     composable("image_result_screen") {
                         ImageResultScreen(navController)
                     }
                     composable("profile_screen") {
-                        ProfileScreen(navController, paintViewModel, userViewModel)
+                        ProfileScreen(navController, paintViewModel, userViewModel, imageViewModel)
                     }
                     composable("gallery_page") {
                         PaintGalleryScreen(navController, paintViewModel)
