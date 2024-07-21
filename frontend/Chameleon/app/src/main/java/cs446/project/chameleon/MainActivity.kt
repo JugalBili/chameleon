@@ -61,7 +61,7 @@ class MainActivity : ComponentActivity() {
                         ImageResultScreen(navController)
                     }
                     composable("profile_screen") {
-                        ProfileScreen(navController, paintViewModel, userViewModel)
+                        ProfileScreen(navController, paintViewModel, userViewModel, imageViewModel)
                     }
                     composable("gallery_page") {
                         PaintGalleryScreen(navController, paintViewModel)

@@ -24,6 +24,7 @@ import cs446.project.chameleon.composables.styling.CenteredColumn
 import cs446.project.chameleon.composables.styling.ChameleonDivider
 import cs446.project.chameleon.composables.styling.ChameleonText
 import cs446.project.chameleon.composables.styling.Screen
+import cs446.project.chameleon.data.viewmodel.ImageViewModel
 import cs446.project.chameleon.data.viewmodel.UserViewModel
 import cs446.project.chameleon.utils.HEADER
 
@@ -31,7 +32,8 @@ import cs446.project.chameleon.utils.HEADER
 fun ProfileScreen(
     navController: NavHostController,
     mainViewModel: PaintViewModel = viewModel(),
-    userViewModel: UserViewModel = viewModel()
+    userViewModel: UserViewModel = viewModel(),
+    imageViewModel: ImageViewModel = viewModel()
     ) {
     val user = userViewModel.getUser() ?: return
     val favourites by userViewModel.favourites.collectAsState()
@@ -55,10 +57,10 @@ fun ProfileScreen(
             Spacer(modifier = Modifier.height(100.dp))
 
             HistoryRows(
-                history
+                navController,
+                history,
+                imageViewModel
             )
-
-
         }
     }
 }

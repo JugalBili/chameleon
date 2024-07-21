@@ -3,7 +3,7 @@ package cs446.project.chameleon.data.viewmodel
 import android.graphics.Bitmap
 import android.util.Log
 import androidx.compose.runtime.mutableStateOf
-import androidx.compose.ui.graphics.Color
+import cs446.project.chameleon.data.model.Color
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import cs446.project.chameleon.data.model.User
@@ -88,12 +88,17 @@ class UserViewModel(test: List<Bitmap>): ViewModel() {
             addPaint(i)
         }
 
-        _historyList.value += UIHistory(test[0],test, listOf(Color.Green, Color.Yellow, Color.Blue))
-        _historyList.value += UIHistory(test[0],test, listOf(Color.Green, Color.Yellow, Color.Blue))
-        _historyList.value += UIHistory(test[0],test, listOf(Color.Green, Color.Yellow, Color.Blue))
-        _historyList.value += UIHistory(test[0],test, listOf(Color.Green, Color.Yellow, Color.Blue))
-        _historyList.value += UIHistory(test[0],test, listOf(Color.Green, Color.Yellow, Color.Blue))
-        _historyList.value += UIHistory(test[0],test, listOf(Color.Green, Color.Yellow, Color.Blue))
-        _historyList.value += UIHistory(test[0],test, listOf(Color.Green, Color.Yellow, Color.Blue))
+        val colors = listOf(
+            Color("paint_id_1", RGB(255, 0, 0)),
+            Color("paint_id_2", RGB(0, 255, 0)),
+            Color("paint_id_3", RGB(0, 0, 255))
+        )
+        _historyList.value += UIHistory(test[0],test, colors)
+        _historyList.value += UIHistory(test[0],test, colors)
+        _historyList.value += UIHistory(test[0],test, colors)
+        _historyList.value += UIHistory(test[0],test, colors)
+        _historyList.value += UIHistory(test[0],test, colors)
+        _historyList.value += UIHistory(test[0],test, colors)
+        _historyList.value += UIHistory(test[0],test, colors)
     }
 }

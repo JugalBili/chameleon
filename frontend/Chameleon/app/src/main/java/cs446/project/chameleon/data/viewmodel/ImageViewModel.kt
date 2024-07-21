@@ -26,8 +26,24 @@ class ImageViewModel(): ViewModel() {
     private val _renders = MutableStateFlow<List<Bitmap>>(emptyList())
     val renders = _renders.asStateFlow()
 
+    fun updateRenders(newRenders: List<Bitmap>) {
+        _renders.value = newRenders
+    }
+
     // Corresponding Colors for Renders
     // TODO Could be PAINT object
     private val _renderColors = MutableStateFlow<List<Color>>(emptyList())
     val renderColors = _renderColors.asStateFlow()
+
+    fun updateRenderColors(newColors: List<Color>) {
+        _renderColors.value = newColors
+    }
+
+
+
+    fun onHistoryRowClick(uiHistory: UIHistory) {
+        updateImage(uiHistory.baseImage)
+        updateRenders(uiHistory.images)
+        updateRenderColors(uiHistory.colors)
+    }
 }
