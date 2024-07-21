@@ -3,6 +3,8 @@ package cs446.project.chameleon
 import android.annotation.SuppressLint
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
+import android.util.Log
+import android.widget.ImageView
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
@@ -26,6 +28,7 @@ import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.livedata.observeAsState
 import androidx.compose.runtime.mutableStateListOf
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
@@ -42,10 +45,12 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.vectorResource
 import androidx.compose.ui.unit.dp
+import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavHostController
 import cs446.project.chameleon.composables.NavBar
 import cs446.project.chameleon.composables.PaintSelectionDialog
 import cs446.project.chameleon.composables.SelectionBar
+import cs446.project.chameleon.data.viewmodel.ImageViewModel
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.delay
 
@@ -53,9 +58,9 @@ import kotlinx.coroutines.delay
 @Composable
 fun ImagePreviewScreen(
     navController: NavHostController,
-    paintViewModel: PaintViewModel
+    paintViewModel: PaintViewModel,
+    imageViewModel: ImageViewModel
 ) {
-    val capturedImage = navController.previousBackStackEntry?.savedStateHandle?.get<Bitmap>("capturedImage")
     var isProcessing by remember { mutableStateOf(false) }
     val coroutineScope = rememberCoroutineScope()
 
@@ -67,12 +72,16 @@ fun ImagePreviewScreen(
     val showModal = remember { mutableStateOf(false) }
     val selectedPaintIds = remember { mutableStateListOf<String>() }
 
+    // ImageViewModel setup
+    val bitmapState = imageViewModel.baseImage.observeAsState()
+
     Scaffold(
         modifier = Modifier.fillMaxSize(),
         content = {
-            capturedImage?.let { image ->
+            bitmapState.value?.let { bitmap ->
+                Log.d("ImagePreviewScreen", "Bitmap received")
                 Image(
-                    bitmap = image.asImageBitmap(),
+                    bitmap = bitmap.asImageBitmap(),
                     contentDescription = "Captured Photo",
                     modifier = Modifier
                         .fillMaxSize(),
@@ -89,7 +98,7 @@ fun ImagePreviewScreen(
                         )
                     }
                 }
-            }},
+            } ?: Log.d("ImagePreviewScreen", "Bitmap is null")},
         bottomBar = {
             Column {
                 // Selection bar

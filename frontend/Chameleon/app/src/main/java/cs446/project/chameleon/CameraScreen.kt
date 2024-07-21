@@ -36,10 +36,14 @@ import androidx.navigation.NavHostController
 import cs446.project.chameleon.composables.CameraPreview
 import cs446.project.chameleon.composables.NavBar
 import cs446.project.chameleon.composables.styling.Screen
+import cs446.project.chameleon.data.viewmodel.ImageViewModel
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun CameraScreen(navController: NavHostController) {
+fun CameraScreen(
+    navController: NavHostController,
+    imageViewModel: ImageViewModel
+) {
     val context = LocalContext.current
     val scope = rememberCoroutineScope()
     val scaffoldState = rememberBottomSheetScaffoldState()
@@ -50,9 +54,6 @@ fun CameraScreen(navController: NavHostController) {
             )
         }
     }
-
-    val viewModel = viewModel<MainViewModel>()
-    val bitmaps by viewModel.bitmaps.collectAsState()
 
     Screen(navController) { padding ->
         Box(
@@ -76,7 +77,7 @@ fun CameraScreen(navController: NavHostController) {
                     onClick = {
                         takePhoto(
                             controller = controller,
-                            onPhotoTaken = viewModel::onTakePhoto,
+                            onPhotoTaken = imageViewModel::updateImage,
                             context = context,
                             navController = navController
                         )
@@ -120,11 +121,6 @@ private fun takePhoto(
                 )
 
                 onPhotoTaken(rotatedBitmap)
-                // pass to preview screen
-                // FOR DEMO PURPOSES, SET THE IMAGE TO THE DEMO ONE TODO fix after
-                val demoBitmap = BitmapFactory.decodeResource(context.resources, R.drawable.demo_before)
-
-                navController.currentBackStackEntry?.savedStateHandle?.set("capturedImage", demoBitmap)
                 navController.navigate("image_preview_screen")
             }
 
