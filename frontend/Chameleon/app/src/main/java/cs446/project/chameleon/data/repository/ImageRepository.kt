@@ -48,9 +48,9 @@ class ImageRepository {
         return apiService.getImageList("Bearer $authToken", hash)
     }
 
-    suspend fun postImage(authToken: String, filePath: String, colors: List<Color>): ImageResponse {
+    suspend fun postImage(authToken: String, bitmapFile: File, colors: List<Color>): ImageResponse {
         // file
-        val file = File(filePath)
+        val file = bitmapFile
         val requestFile = file.asRequestBody("image/jpeg".toMediaTypeOrNull())
         val filePart = MultipartBody.Part.createFormData("file", file.name, requestFile)
 

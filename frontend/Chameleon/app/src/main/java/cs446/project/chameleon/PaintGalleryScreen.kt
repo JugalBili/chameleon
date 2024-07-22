@@ -89,7 +89,8 @@ fun PaintGalleryScreen(
                 onPaintClick = { paint ->
                     paintViewModel.updateSelectedPaint(paint)
                     navController.navigate("paint_review")
-                }
+                },
+                maxHeight = 1f
             )
         }
     }

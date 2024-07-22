@@ -1,5 +1,6 @@
 package cs446.project.chameleon
 
+import android.content.Context
 import android.content.pm.PackageManager
 import android.graphics.BitmapFactory
 import android.os.Build
@@ -31,6 +32,8 @@ class MainActivity : ComponentActivity() {
             )
         }
 
+        val context: Context = this
+
         // FOR DEMO PURPOSES, final processed image TODO remove after
         val demoBitmap = BitmapFactory.decodeResource(this.resources, R.drawable.demo_before)
         val demoBitmap1 = BitmapFactory.decodeResource(this.resources, R.drawable.demo_after_1)
@@ -41,7 +44,7 @@ class MainActivity : ComponentActivity() {
             ChameleonTheme {
                 val userViewModel: UserViewModel = UserViewModel(listOf(demoBitmap, demoBitmap1, demoBitmap2))
                 val paintViewModel: PaintViewModel = viewModel()
-                val imageViewModel: ImageViewModel = viewModel()
+                val imageViewModel: ImageViewModel = ImageViewModel(context)
                 val navController = rememberNavController()
 
                 NavHost(

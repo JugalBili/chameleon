@@ -1,19 +1,25 @@
 package cs446.project.chameleon.data.viewmodel
 
+import android.annotation.SuppressLint
+import android.content.Context
 import android.graphics.Bitmap
-import android.util.Log
-import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.setValue
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import cs446.project.chameleon.data.model.Color
 import cs446.project.chameleon.data.model.Paint
+import cs446.project.chameleon.data.repository.ImageRepository
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
+import kotlinx.coroutines.withContext
+import java.io.ByteArrayOutputStream
+import java.io.File
+import java.io.FileOutputStream
 
-class ImageViewModel(): ViewModel() {
+class ImageViewModel(@field:SuppressLint("StaticFieldLeak") private val context: Context): ViewModel() {
+    private var imageRepository: ImageRepository = ImageRepository()
+
     // Base image
     private val _baseImage = MutableLiveData<Bitmap>()
     val baseImage: LiveData<Bitmap> get() = _baseImage
@@ -44,7 +50,26 @@ class ImageViewModel(): ViewModel() {
         updateRenderColors(uiHistory.colors)
     }
 
-    fun postImage(authToken: String, paints: List<Paint>) {
-        // TODO: Use baseimage to update renders and renderColors
+    suspend fun postImage(authToken: String, paints: List<Paint>) {
+        val colorsList = mutableListOf<Color>()
+        for (paint in paints) {
+            colorsList.add(Color(paint.id, paint.rgb))
+        }
+
+        val tempFile = withContext(Dispatchers.IO) {
+            File.createTempFile("temp_image", ".jpg", context.cacheDir)
+        }
+
+        ByteArrayOutputStream().use { byteArrayOutputStream ->
+            _baseImage.value?.compress(Bitmap.CompressFormat.JPEG, 100, byteArrayOutputStream)
+            val byteArray = byteArrayOutputStream.toByteArray()
+
+            // Write the ByteArray to the temporary file
+            FileOutputStream(tempFile).use { fileOutputStream ->
+                fileOutputStream.write(byteArray)
+            }
+        }
+
+        imageRepository.postImage(authToken, tempFile, colorsList)
     }
 }

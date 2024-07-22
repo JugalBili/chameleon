@@ -1,18 +1,15 @@
 package cs446.project.chameleon.data.viewmodel
 
 import android.graphics.Bitmap
-import android.util.Log
 import androidx.compose.runtime.mutableStateOf
 import cs446.project.chameleon.data.model.Color
 import androidx.lifecycle.ViewModel
-import androidx.lifecycle.viewModelScope
 import cs446.project.chameleon.data.model.User
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import androidx.compose.runtime.*
+import cs446.project.chameleon.data.model.Favorite
 import cs446.project.chameleon.data.model.HSL
-import cs446.project.chameleon.data.model.History
-import cs446.project.chameleon.data.model.HistoryData
 import cs446.project.chameleon.data.model.Paint
 import cs446.project.chameleon.data.model.RGB
 import cs446.project.chameleon.data.model.Token
@@ -20,7 +17,7 @@ import cs446.project.chameleon.data.repository.FavoriteRepository
 import cs446.project.chameleon.data.repository.HistoryRepository
 import cs446.project.chameleon.data.repository.ImageRepository
 import cs446.project.chameleon.data.repository.UserRepository
-import kotlinx.coroutines.launch
+import cs446.project.chameleon.utils.getPaintById
 
 data class UIHistory (
     var baseImage: Bitmap,
@@ -48,7 +45,6 @@ class UserViewModel(test: List<Bitmap>): ViewModel() {
     // User token
     lateinit var token: Token
 
-    // User favourites
     private val _favourites = MutableStateFlow<List<Paint>>(emptyList())
     val favourites = _favourites.asStateFlow()
     fun addPaint(paint: Paint) {
@@ -61,37 +57,65 @@ class UserViewModel(test: List<Bitmap>): ViewModel() {
     // User history
     private val _historyList = MutableStateFlow<List<UIHistory>>(emptyList())
     val historyList = _historyList.asStateFlow()
+    fun addHistory(history: UIHistory) {
+        _historyList.value += history
+    }
+    fun deleteHistory(history: UIHistory) {
+        _historyList.value -= history
+    }
 
 
     suspend fun loginUser(email: String, password: String) {
         val response = userRepository.login(email, password)
         token = response.token
         _user = response.user
+
+        fetchFavourites()
+        fetchHistory()
     }
 
-    suspend fun registeUser(email: String, password: String, firstname: String, lastname: String) {
+    suspend fun registerUser(email: String, password: String, firstname: String, lastname: String) {
         userRepository.register(email, password, firstname, lastname)
         loginUser(email, password)
     }
 
+    // favourites
     suspend fun fetchFavourites() {
+        _favourites.value = emptyList()
         val response = favoriteRepository.getFavorites(token.token)
         for (fav in response) {
-            // TODO: getPaint function that transforms Favorite -> Paint object
-            // addPaint(getPaint(fav))
+            addPaint(getPaintById(fav.paintId))
         }
     }
 
-    suspend fun addFavourites() {
-        // TODO: Function to add favourite to backend
+    suspend fun addFavourite(paint: Paint) {
+        val fav = Favorite(paint.id, paint.rgb)
+        favoriteRepository.postFavorite(token.token, fav)
     }
 
+    suspend fun deleteFavourite(paint: Paint) {
+        favoriteRepository.deleteFavorite(token.token, paint.id)
+    }
+
+    // history
     suspend fun fetchHistory() {
+        _historyList.value = emptyList()
         val response = historyRepository.getHistory(token.token)
 
         for (history in response.history) {
-            val obj: UIHistory
-            obj.baseImage = imageRepository.getImageBitmap(token.token, history.baseImage)
+            val imgRes = imageRepository.getImageList(token.token, history.baseImage)
+
+            // get original image
+            val baseImage = imageRepository.getImageBitmap(token.token, imgRes.originalImage)
+
+            // get renders
+            val images = mutableListOf<Bitmap>()
+
+            for (imgHash in imgRes.processedImages) {
+                images.add(imageRepository.getImageBitmap(token.token, imgHash.processedImageHash))     // TODO maybe sus
+            }
+
+            addHistory(UIHistory(baseImage, images, history.colors))
         }
     }
 

@@ -68,7 +68,9 @@ fun LoginPage(navController: NavHostController) {
         modifier = Modifier.fillMaxSize(),
         content = { padding ->
             Column(
-                modifier = Modifier.fillMaxSize().padding(12.dp),
+                modifier = Modifier
+                    .fillMaxSize()
+                    .padding(12.dp),
                 verticalArrangement = Arrangement.Center,
                 horizontalAlignment = Alignment.CenterHorizontally
             ) {
@@ -110,12 +112,16 @@ fun LoginPage(navController: NavHostController) {
         },
         bottomBar = {
             Row(
-                modifier = Modifier.fillMaxWidth().padding(10.dp),
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(10.dp),
                 horizontalArrangement = Arrangement.SpaceEvenly
             ) {
                 Button(
                     onClick = { navController.navigate("camera_screen") },
-                    modifier = Modifier.padding(10.dp).weight(1f)
+                    modifier = Modifier
+                        .padding(10.dp)
+                        .weight(1f)
                 ) {
                     Text(text = "Login")
                 }
