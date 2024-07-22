@@ -58,7 +58,7 @@ class MainActivity : ComponentActivity() {
                         ImagePreviewScreen(navController, paintViewModel, imageViewModel)
                     }
                     composable("image_result_screen") {
-                        ImageResultScreen(navController)
+                        ImageResultScreen(navController, imageViewModel)
                     }
                     composable("profile_screen") {
                         ProfileScreen(navController, paintViewModel, userViewModel, imageViewModel)

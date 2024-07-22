@@ -6,6 +6,7 @@ import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
@@ -29,6 +30,7 @@ fun SelectionBar(
     Box(
         modifier = Modifier
             .fillMaxWidth()
+            .height(60.dp)
             .background(Color(84, 139, 227))
             .drawBehind {
                 val strokeWidth = 2.dp.toPx()
