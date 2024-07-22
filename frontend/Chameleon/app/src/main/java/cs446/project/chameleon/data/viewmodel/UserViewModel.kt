@@ -54,7 +54,7 @@ class UserViewModel(test: List<Bitmap>): ViewModel() {
     fun addPaint(paint: Paint) {
         _favourites.value += paint
     }
-    fun deleteFav(paint: Paint) {
+    fun deletePaint(paint: Paint) {
         _favourites.value -= paint
     }
 
@@ -80,6 +80,10 @@ class UserViewModel(test: List<Bitmap>): ViewModel() {
             // TODO getPaint function that transforms Favorite -> Paint object
             // addPaint(getPaint(fav))
         }
+    }
+
+    suspend fun addFavourites() {
+        // Function to add favourite to backend
     }
 
     suspend fun fetchHistory() {
