@@ -15,13 +15,15 @@ import cs446.project.chameleon.data.model.History
 import cs446.project.chameleon.data.model.HistoryData
 import cs446.project.chameleon.data.model.Paint
 import cs446.project.chameleon.data.model.RGB
+import cs446.project.chameleon.data.model.Token
+import cs446.project.chameleon.data.repository.FavoriteRepository
 import cs446.project.chameleon.data.repository.HistoryRepository
 import cs446.project.chameleon.data.repository.ImageRepository
 import cs446.project.chameleon.data.repository.UserRepository
 import kotlinx.coroutines.launch
 
 data class UIHistory (
-    val baseImage: Bitmap,
+    var baseImage: Bitmap,
     val images: List<Bitmap>,
     val colors: List<Color>
 )
@@ -31,6 +33,7 @@ class UserViewModel(test: List<Bitmap>): ViewModel() {
     // Setup repo
     private var userRepository: UserRepository = UserRepository()
     private var imageRepository: ImageRepository = ImageRepository()
+    private var favoriteRepository: FavoriteRepository = FavoriteRepository()
     private var historyRepository: HistoryRepository = HistoryRepository()
 
     // User object
@@ -43,7 +46,7 @@ class UserViewModel(test: List<Bitmap>): ViewModel() {
     }
 
     // User token
-    lateinit var token: String
+    lateinit var token: Token
 
     // User favourites
     private val _favourites = MutableStateFlow<List<Paint>>(emptyList())
@@ -60,16 +63,31 @@ class UserViewModel(test: List<Bitmap>): ViewModel() {
     val historyList = _historyList.asStateFlow()
 
 
-    fun fetchUser(){
+    suspend fun loginUser(email: String, password: String) {
+        val response = userRepository.login(email, password)
+        token = response.token
+        _user = response.user
     }
 
-    fun fetchFavourites() {
+    suspend fun registeUser(email: String, password: String, firstname: String, lastname: String) {
+        userRepository.register(email, password, firstname, lastname)
+        loginUser(email, password)
     }
 
-    fun fetchHistory() {
-        viewModelScope.launch {
-            val data = historyRepository.getHistory(token)
-                // TODO: Update historyList with this data
+    suspend fun fetchFavourites() {
+        val response = favoriteRepository.getFavorites(token.token)
+        for (fav in response) {
+            // TODO getPaint function that transforms Favorite -> Paint object
+            // addPaint(getPaint(fav))
+        }
+    }
+
+    suspend fun fetchHistory() {
+        val response = historyRepository.getHistory(token.token)
+
+        for (history in response.history) {
+            val obj: UIHistory
+            obj.baseImage = imageRepository.getImageBitmap(token.token, history.baseImage)
         }
     }
 
