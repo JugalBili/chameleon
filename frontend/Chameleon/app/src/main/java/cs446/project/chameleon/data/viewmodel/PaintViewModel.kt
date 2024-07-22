@@ -1,11 +1,10 @@
-package cs446.project.chameleon
+package cs446.project.chameleon.data.viewmodel
 
 import android.util.Log
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateListOf
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
-import androidx.compose.runtime.snapshots.SnapshotStateList
 import androidx.lifecycle.ViewModel
 import cs446.project.chameleon.data.model.HSL
 import cs446.project.chameleon.data.model.Paint

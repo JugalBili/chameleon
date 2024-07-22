@@ -77,13 +77,13 @@ class UserViewModel(test: List<Bitmap>): ViewModel() {
     suspend fun fetchFavourites() {
         val response = favoriteRepository.getFavorites(token.token)
         for (fav in response) {
-            // TODO getPaint function that transforms Favorite -> Paint object
+            // TODO: getPaint function that transforms Favorite -> Paint object
             // addPaint(getPaint(fav))
         }
     }
 
     suspend fun addFavourites() {
-        // Function to add favourite to backend
+        // TODO: Function to add favourite to backend
     }
 
     suspend fun fetchHistory() {

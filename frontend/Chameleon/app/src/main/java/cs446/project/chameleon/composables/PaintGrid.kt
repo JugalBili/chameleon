@@ -12,7 +12,7 @@ import androidx.compose.foundation.lazy.grid.items
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import cs446.project.chameleon.PaintViewModel
+import cs446.project.chameleon.data.viewmodel.PaintViewModel
 import cs446.project.chameleon.data.model.Paint
 
 @Composable

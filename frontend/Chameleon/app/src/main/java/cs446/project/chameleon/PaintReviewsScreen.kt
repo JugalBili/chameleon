@@ -35,6 +35,7 @@ import cs446.project.chameleon.composables.styling.ColouredBox
 import cs446.project.chameleon.composables.styling.PrimaryButton
 import cs446.project.chameleon.composables.styling.Screen
 import cs446.project.chameleon.data.model.Review
+import cs446.project.chameleon.data.viewmodel.PaintViewModel
 import cs446.project.chameleon.utils.getColour
 import java.time.Instant
 

@@ -31,7 +31,6 @@ class ImageViewModel(): ViewModel() {
     }
 
     // Corresponding Colors for Renders
-    // TODO Could be PAINT object
     private val _renderColors = MutableStateFlow<List<Color>>(emptyList())
     val renderColors = _renderColors.asStateFlow()
 
@@ -39,11 +38,13 @@ class ImageViewModel(): ViewModel() {
         _renderColors.value = newColors
     }
 
-
-
     fun onHistoryRowClick(uiHistory: UIHistory) {
         updateImage(uiHistory.baseImage)
         updateRenders(uiHistory.images)
         updateRenderColors(uiHistory.colors)
+    }
+
+    fun postImage(authToken: String, paints: List<Paint>) {
+        // TODO: Use baseimage to update renders and renderColors
     }
 }
