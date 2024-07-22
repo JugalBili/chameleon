@@ -1,5 +1,6 @@
 package cs446.project.chameleon
 
+import android.content.Context
 import android.content.pm.PackageManager
 import android.graphics.BitmapFactory
 import android.os.Build
@@ -7,7 +8,6 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
-import androidx.compose.ui.platform.LocalContext
 import androidx.annotation.RequiresApi
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
@@ -16,6 +16,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import cs446.project.chameleon.data.viewmodel.ImageViewModel
+import cs446.project.chameleon.data.viewmodel.PaintViewModel
 import cs446.project.chameleon.data.viewmodel.UserViewModel
 import cs446.project.chameleon.ui.theme.ChameleonTheme
 
@@ -31,6 +32,8 @@ class MainActivity : ComponentActivity() {
             )
         }
 
+        val context: Context = this
+
         // FOR DEMO PURPOSES, final processed image TODO remove after
         val demoBitmap = BitmapFactory.decodeResource(this.resources, R.drawable.demo_before)
         val demoBitmap1 = BitmapFactory.decodeResource(this.resources, R.drawable.demo_after_1)
@@ -41,7 +44,7 @@ class MainActivity : ComponentActivity() {
             ChameleonTheme {
                 val userViewModel: UserViewModel = UserViewModel(listOf(demoBitmap, demoBitmap1, demoBitmap2))
                 val paintViewModel: PaintViewModel = viewModel()
-                val imageViewModel: ImageViewModel = viewModel()
+                val imageViewModel: ImageViewModel = ImageViewModel(context)
                 val navController = rememberNavController()
 
                 NavHost(
