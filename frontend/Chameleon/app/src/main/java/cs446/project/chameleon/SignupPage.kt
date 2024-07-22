@@ -9,6 +9,7 @@ import androidx.compose.material.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.input.PasswordVisualTransformation
@@ -16,6 +17,9 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
+import cs446.project.chameleon.data.model.RGB
+import cs446.project.chameleon.utils.getColour
+
 //import com.example.signup.ui.theme.SignUpTheme
 
 
@@ -28,6 +32,7 @@ fun SignupPage(navController: NavHostController) {
     var lastname by remember { mutableStateOf("") }
     var password by remember { mutableStateOf("") }
     var confirmPassword by remember { mutableStateOf("") }
+    var signupError by remember { mutableStateOf(false) }
 
     fun isEmailValid(email: String): Boolean {
         return android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches()
@@ -55,6 +60,11 @@ fun SignupPage(navController: NavHostController) {
                 imeAction = ImeAction.Next
             ),
             isError = emailError,
+            colors = TextFieldDefaults.outlinedTextFieldColors(
+                focusedBorderColor = Color.Blue,
+                unfocusedBorderColor = Color.Gray,
+                cursorColor = Color.Blue
+            ),
             modifier = Modifier.fillMaxWidth()
         )
         if (emailError) {
@@ -74,6 +84,11 @@ fun SignupPage(navController: NavHostController) {
             keyboardOptions = KeyboardOptions.Default.copy(
                 imeAction = ImeAction.Next
             ),
+            colors = TextFieldDefaults.outlinedTextFieldColors(
+                focusedBorderColor = Color.Blue,
+                unfocusedBorderColor = Color.Gray,
+                cursorColor = Color.Blue
+            ),
             modifier = Modifier.fillMaxWidth()
         )
 
@@ -85,6 +100,11 @@ fun SignupPage(navController: NavHostController) {
             label = { Text("Last Name") },
             keyboardOptions = KeyboardOptions.Default.copy(
                 imeAction = ImeAction.Next
+            ),
+            colors = TextFieldDefaults.outlinedTextFieldColors(
+                focusedBorderColor = Color.Blue,
+                unfocusedBorderColor = Color.Gray,
+                cursorColor = Color.Blue
             ),
             modifier = Modifier.fillMaxWidth()
         )
@@ -100,6 +120,11 @@ fun SignupPage(navController: NavHostController) {
                 keyboardType = KeyboardType.Password,
                 imeAction = ImeAction.Next
             ),
+            colors = TextFieldDefaults.outlinedTextFieldColors(
+                focusedBorderColor = Color.Blue,
+                unfocusedBorderColor = Color.Gray,
+                cursorColor = Color.Blue
+            ),
             modifier = Modifier.fillMaxWidth()
         )
 
@@ -114,6 +139,11 @@ fun SignupPage(navController: NavHostController) {
                 keyboardType = KeyboardType.Password,
                 imeAction = ImeAction.Done
             ),
+            colors = TextFieldDefaults.outlinedTextFieldColors(
+                focusedBorderColor = Color.Blue,
+                unfocusedBorderColor = Color.Gray,
+                cursorColor = Color.Blue
+            ),
             modifier = Modifier.fillMaxWidth()
         )
 
@@ -122,12 +152,26 @@ fun SignupPage(navController: NavHostController) {
         Button(
             onClick = {
                 if (!emailError && email.isNotEmpty() && firstname.isNotEmpty() && lastname.isNotEmpty() && password.isNotEmpty() && confirmPassword == password) {
-                    // Handle sign up action
+                    navController.navigate("camera_screen")
+                }else {
+                    signupError = true
                 }
+
             },
+            colors = ButtonDefaults.buttonColors(
+                backgroundColor = getColour(RGB(5,80,181)), // Change button color here
+                contentColor = Color.White // Change text color here
+            ),
             modifier = Modifier.fillMaxWidth()
         ) {
             Text(text = "Sign Up")
         }
+        if (signupError){
+        Text(
+            text = "Incomplete info",
+            color = MaterialTheme.colors.error,
+            fontSize = 12.sp
+        )
+            }
     }
 }
