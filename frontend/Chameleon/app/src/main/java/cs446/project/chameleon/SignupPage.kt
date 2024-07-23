@@ -18,6 +18,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
 import cs446.project.chameleon.data.model.RGB
+import cs446.project.chameleon.data.viewmodel.ErrorViewModel
 import cs446.project.chameleon.data.viewmodel.UserViewModel
 import cs446.project.chameleon.utils.getColour
 import kotlinx.coroutines.launch
@@ -29,7 +30,8 @@ import kotlinx.coroutines.launch
 @Composable
 fun SignupPage(
     navController: NavHostController,
-    userViewModel: UserViewModel
+    userViewModel: UserViewModel,
+    errorViewModel: ErrorViewModel
 ) {
     var email by remember { mutableStateOf("") }
     var emailError by remember { mutableStateOf(false) }
@@ -160,9 +162,13 @@ fun SignupPage(
             onClick = {
                 if (!emailError && email.isNotEmpty() && firstname.isNotEmpty() && lastname.isNotEmpty() && password.isNotEmpty() && confirmPassword == password) {
                     coroutineScope.launch {
-                        userViewModel.registerUser(email, password, firstname, lastname)
+                        val response = userViewModel.registerUser(email, password, firstname, lastname)
+                        if (response != null) {
+                            errorViewModel.displayError(response)
+                        } else {
+                            navController.navigate("camera_screen")
+                        }
                     }
-                    navController.navigate("camera_screen")
                 } else {
                     signupError = true
                 }

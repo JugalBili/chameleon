@@ -75,6 +75,7 @@ fun CameraScreen(
             Box(
                 modifier = Modifier
                     .align(Alignment.BottomCenter)
+                    .padding(50.dp)
                     .background(Color.Transparent)
             ) {
                 IconButton(
@@ -91,7 +92,8 @@ fun CameraScreen(
                     Icon(
                         imageVector = ImageVector.vectorResource(id = R.drawable.baseline_stop_circle_24),
                         contentDescription = "Take photo",
-                        tint = Color.White
+                        tint = Color.White,
+                        modifier = Modifier.size(100.dp)
                     )
                 }
             }
