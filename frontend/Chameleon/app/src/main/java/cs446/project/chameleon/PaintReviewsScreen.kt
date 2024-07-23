@@ -65,7 +65,7 @@ fun PaintReviewsScreen(
         Review("PPG1065-2", "3", "Weird name but aight", Instant.now(), listOf(""))
     )
 
-    Screen(navController) { padding ->
+    Screen(navController, userViewModel) { padding ->
         CenteredColumn(modifier = Modifier.padding(padding), centerVertically = false) {
 
             // Paint Info

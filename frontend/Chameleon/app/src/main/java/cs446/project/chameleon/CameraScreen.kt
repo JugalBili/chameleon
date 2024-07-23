@@ -37,11 +37,13 @@ import cs446.project.chameleon.composables.CameraPreview
 import cs446.project.chameleon.composables.NavBar
 import cs446.project.chameleon.composables.styling.Screen
 import cs446.project.chameleon.data.viewmodel.ImageViewModel
+import cs446.project.chameleon.data.viewmodel.UserViewModel
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun CameraScreen(
     navController: NavHostController,
+    userViewModel: UserViewModel,
     imageViewModel: ImageViewModel
 ) {
     val context = LocalContext.current
@@ -55,7 +57,7 @@ fun CameraScreen(
         }
     }
 
-    Screen(navController) { padding ->
+    Screen(navController, userViewModel) { padding ->
         Box(
             modifier = Modifier
                 .fillMaxSize()

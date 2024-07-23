@@ -58,19 +58,19 @@ class MainActivity : ComponentActivity() {
                         SignupPage(navController, userViewModel)
                     }
                     composable("camera_screen") {
-                        CameraScreen(navController, imageViewModel)
+                        CameraScreen(navController, userViewModel, imageViewModel)
                     }
                     composable("image_preview_screen") {
                         ImagePreviewScreen(navController, paintViewModel, imageViewModel, userViewModel)
                     }
                     composable("image_result_screen") {
-                        ImageResultScreen(navController, imageViewModel)
+                        ImageResultScreen(navController, userViewModel, imageViewModel)
                     }
                     composable("profile_screen") {
                         ProfileScreen(navController, paintViewModel, userViewModel, imageViewModel)
                     }
                     composable("gallery_page") {
-                        PaintGalleryScreen(navController, paintViewModel)
+                        PaintGalleryScreen(navController, userViewModel, paintViewModel)
                     }
                     composable("paint_review") {
                         PaintReviewsScreen(navController, paintViewModel, userViewModel)

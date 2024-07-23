@@ -32,7 +32,7 @@ fun ProfileScreen(
     val favourites by userViewModel.favourites.collectAsState()
     val history by userViewModel.historyList.collectAsState()
 
-    Screen(navController) { padding ->
+    Screen(navController, userViewModel) { padding ->
         CenteredColumn(modifier = Modifier.padding(padding)) {
             // Title
             ChameleonText("${user.firstname} ${user.lastname}", HEADER)

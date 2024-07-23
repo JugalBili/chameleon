@@ -100,7 +100,7 @@ fun ImagePreviewScreen(
 
 
                 // Nav bar
-                NavBar(navController = navController)
+                NavBar(navController = navController, userViewModel)
             }
         }
     )
