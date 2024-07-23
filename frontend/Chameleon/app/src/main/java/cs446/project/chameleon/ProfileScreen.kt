@@ -16,6 +16,7 @@ import cs446.project.chameleon.composables.styling.CenteredColumn
 import cs446.project.chameleon.composables.styling.ChameleonDivider
 import cs446.project.chameleon.composables.styling.ChameleonText
 import cs446.project.chameleon.composables.styling.Screen
+import cs446.project.chameleon.data.viewmodel.ErrorViewModel
 import cs446.project.chameleon.data.viewmodel.ImageViewModel
 import cs446.project.chameleon.data.viewmodel.PaintViewModel
 import cs446.project.chameleon.data.viewmodel.UserViewModel
@@ -24,15 +25,16 @@ import cs446.project.chameleon.utils.HEADER
 @Composable
 fun ProfileScreen(
     navController: NavHostController,
-    mainViewModel: PaintViewModel = viewModel(),
-    userViewModel: UserViewModel = viewModel(),
-    imageViewModel: ImageViewModel = viewModel()
+    userViewModel: UserViewModel,
+    paintViewModel: PaintViewModel,
+    imageViewModel: ImageViewModel,
+    errorViewModel: ErrorViewModel
 ) {
     val user = userViewModel.getUser() ?: return
     val favourites by userViewModel.favourites.collectAsState()
     val history by userViewModel.historyList.collectAsState()
 
-    Screen(navController, userViewModel) { padding ->
+    Screen(navController, userViewModel, errorViewModel) { padding ->
         CenteredColumn(modifier = Modifier.padding(padding)) {
             // Title
             ChameleonText("${user.firstname} ${user.lastname}", HEADER)
@@ -42,7 +44,7 @@ fun ProfileScreen(
             FavouritesBar(
                 favourites,
                 onClick = { paint ->
-                    mainViewModel.updateSelectedPaint(paint)
+                    paintViewModel.updateSelectedPaint(paint)
                     navController.navigate("paint_review")
                 }
             )

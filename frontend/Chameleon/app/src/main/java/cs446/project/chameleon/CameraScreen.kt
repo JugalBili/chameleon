@@ -39,7 +39,9 @@ import androidx.navigation.NavHostController
 import cs446.project.chameleon.composables.CameraPreview
 import cs446.project.chameleon.composables.NavBar
 import cs446.project.chameleon.composables.styling.Screen
+import cs446.project.chameleon.data.viewmodel.ErrorViewModel
 import cs446.project.chameleon.data.viewmodel.ImageViewModel
+import cs446.project.chameleon.data.viewmodel.PaintViewModel
 import cs446.project.chameleon.data.viewmodel.UserViewModel
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -47,7 +49,9 @@ import cs446.project.chameleon.data.viewmodel.UserViewModel
 fun CameraScreen(
     navController: NavHostController,
     userViewModel: UserViewModel,
-    imageViewModel: ImageViewModel
+    paintViewModel: PaintViewModel,
+    imageViewModel: ImageViewModel,
+    errorViewModel: ErrorViewModel
 ) {
     val context = LocalContext.current
     val scope = rememberCoroutineScope()
@@ -60,7 +64,7 @@ fun CameraScreen(
         }
     }
 
-    Screen(navController, userViewModel) { padding ->
+    Screen(navController, userViewModel, errorViewModel) { padding ->
         Box(
             modifier = Modifier
                 .fillMaxSize()

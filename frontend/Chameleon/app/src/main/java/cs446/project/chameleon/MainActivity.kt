@@ -46,39 +46,39 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             ChameleonTheme {
+                val navController = rememberNavController()
                 val userViewModel: UserViewModel = UserViewModel(listOf(demoBitmap, demoBitmap1, demoBitmap2))
                 val paintViewModel: PaintViewModel = viewModel()
                 val imageViewModel: ImageViewModel = ImageViewModel(context)
                 val errorViewModel: ErrorViewModel = viewModel()
-                val navController = rememberNavController()
 
                 NavHost(
                     navController = navController,
                     startDestination = "login_page"
                 ) {
                     composable("login_page") {
-                        LoginPage(navController, userViewModel, errorViewModel)
+                        LoginPage(navController, userViewModel, paintViewModel, imageViewModel, errorViewModel)
                     }
                     composable("signup_page") {
-                        SignupPage(navController, userViewModel, errorViewModel)
+                        SignupPage(navController, userViewModel, paintViewModel, imageViewModel, errorViewModel)
                     }
                     composable("camera_screen") {
-                        CameraScreen(navController, userViewModel, imageViewModel)
+                        CameraScreen(navController, userViewModel, paintViewModel, imageViewModel, errorViewModel)
                     }
                     composable("image_preview_screen") {
-                        ImagePreviewScreen(navController, paintViewModel, imageViewModel, userViewModel, errorViewModel)
+                        ImagePreviewScreen(navController, userViewModel, paintViewModel, imageViewModel, errorViewModel)
                     }
                     composable("image_result_screen") {
-                        ImageResultScreen(navController, userViewModel, imageViewModel)
+                        ImageResultScreen(navController, userViewModel, paintViewModel, imageViewModel, errorViewModel)
                     }
                     composable("profile_screen") {
-                        ProfileScreen(navController, paintViewModel, userViewModel, imageViewModel)
+                        ProfileScreen(navController, userViewModel, paintViewModel, imageViewModel, errorViewModel)
                     }
                     composable("gallery_page") {
-                        PaintGalleryScreen(navController, userViewModel, paintViewModel)
+                        PaintGalleryScreen(navController, userViewModel, paintViewModel, imageViewModel, errorViewModel)
                     }
                     composable("paint_review") {
-                        PaintReviewsScreen(navController, paintViewModel, userViewModel)
+                        PaintReviewsScreen(navController, userViewModel, paintViewModel, imageViewModel, errorViewModel)
                     }
                 }
 

@@ -19,6 +19,8 @@ import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
 import cs446.project.chameleon.data.model.RGB
 import cs446.project.chameleon.data.viewmodel.ErrorViewModel
+import cs446.project.chameleon.data.viewmodel.ImageViewModel
+import cs446.project.chameleon.data.viewmodel.PaintViewModel
 import cs446.project.chameleon.data.viewmodel.UserViewModel
 import cs446.project.chameleon.utils.getColour
 import kotlinx.coroutines.launch
@@ -31,6 +33,8 @@ import kotlinx.coroutines.launch
 fun SignupPage(
     navController: NavHostController,
     userViewModel: UserViewModel,
+    paintViewModel: PaintViewModel,
+    imageViewModel: ImageViewModel,
     errorViewModel: ErrorViewModel
 ) {
     var email by remember { mutableStateOf("") }
