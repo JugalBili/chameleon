@@ -101,12 +101,21 @@ class UserViewModel(test: List<Bitmap>): ViewModel() {
     }
 
     suspend fun addFavourite(paint: Paint) {
+        println(token)
         val fav = Favorite(paint.id, paint.rgb)
         favoriteRepository.postFavorite(token.token, fav)
+
+        runBlocking {
+            fetchFavourites()
+        }
     }
 
     suspend fun deleteFavourite(paint: Paint) {
         favoriteRepository.deleteFavorite(token.token, paint.id)
+
+        runBlocking {
+            fetchFavourites()
+        }
     }
 
     // history

@@ -73,7 +73,7 @@ class MainActivity : ComponentActivity() {
                         PaintGalleryScreen(navController, paintViewModel)
                     }
                     composable("paint_review") {
-                        PaintReviewsScreen(navController, paintViewModel)
+                        PaintReviewsScreen(navController, paintViewModel, userViewModel)
                     }
                 }
             }
