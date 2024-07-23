@@ -53,6 +53,7 @@ async def upload_file(image_service: Annotated['ImageService', Depends(get_image
                       user: Annotated['User', Depends(get_user)],
                       file: UploadFile = File(...),
                       colors: str = Form(...)):
+    print("Upload Received Colors: ", colors)
     try:
         raw_colors = json.loads(colors)
         color_list = [ColorDTO(**color) for color in raw_colors]
