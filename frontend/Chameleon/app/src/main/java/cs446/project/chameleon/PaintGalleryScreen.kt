@@ -25,6 +25,7 @@ import cs446.project.chameleon.composables.styling.Screen
 import cs446.project.chameleon.composables.styling.SearchBox
 import cs446.project.chameleon.data.viewmodel.ErrorViewModel
 import cs446.project.chameleon.data.viewmodel.ImageViewModel
+import cs446.project.chameleon.data.viewmodel.LoadingViewModel
 import cs446.project.chameleon.data.viewmodel.PaintViewModel
 import cs446.project.chameleon.data.viewmodel.UserViewModel
 import cs446.project.chameleon.utils.BRAND_FILTER
@@ -37,7 +38,8 @@ fun PaintGalleryScreen(
     userViewModel: UserViewModel,
     paintViewModel: PaintViewModel,
     imageViewModel: ImageViewModel,
-    errorViewModel: ErrorViewModel
+    errorViewModel: ErrorViewModel,
+    loadingViewModel: LoadingViewModel
 ) {
     val paints by paintViewModel.paints.collectAsState()
 

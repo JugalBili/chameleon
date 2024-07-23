@@ -41,6 +41,7 @@ import cs446.project.chameleon.composables.NavBar
 import cs446.project.chameleon.composables.styling.Screen
 import cs446.project.chameleon.data.viewmodel.ErrorViewModel
 import cs446.project.chameleon.data.viewmodel.ImageViewModel
+import cs446.project.chameleon.data.viewmodel.LoadingViewModel
 import cs446.project.chameleon.data.viewmodel.PaintViewModel
 import cs446.project.chameleon.data.viewmodel.UserViewModel
 
@@ -51,7 +52,8 @@ fun CameraScreen(
     userViewModel: UserViewModel,
     paintViewModel: PaintViewModel,
     imageViewModel: ImageViewModel,
-    errorViewModel: ErrorViewModel
+    errorViewModel: ErrorViewModel,
+    loadingViewModel: LoadingViewModel
 ) {
     val context = LocalContext.current
     val scope = rememberCoroutineScope()

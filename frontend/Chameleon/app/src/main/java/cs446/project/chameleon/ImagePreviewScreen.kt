@@ -31,6 +31,7 @@ import cs446.project.chameleon.composables.PaintSelectionDialog
 import cs446.project.chameleon.composables.SelectionBar
 import cs446.project.chameleon.data.viewmodel.ErrorViewModel
 import cs446.project.chameleon.data.viewmodel.ImageViewModel
+import cs446.project.chameleon.data.viewmodel.LoadingViewModel
 import cs446.project.chameleon.data.viewmodel.PaintViewModel
 import cs446.project.chameleon.data.viewmodel.UserViewModel
 import kotlinx.coroutines.launch
@@ -43,7 +44,8 @@ fun ImagePreviewScreen(
     userViewModel: UserViewModel,
     paintViewModel: PaintViewModel,
     imageViewModel: ImageViewModel,
-    errorViewModel: ErrorViewModel
+    errorViewModel: ErrorViewModel,
+    loadingViewModel: LoadingViewModel
 ) {
     var isProcessing by remember { mutableStateOf(false) }
     val coroutineScope = rememberCoroutineScope()
@@ -91,7 +93,9 @@ fun ImagePreviewScreen(
                         // process the image, then display result
                         isProcessing = true
                         coroutineScope.launch {
+                            loadingViewModel.displayLoad()
                             val response = imageViewModel.postImage(userViewModel.token.token, paintViewModel.selectedPaints)
+                            loadingViewModel.dismissLoad()
                             if (response != null) {
                                 errorViewModel.displayError(response)
                             } else {
