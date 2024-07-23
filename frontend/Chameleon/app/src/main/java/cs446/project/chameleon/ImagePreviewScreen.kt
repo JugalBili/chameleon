@@ -52,7 +52,6 @@ fun ImagePreviewScreen(
 
     // Colour Selection Modal
     val showModal = remember { mutableStateOf(false) }
-    val selectedPaintIds = remember { mutableStateListOf<String>() }
 
     // ImageViewModel setup
     val bitmapState = imageViewModel.baseImage.observeAsState()
@@ -109,14 +108,8 @@ fun ImagePreviewScreen(
         PaintSelectionDialog(
             onClose = { showModal.value = false },
             onSubmit = { showModal.value = false },
-            onClick = { paint ->
-                if (selectedPaintIds.contains(paint.id)) {
-                    selectedPaintIds.remove(paint.id)
-                } else {
-                    selectedPaintIds.add(paint.id)
-                }
-            },
-            paintViewModel = paintViewModel
+            paintViewModel = paintViewModel,
+            userViewModel = userViewModel
         )
     }
 }
