@@ -52,6 +52,9 @@ class UserViewModel(test: List<Bitmap>): ViewModel() {
 
     private val _favourites = MutableStateFlow<List<Paint>>(emptyList())
     val favourites = _favourites.asStateFlow()
+    fun getFavourites(): List<Paint> {
+        return _favourites.value
+    }
     fun addPaint(paint: Paint) {
         _favourites.value += paint
     }
@@ -101,7 +104,6 @@ class UserViewModel(test: List<Bitmap>): ViewModel() {
     }
 
     suspend fun addFavourite(paint: Paint) {
-        println(token)
         val fav = Favorite(paint.id, paint.rgb)
         favoriteRepository.postFavorite(token.token, fav)
 

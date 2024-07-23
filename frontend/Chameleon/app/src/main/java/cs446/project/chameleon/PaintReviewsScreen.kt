@@ -54,7 +54,7 @@ fun PaintReviewsScreen(
 ) {
     val coroutineScope = rememberCoroutineScope()
     val paint = paintViewModel.getSelectedPaint() ?: return
-    val favourites by userViewModel.favourites.collectAsState()
+    var favourites = userViewModel.getFavourites()
 
     var isLiked by remember { mutableStateOf(paint in favourites) }
 
@@ -101,6 +101,8 @@ fun PaintReviewsScreen(
                             } else {
                                 userViewModel.deleteFavourite(paint)
                             }
+                            favourites = userViewModel.getFavourites()
+                            isLiked = paint in favourites
                         }
                     }
                 ) {

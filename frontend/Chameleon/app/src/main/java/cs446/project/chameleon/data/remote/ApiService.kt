@@ -63,7 +63,7 @@ interface ApiService {
     @POST("favorite/")
     suspend fun postFavorite(@Header("Authorization") token: String, @Body favorite: Favorite): Unit
 
-    @DELETE("favorite/{paint_id}/")
+    @DELETE("favorite/{paint_id}")
     suspend fun deleteFavorite(@Header("Authorization") token: String, @Path("paint_id") paintId: String): Unit
 
 
