@@ -18,9 +18,11 @@ import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -34,21 +36,27 @@ import cs446.project.chameleon.composables.styling.ChameleonDivider
 import cs446.project.chameleon.composables.styling.ColouredBox
 import cs446.project.chameleon.composables.styling.PrimaryButton
 import cs446.project.chameleon.composables.styling.Screen
+import cs446.project.chameleon.data.model.Paint
 import cs446.project.chameleon.data.model.Review
 import cs446.project.chameleon.data.viewmodel.PaintViewModel
+import cs446.project.chameleon.data.viewmodel.UserViewModel
 import cs446.project.chameleon.utils.getColour
+import kotlinx.coroutines.flow.toList
+import kotlinx.coroutines.launch
 import java.time.Instant
 
 @RequiresApi(Build.VERSION_CODES.O)
 @Composable
 fun PaintReviewsScreen(
     navController: NavHostController,
-    paintViewModel: PaintViewModel
+    paintViewModel: PaintViewModel,
+    userViewModel: UserViewModel
 ) {
+    val coroutineScope = rememberCoroutineScope()
     val paint = paintViewModel.getSelectedPaint() ?: return
+    var favourites = userViewModel.getFavourites()
 
-    // TODO: get the default value of isLiked from user data
-    var isLiked by remember { mutableStateOf(false) }
+    var isLiked by remember { mutableStateOf(paint in favourites) }
 
     // TODO: hard-coded values for now
     val reviews = listOf(
@@ -57,7 +65,7 @@ fun PaintReviewsScreen(
         Review("PPG1065-2", "3", "Weird name but aight", Instant.now(), listOf(""))
     )
 
-    Screen(navController) { padding ->
+    Screen(navController, userViewModel) { padding ->
         CenteredColumn(modifier = Modifier.padding(padding), centerVertically = false) {
 
             // Paint Info
@@ -86,7 +94,17 @@ fun PaintReviewsScreen(
 
                 IconButton(
                     modifier = Modifier.size(48.dp),
-                    onClick = { isLiked = !isLiked }
+                    onClick = {
+                        coroutineScope.launch {
+                            if (!isLiked) {
+                                userViewModel.addFavourite(paint)
+                            } else {
+                                userViewModel.deleteFavourite(paint)
+                            }
+                            favourites = userViewModel.getFavourites()
+                            isLiked = paint in favourites
+                        }
+                    }
                 ) {
                     Icon(
                         imageVector = if (isLiked) Icons.Filled.Favorite else Icons.Outlined.FavoriteBorder,

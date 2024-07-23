@@ -39,6 +39,7 @@ import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
 import cs446.project.chameleon.composables.NavBar
 import cs446.project.chameleon.data.viewmodel.ImageViewModel
+import cs446.project.chameleon.data.viewmodel.UserViewModel
 import kotlinx.coroutines.launch
 import kotlin.math.abs
 
@@ -46,6 +47,7 @@ import kotlin.math.abs
 @Composable
 fun ImageResultScreen(
     navController: NavHostController,
+    userViewModel: UserViewModel,
     imageViewModel: ImageViewModel
 ) {
     // ImageViewModel setup
@@ -95,7 +97,7 @@ fun ImageResultScreen(
                     }
                 }
 
-                NavBar(navController)
+                NavBar(navController, userViewModel)
             }
         }
     )

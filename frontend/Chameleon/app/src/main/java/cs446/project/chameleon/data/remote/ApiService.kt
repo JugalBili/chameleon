@@ -44,7 +44,7 @@ interface ApiService {
     suspend fun getImageList(@Header("Authorization") token: String, @Path("hash") hash: String): ImageResponse
 
     @Multipart
-    @POST("image")
+    @POST("image/")
     suspend fun postImage(@Header("Authorization") token: String,
                           @Part file: MultipartBody.Part,
                           @Part("colors") colors: RequestBody
@@ -52,15 +52,15 @@ interface ApiService {
 
 
     // history endpoints
-    @GET("history")
+    @GET("history/")
     suspend fun getHistory(@Header("Authorization") token: String): History
 
 
     // favorite endpoints
-    @GET("favorite")
+    @GET("favorite/")
     suspend fun getFavorite(@Header("Authorization") token: String): FavoriteResponse
 
-    @POST("favorite")
+    @POST("favorite/")
     suspend fun postFavorite(@Header("Authorization") token: String, @Body favorite: Favorite): Unit
 
     @DELETE("favorite/{paint_id}")

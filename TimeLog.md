@@ -18,4 +18,5 @@
 | July 19 2024 | 0     | 6     | 6     | 6     | 0     | 0     | UI update to use more composables       |
 | July 20 2024 | 0     | 6     | 6     | 6     | 0     | 0     | Integrate ViewModel to UI               |
 | July 21 2024 | 0     | 6     | 7     | 7     | 0     | 0     | Revamp from previous UI                 |
+| July 23 2024 | 6     | 6     | 8     | 8     | 8     | 8     | Link Frontend to backend                |
 | -            | -     | -     | -     | -     | -     | -     | -                                       |

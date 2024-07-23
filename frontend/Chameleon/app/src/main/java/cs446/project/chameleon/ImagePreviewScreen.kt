@@ -31,6 +31,7 @@ import cs446.project.chameleon.composables.PaintSelectionDialog
 import cs446.project.chameleon.composables.SelectionBar
 import cs446.project.chameleon.data.viewmodel.ImageViewModel
 import cs446.project.chameleon.data.viewmodel.PaintViewModel
+import cs446.project.chameleon.data.viewmodel.UserViewModel
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.delay
 
@@ -39,7 +40,8 @@ import kotlinx.coroutines.delay
 fun ImagePreviewScreen(
     navController: NavHostController,
     paintViewModel: PaintViewModel,
-    imageViewModel: ImageViewModel
+    imageViewModel: ImageViewModel,
+    userViewModel: UserViewModel
 ) {
     var isProcessing by remember { mutableStateOf(false) }
     val coroutineScope = rememberCoroutineScope()
@@ -88,26 +90,17 @@ fun ImagePreviewScreen(
                         // process the image, then display result
                         isProcessing = true
                         coroutineScope.launch {
-                            processImage(
-                                listOf(
-                                    demoBitmap,
-                                    demoBitmap2
-                                )
-                            ) { processedImages -> // TODO change demoBitmap to actual result
-                                navController.currentBackStackEntry?.savedStateHandle?.set(
-                                    "processedImages",
-                                    processedImages
-                                )
-                                isProcessing = false
-                                navController.navigate("image_result_screen")
-                            }
+                            imageViewModel.postImage(userViewModel.token.token, paintViewModel.selectedPaints)
+                            isProcessing = false
+                            paintViewModel.clearSelectedPaints()
+                            navController.navigate("image_result_screen")
                         }
                     }
                 )
 
 
                 // Nav bar
-                NavBar(navController = navController)
+                NavBar(navController = navController, userViewModel)
             }
         }
     )
