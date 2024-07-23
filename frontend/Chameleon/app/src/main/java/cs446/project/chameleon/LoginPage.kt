@@ -109,13 +109,10 @@ fun LoginPage(
                 ClickableText(text = annotatedText, onClick = { offset ->
                     annotatedText.getStringAnnotations(
                         tag = "signup", start = offset, end = offset
-                    ).firstOrNull()?.let { clicked.value = true }
+                    ).firstOrNull()?.let {navController.navigate("signup_page")}
                 })
 
-                // TEST TO SEE IF IT WAS CLICKED
-                if (clicked.value) {
-                    Text(text = "Clicked")
-                }
+
             }
         },
         bottomBar = {
