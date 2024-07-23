@@ -40,9 +40,9 @@ import kotlinx.coroutines.delay
 @Composable
 fun ImagePreviewScreen(
     navController: NavHostController,
+    userViewModel: UserViewModel,
     paintViewModel: PaintViewModel,
     imageViewModel: ImageViewModel,
-    userViewModel: UserViewModel,
     errorViewModel: ErrorViewModel
 ) {
     var isProcessing by remember { mutableStateOf(false) }
@@ -91,17 +91,21 @@ fun ImagePreviewScreen(
                         // process the image, then display result
                         isProcessing = true
                         coroutineScope.launch {
-                            imageViewModel.postImage(userViewModel.token.token, paintViewModel.selectedPaints)
-                            isProcessing = false
-                            paintViewModel.clearSelectedPaints()
-                            navController.navigate("image_result_screen")
+                            val response = imageViewModel.postImage(userViewModel.token.token, paintViewModel.selectedPaints)
+                            if (response != null) {
+                                errorViewModel.displayError(response)
+                            } else {
+                                isProcessing = false
+                                paintViewModel.clearSelectedPaints()
+                                navController.navigate("image_result_screen")
+                            }
                         }
                     }
                 )
 
 
                 // Nav bar
-                NavBar(navController = navController, userViewModel)
+                NavBar(navController = navController, userViewModel, errorViewModel)
             }
         }
     )
