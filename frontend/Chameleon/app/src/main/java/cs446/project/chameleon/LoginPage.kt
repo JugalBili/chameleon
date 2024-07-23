@@ -1,5 +1,6 @@
 package cs446.project.chameleon
 
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -16,10 +17,11 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
-import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.painter.Painter
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.SpanStyle
 import androidx.compose.ui.text.buildAnnotatedString
 import androidx.compose.ui.text.input.PasswordVisualTransformation
@@ -28,15 +30,10 @@ import androidx.compose.ui.text.withStyle
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
-import cs446.project.chameleon.data.viewmodel.UserViewModel
-import kotlinx.coroutines.launch
-
+import cs446.project.chameleon.R
 
 @Composable
-fun LoginPage(
-    navController: NavHostController,
-    userViewModel: UserViewModel
-) {
+fun LoginPage(navController: NavHostController) {
 
     val username = remember { mutableStateOf("") }
     val password = remember { mutableStateOf("") }
@@ -70,8 +67,6 @@ fun LoginPage(
         pop()
     }
 
-    val coroutineScope = rememberCoroutineScope()
-
     Scaffold(
         modifier = Modifier.fillMaxSize(),
         content = { padding ->
@@ -82,7 +77,15 @@ fun LoginPage(
                 verticalArrangement = Arrangement.Center,
                 horizontalAlignment = Alignment.CenterHorizontally
             ) {
-                Text(text = titleText, fontSize = 32.sp)
+                // Replace the Text composable with the Image composable
+                val image: Painter = painterResource(id = R.drawable.logo)
+                Image(
+                    painter = image,
+                    contentDescription = "App Logo",
+                    modifier = Modifier
+                        .height(300.dp)
+                        .padding(16.dp)
+                )
                 Spacer(modifier = Modifier.height(24.dp))
 
                 OutlinedTextField(
@@ -106,13 +109,14 @@ fun LoginPage(
                 )
                 Spacer(modifier = Modifier.height(24.dp))
 
-                ClickableText(text = annotatedText, onClick = { offset ->
-                    annotatedText.getStringAnnotations(
-                        tag = "signup", start = offset, end = offset
-                    ).firstOrNull()?.let {navController.navigate("signup_page")}
-                })
-
-
+                ClickableText(
+                    text = annotatedText,
+                    onClick = { offset ->
+                        annotatedText.getStringAnnotations(
+                            tag = "signup", start = offset, end = offset
+                        ).firstOrNull()?.let { navController.navigate("signup_page") }
+                    }
+                )
             }
         },
         bottomBar = {
@@ -123,12 +127,7 @@ fun LoginPage(
                 horizontalArrangement = Arrangement.SpaceEvenly
             ) {
                 Button(
-                    onClick = {
-                        coroutineScope.launch {
-                            userViewModel.loginUser(username.value, password.value)
-                            navController.navigate("camera_screen")
-                        }
-                    },
+                    onClick = { navController.navigate("camera_screen") },
                     modifier = Modifier
                         .padding(10.dp)
                         .weight(1f)
