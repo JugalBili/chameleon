@@ -23,6 +23,8 @@ import cs446.project.chameleon.composables.styling.ChameleonText
 import cs446.project.chameleon.composables.styling.Dropdown
 import cs446.project.chameleon.composables.styling.Screen
 import cs446.project.chameleon.composables.styling.SearchBox
+import cs446.project.chameleon.data.viewmodel.ErrorViewModel
+import cs446.project.chameleon.data.viewmodel.ImageViewModel
 import cs446.project.chameleon.data.viewmodel.PaintViewModel
 import cs446.project.chameleon.data.viewmodel.UserViewModel
 import cs446.project.chameleon.utils.BRAND_FILTER
@@ -33,7 +35,9 @@ import cs446.project.chameleon.utils.NAME_FILTER
 fun PaintGalleryScreen(
     navController: NavHostController,
     userViewModel: UserViewModel,
-    paintViewModel: PaintViewModel
+    paintViewModel: PaintViewModel,
+    imageViewModel: ImageViewModel,
+    errorViewModel: ErrorViewModel
 ) {
     val paints by paintViewModel.paints.collectAsState()
 
@@ -53,7 +57,7 @@ fun PaintGalleryScreen(
         paints
     }
 
-    Screen(navController, userViewModel) { padding ->
+    Screen(navController, userViewModel, errorViewModel) { padding ->
         CenteredColumn(modifier = Modifier.padding(padding)) {
 
             // Title

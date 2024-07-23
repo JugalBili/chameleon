@@ -58,37 +58,43 @@ class ImageViewModel(@field:SuppressLint("StaticFieldLeak") private val context:
         updateRenderColors(uiHistory.colors)
     }
 
-    suspend fun postImage(authToken: String, paints: List<Paint>) {
-        _renders.value = emptyList()
-        //_baseImage.value?.let { addRender(it) }
-        _renderColors.value = emptyList()
-        val colorsList = mutableListOf<Color>()
-        for (paint in paints) {
-            colorsList.add(Color(paint.id, paint.rgb))
-        }
-
-        val tempFile = withContext(Dispatchers.IO) {
-            File.createTempFile("temp_image", ".jpg", context.cacheDir)
-        }
-
-        ByteArrayOutputStream().use { byteArrayOutputStream ->
-            _baseImage.value?.compress(Bitmap.CompressFormat.JPEG, 100, byteArrayOutputStream)
-            val byteArray = byteArrayOutputStream.toByteArray()
-
-            // Write the ByteArray to the temporary file
-            FileOutputStream(tempFile).use { fileOutputStream ->
-                fileOutputStream.write(byteArray)
+    suspend fun postImage(authToken: String, paints: List<Paint>): String? {
+        try {
+            _renders.value = emptyList()
+            baseImage.value?.let { addRender(it) }
+            _renderColors.value = emptyList()
+            val colorsList = mutableListOf<Color>()
+            for (paint in paints) {
+                colorsList.add(Color(paint.id, paint.rgb))
             }
-        }
 
-
-        runBlocking {
-            val response = imageRepository.postImage(authToken, tempFile, colorsList)
-
-            for (image in response.processedImages) {
-                addRenderColor(image.color)
-                addRender(imageRepository.getImageBitmap(authToken, image.processedImageHash))
+            val tempFile = withContext(Dispatchers.IO) {
+                File.createTempFile("temp_image", ".jpg", context.cacheDir)
             }
+
+            ByteArrayOutputStream().use { byteArrayOutputStream ->
+                _baseImage.value?.compress(Bitmap.CompressFormat.JPEG, 100, byteArrayOutputStream)
+                val byteArray = byteArrayOutputStream.toByteArray()
+
+                // Write the ByteArray to the temporary file
+                FileOutputStream(tempFile).use { fileOutputStream ->
+                    fileOutputStream.write(byteArray)
+                }
+            }
+
+            runBlocking {
+                val response = imageRepository.postImage(authToken, tempFile, colorsList)
+
+                for (image in response.processedImages) {
+                    addRenderColor(image.color)
+                    addRender(imageRepository.getImageBitmap(authToken, image.processedImageHash))
+                }
+            }
+
+            return null
+        } catch (e: Exception) {
+            return "Connection to server failed"
         }
+
     }
 }

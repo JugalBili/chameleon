@@ -161,21 +161,27 @@ class UserViewModel(test: List<Bitmap>): ViewModel() {
     }
 
     // fetched non-cached rendered images for a base image
-    suspend fun fetchNonCachedHistory() {
-        val response = historyRepository.getHistory(token.token)
+    suspend fun fetchNonCachedHistory(): String? {
+        try {
+            val response = historyRepository.getHistory(token.token)
 
-        for (history in response.history) {
-            if (!historyList.value.any { it.baseImageId == history.baseImage }) {
-                val baseImage = imageRepository.getImageBitmap(token.token, history.baseImage)
-                val imgRes = imageRepository.getImageList(token.token, history.baseImage)
+            for (history in response.history) {
+                if (!historyList.value.any { it.baseImageId == history.baseImage }) {
+                    val baseImage = imageRepository.getImageBitmap(token.token, history.baseImage)
+                    val imgRes = imageRepository.getImageList(token.token, history.baseImage)
 
-                val imageIds = mutableListOf<String>()
-                for (img in imgRes.processedImages) {
-                    imageIds.add(img.processedImageHash)
+                    val imageIds = mutableListOf<String>()
+                    for (img in imgRes.processedImages) {
+                        imageIds.add(img.processedImageHash)
+                    }
+
+                    addHistory(UIHistory(imgRes.originalImage, baseImage, imageIds, history.colors))
                 }
-
-                addHistory(UIHistory(imgRes.originalImage, baseImage, imageIds, history.colors))
             }
+
+            return null
+        } catch (e: Exception) {
+            return "Connection to server failed"
         }
     }
 

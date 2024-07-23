@@ -38,6 +38,8 @@ import cs446.project.chameleon.composables.styling.PrimaryButton
 import cs446.project.chameleon.composables.styling.Screen
 import cs446.project.chameleon.data.model.Paint
 import cs446.project.chameleon.data.model.Review
+import cs446.project.chameleon.data.viewmodel.ErrorViewModel
+import cs446.project.chameleon.data.viewmodel.ImageViewModel
 import cs446.project.chameleon.data.viewmodel.PaintViewModel
 import cs446.project.chameleon.data.viewmodel.UserViewModel
 import cs446.project.chameleon.utils.getColour
@@ -49,8 +51,10 @@ import java.time.Instant
 @Composable
 fun PaintReviewsScreen(
     navController: NavHostController,
+    userViewModel: UserViewModel,
     paintViewModel: PaintViewModel,
-    userViewModel: UserViewModel
+    imageViewModel: ImageViewModel,
+    errorViewModel: ErrorViewModel
 ) {
     val coroutineScope = rememberCoroutineScope()
     val paint = paintViewModel.getSelectedPaint() ?: return
@@ -65,7 +69,7 @@ fun PaintReviewsScreen(
         Review("PPG1065-2", "3", "Weird name but aight", Instant.now(), listOf(""))
     )
 
-    Screen(navController, userViewModel) { padding ->
+    Screen(navController, userViewModel, errorViewModel) { padding ->
         CenteredColumn(modifier = Modifier.padding(padding), centerVertically = false) {
 
             // Paint Info
