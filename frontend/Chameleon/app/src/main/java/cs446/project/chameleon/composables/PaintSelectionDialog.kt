@@ -27,6 +27,7 @@ import cs446.project.chameleon.composables.styling.ChameleonText
 import cs446.project.chameleon.composables.styling.ColouredBox
 import cs446.project.chameleon.composables.styling.Dropdown
 import cs446.project.chameleon.composables.styling.PrimaryButton
+import cs446.project.chameleon.data.viewmodel.ErrorViewModel
 import cs446.project.chameleon.data.viewmodel.UserViewModel
 import cs446.project.chameleon.utils.PAINT_SELECTION_OPTIONS
 import cs446.project.chameleon.utils.getColour
@@ -37,7 +38,8 @@ fun PaintSelectionDialog(
     onClose: () -> Unit,
     onSubmit: () -> Unit,
     paintViewModel: PaintViewModel,
-    userViewModel: UserViewModel
+    userViewModel: UserViewModel,
+    errorViewModel: ErrorViewModel
 ) {
     val paints by paintViewModel.paints.collectAsState()
     val favouritePaints by userViewModel.favourites.collectAsState()
