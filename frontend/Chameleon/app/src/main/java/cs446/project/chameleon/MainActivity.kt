@@ -9,12 +9,16 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.annotation.RequiresApi
+import androidx.compose.material.AlertDialog
+import androidx.compose.material.Text
+import androidx.compose.material.TextButton
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import cs446.project.chameleon.data.viewmodel.ErrorViewModel
 import cs446.project.chameleon.data.viewmodel.ImageViewModel
 import cs446.project.chameleon.data.viewmodel.PaintViewModel
 import cs446.project.chameleon.data.viewmodel.UserViewModel
@@ -45,6 +49,7 @@ class MainActivity : ComponentActivity() {
                 val userViewModel: UserViewModel = UserViewModel(listOf(demoBitmap, demoBitmap1, demoBitmap2))
                 val paintViewModel: PaintViewModel = viewModel()
                 val imageViewModel: ImageViewModel = ImageViewModel(context)
+                val errorViewModel: ErrorViewModel = viewModel()
                 val navController = rememberNavController()
 
                 NavHost(
@@ -61,7 +66,7 @@ class MainActivity : ComponentActivity() {
                         CameraScreen(navController, userViewModel, imageViewModel)
                     }
                     composable("image_preview_screen") {
-                        ImagePreviewScreen(navController, paintViewModel, imageViewModel, userViewModel)
+                        ImagePreviewScreen(navController, paintViewModel, imageViewModel, userViewModel, errorViewModel)
                     }
                     composable("image_result_screen") {
                         ImageResultScreen(navController, userViewModel, imageViewModel)
@@ -75,6 +80,19 @@ class MainActivity : ComponentActivity() {
                     composable("paint_review") {
                         PaintReviewsScreen(navController, paintViewModel, userViewModel)
                     }
+                }
+
+                if (errorViewModel.showErrorDialog.value) {
+                    AlertDialog(
+                        onDismissRequest = { errorViewModel.dismissError() },
+                        title = { Text("Error") },
+                        text = { Text(errorViewModel.errorMsg.value) },
+                        confirmButton = {
+                            TextButton(onClick = { errorViewModel.dismissError() }) {
+                                Text("OK")
+                            }
+                        }
+                    )
                 }
             }
         }

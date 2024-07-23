@@ -27,6 +27,8 @@ import cs446.project.chameleon.composables.styling.ChameleonText
 import cs446.project.chameleon.composables.styling.ColouredBox
 import cs446.project.chameleon.composables.styling.Dropdown
 import cs446.project.chameleon.composables.styling.PrimaryButton
+import cs446.project.chameleon.data.viewmodel.ErrorViewModel
+import cs446.project.chameleon.data.viewmodel.UserViewModel
 import cs446.project.chameleon.utils.PAINT_SELECTION_OPTIONS
 import cs446.project.chameleon.utils.getColour
 import cs446.project.chameleon.utils.smallSpacing
@@ -35,11 +37,12 @@ import cs446.project.chameleon.utils.smallSpacing
 fun PaintSelectionDialog(
     onClose: () -> Unit,
     onSubmit: () -> Unit,
-    onClick: (Paint) -> Unit, // TODO: integrate with this to the ImagePreviewScreen
-    paintViewModel: PaintViewModel
+    paintViewModel: PaintViewModel,
+    userViewModel: UserViewModel,
+    errorViewModel: ErrorViewModel
 ) {
     val paints by paintViewModel.paints.collectAsState()
-    val favouritePaints = paints // TODO: implement actual favourite system
+    val favouritePaints by userViewModel.favourites.collectAsState()
 
     var paintGroup by remember { mutableStateOf(PAINT_SELECTION_OPTIONS[0]) }
     var saved by remember { mutableStateOf(false) }
@@ -90,7 +93,9 @@ fun PaintSelectionDialog(
                         paints.filter { it.labelHSL.contains(paintGroup, ignoreCase = true) }
                     },
                     onPaintClick = { paint ->
-                        paintViewModel.updateSelectedPaints(paint)
+                        if (paintViewModel.selectedPaints.size < 4 || paint in paintViewModel.selectedPaints) {
+                            paintViewModel.updateSelectedPaints(paint)
+                        }
                     },
                     paintViewModel = paintViewModel
                 )
