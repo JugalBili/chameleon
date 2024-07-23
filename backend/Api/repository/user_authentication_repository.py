@@ -64,11 +64,14 @@ class UserAuthenticationRepository:
             if identification is None:
                 raise InvalidTokenError
             if expiration is None or expiration < datetime.now(timezone.utc).timestamp():
+                print("expired token Received")
                 raise HTTPException(status_code=401, detail="Token is expired")
         except InvalidTokenError:
+            print("Credentials could not be validated! Invalid Token Error")
             raise HTTPException(status_code=401, detail="Could not validate credentials")
         user = await self.get_user_from_email(identification)
         if user is None:
+            print("Could not validate credentials, User does not exist")
             raise HTTPException(status_code=401, detail="Could not validate credentials")
         return user
 

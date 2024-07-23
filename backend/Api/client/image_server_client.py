@@ -12,6 +12,7 @@ class ImageServerClient:
         json_data = image_data.model_dump_json()
         url = self.base_url + "/image/generate"
         try:
+            print("sending request to: ", url)
             resp  = requests.post(url, data=json_data, headers={"Content-Type": "application/json"})
             resp.raise_for_status()
             processed_data = resp.json()
