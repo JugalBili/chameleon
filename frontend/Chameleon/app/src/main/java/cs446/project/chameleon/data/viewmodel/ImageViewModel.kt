@@ -7,11 +7,13 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import cs446.project.chameleon.data.model.Color
+import cs446.project.chameleon.data.model.ImageResponse
 import cs446.project.chameleon.data.model.Paint
 import cs446.project.chameleon.data.repository.ImageRepository
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
+import kotlinx.coroutines.runBlocking
 import kotlinx.coroutines.withContext
 import java.io.ByteArrayOutputStream
 import java.io.File
@@ -76,10 +78,16 @@ class ImageViewModel(@field:SuppressLint("StaticFieldLeak") private val context:
             }
         }
 
-        val response = imageRepository.postImage(authToken, tempFile, colorsList)
+        var response: ImageResponse
+        runBlocking {
+            response = imageRepository.postImage(authToken, tempFile, colorsList)
+        }
+        println("move on")
         for (image in response.processedImages) {
             addRenderColor(image.color)
-            addRender(imageRepository.getImageBitmap(authToken, image.processedImageHash))
+            runBlocking {
+                addRender(imageRepository.getImageBitmap(authToken, image.processedImageHash))
+            }
         }
     }
 }
