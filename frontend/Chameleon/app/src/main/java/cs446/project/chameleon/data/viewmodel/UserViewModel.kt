@@ -11,6 +11,7 @@ import androidx.compose.runtime.*
 import cs446.project.chameleon.data.model.Favorite
 import cs446.project.chameleon.data.model.HSL
 import cs446.project.chameleon.data.model.History
+import cs446.project.chameleon.data.model.LoginResponse
 import cs446.project.chameleon.data.model.Paint
 import cs446.project.chameleon.data.model.RGB
 import cs446.project.chameleon.data.model.Token
@@ -75,24 +76,36 @@ class UserViewModel(test: List<Bitmap>): ViewModel() {
     }
 
 
-    suspend fun loginUser(email: String, password: String) {
-        val response = userRepository.login(email, password)
-        token = response.token
-        _user = response.user
+    suspend fun loginUser(email: String, password: String): String? {
+        try {
+            val response = userRepository.login(email, password)
 
-        runBlocking {
-            fetchFavourites()
-        }
+            token = response.token
+            _user = response.user
 
-        runBlocking {
-            fetchHistory()
+            runBlocking {
+                fetchFavourites()
+            }
+
+            runBlocking {
+                fetchHistory()
+            }
+
+            return null
+        } catch (e: Exception) {
+            return "Login unsuccessful"
         }
     }
 
-    suspend fun registerUser(email: String, password: String, firstname: String, lastname: String) {
-        runBlocking {
-            userRepository.register(email, password, firstname, lastname)
-            loginUser(email, password)
+    suspend fun registerUser(email: String, password: String, firstname: String, lastname: String): String? {
+        try {
+            runBlocking {
+                userRepository.register(email, password, firstname, lastname)
+                loginUser(email, password)
+            }
+            return null
+        } catch (e: Exception) {
+            return "Register unsuccessful"
         }
     }
 

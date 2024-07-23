@@ -57,10 +57,10 @@ class MainActivity : ComponentActivity() {
                     startDestination = "login_page"
                 ) {
                     composable("login_page") {
-                        LoginPage(navController)
+                        LoginPage(navController, userViewModel, errorViewModel)
                     }
                     composable("signup_page") {
-                        SignupPage(navController, userViewModel)
+                        SignupPage(navController, userViewModel, errorViewModel)
                     }
                     composable("camera_screen") {
                         CameraScreen(navController, userViewModel, imageViewModel)
