@@ -1,5 +1,4 @@
-package cs446.project.chameleon
-
+import androidx.compose.ui.platform.LocalSoftwareKeyboardController
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -10,6 +9,8 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.text.ClickableText
+import androidx.compose.foundation.text.KeyboardActions
+import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.OutlinedTextField
@@ -23,31 +24,32 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.painter.Painter
+import androidx.compose.ui.platform.LocalSoftwareKeyboardController
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.SpanStyle
 import androidx.compose.ui.text.buildAnnotatedString
+import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.text.style.TextDecoration
 import androidx.compose.ui.text.withStyle
 import androidx.compose.ui.unit.dp
-import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
 import cs446.project.chameleon.R
 import cs446.project.chameleon.data.viewmodel.ErrorViewModel
 import cs446.project.chameleon.data.viewmodel.UserViewModel
 import kotlinx.coroutines.launch
 
-
 @Composable
 fun LoginPage(
     navController: NavHostController,
     userViewModel: UserViewModel,
-    errorViewModel: ErrorViewModel,
+    errorViewModel: ErrorViewModel
 ) {
 
     val username = remember { mutableStateOf("") }
     val password = remember { mutableStateOf("") }
-    val clicked = remember { mutableStateOf(false) }
+    val coroutineScope = rememberCoroutineScope()
+    val keyboardController = LocalSoftwareKeyboardController.current
 
     val annotatedText = buildAnnotatedString {
         append("Don't have an account? Sign up ")
@@ -57,8 +59,6 @@ fun LoginPage(
         }
         pop()
     }
-
-    val coroutineScope = rememberCoroutineScope()
 
     Scaffold(
         modifier = Modifier.fillMaxSize(),
@@ -70,7 +70,6 @@ fun LoginPage(
                 verticalArrangement = Arrangement.Center,
                 horizontalAlignment = Alignment.CenterHorizontally
             ) {
-                // Move the logo up to be above the username field
                 val image: Painter = painterResource(id = R.drawable.logo)
                 Image(
                     painter = image,
@@ -83,23 +82,41 @@ fun LoginPage(
                     value = username.value,
                     onValueChange = { username.value = it },
                     label = { Text("Username") },
+                    keyboardOptions = KeyboardOptions.Default.copy(
+                        imeAction = ImeAction.Next
+                    ),
                     modifier = Modifier
                         .fillMaxWidth()
                         .padding(horizontal = 64.dp)
                 )
-                Spacer(modifier = Modifier.height(16.dp)) // Reduced space before Password field
+                Spacer(modifier = Modifier.height(16.dp))
 
-                // Center the Password field
                 OutlinedTextField(
                     value = password.value,
                     onValueChange = { password.value = it },
                     label = { Text("Password") },
+                    keyboardOptions = KeyboardOptions.Default.copy(
+                        imeAction = ImeAction.Done
+                    ),
+                    keyboardActions = KeyboardActions(
+                        onDone = {
+                            coroutineScope.launch {
+                                val response = userViewModel.loginUser(username.value, password.value)
+                                if (response != null) {
+                                    errorViewModel.displayError(response)
+                                } else {
+                                    navController.navigate("camera_screen")
+                                }
+                            }
+                            keyboardController?.hide()
+                        }
+                    ),
+                    visualTransformation = PasswordVisualTransformation(),
                     modifier = Modifier
                         .fillMaxWidth()
-                        .padding(horizontal = 64.dp),
-                    visualTransformation = PasswordVisualTransformation()
+                        .padding(horizontal = 64.dp)
                 )
-                Spacer(modifier = Modifier.height(24.dp)) // Space between Password field and Sign Up link
+                Spacer(modifier = Modifier.height(24.dp))
 
                 ClickableText(text = annotatedText, onClick = { offset ->
                     annotatedText.getStringAnnotations(
@@ -115,8 +132,7 @@ fun LoginPage(
                     Button(
                         onClick = {
                             coroutineScope.launch {
-                                val response =
-                                    userViewModel.loginUser(username.value, password.value)
+                                val response = userViewModel.loginUser(username.value, password.value)
                                 if (response != null) {
                                     errorViewModel.displayError(response)
                                 } else {
@@ -136,7 +152,6 @@ fun LoginPage(
                     }
                 }
             }
-        },
-
+        }
     )
 }
