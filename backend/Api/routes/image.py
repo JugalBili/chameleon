@@ -37,13 +37,13 @@ def get_all_images_for_hash(image_service: Annotated['ImageService', Depends(get
     return Response(zip_file.getvalue(), headers=headers, media_type="application/zip")
 
 @router.get("/list/{image_hash}")
-def list_image_for_hash(image_service: Annotated['ImageService', Depends(get_image_service)],
+async def list_image_for_hash(image_service: Annotated['ImageService', Depends(get_image_service)],
                         history_service: Annotated['HistoryService', Depends(get_history_service)],
                         user: Annotated['User', Depends(get_user)],
                         image_hash: str
                         ):
     summary = image_service.get_image_summary_by_hash(user.uid, image_hash)
-    history_service.update_history(user, summary.original_image, [])
+    await history_service.update_history(user, summary.original_image, [])
     return summary
 
 

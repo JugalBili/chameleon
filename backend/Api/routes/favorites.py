@@ -24,7 +24,7 @@ async def get_user_favorites(
 async def add_to_favorites(favorites_service: Annotated["FavoritesService", Depends(get_favorites_service)],
     user: Annotated['User', Depends(get_user)],
     color: ColorDTO):
-    print("Received Color DTO: ", ColorDTO.model_dump())
+    print("Received Color DTO: ", color.model_dump())
     await favorites_service.add_to_favorites(user, color)
     # returns 204: no-content
     return Response(status_code=204)
