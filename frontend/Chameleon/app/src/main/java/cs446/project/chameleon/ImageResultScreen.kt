@@ -40,6 +40,7 @@ import androidx.navigation.NavHostController
 import cs446.project.chameleon.composables.NavBar
 import cs446.project.chameleon.data.viewmodel.ErrorViewModel
 import cs446.project.chameleon.data.viewmodel.ImageViewModel
+import cs446.project.chameleon.data.viewmodel.LoadingViewModel
 import cs446.project.chameleon.data.viewmodel.PaintViewModel
 import cs446.project.chameleon.data.viewmodel.UserViewModel
 import kotlinx.coroutines.launch
@@ -52,7 +53,8 @@ fun ImageResultScreen(
     userViewModel: UserViewModel,
     paintViewModel: PaintViewModel,
     imageViewModel: ImageViewModel,
-    errorViewModel: ErrorViewModel
+    errorViewModel: ErrorViewModel,
+    loadingViewModel: LoadingViewModel
 ) {
     // ImageViewModel setup
     val renders by imageViewModel.renders.collectAsState()

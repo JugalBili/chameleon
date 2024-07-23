@@ -20,6 +20,7 @@ import androidx.navigation.NavHostController
 import cs446.project.chameleon.data.model.RGB
 import cs446.project.chameleon.data.viewmodel.ErrorViewModel
 import cs446.project.chameleon.data.viewmodel.ImageViewModel
+import cs446.project.chameleon.data.viewmodel.LoadingViewModel
 import cs446.project.chameleon.data.viewmodel.PaintViewModel
 import cs446.project.chameleon.data.viewmodel.UserViewModel
 import cs446.project.chameleon.utils.getColour
@@ -35,7 +36,8 @@ fun SignupPage(
     userViewModel: UserViewModel,
     paintViewModel: PaintViewModel,
     imageViewModel: ImageViewModel,
-    errorViewModel: ErrorViewModel
+    errorViewModel: ErrorViewModel,
+    loadingViewModel: LoadingViewModel
 ) {
     var email by remember { mutableStateOf("") }
     var emailError by remember { mutableStateOf(false) }
@@ -166,7 +168,9 @@ fun SignupPage(
             onClick = {
                 if (!emailError && email.isNotEmpty() && firstname.isNotEmpty() && lastname.isNotEmpty() && password.isNotEmpty() && confirmPassword == password) {
                     coroutineScope.launch {
+                        loadingViewModel.displayLoad()
                         val response = userViewModel.registerUser(email, password, firstname, lastname)
+                        loadingViewModel.dismissLoad()
                         if (response != null) {
                             errorViewModel.displayError(response)
                         } else {

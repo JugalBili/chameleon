@@ -31,6 +31,7 @@ import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
 import cs446.project.chameleon.data.viewmodel.ErrorViewModel
 import cs446.project.chameleon.data.viewmodel.ImageViewModel
+import cs446.project.chameleon.data.viewmodel.LoadingViewModel
 import cs446.project.chameleon.data.viewmodel.PaintViewModel
 import cs446.project.chameleon.data.viewmodel.UserViewModel
 import kotlinx.coroutines.launch
@@ -42,7 +43,8 @@ fun LoginPage(
     userViewModel: UserViewModel,
     paintViewModel: PaintViewModel,
     imageViewModel: ImageViewModel,
-    errorViewModel: ErrorViewModel
+    errorViewModel: ErrorViewModel,
+    loadingViewModel: LoadingViewModel
 ) {
 
     val username = remember { mutableStateOf("") }
@@ -132,7 +134,9 @@ fun LoginPage(
                 Button(
                     onClick = {
                         coroutineScope.launch {
+                            loadingViewModel.displayLoad()
                             val response = userViewModel.loginUser(username.value, password.value)
+                            loadingViewModel.dismissLoad()
                             if (response != null) {
                                 errorViewModel.displayError(response)
                             } else {
