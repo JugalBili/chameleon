@@ -59,6 +59,9 @@ class ImageViewModel(@field:SuppressLint("StaticFieldLeak") private val context:
     }
 
     suspend fun postImage(authToken: String, paints: List<Paint>) {
+        _renders.value = emptyList()
+        //_baseImage.value?.let { addRender(it) }
+        _renderColors.value = emptyList()
         val colorsList = mutableListOf<Color>()
         for (paint in paints) {
             colorsList.add(Color(paint.id, paint.rgb))
@@ -82,12 +85,9 @@ class ImageViewModel(@field:SuppressLint("StaticFieldLeak") private val context:
         runBlocking {
             val response = imageRepository.postImage(authToken, tempFile, colorsList)
 
-            println("move on")
             for (image in response.processedImages) {
                 addRenderColor(image.color)
-                runBlocking {
-                    addRender(imageRepository.getImageBitmap(authToken, image.processedImageHash))
-                }
+                addRender(imageRepository.getImageBitmap(authToken, image.processedImageHash))
             }
         }
     }

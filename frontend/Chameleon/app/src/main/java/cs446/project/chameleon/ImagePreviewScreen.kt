@@ -92,6 +92,8 @@ fun ImagePreviewScreen(
                         coroutineScope.launch {
                             imageViewModel.postImage(userViewModel.token.token, paintViewModel.selectedPaints)
                             isProcessing = false
+                            paintViewModel.clearSelectedPaints()
+                            navController.navigate("image_result_screen")
                         }
                     }
                 )

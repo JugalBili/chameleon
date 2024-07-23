@@ -124,11 +124,11 @@ fun LoginPage(
             ) {
                 Button(
                     onClick = {
-                        navController.navigate("camera_screen")
                         coroutineScope.launch {
                             userViewModel.loginUser(username.value, password.value)
+                            navController.navigate("camera_screen")
                         }
-                              },
+                    },
                     modifier = Modifier
                         .padding(10.dp)
                         .weight(1f)
