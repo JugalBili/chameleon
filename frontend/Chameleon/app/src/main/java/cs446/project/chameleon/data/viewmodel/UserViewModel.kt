@@ -87,9 +87,8 @@ class UserViewModel(test: List<Bitmap>): ViewModel() {
     }
 
     suspend fun registerUser(email: String, password: String, firstname: String, lastname: String) {
-        userRepository.register(email, password, firstname, lastname)
-
         runBlocking {
+            userRepository.register(email, password, firstname, lastname)
             loginUser(email, password)
         }
     }
@@ -140,6 +139,10 @@ class UserViewModel(test: List<Bitmap>): ViewModel() {
             }
 
             addHistory(UIHistory(baseImage, images, history.colors))
+
+
+            // TODO FIX
+            break
         }
     }
 
