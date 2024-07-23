@@ -54,6 +54,9 @@ class MainActivity : ComponentActivity() {
                     composable("login_page") {
                         LoginPage(navController)
                     }
+                    composable("signup_page") {
+                        SignupPage(navController)
+                    }
                     composable("camera_screen") {
                         CameraScreen(navController, imageViewModel)
                     }
