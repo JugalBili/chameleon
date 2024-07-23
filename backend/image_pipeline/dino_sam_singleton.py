@@ -82,10 +82,14 @@ class DinoSAMSingleton:
         print(f"=== Starting Grounded SAM Pipeline for Image {image_name} ===\n")
         image_pil = Image.fromarray(cv2.cvtColor(image_cv, cv2.COLOR_BGR2RGB)) 
 
-        pred_dict = self.gd_predictor.run_inference(
-            image_pil, CAPTION, BOX_THRESHOLD, TEXT_THRESHOLD
-        )
-        masks = self.sam_predictor.run_inference(image_pil, pred_dict)
+        try:
+            pred_dict = self.gd_predictor.run_inference(
+                image_pil, CAPTION, BOX_THRESHOLD, TEXT_THRESHOLD
+            )
+            masks = self.sam_predictor.run_inference(image_pil, pred_dict)
+        except RuntimeError as e:
+            print(f"Error running ML Pipeline: {e}")
+            return [],[image_cv for i in range(len(colors))]
 
         boxed_image = self.gd_predictor.apply_boxes_to_image(image_pil, pred_dict)
         # boxed_image.save(
