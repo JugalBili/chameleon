@@ -11,6 +11,7 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.text.ClickableText
 import androidx.compose.material3.Button
+import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
@@ -48,18 +49,6 @@ fun LoginPage(
     val password = remember { mutableStateOf("") }
     val clicked = remember { mutableStateOf(false) }
 
-    val colours = listOf(
-        Color(0xFFD32F2F),
-        Color(0xFFFF5722),
-        Color(0xFFF57C00),
-        Color(0xFFFDD835),
-        Color(0xFF43A047),
-        Color(0xFF29B6F6),
-        Color(0xFF1E88E5),
-        Color(0xFF8E24AA),
-        Color(0xFF5E35B1)
-    )
-
     val annotatedText = buildAnnotatedString {
         append("Don't have an account? Sign up ")
         pushStringAnnotation(tag = "signup", annotation = "here!")
@@ -77,19 +66,18 @@ fun LoginPage(
             Column(
                 modifier = Modifier
                     .fillMaxSize()
-                    .padding(12.dp),
+                    .padding(3.dp),
                 verticalArrangement = Arrangement.Center,
                 horizontalAlignment = Alignment.CenterHorizontally
             ) {
+                // Move the logo up to be above the username field
                 val image: Painter = painterResource(id = R.drawable.logo)
                 Image(
                     painter = image,
                     contentDescription = "App Logo",
                     modifier = Modifier
                         .height(300.dp)
-                        .padding(16.dp)
                 )
-                Spacer(modifier = Modifier.height(24.dp))
 
                 OutlinedTextField(
                     value = username.value,
@@ -99,8 +87,9 @@ fun LoginPage(
                         .fillMaxWidth()
                         .padding(horizontal = 64.dp)
                 )
-                Spacer(modifier = Modifier.height(24.dp))
+                Spacer(modifier = Modifier.height(16.dp)) // Reduced space before Password field
 
+                // Center the Password field
                 OutlinedTextField(
                     value = password.value,
                     onValueChange = { password.value = it },
@@ -110,42 +99,44 @@ fun LoginPage(
                         .padding(horizontal = 64.dp),
                     visualTransformation = PasswordVisualTransformation()
                 )
-                Spacer(modifier = Modifier.height(24.dp))
+                Spacer(modifier = Modifier.height(24.dp)) // Space between Password field and Sign Up link
 
                 ClickableText(text = annotatedText, onClick = { offset ->
                     annotatedText.getStringAnnotations(
                         tag = "signup", start = offset, end = offset
-                    ).firstOrNull()?.let {navController.navigate("signup_page")}
+                    ).firstOrNull()?.let { navController.navigate("signup_page") }
                 })
-
-
-            }
-        },
-        bottomBar = {
-            Row(
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .padding(10.dp),
-                horizontalArrangement = Arrangement.SpaceEvenly
-            ) {
-                Button(
-                    onClick = {
-                        coroutineScope.launch {
-                            val response = userViewModel.loginUser(username.value, password.value)
-                            if (response != null) {
-                                errorViewModel.displayError(response)
-                            } else {
-                                navController.navigate("camera_screen")
-                            }
-                        }
-                    },
+                Row(
                     modifier = Modifier
-                        .padding(10.dp)
-                        .weight(1f)
+                        .fillMaxWidth()
+                        .padding(10.dp),
+                    horizontalArrangement = Arrangement.SpaceEvenly
                 ) {
-                    Text(text = "Login")
+                    Button(
+                        onClick = {
+                            coroutineScope.launch {
+                                val response =
+                                    userViewModel.loginUser(username.value, password.value)
+                                if (response != null) {
+                                    errorViewModel.displayError(response)
+                                } else {
+                                    navController.navigate("camera_screen")
+                                }
+                            }
+                        },
+                        colors = ButtonDefaults.buttonColors(
+                            containerColor = Color(84, 139, 227),
+                            contentColor = Color.White
+                        ),
+                        modifier = Modifier
+                            .padding(10.dp)
+                            .weight(1f)
+                    ) {
+                        Text(text = "Login")
+                    }
                 }
             }
-        }
+        },
+
     )
 }
