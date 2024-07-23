@@ -55,7 +55,7 @@ class ImageService:
             image_data = ImageData(
                 uid=uid, colors=to_process, raw_image_hash=image_hash
             )
-            resp = self.client.send_image_process_request(image_data)
+            resp = await self.client.send_image_process_request(image_data)
             processed_images.extend(resp)
 
         return ImageRequestListResponse(
