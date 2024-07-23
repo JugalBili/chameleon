@@ -14,7 +14,7 @@ class ImageServerClient:
         try:
             print("sending request to: ", url)
             print("sending data: ", json_data)
-            resp  = requests.post(url, data=json_data, headers={"Content-Type": "application/json"})
+            resp  = requests.post(url, data=json_data, headers={"Content-Type": "application/json"}, timeout=15)
             resp.raise_for_status()
             processed_data = resp.json()
             print("received data from server: ", processed_data)
