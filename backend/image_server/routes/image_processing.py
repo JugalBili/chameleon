@@ -81,7 +81,7 @@ async def generate_image(image_data: ImageData,
     if not json_data:
         for i in range(len(masks)):
             masks[i][masks[i] > 0] = 1
-            masks[i] = masks[i] * 255
+            masks[i] = (masks[i] * 255).astype(np.uint8)
             pil_mask = PIL.Image.fromarray(masks[i])
             masks[i] = pil_mask.convert('1')
             buffer = io.BytesIO()
