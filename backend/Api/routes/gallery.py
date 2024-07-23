@@ -47,6 +47,7 @@ def get_image_by_hash(
     user: Annotated["User", Depends(get_user)],
     review_dto: ReviewImageDto,
 ):
+    print("Review DTO: ", review_dto.model_dump())
     image = gallery_service.get_image_by_hash(
         review_dto.paint_id, review_dto.image_hash
     )
@@ -61,6 +62,7 @@ async def upload_file(
     file: UploadFile | None = None,
     review: str = Form(...),
 ):
+    print("Received Review: ", review)
     try:
         review_dto = ReviewDto(**json.loads(review))
     except (SyntaxError, ValidationError, TypeError) as e:

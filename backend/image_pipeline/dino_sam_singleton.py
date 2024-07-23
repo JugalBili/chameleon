@@ -16,7 +16,8 @@ from dino import Dino
 from sam import SAM
 
 
-DEVICE = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+SAM_DEVICE = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+GD_DEVICE = 'cpu'
 GD_FILENAME = os.path.join(cur_path, "models/groundingdino_swint_ogc.pth")
 GD_CONFIG_FILENAME = os.path.join(cur_path, "models/GroundingDINO_SwinT_OGC.py")
 SAM_FILENAME =  os.path.join(cur_path, "models/sam_vit_h_4b8939.pth")
@@ -73,19 +74,26 @@ class Singleton:
 @Singleton
 class DinoSAMSingleton:
     def __init__(self):
-        self.gd_predictor = Dino(GD_FILENAME, GD_CONFIG_FILENAME, 'cpu')
+        self.gd_predictor = Dino(GD_FILENAME, GD_CONFIG_FILENAME, GD_DEVICE)
         print("GroundingDINO Model Loaded")
-        self.sam_predictor = SAM(SAM_FILENAME, SAM_TYPE, DEVICE)
+        self.sam_predictor = SAM(SAM_FILENAME, SAM_TYPE, SAM_DEVICE)
         print("SAM Model Loaded")
 
     def run_pipeline(self, image_cv, image_name, colors):
         print(f"=== Starting Grounded SAM Pipeline for Image {image_name} ===\n")
         image_pil = Image.fromarray(cv2.cvtColor(image_cv, cv2.COLOR_BGR2RGB)) 
 
-        pred_dict = self.gd_predictor.run_inference(
-            image_pil, CAPTION, BOX_THRESHOLD, TEXT_THRESHOLD
-        )
-        masks = self.sam_predictor.run_inference(image_pil, pred_dict)
+        try:
+            pred_dict = self.gd_predictor.run_inference(
+                image_pil, CAPTION, BOX_THRESHOLD, TEXT_THRESHOLD
+            )
+            masks = self.sam_predictor.run_inference(image_pil, pred_dict)
+        except RuntimeError as e:
+            print(f"Error running ML Pipeline: {e}")
+            print(f"Restarting models")
+            self.gd_predictor = Dino(GD_FILENAME, GD_CONFIG_FILENAME, GD_DEVICE)
+            self.sam_predictor = SAM(SAM_FILENAME, SAM_TYPE, SAM_DEVICE)
+            return [],[image_cv for i in range(len(colors))]
 
         boxed_image = self.gd_predictor.apply_boxes_to_image(image_pil, pred_dict)
         # boxed_image.save(

@@ -73,6 +73,7 @@ def get_gallery_service(
 def get_auth_token(request: Request):
     token = request.headers.get("Authorization")
     if token is None:
+        print("Received no Authentication Token for user!")
         raise HTTPException(status_code=401)
     return token
 
@@ -83,4 +84,6 @@ async def get_user(
         "UserAuthenticationService", Depends(get_authentication_service)
     ],
 ):
-    return await authentication_service.authenticate_user(token)
+    user = await authentication_service.authenticate_user(token)
+    print("Received request from: ", user.email)
+    return user

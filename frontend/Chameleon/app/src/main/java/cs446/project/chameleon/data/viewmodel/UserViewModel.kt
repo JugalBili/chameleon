@@ -1,28 +1,34 @@
 package cs446.project.chameleon.data.viewmodel
 
 import android.graphics.Bitmap
-import android.util.Log
 import androidx.compose.runtime.mutableStateOf
 import cs446.project.chameleon.data.model.Color
 import androidx.lifecycle.ViewModel
-import androidx.lifecycle.viewModelScope
 import cs446.project.chameleon.data.model.User
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import androidx.compose.runtime.*
+import cs446.project.chameleon.data.model.Favorite
 import cs446.project.chameleon.data.model.HSL
 import cs446.project.chameleon.data.model.History
-import cs446.project.chameleon.data.model.HistoryData
 import cs446.project.chameleon.data.model.Paint
 import cs446.project.chameleon.data.model.RGB
+import cs446.project.chameleon.data.model.Token
+import cs446.project.chameleon.data.repository.FavoriteRepository
 import cs446.project.chameleon.data.repository.HistoryRepository
 import cs446.project.chameleon.data.repository.ImageRepository
 import cs446.project.chameleon.data.repository.UserRepository
-import kotlinx.coroutines.launch
+import cs446.project.chameleon.utils.getPaintById
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.async
+import kotlinx.coroutines.coroutineScope
+import kotlinx.coroutines.runBlocking
+import okhttp3.internal.wait
 
 data class UIHistory (
-    val baseImage: Bitmap,
-    val images: List<Bitmap>,
+    var baseImageId: String,
+    var baseImage: Bitmap,
+    val imageIds: List<String>,
     val colors: List<Color>
 )
 
@@ -31,6 +37,7 @@ class UserViewModel(test: List<Bitmap>): ViewModel() {
     // Setup repo
     private var userRepository: UserRepository = UserRepository()
     private var imageRepository: ImageRepository = ImageRepository()
+    private var favoriteRepository: FavoriteRepository = FavoriteRepository()
     private var historyRepository: HistoryRepository = HistoryRepository()
 
     // User object
@@ -43,62 +50,159 @@ class UserViewModel(test: List<Bitmap>): ViewModel() {
     }
 
     // User token
-    lateinit var token: String
+    lateinit var token: Token
 
-    // User favourites
     private val _favourites = MutableStateFlow<List<Paint>>(emptyList())
     val favourites = _favourites.asStateFlow()
+    fun getFavourites(): List<Paint> {
+        return _favourites.value
+    }
     fun addPaint(paint: Paint) {
         _favourites.value += paint
     }
-    fun deleteFav(paint: Paint) {
+    fun deletePaint(paint: Paint) {
         _favourites.value -= paint
     }
 
     // User history
     private val _historyList = MutableStateFlow<List<UIHistory>>(emptyList())
     val historyList = _historyList.asStateFlow()
-
-
-    fun fetchUser(){
+    fun addHistory(history: UIHistory) {
+        _historyList.value += history
+    }
+    fun deleteHistory(history: UIHistory) {
+        _historyList.value -= history
     }
 
-    fun fetchFavourites() {
-    }
 
-    fun fetchHistory() {
-        viewModelScope.launch {
-            val data = historyRepository.getHistory(token)
-                // TODO: Update historyList with this data
+    suspend fun loginUser(email: String, password: String) {
+        val response = userRepository.login(email, password)
+        token = response.token
+        _user = response.user
+
+        runBlocking {
+            fetchFavourites()
         }
+
+        runBlocking {
+            fetchHistory()
+        }
+    }
+
+    suspend fun registerUser(email: String, password: String, firstname: String, lastname: String) {
+        runBlocking {
+            userRepository.register(email, password, firstname, lastname)
+            loginUser(email, password)
+        }
+    }
+
+    // favourites
+    suspend fun fetchFavourites() {
+        _favourites.value = emptyList()
+        val response = favoriteRepository.getFavorites(token.token)
+        for (fav in response) {
+            addPaint(getPaintById(fav.paintId))
+        }
+    }
+
+    suspend fun addFavourite(paint: Paint) {
+        val fav = Favorite(paint.id, paint.rgb)
+        favoriteRepository.postFavorite(token.token, fav)
+
+        runBlocking {
+            fetchFavourites()
+        }
+    }
+
+    suspend fun deleteFavourite(paint: Paint) {
+        favoriteRepository.deleteFavorite(token.token, paint.id)
+
+        runBlocking {
+            fetchFavourites()
+        }
+    }
+
+    // history
+    suspend fun fetchHistory() {
+        _historyList.value = emptyList()
+
+        val response = historyRepository.getHistory(token.token)
+
+        for (history in response.history) {
+            val imgRes = imageRepository.getImageList(token.token, history.baseImage)
+
+            // get original image
+            val baseImage = imageRepository.getImageBitmap(token.token, imgRes.originalImage)
+
+            // get renders
+            val imageIds = mutableListOf<String>()
+            for (img in imgRes.processedImages) {
+                imageIds.add(img.processedImageHash)
+            }
+
+            addHistory(UIHistory(imgRes.originalImage, baseImage, imageIds, history.colors))
+
+            // TODO FIX
+            //break
+        }
+    }
+
+    // fetched non-cached rendered images for a base image
+    suspend fun fetchNonCachedHistory() {
+        val response = historyRepository.getHistory(token.token)
+
+        for (history in response.history) {
+            if (!historyList.value.any { it.baseImageId == history.baseImage }) {
+                val baseImage = imageRepository.getImageBitmap(token.token, history.baseImage)
+                val imgRes = imageRepository.getImageList(token.token, history.baseImage)
+
+                val imageIds = mutableListOf<String>()
+                for (img in imgRes.processedImages) {
+                    imageIds.add(img.processedImageHash)
+                }
+
+                addHistory(UIHistory(imgRes.originalImage, baseImage, imageIds, history.colors))
+            }
+        }
+    }
+
+    // fetch rendered images for a base image
+    suspend fun fetchRenderedFromHistory(imageIds: List<String>): List<Bitmap> {
+        val images = mutableListOf<Bitmap>()
+
+        for (imgHash in imageIds) {
+            images.add(imageRepository.getImageBitmap(token.token, imgHash))
+        }
+
+        return images
     }
 
 
     // INIT TO TEST PAGE
-    init {
-        val defaultUser = User("asdf", "John", "Doe", "asdf")
-        updateUser(defaultUser)
-        val defaultPaints = listOf(
-            Paint("Benjamin Moore", "https://www.benjaminmoore.com/en-ca/paint-colours/colour/2000-70/voile-pink", "Voile Pink", "2000-70", RGB(252, 226, 230), HSL(351f, 81.3f, 93.7f), "white", "red"),
-            Paint("PPG", "https://www.ppgpaints.com/color/color-families/greens/grass-daisy", "Grass Daisy", "PPG1215-6", RGB(206, 176, 42), HSL(49f, 66.1f, 48.6f), "yellow", "yellow"),
-            Paint("PPG", "https://www.ppgpaints.com/color/color-families/oranges/fiesta", "Fiesta", "PPG1065-2", RGB(237, 216, 210), HSL(13f, 42.9f, 87.6f), "white", "red"),
-            Paint("Dunn Edwards", "https://www.dunnedwards.com/colors/browser/de5921", "Your Shadow", "DE5921", RGB(120, 126, 147), HSL(227f, 11.1f, 52.4f), "gray", "blue")
-        )
-        for (i in defaultPaints) {
-            addPaint(i)
-        }
-
-        val colors = listOf(
-            Color("paint_id_1", RGB(255, 0, 0)),
-            Color("paint_id_2", RGB(0, 255, 0)),
-            Color("paint_id_3", RGB(0, 0, 255))
-        )
-        _historyList.value += UIHistory(test[0],test, colors)
-        _historyList.value += UIHistory(test[0],test, colors)
-        _historyList.value += UIHistory(test[0],test, colors)
-        _historyList.value += UIHistory(test[0],test, colors)
-        _historyList.value += UIHistory(test[0],test, colors)
-        _historyList.value += UIHistory(test[0],test, colors)
-        _historyList.value += UIHistory(test[0],test, colors)
-    }
+//    init {
+//        val defaultUser = User("asdf", "John", "Doe", "asdf")
+//        updateUser(defaultUser)
+//        val defaultPaints = listOf(
+//            Paint("Benjamin Moore", "https://www.benjaminmoore.com/en-ca/paint-colours/colour/2000-70/voile-pink", "Voile Pink", "2000-70", RGB(252, 226, 230), HSL(351f, 81.3f, 93.7f), "white", "red"),
+//            Paint("PPG", "https://www.ppgpaints.com/color/color-families/greens/grass-daisy", "Grass Daisy", "PPG1215-6", RGB(206, 176, 42), HSL(49f, 66.1f, 48.6f), "yellow", "yellow"),
+//            Paint("PPG", "https://www.ppgpaints.com/color/color-families/oranges/fiesta", "Fiesta", "PPG1065-2", RGB(237, 216, 210), HSL(13f, 42.9f, 87.6f), "white", "red"),
+//            Paint("Dunn Edwards", "https://www.dunnedwards.com/colors/browser/de5921", "Your Shadow", "DE5921", RGB(120, 126, 147), HSL(227f, 11.1f, 52.4f), "gray", "blue")
+//        )
+//        for (i in defaultPaints) {
+//            addPaint(i)
+//        }
+//
+//        val colors = listOf(
+//            Color("paint_id_1", RGB(255, 0, 0)),
+//            Color("paint_id_2", RGB(0, 255, 0)),
+//            Color("paint_id_3", RGB(0, 0, 255))
+//        )
+//        _historyList.value += UIHistory(test[0],test, colors)
+//        _historyList.value += UIHistory(test[0],test, colors)
+//        _historyList.value += UIHistory(test[0],test, colors)
+//        _historyList.value += UIHistory(test[0],test, colors)
+//        _historyList.value += UIHistory(test[0],test, colors)
+//        _historyList.value += UIHistory(test[0],test, colors)
+//        _historyList.value += UIHistory(test[0],test, colors)
+//    }
 }

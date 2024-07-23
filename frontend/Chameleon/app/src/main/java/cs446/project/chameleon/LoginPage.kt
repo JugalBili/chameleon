@@ -16,6 +16,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
@@ -27,10 +28,15 @@ import androidx.compose.ui.text.withStyle
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
+import cs446.project.chameleon.data.viewmodel.UserViewModel
+import kotlinx.coroutines.launch
 
 
 @Composable
-fun LoginPage(navController: NavHostController) {
+fun LoginPage(
+    navController: NavHostController,
+    userViewModel: UserViewModel
+) {
 
     val username = remember { mutableStateOf("") }
     val password = remember { mutableStateOf("") }
@@ -64,11 +70,15 @@ fun LoginPage(navController: NavHostController) {
         pop()
     }
 
+    val coroutineScope = rememberCoroutineScope()
+
     Scaffold(
         modifier = Modifier.fillMaxSize(),
         content = { padding ->
             Column(
-                modifier = Modifier.fillMaxSize().padding(12.dp),
+                modifier = Modifier
+                    .fillMaxSize()
+                    .padding(12.dp),
                 verticalArrangement = Arrangement.Center,
                 horizontalAlignment = Alignment.CenterHorizontally
             ) {
@@ -107,12 +117,21 @@ fun LoginPage(navController: NavHostController) {
         },
         bottomBar = {
             Row(
-                modifier = Modifier.fillMaxWidth().padding(10.dp),
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(10.dp),
                 horizontalArrangement = Arrangement.SpaceEvenly
             ) {
                 Button(
-                    onClick = { navController.navigate("camera_screen") },
-                    modifier = Modifier.padding(10.dp).weight(1f)
+                    onClick = {
+                        coroutineScope.launch {
+                            userViewModel.loginUser(username.value, password.value)
+                            navController.navigate("camera_screen")
+                        }
+                    },
+                    modifier = Modifier
+                        .padding(10.dp)
+                        .weight(1f)
                 ) {
                     Text(text = "Login")
                 }

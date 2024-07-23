@@ -4,28 +4,13 @@ import android.annotation.SuppressLint
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 import android.util.Log
-import android.widget.ImageView
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
-import androidx.compose.foundation.border
-import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.padding
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.automirrored.filled.ArrowBack
-import androidx.compose.material.icons.filled.Check
-import androidx.compose.material.icons.filled.Home
-import androidx.compose.material.icons.filled.KeyboardArrowUp
 import androidx.compose.material3.CircularProgressIndicator
-import androidx.compose.material3.Icon
-import androidx.compose.material3.IconButton
 import androidx.compose.material3.Scaffold
-import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.livedata.observeAsState
@@ -36,21 +21,18 @@ import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.draw.drawBehind
-import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.asImageBitmap
-import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
-import androidx.compose.ui.res.vectorResource
-import androidx.compose.ui.unit.dp
-import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavHostController
 import cs446.project.chameleon.composables.NavBar
 import cs446.project.chameleon.composables.PaintSelectionDialog
 import cs446.project.chameleon.composables.SelectionBar
+import cs446.project.chameleon.data.viewmodel.ErrorViewModel
 import cs446.project.chameleon.data.viewmodel.ImageViewModel
+import cs446.project.chameleon.data.viewmodel.PaintViewModel
+import cs446.project.chameleon.data.viewmodel.UserViewModel
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.delay
 
@@ -59,7 +41,9 @@ import kotlinx.coroutines.delay
 fun ImagePreviewScreen(
     navController: NavHostController,
     paintViewModel: PaintViewModel,
-    imageViewModel: ImageViewModel
+    imageViewModel: ImageViewModel,
+    userViewModel: UserViewModel,
+    errorViewModel: ErrorViewModel
 ) {
     var isProcessing by remember { mutableStateOf(false) }
     val coroutineScope = rememberCoroutineScope()
@@ -70,7 +54,6 @@ fun ImagePreviewScreen(
 
     // Colour Selection Modal
     val showModal = remember { mutableStateOf(false) }
-    val selectedPaintIds = remember { mutableStateListOf<String>() }
 
     // ImageViewModel setup
     val bitmapState = imageViewModel.baseImage.observeAsState()
@@ -108,26 +91,17 @@ fun ImagePreviewScreen(
                         // process the image, then display result
                         isProcessing = true
                         coroutineScope.launch {
-                            processImage(
-                                listOf(
-                                    demoBitmap,
-                                    demoBitmap2
-                                )
-                            ) { processedImages -> // TODO change demoBitmap to actual result
-                                navController.currentBackStackEntry?.savedStateHandle?.set(
-                                    "processedImages",
-                                    processedImages
-                                )
-                                isProcessing = false
-                                navController.navigate("image_result_screen")
-                            }
+                            imageViewModel.postImage(userViewModel.token.token, paintViewModel.selectedPaints)
+                            isProcessing = false
+                            paintViewModel.clearSelectedPaints()
+                            navController.navigate("image_result_screen")
                         }
                     }
                 )
 
 
                 // Nav bar
-                NavBar(navController = navController)
+                NavBar(navController = navController, userViewModel)
             }
         }
     )
@@ -136,14 +110,9 @@ fun ImagePreviewScreen(
         PaintSelectionDialog(
             onClose = { showModal.value = false },
             onSubmit = { showModal.value = false },
-            onClick = { paint ->
-                if (selectedPaintIds.contains(paint.id)) {
-                    selectedPaintIds.remove(paint.id)
-                } else {
-                    selectedPaintIds.add(paint.id)
-                }
-            },
-            paintViewModel = paintViewModel
+            paintViewModel = paintViewModel,
+            userViewModel = userViewModel,
+            errorViewModel = errorViewModel
         )
     }
 }
