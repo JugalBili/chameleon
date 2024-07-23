@@ -1,5 +1,6 @@
 package cs446.project.chameleon.composables
 
+import android.graphics.Bitmap
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
@@ -34,6 +35,7 @@ import cs446.project.chameleon.data.model.History
 import cs446.project.chameleon.utils.SUBHEADER
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.asImageBitmap
@@ -41,14 +43,19 @@ import androidx.navigation.NavHostController
 import cs446.project.chameleon.composables.styling.ColouredBox
 import cs446.project.chameleon.data.viewmodel.ImageViewModel
 import cs446.project.chameleon.data.viewmodel.UIHistory
+import cs446.project.chameleon.data.viewmodel.UserViewModel
 import cs446.project.chameleon.utils.getColour
+import kotlinx.coroutines.launch
 
 @Composable
 fun HistoryRows(
     navController: NavHostController,
     history: List<UIHistory>,
-    imageViewModel: ImageViewModel
+    imageViewModel: ImageViewModel,
+    userViewModel: UserViewModel
 ) {
+    val coroutineScope = rememberCoroutineScope()
+
     Box(modifier = Modifier.fillMaxWidth().fillMaxHeight()) {
         CenteredColumn(modifier = Modifier.padding(16.dp), centerHorizontally = false) {
 
@@ -68,8 +75,11 @@ fun HistoryRows(
                             .border(1.dp, Color.Black, RoundedCornerShape(16.dp))
                             .padding(8.dp)
                             .clickable {
-                                imageViewModel.onHistoryRowClick(item)
-                                navController.navigate("image_result_screen")},
+                                coroutineScope.launch {
+                                    imageViewModel.onHistoryRowClick(item, userViewModel.fetchRenderedFromHistory(item.imageIds))
+                                    navController.navigate("image_result_screen")
+                                }
+                            },
                         verticalAlignment = Alignment.CenterVertically
                     ) {
                         item {

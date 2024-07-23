@@ -59,6 +59,8 @@ class ImageRepository {
         val colorsJson = gson.toJson(colors)
         val colorsRequestBody = colorsJson.toRequestBody("text/plain".toMediaTypeOrNull())
 
+        println(filePart)
+        println(colorsRequestBody)
         return apiService.postImage("Bearer $authToken", filePart, colorsRequestBody)
     }
 

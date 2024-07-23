@@ -7,11 +7,13 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import cs446.project.chameleon.data.model.Color
+import cs446.project.chameleon.data.model.ImageResponse
 import cs446.project.chameleon.data.model.Paint
 import cs446.project.chameleon.data.repository.ImageRepository
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
+import kotlinx.coroutines.runBlocking
 import kotlinx.coroutines.withContext
 import java.io.ByteArrayOutputStream
 import java.io.File
@@ -31,6 +33,9 @@ class ImageViewModel(@field:SuppressLint("StaticFieldLeak") private val context:
     // Renders
     private val _renders = MutableStateFlow<List<Bitmap>>(emptyList())
     val renders = _renders.asStateFlow()
+    fun addRender(bitmap: Bitmap) {
+        _renders.value += bitmap
+    }
 
     fun updateRenders(newRenders: List<Bitmap>) {
         _renders.value = newRenders
@@ -39,18 +44,24 @@ class ImageViewModel(@field:SuppressLint("StaticFieldLeak") private val context:
     // Corresponding Colors for Renders
     private val _renderColors = MutableStateFlow<List<Color>>(emptyList())
     val renderColors = _renderColors.asStateFlow()
+    fun addRenderColor(color: Color) {
+        _renderColors.value += color
+    }
 
     fun updateRenderColors(newColors: List<Color>) {
         _renderColors.value = newColors
     }
 
-    fun onHistoryRowClick(uiHistory: UIHistory) {
+    fun onHistoryRowClick(uiHistory: UIHistory, bitmaps: List<Bitmap>) {
         updateImage(uiHistory.baseImage)
-        updateRenders(uiHistory.images)
+        updateRenders(bitmaps)
         updateRenderColors(uiHistory.colors)
     }
 
     suspend fun postImage(authToken: String, paints: List<Paint>) {
+        _renders.value = emptyList()
+        //_baseImage.value?.let { addRender(it) }
+        _renderColors.value = emptyList()
         val colorsList = mutableListOf<Color>()
         for (paint in paints) {
             colorsList.add(Color(paint.id, paint.rgb))
@@ -70,6 +81,14 @@ class ImageViewModel(@field:SuppressLint("StaticFieldLeak") private val context:
             }
         }
 
-        imageRepository.postImage(authToken, tempFile, colorsList)
+
+        runBlocking {
+            val response = imageRepository.postImage(authToken, tempFile, colorsList)
+
+            for (image in response.processedImages) {
+                addRenderColor(image.color)
+                addRender(imageRepository.getImageBitmap(authToken, image.processedImageHash))
+            }
+        }
     }
 }
