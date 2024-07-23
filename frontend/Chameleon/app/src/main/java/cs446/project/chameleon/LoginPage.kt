@@ -28,6 +28,7 @@ import androidx.compose.ui.text.withStyle
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
+import cs446.project.chameleon.data.viewmodel.ErrorViewModel
 import cs446.project.chameleon.data.viewmodel.UserViewModel
 import kotlinx.coroutines.launch
 
@@ -35,7 +36,8 @@ import kotlinx.coroutines.launch
 @Composable
 fun LoginPage(
     navController: NavHostController,
-    userViewModel: UserViewModel
+    userViewModel: UserViewModel,
+    errorViewModel: ErrorViewModel,
 ) {
 
     val username = remember { mutableStateOf("") }
@@ -125,8 +127,12 @@ fun LoginPage(
                 Button(
                     onClick = {
                         coroutineScope.launch {
-                            userViewModel.loginUser(username.value, password.value)
-                            navController.navigate("camera_screen")
+                            val response = userViewModel.loginUser(username.value, password.value)
+                            if (response != null) {
+                                errorViewModel.displayError(response)
+                            } else {
+                                navController.navigate("camera_screen")
+                            }
                         }
                     },
                     modifier = Modifier
