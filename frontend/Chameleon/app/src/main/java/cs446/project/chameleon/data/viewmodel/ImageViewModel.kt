@@ -31,6 +31,9 @@ class ImageViewModel(@field:SuppressLint("StaticFieldLeak") private val context:
     // Renders
     private val _renders = MutableStateFlow<List<Bitmap>>(emptyList())
     val renders = _renders.asStateFlow()
+    fun addRender(bitmap: Bitmap) {
+        _renders.value += bitmap
+    }
 
     fun updateRenders(newRenders: List<Bitmap>) {
         _renders.value = newRenders
@@ -39,6 +42,9 @@ class ImageViewModel(@field:SuppressLint("StaticFieldLeak") private val context:
     // Corresponding Colors for Renders
     private val _renderColors = MutableStateFlow<List<Color>>(emptyList())
     val renderColors = _renderColors.asStateFlow()
+    fun addRenderColor(color: Color) {
+        _renderColors.value += color
+    }
 
     fun updateRenderColors(newColors: List<Color>) {
         _renderColors.value = newColors
@@ -70,6 +76,10 @@ class ImageViewModel(@field:SuppressLint("StaticFieldLeak") private val context:
             }
         }
 
-        imageRepository.postImage(authToken, tempFile, colorsList)
+        val response = imageRepository.postImage(authToken, tempFile, colorsList)
+        for (image in response.processedImages) {
+            addRenderColor(image.color)
+            addRender(imageRepository.getImageBitmap(authToken, image.processedImageHash))
+        }
     }
 }

@@ -70,6 +70,8 @@ class UserViewModel(test: List<Bitmap>): ViewModel() {
         token = response.token
         _user = response.user
 
+        System.out.println()
+
         fetchFavourites()
         fetchHistory()
     }
@@ -121,30 +123,30 @@ class UserViewModel(test: List<Bitmap>): ViewModel() {
 
 
     // INIT TO TEST PAGE
-    init {
-        val defaultUser = User("asdf", "John", "Doe", "asdf")
-        updateUser(defaultUser)
-        val defaultPaints = listOf(
-            Paint("Benjamin Moore", "https://www.benjaminmoore.com/en-ca/paint-colours/colour/2000-70/voile-pink", "Voile Pink", "2000-70", RGB(252, 226, 230), HSL(351f, 81.3f, 93.7f), "white", "red"),
-            Paint("PPG", "https://www.ppgpaints.com/color/color-families/greens/grass-daisy", "Grass Daisy", "PPG1215-6", RGB(206, 176, 42), HSL(49f, 66.1f, 48.6f), "yellow", "yellow"),
-            Paint("PPG", "https://www.ppgpaints.com/color/color-families/oranges/fiesta", "Fiesta", "PPG1065-2", RGB(237, 216, 210), HSL(13f, 42.9f, 87.6f), "white", "red"),
-            Paint("Dunn Edwards", "https://www.dunnedwards.com/colors/browser/de5921", "Your Shadow", "DE5921", RGB(120, 126, 147), HSL(227f, 11.1f, 52.4f), "gray", "blue")
-        )
-        for (i in defaultPaints) {
-            addPaint(i)
-        }
-
-        val colors = listOf(
-            Color("paint_id_1", RGB(255, 0, 0)),
-            Color("paint_id_2", RGB(0, 255, 0)),
-            Color("paint_id_3", RGB(0, 0, 255))
-        )
-        _historyList.value += UIHistory(test[0],test, colors)
-        _historyList.value += UIHistory(test[0],test, colors)
-        _historyList.value += UIHistory(test[0],test, colors)
-        _historyList.value += UIHistory(test[0],test, colors)
-        _historyList.value += UIHistory(test[0],test, colors)
-        _historyList.value += UIHistory(test[0],test, colors)
-        _historyList.value += UIHistory(test[0],test, colors)
-    }
+//    init {
+//        val defaultUser = User("asdf", "John", "Doe", "asdf")
+//        updateUser(defaultUser)
+//        val defaultPaints = listOf(
+//            Paint("Benjamin Moore", "https://www.benjaminmoore.com/en-ca/paint-colours/colour/2000-70/voile-pink", "Voile Pink", "2000-70", RGB(252, 226, 230), HSL(351f, 81.3f, 93.7f), "white", "red"),
+//            Paint("PPG", "https://www.ppgpaints.com/color/color-families/greens/grass-daisy", "Grass Daisy", "PPG1215-6", RGB(206, 176, 42), HSL(49f, 66.1f, 48.6f), "yellow", "yellow"),
+//            Paint("PPG", "https://www.ppgpaints.com/color/color-families/oranges/fiesta", "Fiesta", "PPG1065-2", RGB(237, 216, 210), HSL(13f, 42.9f, 87.6f), "white", "red"),
+//            Paint("Dunn Edwards", "https://www.dunnedwards.com/colors/browser/de5921", "Your Shadow", "DE5921", RGB(120, 126, 147), HSL(227f, 11.1f, 52.4f), "gray", "blue")
+//        )
+//        for (i in defaultPaints) {
+//            addPaint(i)
+//        }
+//
+//        val colors = listOf(
+//            Color("paint_id_1", RGB(255, 0, 0)),
+//            Color("paint_id_2", RGB(0, 255, 0)),
+//            Color("paint_id_3", RGB(0, 0, 255))
+//        )
+//        _historyList.value += UIHistory(test[0],test, colors)
+//        _historyList.value += UIHistory(test[0],test, colors)
+//        _historyList.value += UIHistory(test[0],test, colors)
+//        _historyList.value += UIHistory(test[0],test, colors)
+//        _historyList.value += UIHistory(test[0],test, colors)
+//        _historyList.value += UIHistory(test[0],test, colors)
+//        _historyList.value += UIHistory(test[0],test, colors)
+//    }
 }
