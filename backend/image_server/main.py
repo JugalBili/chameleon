@@ -15,15 +15,16 @@ from image_pipeline.dino_sam_singleton import DinoSAMSingleton
 @asynccontextmanager
 async def lifespan(app: FastAPI):
     env = getEnv()
-    cred = credentials.Certificate('./firebase-auth-image-server.json')
+    cred = credentials.Certificate("./firebase-auth-image-server.json")
 
-    firebase_admin.initialize_app(cred, {
-        'storageBucket': env.firebase_storage_bucket_url
-    })
+    firebase_admin.initialize_app(
+        cred, {"storageBucket": env.firebase_storage_bucket_url}
+    )
     # Initialize Pipeline Models
     ds_instance = DinoSAMSingleton.instance()
     yield
     print("good bye")
+
 
 # initialize fastAPI
 app = FastAPI(lifespan=lifespan)

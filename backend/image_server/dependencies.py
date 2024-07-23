@@ -7,5 +7,6 @@ from shared.repository.image_repository import ImageRepository
 def getEnv():
     return Settings()
 
+
 def get_image_repository():
     return ImageRepository()

@@ -59,7 +59,7 @@ def get_image_by_hash(
 async def upload_file(
     gallery_service: Annotated["GalleryService", Depends(get_gallery_service)],
     user: Annotated["User", Depends(get_user)],
-    file: UploadFile | None = None,
+    files: list[UploadFile] = File(None),
     review: str = Form(...),
 ):
     print("Received Review: ", review)
@@ -69,8 +69,9 @@ async def upload_file(
         raise HTTPException(status_code=422, detail=f"Invalid 'image_info' input: {e}")
     except Exception as e:
         raise HTTPException(status_code=422, detail=f"invalid image_info input: {e}")
-    if file:
-        image_hash = await gallery_service.upload_image(user, file, review_dto.paint_id)
-        review_dto.image_hashes.append(image_hash)
+    if files:
+        for file in files: 
+            image_hash = await gallery_service.upload_image(user, file, review_dto.paint_id)
+            review_dto.image_hashes.append(image_hash)
     await gallery_service.add_paint_review(review_dto, user)
     return Response(status_code=204)
