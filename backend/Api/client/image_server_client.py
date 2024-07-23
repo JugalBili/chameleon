@@ -13,9 +13,11 @@ class ImageServerClient:
         url = self.base_url + "/image/generate"
         try:
             print("sending request to: ", url)
+            print("sending data: ", json_data)
             resp  = requests.post(url, data=json_data, headers={"Content-Type": "application/json"})
             resp.raise_for_status()
             processed_data = resp.json()
+            print("received data from server: ", processed_data)
             processed_resp = [GetProcessedResponse(**image_response) for image_response in processed_data]
             return processed_resp
         except ValidationError as e:
