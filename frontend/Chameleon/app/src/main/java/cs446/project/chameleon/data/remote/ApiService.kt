@@ -83,4 +83,10 @@ interface ApiService {
                           @Part file: MultipartBody.Part,
                           @Part("review") review: RequestBody
     ):Unit
+
+    @Multipart
+    @POST("gallery/create-review")
+    suspend fun createImagelessReview(@Header("Authorization") token: String,
+                             @Part("review") review: RequestBody
+    ):Unit
 }
