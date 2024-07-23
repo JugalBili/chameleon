@@ -10,7 +10,7 @@
 | June 21 2024 | 0     | 2     | 0     | 2     | 0     | 0     | Test/setup Camera Func.                 |
 | June 22 2024 | 0     | 2     | 0     | 3.5   | 0     | 0     | Integrate Camera Func. into app         |
 | June 25 2024 | 0     | 2     | 5     | 1     | 5     | 0     | Setup UI for paints and image recolours |
-| June 27 2024 | 1     | 3     | 2     | 2     | 0     | 0     | Writing Deliverable 3                   |
+| June 27 2024 | 1     | 3     | 2     | 2     | 0     | 2     | Writing Deliverable 3                   |
 | July 19 2024 | 0     | 0     | 6     | 6     | 0     | 0     | UI update to use more composables       |
 | July 20 2024 | 0     | 0     | 6     | 6     | 0     | 0     | Integrate ViewModel to UI               |
 | July 21 2024 | 0     | 0     | 7     | 7     | 0     | 0     | Revamp from previous UI                 |
