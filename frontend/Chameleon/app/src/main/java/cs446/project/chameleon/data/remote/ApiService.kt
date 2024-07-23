@@ -52,12 +52,12 @@ interface ApiService {
 
 
     // history endpoints
-    @GET("history")
+    @GET("history/")
     suspend fun getHistory(@Header("Authorization") token: String): History
 
 
     // favorite endpoints
-    @GET("favorite")
+    @GET("favorite/")
     suspend fun getFavorite(@Header("Authorization") token: String): FavoriteResponse
 
     @POST("favorite")

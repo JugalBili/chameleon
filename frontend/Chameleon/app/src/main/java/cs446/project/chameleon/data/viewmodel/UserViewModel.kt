@@ -18,6 +18,9 @@ import cs446.project.chameleon.data.repository.HistoryRepository
 import cs446.project.chameleon.data.repository.ImageRepository
 import cs446.project.chameleon.data.repository.UserRepository
 import cs446.project.chameleon.utils.getPaintById
+import kotlinx.coroutines.async
+import kotlinx.coroutines.coroutineScope
+import okhttp3.internal.wait
 
 data class UIHistory (
     var baseImage: Bitmap,
@@ -65,15 +68,21 @@ class UserViewModel(test: List<Bitmap>): ViewModel() {
     }
 
 
-    suspend fun loginUser(email: String, password: String) {
+    suspend fun loginUser(email: String, password: String) = coroutineScope {
         val response = userRepository.login(email, password)
         token = response.token
         _user = response.user
 
-        System.out.println()
 
-        fetchFavourites()
-        fetchHistory()
+        val deferred = async {
+            fetchFavourites()
+        }
+        val result = deferred.await()
+
+        val deferred1 = async {
+            fetchHistory()
+        }
+        val result1 = deferred1.await()
     }
 
     suspend fun registerUser(email: String, password: String, firstname: String, lastname: String) {
@@ -88,6 +97,7 @@ class UserViewModel(test: List<Bitmap>): ViewModel() {
         for (fav in response) {
             addPaint(getPaintById(fav.paintId))
         }
+        println("finish")
     }
 
     suspend fun addFavourite(paint: Paint) {
@@ -101,8 +111,11 @@ class UserViewModel(test: List<Bitmap>): ViewModel() {
 
     // history
     suspend fun fetchHistory() {
+        println("fetch history")
         _historyList.value = emptyList()
+
         val response = historyRepository.getHistory(token.token)
+        println(response)
 
         for (history in response.history) {
             val imgRes = imageRepository.getImageList(token.token, history.baseImage)

@@ -19,7 +19,10 @@ class HistoryRepository {
     }
 
     suspend fun getHistory(authToken: String): History {
-        return apiService.getHistory("Bearer $authToken")
+        println(authToken)
+        val historyResponse = apiService.getHistory("Bearer $authToken")
+        println(historyResponse)
+        return historyResponse
     }
 
 }
