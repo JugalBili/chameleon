@@ -10,6 +10,7 @@ import kotlinx.coroutines.flow.asStateFlow
 import androidx.compose.runtime.*
 import cs446.project.chameleon.data.model.Favorite
 import cs446.project.chameleon.data.model.HSL
+import cs446.project.chameleon.data.model.History
 import cs446.project.chameleon.data.model.Paint
 import cs446.project.chameleon.data.model.RGB
 import cs446.project.chameleon.data.model.Token
@@ -26,7 +27,7 @@ import okhttp3.internal.wait
 
 data class UIHistory (
     var baseImage: Bitmap,
-    val images: List<Bitmap>,
+    val imageIds: List<String>,
     val colors: List<Color>
 )
 
@@ -81,6 +82,7 @@ class UserViewModel(test: List<Bitmap>): ViewModel() {
         runBlocking {
             fetchFavourites()
         }
+
         runBlocking {
             fetchHistory()
         }
@@ -132,18 +134,27 @@ class UserViewModel(test: List<Bitmap>): ViewModel() {
             val baseImage = imageRepository.getImageBitmap(token.token, imgRes.originalImage)
 
             // get renders
-            val images = mutableListOf<Bitmap>()
-
-            for (imgHash in imgRes.processedImages) {
-                images.add(imageRepository.getImageBitmap(token.token, imgHash.processedImageHash))     // TODO maybe sus
+            val imageIds = mutableListOf<String>()
+            for (img in imgRes.processedImages) {
+                imageIds.add(img.processedImageHash)
             }
 
-            addHistory(UIHistory(baseImage, images, history.colors))
-
+            addHistory(UIHistory(baseImage, imageIds, history.colors))
 
             // TODO FIX
-            break
+            //break
         }
+    }
+
+    // fetch rendered images for a base image
+    suspend fun fetchRenderedFromHistory(imageIds: List<String>): List<Bitmap> {
+        val images = mutableListOf<Bitmap>()
+
+        for (imgHash in imageIds) {
+            images.add(imageRepository.getImageBitmap(token.token, imgHash))
+        }
+
+        return images
     }
 
 

@@ -27,7 +27,7 @@ fun ProfileScreen(
     mainViewModel: PaintViewModel = viewModel(),
     userViewModel: UserViewModel = viewModel(),
     imageViewModel: ImageViewModel = viewModel()
-    ) {
+) {
     val user = userViewModel.getUser() ?: return
     val favourites by userViewModel.favourites.collectAsState()
     val history by userViewModel.historyList.collectAsState()
@@ -52,7 +52,8 @@ fun ProfileScreen(
             HistoryRows(
                 navController,
                 history,
-                imageViewModel
+                imageViewModel,
+                userViewModel
             )
         }
     }

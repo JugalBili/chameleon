@@ -59,7 +59,8 @@ fun NavBar(navController: NavHostController) {
             },
             selected = selectedIndex == 2,
             onClick = { selectedIndex = 2
-                navController.navigate("profile_screen")}
+                navController.navigate("profile_screen")
+            }
         )
     }
 }

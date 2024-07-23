@@ -52,9 +52,9 @@ class ImageViewModel(@field:SuppressLint("StaticFieldLeak") private val context:
         _renderColors.value = newColors
     }
 
-    fun onHistoryRowClick(uiHistory: UIHistory) {
+    fun onHistoryRowClick(uiHistory: UIHistory, bitmaps: List<Bitmap>) {
         updateImage(uiHistory.baseImage)
-        updateRenders(uiHistory.images)
+        updateRenders(bitmaps)
         updateRenderColors(uiHistory.colors)
     }
 
