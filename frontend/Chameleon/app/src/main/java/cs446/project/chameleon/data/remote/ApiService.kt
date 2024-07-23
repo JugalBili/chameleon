@@ -44,7 +44,7 @@ interface ApiService {
     suspend fun getImageList(@Header("Authorization") token: String, @Path("hash") hash: String): ImageResponse
 
     @Multipart
-    @POST("image")
+    @POST("image/")
     suspend fun postImage(@Header("Authorization") token: String,
                           @Part file: MultipartBody.Part,
                           @Part("colors") colors: RequestBody

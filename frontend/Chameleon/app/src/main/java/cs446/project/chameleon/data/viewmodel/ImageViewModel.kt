@@ -78,15 +78,16 @@ class ImageViewModel(@field:SuppressLint("StaticFieldLeak") private val context:
             }
         }
 
-        var response: ImageResponse
+
         runBlocking {
-            response = imageRepository.postImage(authToken, tempFile, colorsList)
-        }
-        println("move on")
-        for (image in response.processedImages) {
-            addRenderColor(image.color)
-            runBlocking {
-                addRender(imageRepository.getImageBitmap(authToken, image.processedImageHash))
+            val response = imageRepository.postImage(authToken, tempFile, colorsList)
+
+            println("move on")
+            for (image in response.processedImages) {
+                addRenderColor(image.color)
+                runBlocking {
+                    addRender(imageRepository.getImageBitmap(authToken, image.processedImageHash))
+                }
             }
         }
     }
