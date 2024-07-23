@@ -50,13 +50,6 @@ fun LoginPage(navController: NavHostController) {
         Color(0xFF8E24AA),
         Color(0xFF5E35B1)
     )
-    val titleText = buildAnnotatedString {
-        "Chameleon".forEachIndexed { idx, char ->
-            withStyle(style = SpanStyle(color = colours[idx % colours.size])) {
-                append(char)
-            }
-        }
-    }
 
     val annotatedText = buildAnnotatedString {
         append("Don't have an account? Sign up ")
