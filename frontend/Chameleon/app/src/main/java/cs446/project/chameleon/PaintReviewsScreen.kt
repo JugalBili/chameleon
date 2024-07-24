@@ -1,5 +1,6 @@
 package cs446.project.chameleon
 
+import android.annotation.SuppressLint
 import android.os.Build
 import androidx.annotation.RequiresApi
 import androidx.compose.foundation.layout.Arrangement
@@ -11,12 +12,15 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
+import androidx.compose.material.MaterialTheme
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Favorite
 import androidx.compose.material.icons.outlined.FavoriteBorder
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
+import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
+import androidx.compose.material3.TextField
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
@@ -29,10 +33,12 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.compose.ui.window.Dialog
 import androidx.navigation.NavHostController
 import cs446.project.chameleon.composables.ReviewCard
 import cs446.project.chameleon.composables.styling.CenteredColumn
 import cs446.project.chameleon.composables.styling.ChameleonDivider
+import cs446.project.chameleon.composables.styling.ChameleonText
 import cs446.project.chameleon.composables.styling.ColouredBox
 import cs446.project.chameleon.composables.styling.PrimaryButton
 import cs446.project.chameleon.composables.styling.Screen
@@ -42,11 +48,13 @@ import cs446.project.chameleon.data.viewmodel.ErrorViewModel
 import cs446.project.chameleon.data.viewmodel.ImageViewModel
 import cs446.project.chameleon.data.viewmodel.PaintViewModel
 import cs446.project.chameleon.data.viewmodel.UserViewModel
+import cs446.project.chameleon.utils.HEADER
 import cs446.project.chameleon.utils.getColour
 import kotlinx.coroutines.flow.toList
 import kotlinx.coroutines.launch
 import java.time.Instant
 
+@SuppressLint("StateFlowValueCalledInComposition")
 @RequiresApi(Build.VERSION_CODES.O)
 @Composable
 fun PaintReviewsScreen(
@@ -61,13 +69,11 @@ fun PaintReviewsScreen(
     var favourites = userViewModel.getFavourites()
 
     var isLiked by remember { mutableStateOf(paint in favourites) }
+    var isWritingReview by remember { mutableStateOf(false) }
+    var writingReviewText by remember { mutableStateOf("") }
 
-    // TODO: hard-coded values for now
-    val reviews = listOf(
-        Review("PPG1065-2", "1", "Ayo this slaps", Instant.now(), listOf("")),
-        Review("PPG1065-2", "2", "Yea I agree", Instant.now(), listOf("")),
-        Review("PPG1065-2", "3", "Weird name but aight", Instant.now(), listOf(""))
-    )
+    var reviews by remember { mutableStateOf(userViewModel.getReviews()) }
+    var hasLeftReview by remember { mutableStateOf(reviews.any { it.uid == userViewModel.getUser()?.uid }) }
 
     Screen(navController, userViewModel, errorViewModel) { padding ->
         CenteredColumn(modifier = Modifier.padding(padding), centerVertically = false) {
@@ -88,13 +94,21 @@ fun PaintReviewsScreen(
                     Text(text = paint.brand, fontSize = 12.sp)
                 }
 
-                PrimaryButton(
-                    text = "Try!",
-                    onClick = {
-                        paintViewModel.updateSelectedPaints(paint)
-                        navController.navigate("camera_screen")
-                    }
-                )
+                CenteredColumn(fullWidth = false) {
+                    PrimaryButton(
+                        text = "Try!",
+                        onClick = {
+                            paintViewModel.updateSelectedPaints(paint)
+                            navController.navigate("camera_screen")
+                        }
+                    )
+                    PrimaryButton(
+                        text = if (hasLeftReview) "Edit Review" else "Write Review",
+                        onClick = {
+                            isWritingReview = true
+                        }
+                    )
+                }
 
                 IconButton(
                     modifier = Modifier.size(48.dp),
@@ -124,6 +138,38 @@ fun PaintReviewsScreen(
                 items(reviews) { review ->
                     ReviewCard(review = review)
                     Spacer(modifier = Modifier.height(16.dp))
+                }
+            }
+        }
+
+        if (isWritingReview) {
+            Dialog(
+                onDismissRequest = { isWritingReview = false }
+            ) {
+                Surface(shape = MaterialTheme.shapes.medium) {
+                    CenteredColumn(modifier = Modifier.padding(12.dp)) {
+                        ChameleonText(if (hasLeftReview) "Edit your Review!" else "Write a Review!", HEADER)
+                        ChameleonDivider()
+
+                        TextField(
+                            modifier = Modifier.padding(bottom = 10.dp),
+                            value = writingReviewText,
+                            onValueChange = { writingReviewText = it },
+                            label = { Text("Write your review here") }
+                        )
+                        PrimaryButton(
+                            "Submit review",
+                            onClick = {
+                                coroutineScope.launch {
+                                    isWritingReview = false
+                                    userViewModel.createReview(paint.id, writingReviewText)
+                                    userViewModel.fetchReviews(paint.id)
+                                    reviews = userViewModel.getReviews()
+                                    hasLeftReview = reviews.any { it.uid == userViewModel.getUser()?.uid }
+                                }
+                            }
+                        )
+                    }
                 }
             }
         }

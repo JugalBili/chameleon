@@ -10,6 +10,7 @@ import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
@@ -30,6 +31,7 @@ import cs446.project.chameleon.data.viewmodel.UserViewModel
 import cs446.project.chameleon.utils.BRAND_FILTER
 import cs446.project.chameleon.utils.COLOUR_FILTER
 import cs446.project.chameleon.utils.NAME_FILTER
+import kotlinx.coroutines.launch
 
 @Composable
 fun PaintGalleryScreen(
@@ -39,6 +41,7 @@ fun PaintGalleryScreen(
     imageViewModel: ImageViewModel,
     errorViewModel: ErrorViewModel
 ) {
+    val coroutineScope = rememberCoroutineScope()
     val paints by paintViewModel.paints.collectAsState()
 
     // Handle search filters
@@ -93,8 +96,11 @@ fun PaintGalleryScreen(
             PaintGrid(
                 paints = filteredPaints,
                 onPaintClick = { paint ->
-                    paintViewModel.updateSelectedPaint(paint)
-                    navController.navigate("paint_review")
+                    coroutineScope.launch {
+                        paintViewModel.updateSelectedPaint(paint)
+                        userViewModel.fetchReviews(paint.id)
+                        navController.navigate("paint_review")
+                    }
                 },
                 maxHeight = 1f
             )
