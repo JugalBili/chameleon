@@ -43,9 +43,8 @@ class GalleryRepository {
         return BitmapFactory.decodeStream(responseBody.byteStream())
     }
 
-    suspend fun createReview(authToken: String, filePath: String, paintId: String, review: String): Unit {
-        // file
-        val file = File(filePath)
+    suspend fun createReview(authToken: String, bitmapFile: File, paintId: String, review: String): Unit {
+        val file = bitmapFile
         val requestFile = file.asRequestBody("image/jpeg".toMediaTypeOrNull())
         val filePart = MultipartBody.Part.createFormData("file", file.name, requestFile)
 
@@ -58,4 +57,12 @@ class GalleryRepository {
         apiService.createReview("Bearer $authToken", filePart, createReviewRequestBody)
     }
 
+    suspend fun createImagelessReview(authToken: String, paintId: String, review: String) {
+        val createReviewRequest = CreateReviewRequest(paintId, review)
+        val gson = Gson()
+        val createReviewRequestJson = gson.toJson(createReviewRequest)
+        val createReviewRequestBody = createReviewRequestJson.toRequestBody("text/plain".toMediaTypeOrNull())
+
+        apiService.createImagelessReview("Bearer $authToken", createReviewRequestBody)
+    }
 }

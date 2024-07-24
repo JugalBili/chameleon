@@ -1,5 +1,7 @@
-import androidx.compose.ui.platform.LocalSoftwareKeyboardController
+package cs446.project.chameleon
+
 import androidx.compose.foundation.Image
+import android.widget.ImageView
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -36,6 +38,8 @@ import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
 import cs446.project.chameleon.R
 import cs446.project.chameleon.data.viewmodel.ErrorViewModel
+import cs446.project.chameleon.data.viewmodel.ImageViewModel
+import cs446.project.chameleon.data.viewmodel.PaintViewModel
 import cs446.project.chameleon.data.viewmodel.UserViewModel
 import kotlinx.coroutines.launch
 
@@ -43,6 +47,8 @@ import kotlinx.coroutines.launch
 fun LoginPage(
     navController: NavHostController,
     userViewModel: UserViewModel,
+    paintViewModel: PaintViewModel,
+    imageViewModel: ImageViewModel,
     errorViewModel: ErrorViewModel
 ) {
 
@@ -50,7 +56,6 @@ fun LoginPage(
     val password = remember { mutableStateOf("") }
     val coroutineScope = rememberCoroutineScope()
     val keyboardController = LocalSoftwareKeyboardController.current
-
     val annotatedText = buildAnnotatedString {
         append("Don't have an account? Sign up ")
         pushStringAnnotation(tag = "signup", annotation = "here!")
@@ -70,6 +75,7 @@ fun LoginPage(
                 verticalArrangement = Arrangement.Center,
                 horizontalAlignment = Alignment.CenterHorizontally
             ) {
+                // Move the logo up to be above the username field
                 val image: Painter = painterResource(id = R.drawable.logo)
                 Image(
                     painter = image,
@@ -89,8 +95,9 @@ fun LoginPage(
                         .fillMaxWidth()
                         .padding(horizontal = 64.dp)
                 )
-                Spacer(modifier = Modifier.height(16.dp))
+                Spacer(modifier = Modifier.height(16.dp)) // Reduced space before Password field-
 
+                // Center the Password field
                 OutlinedTextField(
                     value = password.value,
                     onValueChange = { password.value = it },
@@ -116,7 +123,7 @@ fun LoginPage(
                         .fillMaxWidth()
                         .padding(horizontal = 64.dp)
                 )
-                Spacer(modifier = Modifier.height(24.dp))
+                Spacer(modifier = Modifier.height(24.dp)) // Space between Password field and Sign Up link
 
                 ClickableText(text = annotatedText, onClick = { offset ->
                     annotatedText.getStringAnnotations(
@@ -133,6 +140,8 @@ fun LoginPage(
                         onClick = {
                             coroutineScope.launch {
                                 val response = userViewModel.loginUser(username.value, password.value)
+                                val response =
+                                    userViewModel.loginUser(username.value, password.value)
                                 if (response != null) {
                                     errorViewModel.displayError(response)
                                 } else {
@@ -152,6 +161,7 @@ fun LoginPage(
                     }
                 }
             }
-        }
+        },
+
     )
 }

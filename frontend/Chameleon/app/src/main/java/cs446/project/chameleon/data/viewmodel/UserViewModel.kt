@@ -14,8 +14,10 @@ import cs446.project.chameleon.data.model.History
 import cs446.project.chameleon.data.model.LoginResponse
 import cs446.project.chameleon.data.model.Paint
 import cs446.project.chameleon.data.model.RGB
+import cs446.project.chameleon.data.model.Review
 import cs446.project.chameleon.data.model.Token
 import cs446.project.chameleon.data.repository.FavoriteRepository
+import cs446.project.chameleon.data.repository.GalleryRepository
 import cs446.project.chameleon.data.repository.HistoryRepository
 import cs446.project.chameleon.data.repository.ImageRepository
 import cs446.project.chameleon.data.repository.UserRepository
@@ -40,6 +42,7 @@ class UserViewModel(test: List<Bitmap>): ViewModel() {
     private var imageRepository: ImageRepository = ImageRepository()
     private var favoriteRepository: FavoriteRepository = FavoriteRepository()
     private var historyRepository: HistoryRepository = HistoryRepository()
+    private var galleryRepository: GalleryRepository = GalleryRepository()
 
     // User object
     private var _user: User? by mutableStateOf(null)
@@ -161,21 +164,27 @@ class UserViewModel(test: List<Bitmap>): ViewModel() {
     }
 
     // fetched non-cached rendered images for a base image
-    suspend fun fetchNonCachedHistory() {
-        val response = historyRepository.getHistory(token.token)
+    suspend fun fetchNonCachedHistory(): String? {
+        try {
+            val response = historyRepository.getHistory(token.token)
 
-        for (history in response.history) {
-            if (!historyList.value.any { it.baseImageId == history.baseImage }) {
-                val baseImage = imageRepository.getImageBitmap(token.token, history.baseImage)
-                val imgRes = imageRepository.getImageList(token.token, history.baseImage)
+            for (history in response.history) {
+                if (!historyList.value.any { it.baseImageId == history.baseImage }) {
+                    val baseImage = imageRepository.getImageBitmap(token.token, history.baseImage)
+                    val imgRes = imageRepository.getImageList(token.token, history.baseImage)
 
-                val imageIds = mutableListOf<String>()
-                for (img in imgRes.processedImages) {
-                    imageIds.add(img.processedImageHash)
+                    val imageIds = mutableListOf<String>()
+                    for (img in imgRes.processedImages) {
+                        imageIds.add(img.processedImageHash)
+                    }
+
+                    addHistory(UIHistory(imgRes.originalImage, baseImage, imageIds, history.colors))
                 }
-
-                addHistory(UIHistory(imgRes.originalImage, baseImage, imageIds, history.colors))
             }
+
+            return null
+        } catch (e: Exception) {
+            return "Connection to server failed"
         }
     }
 
@@ -190,32 +199,18 @@ class UserViewModel(test: List<Bitmap>): ViewModel() {
         return images
     }
 
-
-    // INIT TO TEST PAGE
-//    init {
-//        val defaultUser = User("asdf", "John", "Doe", "asdf")
-//        updateUser(defaultUser)
-//        val defaultPaints = listOf(
-//            Paint("Benjamin Moore", "https://www.benjaminmoore.com/en-ca/paint-colours/colour/2000-70/voile-pink", "Voile Pink", "2000-70", RGB(252, 226, 230), HSL(351f, 81.3f, 93.7f), "white", "red"),
-//            Paint("PPG", "https://www.ppgpaints.com/color/color-families/greens/grass-daisy", "Grass Daisy", "PPG1215-6", RGB(206, 176, 42), HSL(49f, 66.1f, 48.6f), "yellow", "yellow"),
-//            Paint("PPG", "https://www.ppgpaints.com/color/color-families/oranges/fiesta", "Fiesta", "PPG1065-2", RGB(237, 216, 210), HSL(13f, 42.9f, 87.6f), "white", "red"),
-//            Paint("Dunn Edwards", "https://www.dunnedwards.com/colors/browser/de5921", "Your Shadow", "DE5921", RGB(120, 126, 147), HSL(227f, 11.1f, 52.4f), "gray", "blue")
-//        )
-//        for (i in defaultPaints) {
-//            addPaint(i)
-//        }
-//
-//        val colors = listOf(
-//            Color("paint_id_1", RGB(255, 0, 0)),
-//            Color("paint_id_2", RGB(0, 255, 0)),
-//            Color("paint_id_3", RGB(0, 0, 255))
-//        )
-//        _historyList.value += UIHistory(test[0],test, colors)
-//        _historyList.value += UIHistory(test[0],test, colors)
-//        _historyList.value += UIHistory(test[0],test, colors)
-//        _historyList.value += UIHistory(test[0],test, colors)
-//        _historyList.value += UIHistory(test[0],test, colors)
-//        _historyList.value += UIHistory(test[0],test, colors)
-//        _historyList.value += UIHistory(test[0],test, colors)
-//    }
+    // Review calls
+    private val _reviews = MutableStateFlow<List<Review>>(emptyList())
+    val reviews = _reviews.asStateFlow()
+    fun getReviews(): List<Review> {
+        return _reviews.value
+    }
+    suspend fun fetchReviews(paintId: String) {
+        _reviews.value = galleryRepository.getAllReviews(token.token, paintId)
+    }
+    suspend fun createReview(paintId: String, review: String) {
+        runBlocking {
+            galleryRepository.createImagelessReview(token.token, paintId, review)
+        }
+    }
 }

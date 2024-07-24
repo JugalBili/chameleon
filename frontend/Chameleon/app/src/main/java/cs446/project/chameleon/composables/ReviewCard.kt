@@ -26,9 +26,6 @@ import cs446.project.chameleon.utils.formatTimestamp
 @Composable
 fun ReviewCard(review: Review) {
 
-    // TODO: query the user associated with the review.uid to get the name
-    val name = "John UninspiredLastName"
-
     Card(
         modifier = Modifier.fillMaxWidth().padding(12.dp),
         shape = RoundedCornerShape(16.dp)
@@ -38,10 +35,9 @@ fun ReviewCard(review: Review) {
             Row(
                 modifier = Modifier.fillMaxWidth(),
                 verticalAlignment = Alignment.CenterVertically,
-                horizontalArrangement = Arrangement.SpaceBetween
+                horizontalArrangement = Arrangement.End
             ) {
-                Text(text = name)
-                Text(text = formatTimestamp(review.timeStamp))
+                Text(text = review.timeStamp.toString().substring(0,10))
             }
 
             ChameleonDivider()
