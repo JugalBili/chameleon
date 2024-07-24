@@ -72,7 +72,7 @@ fun HistoryRows(
                             .fillMaxWidth()
                             .height(200.dp)
                             .padding(8.dp)
-                            .border(1.dp, Color.Black, RoundedCornerShape(16.dp))
+                            .border(1.dp, Color.Black)
                             .padding(8.dp)
                             .clickable {
                                 coroutineScope.launch {

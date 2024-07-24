@@ -49,7 +49,7 @@ class HistoryRepository:
         )
         query = collection_ref.order_by("last_accessed",
                                          direction=firestore_async.Query.DESCENDING
-                                         )
+                                         ).limit(3)
 
         history_docs = query.stream()
         history_list: List[History] = []
