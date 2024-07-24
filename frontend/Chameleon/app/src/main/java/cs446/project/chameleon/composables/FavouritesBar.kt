@@ -22,10 +22,9 @@ import cs446.project.chameleon.data.model.Paint
 fun FavouritesBar(
     paints: List<Paint>,
     onClick: (Paint) -> Unit
-    // TODO: maybe get the favourites list from UserViewModel
 ) {
 
-    Box(modifier = Modifier.fillMaxWidth().fillMaxHeight(0.3f)) {
+    Box(modifier = Modifier.fillMaxWidth().fillMaxHeight(0.4f)) {
         CenteredColumn(modifier = Modifier.padding(16.dp), centerHorizontally = false) {
 
             ChameleonText("Favourites", SUBHEADER)

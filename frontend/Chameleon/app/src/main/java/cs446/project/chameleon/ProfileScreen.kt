@@ -37,6 +37,7 @@ fun ProfileScreen(
     Screen(navController, userViewModel, errorViewModel) { padding ->
         CenteredColumn(modifier = Modifier.padding(padding)) {
             // Title
+            Spacer(modifier = Modifier.height(12.dp))
             ChameleonText("${user.firstname} ${user.lastname}", HEADER)
             ChameleonDivider()
             Spacer(modifier = Modifier.height(12.dp))
@@ -49,7 +50,7 @@ fun ProfileScreen(
                 }
             )
 
-            Spacer(modifier = Modifier.height(100.dp))
+            Spacer(modifier = Modifier.height(24.dp))
 
             HistoryRows(
                 navController,
