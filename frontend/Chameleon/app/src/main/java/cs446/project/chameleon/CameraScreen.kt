@@ -1,7 +1,6 @@
 package cs446.project.chameleon
 
 import android.graphics.Bitmap
-import android.graphics.BitmapFactory
 import android.graphics.Matrix
 import android.util.Log
 import androidx.camera.core.ImageCapture.OnImageCapturedCallback
@@ -14,30 +13,23 @@ import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.AddCircle
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
-import androidx.compose.material3.Scaffold
 import androidx.compose.material3.rememberBottomSheetScaffoldState
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.collectAsState
-import androidx.compose.runtime.getValue
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.alpha
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.platform.LocalContext
-import androidx.compose.ui.res.vectorResource
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import androidx.core.content.ContextCompat
-import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavHostController
 import cs446.project.chameleon.composables.CameraPreview
-import cs446.project.chameleon.composables.NavBar
 import cs446.project.chameleon.composables.styling.Screen
 import cs446.project.chameleon.data.viewmodel.ErrorViewModel
 import cs446.project.chameleon.data.viewmodel.ImageViewModel
@@ -79,7 +71,7 @@ fun CameraScreen(
             Box(
                 modifier = Modifier
                     .align(Alignment.BottomCenter)
-                    .padding(50.dp)
+                    .padding(bottom = 75.dp)
                     .background(Color.Transparent)
             ) {
                 IconButton(
@@ -91,13 +83,13 @@ fun CameraScreen(
                             navController = navController
                         )
                     },
-                    modifier = Modifier
+                    modifier = Modifier.size(100.dp)
                 ) {
                     Icon(
-                        imageVector = ImageVector.vectorResource(id = R.drawable.baseline_stop_circle_24),
+                        painter = painterResource(id = R.drawable.take_photo),
                         contentDescription = "Take photo",
-                        tint = Color.White,
-                        modifier = Modifier.size(100.dp)
+                        tint = Color.Black,
+                        modifier = Modifier.size(150.dp).alpha(0.6f)
                     )
                 }
             }
