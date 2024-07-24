@@ -64,13 +64,14 @@ fun PaintGalleryScreen(
         CenteredColumn(modifier = Modifier.padding(padding)) {
 
             // Title
+            Spacer(modifier = Modifier.height(12.dp))
             ChameleonText("Gallery Page", HEADER)
             ChameleonDivider()
             Spacer(modifier = Modifier.height(12.dp))
 
             // Search field
             CenteredRow() {
-                Box(modifier = Modifier.fillMaxWidth(0.3f).padding(end = 8.dp)) {
+                Box(modifier = Modifier.fillMaxWidth(0.305f).padding(end = 8.dp)) {
                     Dropdown(
                         filters,
                         updateSelectedOption = { option ->

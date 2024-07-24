@@ -21,6 +21,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import cs446.project.chameleon.utils.getColour
@@ -59,9 +60,9 @@ fun PaintCard(
                     modifier = Modifier.fillMaxSize(),
                     horizontalAlignment = Alignment.CenterHorizontally
                 ) {
-                    Text(text = paint.name, fontSize = 14.sp)
-                    Text(text = paint.id, fontSize = 12.sp) // TODO: change this to paint code
-                    Text(text = paint.brand, fontSize = 12.sp)
+                    Text(text = paint.name, fontSize = 14.sp, maxLines = 1, overflow = TextOverflow.Ellipsis)
+                    Text(text = paint.id, fontSize = 12.sp, maxLines = 1, overflow = TextOverflow.Ellipsis)
+                    Text(text = paint.brand, fontSize = 12.sp, maxLines = 1, overflow = TextOverflow.Ellipsis)
                 }
             }
         }
