@@ -19,8 +19,6 @@ import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.res.vectorResource
 import androidx.compose.ui.unit.dp
 import cs446.project.chameleon.R
-import cs446.project.chameleon.processImage
-import kotlinx.coroutines.launch
 
 @Composable
 fun SelectionBar(
@@ -54,7 +52,7 @@ fun SelectionBar(
                 onClick = onAddClick
             ) {
                 Icon(
-                    imageVector = ImageVector.vectorResource(id = R.drawable.baseline_add_box_24),
+                    imageVector = ImageVector.vectorResource(id = R.drawable.baseline_color_lens_24),
                     contentDescription = "Plus Icon",
                     tint = Color.Black
                 )
@@ -64,7 +62,7 @@ fun SelectionBar(
                 onClick = onProcessClick
             ) {
                 Icon(
-                    imageVector = ImageVector.vectorResource(id = R.drawable.baseline_check_box_24),
+                    imageVector = ImageVector.vectorResource(id = R.drawable.baseline_cloud_upload_24),
                     contentDescription = "Checkmark Icon",
                     tint = Color.Black
                 )
