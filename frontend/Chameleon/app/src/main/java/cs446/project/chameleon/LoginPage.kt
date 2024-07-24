@@ -11,6 +11,8 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.text.ClickableText
+import androidx.compose.foundation.text.KeyboardActions
+import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.OutlinedTextField
@@ -24,9 +26,12 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.painter.Painter
+import androidx.compose.ui.platform.LocalSoftwareKeyboardController
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.SpanStyle
 import androidx.compose.ui.text.buildAnnotatedString
+import androidx.compose.ui.text.input.ImeAction
+import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.text.style.TextDecoration
 import androidx.compose.ui.text.withStyle
@@ -53,6 +58,7 @@ fun LoginPage(
     val username = remember { mutableStateOf("") }
     val password = remember { mutableStateOf("") }
     val clicked = remember { mutableStateOf(false) }
+    val keyboardController = LocalSoftwareKeyboardController.current
 
     val annotatedText = buildAnnotatedString {
         append("Don't have an account? Sign up ")
@@ -88,6 +94,9 @@ fun LoginPage(
                     value = username.value,
                     onValueChange = { username.value = it },
                     label = { Text("Username") },
+                    keyboardOptions = KeyboardOptions.Default.copy(
+                        imeAction = ImeAction.Next
+                    ),
                     modifier = Modifier
                         .fillMaxWidth()
                         .padding(horizontal = 64.dp)
@@ -99,6 +108,23 @@ fun LoginPage(
                     value = password.value,
                     onValueChange = { password.value = it },
                     label = { Text("Password") },
+                    keyboardOptions = KeyboardOptions.Default.copy(
+                        keyboardType = KeyboardType.Password,
+                        imeAction = ImeAction.Done
+                    ),
+                    keyboardActions = KeyboardActions(
+                        onDone = {
+                            coroutineScope.launch {
+                                val response = userViewModel.loginUser(username.value, password.value)
+                                if (response != null) {
+                                    errorViewModel.displayError(response)
+                                } else {
+                                    navController.navigate("camera_screen")
+                                }
+                            }
+                            keyboardController?.hide()
+                        }
+                    ),
                     modifier = Modifier
                         .fillMaxWidth()
                         .padding(horizontal = 64.dp),
