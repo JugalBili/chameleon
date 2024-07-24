@@ -9,12 +9,16 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.annotation.RequiresApi
+import androidx.compose.material.AlertDialog
+import androidx.compose.material.Text
+import androidx.compose.material.TextButton
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import cs446.project.chameleon.data.viewmodel.ErrorViewModel
 import cs446.project.chameleon.data.viewmodel.ImageViewModel
 import cs446.project.chameleon.data.viewmodel.PaintViewModel
 import cs446.project.chameleon.data.viewmodel.UserViewModel
@@ -42,39 +46,53 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             ChameleonTheme {
+                val navController = rememberNavController()
                 val userViewModel: UserViewModel = UserViewModel(listOf(demoBitmap, demoBitmap1, demoBitmap2))
                 val paintViewModel: PaintViewModel = viewModel()
                 val imageViewModel: ImageViewModel = ImageViewModel(context)
-                val navController = rememberNavController()
+                val errorViewModel: ErrorViewModel = viewModel()
 
                 NavHost(
                     navController = navController,
                     startDestination = "login_page"
                 ) {
                     composable("login_page") {
-                        LoginPage(navController, userViewModel)
+                        LoginPage(navController, userViewModel, paintViewModel, imageViewModel, errorViewModel)
                     }
                     composable("signup_page") {
-                        SignupPage(navController, userViewModel)
+                        SignupPage(navController, userViewModel, paintViewModel, imageViewModel, errorViewModel)
                     }
                     composable("camera_screen") {
-                        CameraScreen(navController, userViewModel, imageViewModel)
+                        CameraScreen(navController, userViewModel, paintViewModel, imageViewModel, errorViewModel)
                     }
                     composable("image_preview_screen") {
-                        ImagePreviewScreen(navController, paintViewModel, imageViewModel, userViewModel)
+                        ImagePreviewScreen(navController, userViewModel, paintViewModel, imageViewModel, errorViewModel)
                     }
                     composable("image_result_screen") {
-                        ImageResultScreen(navController, userViewModel, imageViewModel)
+                        ImageResultScreen(navController, userViewModel, paintViewModel, imageViewModel, errorViewModel)
                     }
                     composable("profile_screen") {
-                        ProfileScreen(navController, paintViewModel, userViewModel, imageViewModel)
+                        ProfileScreen(navController, userViewModel, paintViewModel, imageViewModel, errorViewModel)
                     }
                     composable("gallery_page") {
-                        PaintGalleryScreen(navController, userViewModel, paintViewModel)
+                        PaintGalleryScreen(navController, userViewModel, paintViewModel, imageViewModel, errorViewModel)
                     }
                     composable("paint_review") {
-                        PaintReviewsScreen(navController, paintViewModel, userViewModel)
+                        PaintReviewsScreen(navController, userViewModel, paintViewModel, imageViewModel, errorViewModel)
                     }
+                }
+
+                if (errorViewModel.showErrorDialog.value) {
+                    AlertDialog(
+                        onDismissRequest = { errorViewModel.dismissError() },
+                        title = { Text("Error") },
+                        text = { Text(errorViewModel.errorMsg.value) },
+                        confirmButton = {
+                            TextButton(onClick = { errorViewModel.dismissError() }) {
+                                Text("OK")
+                            }
+                        }
+                    )
                 }
             }
         }

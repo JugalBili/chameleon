@@ -13,6 +13,7 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.AddCircle
 import androidx.compose.material3.ExperimentalMaterial3Api
@@ -28,7 +29,9 @@ import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.res.vectorResource
 import androidx.compose.ui.unit.dp
 import androidx.core.content.ContextCompat
 import androidx.lifecycle.viewmodel.compose.viewModel
@@ -36,7 +39,9 @@ import androidx.navigation.NavHostController
 import cs446.project.chameleon.composables.CameraPreview
 import cs446.project.chameleon.composables.NavBar
 import cs446.project.chameleon.composables.styling.Screen
+import cs446.project.chameleon.data.viewmodel.ErrorViewModel
 import cs446.project.chameleon.data.viewmodel.ImageViewModel
+import cs446.project.chameleon.data.viewmodel.PaintViewModel
 import cs446.project.chameleon.data.viewmodel.UserViewModel
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -44,7 +49,9 @@ import cs446.project.chameleon.data.viewmodel.UserViewModel
 fun CameraScreen(
     navController: NavHostController,
     userViewModel: UserViewModel,
-    imageViewModel: ImageViewModel
+    paintViewModel: PaintViewModel,
+    imageViewModel: ImageViewModel,
+    errorViewModel: ErrorViewModel
 ) {
     val context = LocalContext.current
     val scope = rememberCoroutineScope()
@@ -57,7 +64,7 @@ fun CameraScreen(
         }
     }
 
-    Screen(navController, userViewModel) { padding ->
+    Screen(navController, userViewModel, errorViewModel) { padding ->
         Box(
             modifier = Modifier
                 .fillMaxSize()
@@ -72,7 +79,7 @@ fun CameraScreen(
             Box(
                 modifier = Modifier
                     .align(Alignment.BottomCenter)
-                    .padding(bottom = 128.dp) // Adjust the padding as needed to position above the bottom bar
+                    .padding(50.dp)
                     .background(Color.Transparent)
             ) {
                 IconButton(
@@ -87,8 +94,10 @@ fun CameraScreen(
                     modifier = Modifier
                 ) {
                     Icon(
-                        imageVector = Icons.Default.AddCircle,
-                        contentDescription = "Take photo"
+                        imageVector = ImageVector.vectorResource(id = R.drawable.baseline_stop_circle_24),
+                        contentDescription = "Take photo",
+                        tint = Color.White,
+                        modifier = Modifier.size(100.dp)
                     )
                 }
             }

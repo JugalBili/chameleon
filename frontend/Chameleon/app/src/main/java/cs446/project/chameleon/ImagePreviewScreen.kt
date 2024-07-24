@@ -29,6 +29,7 @@ import androidx.navigation.NavHostController
 import cs446.project.chameleon.composables.NavBar
 import cs446.project.chameleon.composables.PaintSelectionDialog
 import cs446.project.chameleon.composables.SelectionBar
+import cs446.project.chameleon.data.viewmodel.ErrorViewModel
 import cs446.project.chameleon.data.viewmodel.ImageViewModel
 import cs446.project.chameleon.data.viewmodel.PaintViewModel
 import cs446.project.chameleon.data.viewmodel.UserViewModel
@@ -39,9 +40,10 @@ import kotlinx.coroutines.delay
 @Composable
 fun ImagePreviewScreen(
     navController: NavHostController,
+    userViewModel: UserViewModel,
     paintViewModel: PaintViewModel,
     imageViewModel: ImageViewModel,
-    userViewModel: UserViewModel
+    errorViewModel: ErrorViewModel
 ) {
     var isProcessing by remember { mutableStateOf(false) }
     val coroutineScope = rememberCoroutineScope()
@@ -52,7 +54,6 @@ fun ImagePreviewScreen(
 
     // Colour Selection Modal
     val showModal = remember { mutableStateOf(false) }
-    val selectedPaintIds = remember { mutableStateListOf<String>() }
 
     // ImageViewModel setup
     val bitmapState = imageViewModel.baseImage.observeAsState()
@@ -90,17 +91,21 @@ fun ImagePreviewScreen(
                         // process the image, then display result
                         isProcessing = true
                         coroutineScope.launch {
-                            imageViewModel.postImage(userViewModel.token.token, paintViewModel.selectedPaints)
-                            isProcessing = false
-                            paintViewModel.clearSelectedPaints()
-                            navController.navigate("image_result_screen")
+                            val response = imageViewModel.postImage(userViewModel.token.token, paintViewModel.selectedPaints)
+                            if (response != null) {
+                                errorViewModel.displayError(response)
+                            } else {
+                                isProcessing = false
+                                paintViewModel.clearSelectedPaints()
+                                navController.navigate("image_result_screen")
+                            }
                         }
                     }
                 )
 
 
                 // Nav bar
-                NavBar(navController = navController, userViewModel)
+                NavBar(navController = navController, userViewModel, errorViewModel)
             }
         }
     )
@@ -109,14 +114,9 @@ fun ImagePreviewScreen(
         PaintSelectionDialog(
             onClose = { showModal.value = false },
             onSubmit = { showModal.value = false },
-            onClick = { paint ->
-                if (selectedPaintIds.contains(paint.id)) {
-                    selectedPaintIds.remove(paint.id)
-                } else {
-                    selectedPaintIds.add(paint.id)
-                }
-            },
-            paintViewModel = paintViewModel
+            paintViewModel = paintViewModel,
+            userViewModel = userViewModel,
+            errorViewModel = errorViewModel
         )
     }
 }

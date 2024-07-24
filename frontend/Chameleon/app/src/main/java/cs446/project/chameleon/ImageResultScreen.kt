@@ -38,7 +38,9 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
 import cs446.project.chameleon.composables.NavBar
+import cs446.project.chameleon.data.viewmodel.ErrorViewModel
 import cs446.project.chameleon.data.viewmodel.ImageViewModel
+import cs446.project.chameleon.data.viewmodel.PaintViewModel
 import cs446.project.chameleon.data.viewmodel.UserViewModel
 import kotlinx.coroutines.launch
 import kotlin.math.abs
@@ -48,7 +50,9 @@ import kotlin.math.abs
 fun ImageResultScreen(
     navController: NavHostController,
     userViewModel: UserViewModel,
-    imageViewModel: ImageViewModel
+    paintViewModel: PaintViewModel,
+    imageViewModel: ImageViewModel,
+    errorViewModel: ErrorViewModel
 ) {
     // ImageViewModel setup
     val renders by imageViewModel.renders.collectAsState()
@@ -97,7 +101,7 @@ fun ImageResultScreen(
                     }
                 }
 
-                NavBar(navController, userViewModel)
+                NavBar(navController, userViewModel, errorViewModel)
             }
         }
     )

@@ -10,12 +10,14 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
 import cs446.project.chameleon.composables.NavBar
+import cs446.project.chameleon.data.viewmodel.ErrorViewModel
 import cs446.project.chameleon.data.viewmodel.UserViewModel
 
 @Composable
 fun Screen(
     navController: NavHostController,
     userViewModel: UserViewModel,
+    errorViewModel: ErrorViewModel,
     content: @Composable (PaddingValues) -> Unit
 ) {
 
@@ -23,7 +25,7 @@ fun Screen(
         modifier = Modifier.fillMaxSize(),
         content = content,
         bottomBar = {
-            NavBar(navController = navController, userViewModel)
+            NavBar(navController = navController, userViewModel, errorViewModel)
         }
     )
 }
