@@ -4,7 +4,6 @@ import android.graphics.Bitmap
 import androidx.compose.runtime.mutableStateOf
 import cs446.project.chameleon.data.model.Color
 import androidx.lifecycle.ViewModel
-import androidx.lifecycle.viewModelScope
 import cs446.project.chameleon.data.model.User
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
@@ -25,7 +24,6 @@ import cs446.project.chameleon.data.repository.UserRepository
 import cs446.project.chameleon.utils.getPaintById
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.async
-import kotlinx.coroutines.launch
 import kotlinx.coroutines.coroutineScope
 import kotlinx.coroutines.runBlocking
 import okhttp3.internal.wait
@@ -81,22 +79,24 @@ class UserViewModel(test: List<Bitmap>): ViewModel() {
     }
 
 
-    fun loginUser(email: String, password: String): String? {
+    suspend fun loginUser(email: String, password: String): String? {
         try {
-            viewModelScope.launch {
-                val response = userRepository.login(email, password)
+            val response = userRepository.login(email, password)
 
-                token = response.token
-                _user = response.user
+            token = response.token
+            _user = response.user
 
-                println("Fetching Favorites")
+            runBlocking {
                 fetchFavourites()
-                println("Fetching History")
+            }
+
+            runBlocking {
                 fetchHistory()
             }
+
             return null
         } catch (e: Exception) {
-                return "Login unsuccessful"
+            return "Login unsuccessful"
         }
     }
 
@@ -113,14 +113,11 @@ class UserViewModel(test: List<Bitmap>): ViewModel() {
     }
 
     // favourites
-    fun fetchFavourites() {
-        viewModelScope.launch {
-            _favourites.value = emptyList()
-            val response = async {favoriteRepository.getFavorites(token.token)}
-            println(response)
-            for (fav in response.await()) {
-                addPaint(getPaintById(fav.paintId))
-            }
+    suspend fun fetchFavourites() {
+        _favourites.value = emptyList()
+        val response = favoriteRepository.getFavorites(token.token)
+        for (fav in response) {
+            addPaint(getPaintById(fav.paintId))
         }
     }
 
@@ -142,30 +139,27 @@ class UserViewModel(test: List<Bitmap>): ViewModel() {
     }
 
     // history
-    fun fetchHistory() {
-        viewModelScope.launch{
-            _historyList.value = emptyList()
+    suspend fun fetchHistory() {
+        _historyList.value = emptyList()
 
-            val response = async { historyRepository.getHistory(token.token) }
-            println(response)
+        val response = historyRepository.getHistory(token.token)
 
-            for (history in response.await().history) {
-                val imgRes = imageRepository.getImageList(token.token, history.baseImage)
+        for (history in response.history) {
+            val imgRes = imageRepository.getImageList(token.token, history.baseImage)
 
-                // get original image
-                val baseImage = imageRepository.getImageBitmap(token.token, imgRes.originalImage)
+            // get original image
+            val baseImage = imageRepository.getImageBitmap(token.token, imgRes.originalImage)
 
-                // get renders
-                val imageIds = mutableListOf<String>()
-                for (img in imgRes.processedImages) {
-                    imageIds.add(img.processedImageHash)
-                }
-
-                addHistory(UIHistory(imgRes.originalImage, baseImage, imageIds, history.colors))
-
-                // TODO FIX
-                //break
+            // get renders
+            val imageIds = mutableListOf<String>()
+            for (img in imgRes.processedImages) {
+                imageIds.add(img.processedImageHash)
             }
+
+            addHistory(UIHistory(imgRes.originalImage, baseImage, imageIds, history.colors))
+
+            // TODO FIX
+            //break
         }
     }
 
