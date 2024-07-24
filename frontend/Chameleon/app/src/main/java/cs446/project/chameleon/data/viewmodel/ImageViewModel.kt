@@ -38,7 +38,9 @@ class ImageViewModel(@field:SuppressLint("StaticFieldLeak") private val context:
     }
 
     fun updateRenders(newRenders: List<Bitmap>) {
-        _renders.value = newRenders
+        for (i in newRenders) {
+            addRender(i)
+        }
     }
 
     // Corresponding Colors for Renders
@@ -54,6 +56,8 @@ class ImageViewModel(@field:SuppressLint("StaticFieldLeak") private val context:
 
     fun onHistoryRowClick(uiHistory: UIHistory, bitmaps: List<Bitmap>) {
         updateImage(uiHistory.baseImage)
+        _renders.value = emptyList()
+        baseImage.value?.let { addRender(it) }
         updateRenders(bitmaps)
         updateRenderColors(uiHistory.colors)
     }
