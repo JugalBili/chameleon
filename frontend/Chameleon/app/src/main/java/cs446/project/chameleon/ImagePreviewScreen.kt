@@ -35,6 +35,7 @@ import cs446.project.chameleon.data.viewmodel.PaintViewModel
 import cs446.project.chameleon.data.viewmodel.UserViewModel
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.delay
+import kotlinx.coroutines.runBlocking
 
 @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
 @Composable
@@ -90,8 +91,9 @@ fun ImagePreviewScreen(
                     onProcessClick = {
                         // process the image, then display result
                         isProcessing = true
-                        coroutineScope.launch {
+                        runBlocking {
                             val response = imageViewModel.postImage(userViewModel.token.token, paintViewModel.selectedPaints)
+
                             if (response != null) {
                                 errorViewModel.displayError(response)
                             } else {

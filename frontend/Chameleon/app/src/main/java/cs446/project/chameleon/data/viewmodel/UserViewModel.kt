@@ -84,7 +84,10 @@ class UserViewModel(test: List<Bitmap>): ViewModel() {
     fun loginUser(email: String, password: String): String? {
         try {
             viewModelScope.launch {
+                println("login")
                 val response = userRepository.login(email, password)
+
+                println("done login")
 
                 token = response.token
                 _user = response.user
@@ -102,8 +105,8 @@ class UserViewModel(test: List<Bitmap>): ViewModel() {
 
     suspend fun registerUser(email: String, password: String, firstname: String, lastname: String): String? {
         try {
-            runBlocking {
-                userRepository.register(email, password, firstname, lastname)
+            viewModelScope.launch {
+                async { userRepository.register(email, password, firstname, lastname) }
                 loginUser(email, password)
             }
             return null
@@ -124,21 +127,22 @@ class UserViewModel(test: List<Bitmap>): ViewModel() {
         }
     }
 
-    suspend fun addFavourite(paint: Paint) {
-        val fav = Favorite(paint.id, paint.rgb)
-        favoriteRepository.postFavorite(token.token, fav)
-
-        runBlocking {
-            fetchFavourites()
+    fun addFavourite(paint: Paint) {
+        viewModelScope.launch {
+            val fav = Favorite(paint.id, paint.rgb)
+            async { favoriteRepository.postFavorite(token.token, fav) }
         }
+
+        fetchFavourites()
     }
 
-    suspend fun deleteFavourite(paint: Paint) {
-        favoriteRepository.deleteFavorite(token.token, paint.id)
-
-        runBlocking {
-            fetchFavourites()
+    fun deleteFavourite(paint: Paint) {
+        viewModelScope.launch {
+            async { favoriteRepository.deleteFavorite(token.token, paint.id) }
         }
+
+
+        fetchFavourites()
     }
 
     // history
@@ -211,12 +215,16 @@ class UserViewModel(test: List<Bitmap>): ViewModel() {
     fun getReviews(): List<Review> {
         return _reviews.value
     }
-    suspend fun fetchReviews(paintId: String) {
-        _reviews.value = galleryRepository.getAllReviews(token.token, paintId)
+
+    fun fetchReviews(paintId: String) {
+        viewModelScope.launch {
+            val response = async { galleryRepository.getAllReviews(token.token, paintId) }
+            _reviews.value = response.await()
+        }
     }
-    suspend fun createReview(paintId: String, review: String) {
-        runBlocking {
-            galleryRepository.createImagelessReview(token.token, paintId, review)
+    fun createReview(paintId: String, review: String) {
+        viewModelScope.launch{
+            async { galleryRepository.createImagelessReview(token.token, paintId, review) }
         }
     }
 }
