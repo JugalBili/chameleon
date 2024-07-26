@@ -30,3 +30,4 @@
 | July 23 2024 | 3     | 3     | 3     | 3     | 3     | 3     | UI revisions                            |
 | July 24 2024 | 1     | 1     | 1     | 1     | 1     | 1     | Demo run through and practice           |
 | July 25 2024 | 3     | 3     | 0     | 0     | 0     | 3     | Writing Deliverable 6                   |
+| July 26 2024 | 3     | 3     | 3     | 3     | 3     | 3     | Writing Deliverable 6                   |
