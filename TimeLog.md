@@ -16,8 +16,8 @@
 | July 15 2024 | 4     | 5     | 7     | 7     | 0     | 0     | Setup Image API                         |
 | July 15 2024 | 5     | 6     | 7     | 7     | 0     | 0     | Setup Image Processing Pipeline         |
 | July 16 2024 | 6     | 6     | 7     | 7     | 0     | 0     | ^                                       |
-| July 17 2024 | 3     | 4     | 7     | 7     | 0     | 0     | Setup History API                       |
-| July 18 2024 | 3     | 4     | 7     | 7     | 0     | 0     | Setup Favorites API                     |
+| July 17 2024 | 3     | 4     | 7     | 7     | 8     | 0     | Setup History API & Integrate to FE     |
+| July 18 2024 | 3     | 4     | 7     | 7     | 8     | 0     | Setup Favorites API & Integrate to FE   |
 | July 19 2024 | 6     | 3     | 0     | 0     | 0     | 0     | Setup Gallery API                       |
 | July 19 2024 | 0     | 6     | 6     | 6     | 0     | 0     | UI update to use more composables       |
 | July 20 2024 | 0     | 6     | 6     | 6     | 0     | 0     | Integrate ViewModel to UI               |
@@ -29,5 +29,5 @@
 | July 23 2024 | 3     | 3     | 3     | 3     | 3     | 3     | Demo run through and practice           |
 | July 23 2024 | 3     | 3     | 3     | 3     | 3     | 3     | UI revisions                            |
 | July 24 2024 | 1     | 1     | 1     | 1     | 1     | 1     | Demo run through and practice           |
-| July 25 2024 | 3     | 3     | 0     | 0     | 0     | 3     | Writing Deliverable 6                   |
+| July 25 2024 | 3     | 3     | 3     | 3     | 3     | 3     | Writing Deliverable 6                   |
 | July 26 2024 | 3     | 3     | 3     | 3     | 3     | 3     | Writing Deliverable 6                   |
