@@ -13,6 +13,8 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.text.ClickableText
 import androidx.compose.foundation.text.KeyboardActions
 import androidx.compose.foundation.text.KeyboardOptions
+import androidx.compose.material.MaterialTheme
+import androidx.compose.material.Surface
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.OutlinedTextField
@@ -37,6 +39,7 @@ import androidx.compose.ui.text.style.TextDecoration
 import androidx.compose.ui.text.withStyle
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.compose.ui.window.Dialog
 import androidx.navigation.NavHostController
 import cs446.project.chameleon.R
 import cs446.project.chameleon.data.viewmodel.ErrorViewModel
@@ -70,6 +73,7 @@ fun LoginPage(
     }
 
     val coroutineScope = rememberCoroutineScope()
+    val showDialog = remember { mutableStateOf(true) }
 
     Scaffold(
         modifier = Modifier.fillMaxSize(),
@@ -81,6 +85,35 @@ fun LoginPage(
                 verticalArrangement = Arrangement.Center,
                 horizontalAlignment = Alignment.CenterHorizontally
             ) {
+                if (showDialog.value) {
+                    Dialog(onDismissRequest = { showDialog.value = false }) {
+                        Surface(
+                            shape = MaterialTheme.shapes.medium,
+                            color = MaterialTheme.colors.background,
+                            elevation = 24.dp
+                        ) {
+                            Column(
+                                modifier = Modifier.padding(16.dp),
+                                horizontalAlignment = Alignment.CenterHorizontally
+                            ) {
+                                Text(
+                                    text = "Warning",
+                                    style = MaterialTheme.typography.h6,
+                                    color = Color.Red
+                                )
+                                Spacer(modifier = Modifier.height(8.dp))
+                                Text(
+                                    text = "The visualized image may have discrepancies compared to the final product and should be used as a reference only.",
+                                    style = MaterialTheme.typography.body1
+                                )
+                                Spacer(modifier = Modifier.height(16.dp))
+                                Button(onClick = { showDialog.value = false }) {
+                                    Text("Dismiss")
+                                }
+                            }
+                        }
+                    }
+                }
                 // Move the logo up to be above the username field
                 val image: Painter = painterResource(id = R.drawable.logo)
                 Image(
@@ -169,5 +202,5 @@ fun LoginPage(
             }
         },
 
-    )
+        )
 }
